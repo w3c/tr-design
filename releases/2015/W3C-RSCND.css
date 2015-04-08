@@ -1,0 +1,10 @@
+
+/* Style for a "Rescinded Recommendation" */
+
+@import "base.css";
+
+h1, h2, h3, h4, h5, h6 { color: #000; background: #fff; }
+
+body {
+  background-image: url(logo-RSCND);
+}
