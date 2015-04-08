@@ -1,0 +1,8 @@
+
+/* Style for a "Note" */
+
+@import "base.css";
+
+body {
+  background-image: url(logo-NOTE);
+}
