@@ -16,7 +16,7 @@ For the purpose of this project, there are two guiding principles to guarantee e
 1. Ensure the security and privacy of the individuals reading the document;
 2. Ensure proper access by everyone regardless of disability;
 3. Consider the different languages, scripts, and cultures from around the world;
-4. Ensure that individuals can read properly the normative and non-normative parts of a specification when scripting is disabled or not available;
+4. Ensure that individuals can read properly the normative and non-normative parts of the document when scripting is disabled or not available;
 5. Consider the impact of the design on the W3C publication ecosystem: publication tools, authoring tools, editors
 6. Ensure that the W3C Brand and general W3C website integration are respected, per the W3C Communications Team;
 7. Consider the Web user agent compatibility risks (past, present, and future) and the long term maintenance
