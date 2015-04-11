@@ -9,7 +9,7 @@ The goal of this project is to provide a modern design to future [technical repo
 For the purpose of this project, there are two guiding principles to guarantee efficiency and progressive design:
 
 1. **W3C MUST NOT change the design of technical reports already published.**
-2. **W3C MAY adopt a new design for technical reports only once per year, on January 1st.**
+2. **W3C MAY adopt a new design for technical reports only once per year, on the 1st of January.**
 
 ## Guidelines for a proper design
 
