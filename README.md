@@ -19,7 +19,7 @@ For the purpose of this project, we have two high-level rules to guarantee we'll
 
 ## Contributing
 
-If you're familiar with GitHub then contributing is simple: just fork and make pull requests.
+If you're familiar with GitHub then contributing is simple: just fork and make pull requests. Absolutely everyone is welcome (and even encouraged) to contribute to improve the design of W3C specifications.
 
 Discussions happen through issues, pull requests, and on spec-prod@w3.org.
 
