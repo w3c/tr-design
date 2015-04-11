@@ -7,14 +7,6 @@ For the purpose of this project, we have two high-level rules to guarantee we'll
 1. **W3C MUST NOT change the design of documents published in the past.**
 2. **W3C MAY adopt a new /TR design only once per year, on January 1st.**
 
-### Consequences and considerations
-
-1. There are no backward compatibility issues since we never change the design of documents already published and the new design MAY NOT accommodate the large set of documents published in the past by W3C.
-2. A new design MUST accommodate the set of documents published within a given year.
-3. Unique design among all W3C /TR documents is no longer guaranteed. Two W3C Recommendations published in two different years MAY look completely different. While consistency from year to year is NOT required, it should be kept in mind and balanced.
-4. A new design does NOT have to address all possible future refinements before being adopted, such as taking into account all possible future user preferences and how to display all future combinations of those.
-5. Proposed Recommendations published after the 15th of October should easily allow the W3C Advisory Committee to visualize the document using the new design of the following year. Note however that the new design may be tweaked until December 1st or rejected by the Director.
-
 ## Guidelines for a proper /TR design
 
 1. Ensure the security and privacy of the individuals reading the document;
@@ -45,3 +37,11 @@ One _Design Point Person_ will be in charge of managing general proposals, propo
 The W3C webmaster will deploy the new style sheets and associated assets no later than December 1st, if approved by the Director.
 
 If W3C cannot adopt a new design within a given year, the style of the current year remains effective for the following year.
+
+### Considerations
+
+1. There are no backward compatibility issues since we never change the design of documents already published and the new design MAY NOT accommodate the large set of documents published in the past by W3C.
+2. A new design MUST accommodate the set of documents published within a given year.
+3. Unique design among all W3C /TR documents is no longer guaranteed. Two W3C Recommendations published in two different years MAY look completely different. While consistency from year to year is NOT required, it should be kept in mind and balanced.
+4. A new design does NOT have to address all possible future refinements before being adopted, such as taking into account all possible future user preferences and how to display all future combinations of those.
+5. Proposed Recommendations published after the 15th of October should easily allow the W3C Advisory Committee to visualize the document using the new design of the following year. Note however that the new design may be tweaked until December 1st or rejected by the Director.
