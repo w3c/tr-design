@@ -9,7 +9,7 @@ For the purpose of this project, there are two guiding principles to guarantee e
 1. **W3C MUST NOT change the design of documents published in the past.**
 2. **W3C MAY adopt a new /TR design only once per year, on January 1st.**
 
-## Guidelines for a proper /TR design
+## Guidelines for a proper design
 
 1. Ensure the security and privacy of the individuals reading the document;
 2. Ensure proper access by everyone regardless of disability;
