@@ -1,5 +1,3 @@
-Welcome to the /TR redesign project!
-
 # Welcome to the /TR redesign project!
 
 ## Engagement Rules
