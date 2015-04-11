@@ -2,7 +2,7 @@
 
 ## Principles
 
-For the purpose of this project, we have two principles to guarantee we'll be efficient and creative:
+For the purpose of this project, we have two principles to guarantee we'll be efficient, progressive, and creative:
 
 1. **W3C MUST NOT change the design of documents published in the past.**
 2. **W3C MAY adopt a new /TR design only once per year, on January 1st.**
