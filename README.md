@@ -1,4 +1,6 @@
-# Welcome to the /TR design project!
+# Welcome to the W3C Technical Reports design project!
+
+The goal of this project is to provide a modern design to future technical reports published by the W3C.
 
 ## Principles
 
