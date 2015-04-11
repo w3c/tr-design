@@ -1,4 +1,4 @@
-# Welcome to the /TR redesign project!
+# Welcome to the /TR design project!
 
 ## Principles
 
