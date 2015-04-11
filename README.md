@@ -38,7 +38,7 @@ For any given year:
 
 The dates above are deadlines but the earlier the better, especially when considering the schedule of the W3C TPAC meeting.
 
-One _Design Point Person_ per year is in charge of managing general proposals, proposing the final design, ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review), addressing issues and pull requests, and obtaining W3C Director approval for adoption. This person must engage with the Web Community at large.
+One _Design Point Person_ per year is in charge of managing general proposals, proposing the final design, ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review), addressing issues and pull requests, and obtaining W3C Director approval for adoption. This person must engage with the Web Community at large and is appointed by the W3C Director.
 
 The W3C Webmaster will deploy the new style sheets and associated assets no later than December 1st, if approved by the Director.
 
