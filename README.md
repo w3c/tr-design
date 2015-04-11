@@ -42,7 +42,7 @@ One _Design Point Person_ per year is in charge of managing general proposals, p
 
 The W3C Webmaster will deploy the new style sheets and associated assets no later than December 1st, if approved by the W3C Director.
 
-If W3C cannot adopt a new design within a given year, the style of the current year remains effective for the following year.
+If the W3C Director cannot approve a new design within a given year, the style of the current year remains effective for the following year.
 
 The W3C Director MAY delegate responsibility (generally to other individuals in the W3C Team) for his role described in this document.
 
