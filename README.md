@@ -1,6 +1,6 @@
 # Welcome to the W3C Technical Reports design project!
 
-The goal of this project is to provide a modern design to future technical reports published by the W3C.
+The goal of this project is to provide a modern design to future [technical reports](http://www.w3.org/TR/) published by the [W3C](http://www.w3.org/).
 
 ## Principles
 
