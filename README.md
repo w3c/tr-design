@@ -33,18 +33,18 @@ For any given year:
 
 1. No general proposals for a new design can be made after September 30.
 2. No final design can be proposed after October 31. This is intended to ensure a minimum of one month for wide review of the final design before formal adoption.
-3. The deadline to obtain Director approval for a final design is November 30. No substantive changes can be made to a final design after approval. This is intended to guarantee a minimum of one month advanced notice for the W3C publication ecosystem (publication tools, authoring tools, editors).
+3. The deadline to obtain W3C Director approval for a final design is November 30. No substantive changes can be made to a final design after approval. This is intended to guarantee a minimum of one month advanced notice for the W3C publication ecosystem (publication tools, authoring tools, editors).
 4. The new design becomes effective on January 1st of the following year for a 12 months duration.
 
 The dates above are deadlines but the earlier the better, especially when considering the schedule of the W3C TPAC meeting.
 
-One _Design Point Person_ per year is in charge of managing general proposals, proposing the final design, ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review), addressing issues and pull requests, and obtaining Director approval for adoption. This person must engage with the Web Community at large.
+One _Design Point Person_ per year is in charge of managing general proposals, proposing the final design, ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review), addressing issues and pull requests, and obtaining W3C Director approval for adoption. This person must engage with the Web Community at large.
 
 The W3C Webmaster will deploy the new style sheets and associated assets no later than December 1st, if approved by the Director.
 
 If W3C cannot adopt a new design within a given year, the style of the current year remains effective for the following year.
 
-The Director MAY delegate responsibility (generally to other individuals in the W3C Team) for his role described in this document.
+The W3C Director MAY delegate responsibility (generally to other individuals in the W3C Team) for his role described in this document.
 
 ### Considerations
 
