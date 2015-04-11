@@ -25,7 +25,7 @@ If you're familiar with GitHub then contributing is simple: just fork and make p
 
 Discussions happen through issues, pull requests, and on spec-prod@w3.org.
 
-## Process for producing a new /TR design
+## Process for producing a new design for W3C
 
 For any given year:
 
