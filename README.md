@@ -30,7 +30,7 @@ For any given year:
 1. No general proposals for a new design can be made after September 30.
 2. No final design can be proposed after October 31. This is intended to ensure a minimum of one month for wide review of the final design before formal adoption.
 3. The deadline to obtain Director approval for a final design is November 30. As a consequence, no substantive changes can be made to a final design after that date. This is intended to guarantee a minimum of one month advanced notice for the W3C publication ecosystem (publication tools, authoring tools, editors).
-4. The new design becomes effective on January 1st of the following year and stops being operative after December 31st of the following year.
+4. The new design becomes effective on January 1st of the following year for a 12 months duration.
 
 One _Design Point Person_ per year is in charge of managing general proposals, proposing the final design, ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review), addressing issues and pull requests, and obtain Director approval for adoption. This person must engage with the Web Community at large. The dates above are deadlines but the earlier the better, especially when considering the schedule of the W3C TPAC meeting.
 
