@@ -43,6 +43,6 @@ If W3C cannot adopt a new design within a given year, the style of the current y
 ### Considerations
 
 1. There are no backward compatibility issues since we never change the design of documents already published and the new design MAY NOT accommodate the large set of documents published in the past by W3C anyway.
-2. Unique design among all W3C /TR documents is no longer guaranteed. Two W3C specifications published in two different years MAY look completely different. While design consistency from year to year is NOT required, it should be kept in mind and balanced to void confusing the Web community at large.
+2. Unique design among all W3C /TR documents is no longer guaranteed. Two W3C specifications published in two different years MAY look completely different. While design consistency from year to year is NOT required, it should be kept in mind and balanced to avoid confusing the Web community.
 3. A new design does NOT have to address all possible future refinements before being adopted, such as taking into account all possible future user preferences and how to display all future combinations of those.
 4. As a side note, Proposed Recommendations published after the 15th of October should easily allow the W3C Advisory Committee to visualize the document using the new design of the following year. Note however that such new design may be tweaked until November 30 or rejected by the Director.
