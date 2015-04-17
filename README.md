@@ -45,6 +45,10 @@ If the W3C Director cannot approve a new design within a given year, the design 
 
 The W3C Director MAY delegate responsibility (generally to other individuals in the W3C Team) for his role described in this document.
 
+### Bug Fixing
+
+Bug fixing MAY happen on a continuous basis for all style sheets. Published styles are include in releases/ for maintenance purposes.
+
 ### Considerations
 
 1. There are no backward compatibility issues since we never change the design of documents already published and the new design MAY NOT accommodate the large set of documents published in the past by W3C anyway.
