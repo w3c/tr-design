@@ -1,6 +1,6 @@
 # Welcome to the W3C Technical Reports design project!
 
-**DRAFT! DRAFT! This Project has not been adopted by W3C yet.**
+**DRAFT! DRAFT! This Project has not been adopted by W3C yet. Plan is to adopt this by mid-May 2015**
 
 The goal of this project is to provide a modern design to future [technical reports](http://www.w3.org/TR/) published by the [W3C](http://www.w3.org/).
 
