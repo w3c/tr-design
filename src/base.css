@@ -23,7 +23,11 @@ th, td { /* ns 4 */
   font-family: sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 { text-align: left }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  text-align: left;
+}
+
 /* background should be transparent, but WebTV has a bug */
 h1, h2, h3 { color: #005A9C; background: white }
 h1 { font: 170% sans-serif }
