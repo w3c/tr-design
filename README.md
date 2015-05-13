@@ -1,15 +1,25 @@
-# Welcome to the W3C Technical Reports design project!
+# W3C Technical Reports Design Project
 
 **DRAFT! DRAFT! This Project has not been adopted by W3C yet. Plan is to adopt this by mid-May 2015**
 
-The goal of this project is to provide a modern design to future [technical reports](http://www.w3.org/TR/) published by the [W3C](http://www.w3.org/).
+The purpose of this project is to maintain and improve the style sheets
+for current and future [technical reports](http://www.w3.org/TR/) published by the [W3C](http://www.w3.org/).
 
-## Principles
+New style sheets are adoped once a year (see below).
+The project goal for 2015 is outstanding maintenance:
+to clean up, consolidate, and update the styles without significantly altering the visual look and feel.
+(Future releases may significantly alter the visual design,
+but we probably want to overhaul the markup first,
+and that waits until after the new publication system is sorted out.)
 
-For the purpose of this project, there are two guiding principles to guarantee efficiency and progressive design:
+## Contributing
 
-1. **W3C MUST NOT change the design of technical reports already published.**
-2. **W3C MAY adopt a new design for technical reports only once per year, on the 1st of January.**
+If you're familiar with GitHub then contributing is simple: just fork and make pull requests.
+Absolutely everyone is welcome (and even encouraged) to contribute to improve the design of W3C specifications.
+Bugfixes, code cleanup, and simple improvements will be unilaterally approved by the Design Point Person.
+For more significant changes to the visual styles,
+discussion on spec-prod@w3.org is encouraged to get feedback and consensus.
+(Think of it as a design critique.)
 
 ## Guidelines for a proper design
 
@@ -21,13 +31,19 @@ For the purpose of this project, there are two guiding principles to guarantee e
 6. Ensure that the W3C Brand and general W3C website integration are respected, per the W3C Communications Team;
 7. Consider the Web user agent compatibility risks (past, present, and future) and the long term maintenance.
 
-## Contributing
-
-If you're familiar with GitHub then contributing is simple: just fork and make pull requests. Absolutely everyone is welcome (and even encouraged) to contribute to improve the design of W3C specifications.
-
 Discussions happen through issues, pull requests, and on spec-prod@w3.org.
 
-## Process for approving a new design
+
+## Release Process
+
+### Principles
+
+For the purpose of this project, there are two guiding principles to guarantee efficiency and progressive design:
+
+1. **W3C MUST NOT change the design of technical reports already published.**
+2. **W3C MAY adopt a new design for technical reports only once per year, on the 1st of January.**
+
+### Process for approving a new design
 
 For any given year:
 
@@ -39,7 +55,12 @@ For any given year:
 
 The dates above are deadlines but the earlier the better, especially when considering the schedule of the W3C TPAC meeting.
 
-One _Design Point Person_ per year is in charge of managing general proposals, producing and proposing the final design, ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review), addressing issues and pull requests, and obtaining the W3C Director approval. This individual must engage with the Web Community at large and is appointed by the W3C Director.
+One _Design Point Person_ per year is in charge of managing general proposals,
+producing and proposing the final design,
+ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review),
+addressing issues and pull requests,
+and obtaining the W3C Director approval.
+This individual must engage with the Web Community at large and is appointed by the W3C Director.
 
 If the W3C Director cannot approve a new design within a given year, the design of the current year remains effective for the following year.
 
