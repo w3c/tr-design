@@ -62,6 +62,8 @@ addressing issues and pull requests,
 and obtaining the W3C Director approval.
 This individual must engage with the Web Community at large and is appointed by the W3C Director.
 
+NOTE: For 2015, the Design Point Person is @fantasai.
+
 If the W3C Director cannot approve a new design within a given year, the design of the current year remains effective for the following year.
 
 The W3C Director MAY delegate responsibility (generally to other individuals in the W3C Team) for his role described in this document.
