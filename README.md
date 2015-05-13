@@ -1,7 +1,5 @@
 # W3C Technical Reports Design Project
 
-**DRAFT! DRAFT! This Project has not been adopted by W3C yet. Plan is to adopt this by mid-May 2015**
-
 The purpose of this project is to maintain and improve the style sheets
 for current and future [technical reports](http://www.w3.org/TR/) published by the [W3C](http://www.w3.org/).
 
