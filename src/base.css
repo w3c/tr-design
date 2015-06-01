@@ -40,10 +40,3 @@ ul.toc, ol.toc {
   list-style: disc;		/* Mac NS has problem with 'none' */
   list-style: none;
 }
-
-@media speech {
- h1, h2, h3 { voice-stress: moderate; }
- .hide { speak: none; }
- p.copyright { voice-volume: x-soft; voice-rate: x-fast; }
- dt { pause-before: 63ms; }
-}
