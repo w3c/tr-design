@@ -98,7 +98,7 @@ ul.toc, ol.toc {
 
 }
 
-@media print {
+@media print, braille, embossed, speech, tty {
 
   .nav-overlay {
     display:          none;
