@@ -62,3 +62,48 @@ ul.toc, ol.toc {
  p.copyright { voice-volume: x-soft; voice-rate: x-fast; }
  dt { pause-before: 63ms; }
 }
+
+/* Navigation overlay */
+
+@media screen, handheld, tv, projection {
+
+  .nav-overlay {
+    position:         fixed;
+    bottom:           -0.5em;
+    right:            -0.5em;
+    margin:           0;
+    border:           solid 1px #e0e0e0;
+    border-radius:    0.5em;
+    padding:          0.25em 1em 0.75em 0.5em;
+    font-size:        1.5rem;
+    line-height:      1.5rem;
+    background-color: rgba(252, 252, 252, 0.8);
+  }
+
+  .nav-overlay:hover, .nav-overlay:active, .nav-overlay:focus {
+    background-color: rgba(255, 255, 255, 1);
+    border-color:     #808080;
+  }
+
+  .nav-overlay img {
+    width:            1.5rem;
+    height:           1.5rem;
+    vertical-align:   middle;
+    opacity:          0.5;
+  }
+
+  .nav-overlay img:hover, .nav-overlay img:active, .nav-overlay img:focus {
+    opacity:          1;
+  }
+
+}
+
+@media print {
+
+  .nav-overlay {
+    display:          none;
+    visibility:       hidden;
+  }
+
+}
+
