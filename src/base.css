@@ -90,6 +90,51 @@
 	p.copyright,
 	p.copyright small { font-size: small }
 
+	#back-to-top a {
+		position: fixed;
+		bottom: 0; left: 0;
+		width: 22px;
+		height: 22px;
+		padding: 4px 4px 0 0;
+		text-align: center;
+		text-decoration: none;
+		border-top-right-radius: 100%;
+		box-shadow: 0 0 2px;
+	}
+	#back-to-top abbr {
+		border: none;
+		text-decoration: none;
+	}
+
+	@media screen and (min-width: 60em) {
+		[role=navigation]#toc {
+			position: fixed;
+			top: 0; bottom: 0;
+			left: 26px;
+			width: 30%;
+			overflow: auto;
+			padding: 0 1em;
+			background: white;
+			box-shadow: 3px 0 3px;
+		}
+		body {
+			padding-left: 40%;
+			padding-left: calc(26px + 4em + 30%);
+		}
+		[role=navigation]#toc h2 {
+			margin-top: 1rem;
+		}
+	}
+	@media screen and (min-width: 80em) {
+		[role=navigation]#toc {
+			width: 25.5em;
+		}
+		body {
+			padding-left: 31em;
+			padding-left: calc(26px + 29.5em);
+		}
+	}
+
 /******************************************************************************/
 /*                                Sectioning                                  */
 /******************************************************************************/
