@@ -1,42 +1,825 @@
-body {
-  padding: 2em 1em 2em 70px;
-  margin: 0;
-  font-family: sans-serif;
-  color: black;
-  background: white;
-  background-position: top left;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+/******************************************************************************
+ *                   Style sheet for the W3C specifications                   *
+ *
+ * Special classes handled by this style sheet include:
+ * 
+ * Indices
+ *   - .toc for the Table of Contents (<ol class="toc">)
+ *     -> <span class="secno"> for the section numbers
+ *   - #toc for the Table of Contents (<section id="toc">)
+ *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
+ *   - table.index for Index Tables (e.g. for properties or elements)
+ * 
+ * Structural Markup
+ *   - table.data for general data tables
+ *     -> use 'scope' attribute, <colgroup>, <thead>, and <tbody> for best results !
+ *     -> use <table class='complex data'> for extra-complex tables
+ *     -> use <td class='long'> for paragraph-length cell content
+ *     -> use <td class='pre'> when manual line breaks/indentation would help readability
+ *   - dl.switch for switch statements
+ *   - ol.algorithm for algorithms (helps to visualize nesting)
+ *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
+ *     -> .sidefigure for right-floated figures
+ *   - ins/del
+ * 
+ * Code
+ *   - pre and code
+ * 
+ * Special Sections
+ *   - .note       for informative notes             (div, p, span)
+ *   - .example    for informative examples          (div, p, pre, span)
+ *   - .issue      for issues                        (div, p, span)
+ *   - .advisement for short highlighted statements  (div, p, strong)
+ *   - .why        for collapsible informative notes (details)
+ *   - .annoying-warning for spec obsoletion notices (details)
+ * 
+ * Definition Boxes
+ *   - pre.idl for WebIDL definitions
+ *   - table.propdef and table.descdef for CSS property and descriptor definitions
+ *   - table.def for tables that define other entities
+ * 
+ * Numbering
+ *   - .secno for section numbers in .toc and headings (<span class='secno'>3.2</span>)
+ *   - .marker for source-inserted example/figure/issue numbers (<span class='marker'>Issue 4</span>)
+ *   - ::before styled for CSS-generated issue/example/figure numbers:
+ *     -> Documents wishing to use this only need to add
+ *        figcaption::before,
+ *        .caption::before { content: "Figure " counter(figure);   }
+ *        .example::before { content: "Example " counter(example); }
+  *       .issue::before   { content: "Issue " counter(issue);     }
+ * 
+ * Header Stuff (ignore, just don't conflict with these classes)
+ *   - .head for the header
+ *   - hr[title] for the separator
+ *   - .copyright for the copyright
+ *   - .logo for the W3C logo
+ * 
+ ******************************************************************************/
+
+
+/******************************************************************************/
+/*                                   Body                                     */
+/******************************************************************************/
+
+	body {
+		counter-reset: example figure issue;
+
+		/* Layout */
+		max-width: 50em;           /* limit line length to 50em for readability   */
+		margin: 0 auto;            /* center text within page                     */
+		padding: 2em 1em 2em 42px; /* assume 16px font size for downlevel clients */
+		padding: 2em 1em 2emx calc(26px + 1em); /* leave space for status flag    */
+
+		/* Typography */
+		line-height: 1.35;
+		font-family: sans-serif;
+
+		/* Colors */
+		color: black;
+		background: white top left fixed no-repeat;
+	}
+
+/******************************************************************************/
+/*                         Front Matter & Navigation                          */
+/******************************************************************************/
+
+
+	div.head { margin-bottom: 1em }
+	div.head h1 { margin-top: 2em; clear: both }
+
+	p.copyright,
+	p.copyright small { font-size: small }
+
+/******************************************************************************/
+/*                                Sectioning                                  */
+/******************************************************************************/
+
+/** Headings ******************************************************************/
+
+	h1, h2, h3, h4, h5, h6, dt {
+		page-break-after: avoid;
+		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
+		font-family: inherit;    /* Inherit the font family. */
+		line-height: 1.2;        /* Keep wrapped headings compact */
+	}
+
+	h2, h3, h4, h5, h6 {
+		margin-top: 3em;
+	}
+
+	h1, h2, h3 {
+		color: #005A9C;
+		background: transparent;
+	}
+
+	h1 { font-size: 170%; }
+	h2 { font-size: 140%; }
+	h3 { font-size: 120%; }
+	h4 { font-weight: bold; }
+	h5 { font-style: italic; }
+	h6 { font-variant: small-caps; }
+	dt { font-weight: bold; }
+
+/** Subheadings ***************************************************************/
+
+	h1 + h2,
+	#subtitle + h2 {
+		/* #subtitle is a subtitle in an H2 under the H1 */
+		margin-top: 0;
+	}
+	h2 + h3,
+	h3 + h4,
+	h4 + h5,
+	h5 + h6 {
+		margin-top: 1.2em; /* = 1 x line-height */
+	}
+
+/** Section divider ***********************************************************/
+	/* <hr> used to separate TMI into the second half of a section              */
+	hr:not([title]) {
+		font-size: 1.5em;
+		text-align: center;
+		margin: 1em auto;
+		height: auto;
+		border: transparent solid 0;
+		background: transparent;
+	}
+	hr:not([title])::before {
+		content: "\1F411\2003\2003\1F411\2003\2003\1F411"; /* Pick a better character */
+	}
+	/* note: <hr> with title separates document header from contents */
+
+/******************************************************************************/
+/*                            Paragraphs and Lists                            */
+/******************************************************************************/
+
+	p {
+		margin: 1em 0;
+	}
+	dd > p:first-child,
+	li > p:first-child {
+		margin-top: 0;
+	}
+
+	ul, ol {
+		margin-left: 0;
+		padding-left: 2em;
+	}
+	li {
+		margin: 0.25em 2em 0.5em 0;
+		padding-left: 0;
+	}
+
+	dl dd {
+		margin: 0 0 1em 2em;
+	}
+	.head dd { /* undo for header */
+		margin-bottom: 0;
+	}
+
+	/* Style for algorithms */
+	ol.algorithm ol {
+	 border-left: 1px solid #90b8de;
+	 margin-left: 1em;
+	}
+	ol.algorithm ol.algorithm {
+	 border-left: none;
+	 margin-left: 0;
+	}
+
+	/* Style for switch/case <dl>s */
+	dl.switch > dd > ol.only {
+	 margin-left: 0;
+	}
+	dl.switch > dd > ol.algorithm {
+	 margin-left: -2em;
+	}
+	dl.switch {
+	 padding-left: 2em;
+	}
+	dl.switch > dt {
+	 text-indent: -1.5em;
+	 margin-top: 1em;
+	}
+	dl.switch > dt + dt {
+	 margin-top: 0;
+	}
+	dl.switch > dt::before {
+	 content: '\21AA';
+	 padding: 0 0.5em 0 0;
+	 display: inline-block;
+	 width: 1em;
+	 text-align: right;
+	 line-height: 0.5em;
+	}
+
+/** Terminology Markup ********************************************************/
+
+
+/******************************************************************************/
+/*                                 Inline Markup                              */
+/******************************************************************************/
+
+/** Terminology Markup ********************************************************/
+	dfn   { /* Defining instance */
+		font-weight: bolder;
+	}
+	a > i { /* Instance of term */
+		font-style: normal;
+	}
+	dt dfn code, code.idl {
+		font-size: inherit;
+	}
+	dfn var {
+		font-style: normal;
+	}
+
+/** Change Marking ************************************************************/
+
+	del { color: red;  text-decoration: line-through; }
+	ins { color: #080; text-decoration: underline;    }
+
+/** Miscellaneous improvements to inline formatting ***************************/
+
+	sup {
+		vertical-align: super;
+		font-size: 80%
+	}
+
+/******************************************************************************/
+/*                                    Code                                    */
+/******************************************************************************/
+
+/** General monospace/pre rules ***********************************************/
+
+	pre, code {
+		font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+		font-size: .9em;
+		page-break-inside: avoid;
+	}
+	pre {
+		margin-top: 1em;
+		margin-bottom: 1em;
+		overflow: auto;
+	}
+
+/** Inline Code fragments *****************************************************/
+
+  /* Do something nice. */
+
+/** IDL fragments *************************************************************/
+
+	pre.idl {
+		/* Match blue propdef boxes */
+		padding: .5em 1em;
+		background: #DEF;
+		margin: 1.2em 0;
+		border-left: 0.5em solid #8CCBF2;
+	}
+	pre.idl :link, pre.idl :visited {
+		color:inherit;
+		background:transparent;
+	}
+
+/******************************************************************************/
+/*                                    Links                                   */
+/******************************************************************************/
+
+/** General Hyperlinks ********************************************************/
+
+	/* We hyperlink a lot, so make it less intrusive */
+	:link, :visited {
+		color: inherit;
+		background: transparent;
+		text-decoration: none;
+		border-bottom: 1px solid silver;
+	}
+	@supports (text-decoration-color: silver) {
+		:link, :visited {
+			border-bottom: none;
+			text-decoration: underline;
+			text-decoration-color: silver;
+		}
+		:visited {
+			text-decoration-style: dotted;
+		}
+	}
+
+	/* Use distinguishing colors when user is interacting with the link */
+	/* Issue: This style is kindof awful. Pick something better. */
+	:link:hover, :link:focus {
+		background: #ffa;
+		color: blue;
+		text-decoration-color: blue;
+		border-color: navy;
+	}
+	:visited:hover, :visited:focus {
+		background: #ffa;
+		color: navy;
+		text-decoration-color: navy;
+		border-color: navy;
+	}
+	:link:active, :visited:active {
+		color: #C00;
+	}
+
+	/* Backout above styling for W3C logo */
+	a.logo:link, a.logo:visited {
+		padding: 0;
+		border: none;
+		text-decoration: none;
+	}
+
+/******************************************************************************/
+/*                                    Images                                  */
+/******************************************************************************/
+
+	img {
+		border-style: none;
+	}
+
+	/* For autogen numbers, add
+	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
+	*/
+
+	figure, div.figure, div.sidefigure {
+		page-break-inside: avoid;
+	}
+
+	div.figure, p.figure, div.sidefigure, figure {
+		text-align: center;
+		margin: 2.5em 0;
+	}
+	div.figure pre, div.sidefigure pre, figure pre {
+		text-align: left;
+		display: table;
+		margin: 1em auto;
+	}
+	.figure table, figure table {
+		margin: auto;
+	}
+	div.sidefigure, figure.sidefigure {
+		float: right;
+		width: 50%;
+		margin: 0 0 0.5em 0.5em
+	}
+	div.figure img, div.sidefigure img, figure img,
+	div.figure object, div.sidefigure object, figure object {
+		display: block;
+		margin: auto;
+		max-width: 100%
+	}
+	p.caption, figcaption, caption {
+		text-align: center;
+		font-style: italic;
+		font-size: 90%;
+	}
+	p.caption::before, figcaption::before, figcaption > .marker {
+		font-weight: bold;
+	}
+	p.caption, figcaption {
+		counter-increment: figure;
+	}
+
+	/* DL list is indented 2em, but figure inside it is not */
+	dd > div.figure, dd > figure { margin-left: -2em }
+
+/******************************************************************************/
+/*                             Colored Boxes                                  */
+/******************************************************************************/
+
+	.issue, .note, .example, .why, .advisement, blockquote {
+		padding: .5em;
+		border: .5em;
+		border-left-style: solid;
+		page-break-inside: avoid;
+	}
+	span.issue, span.note {
+		padding: .1em .5em .15em;
+		border-right-style: solid;
+	}
+
+	div.issue,
+	div.note,
+	div.example,
+	details.why,
+	strong.advisement,
+	blockquote {
+		margin: 1em auto;
+	}
+	.note  > p:first-child,
+	.issue > p:first-child,
+	blockquote > :first-child {
+		margin-top: 0;
+	}
+	blockquote > :last-child {
+		margin-bottom: 0;
+	}
+
+/** Blockquotes ***************************************************************/
+
+	blockquote {
+		border-color: silver;
+	}
+
+/** Open issue ****************************************************************/
+
+	.issue {
+		border-color: #E05252;
+		background: #FBE9E9;
+		counter-increment: issue;
+		overflow: auto;
+	}
+	.issue::before, .issue > .marker {
+		text-transform: uppercase;
+		color: #AE1E1E;
+		padding-right: 1em;
+		text-transform: uppercase;
+	}
+	/* Add .issue::before { content: "Issue " counter(issue); } for autogen numbers,
+	   or use class="marker" to mark up the issue number in source. */
+
+/** Example *******************************************************************/
+
+	.example {
+		border-color: #E0CB52;
+		background: #FCFAEE;
+		counter-increment: example;
+		overflow: auto;
+		clear: both;
+	}
+	.example::before, .example > .marker {
+		text-transform: uppercase;
+		color: #827017;
+		min-width: 7.5em;
+		display: block;
+	}
+	/* Add .example::before { content: "Example " counter(example); } for autogen numbers,
+	   or use class="marker" to mark up the example number in source. */
+
+/** Non-normative Note ********************************************************/
+
+	.note, .why {
+		border-color: #52E052;
+		background: #E9FBE9;
+		overflow: auto;
+	}
+	.note::before, .note > .marker {
+		text-transform: uppercase;
+		display: block;
+		color: hsl(120, 70%, 30%);
+	}
+	/* Add .note::before { content: "Note"; } for autogen label,
+	   or use class="marker" to mark up the label in source. */
+
+/** Advisement Box ************************************************************/
+	/*  for attention-grabbing normative statements */
+
+	.advisement {
+		border-color: orange;
+		border-style: none solid;
+		background: #FFEECC;
+		text-align: center;
+	}
+	strong.advisement {
+		display: block;
+	}
+	/*.advisement::before { color: #FF8800; } */
+
+/** Collapsible Informative Explanations ***************************************/
+
+	details.why {
+		border-color: #52E052;
+		background: #E9FBE9;
+		display: block;
+	}
+
+	details.why > summary {
+		font-style: italic;
+		display: block;
+	}
+
+	details.why[open] > summary {
+		border-bottom: 1px silver solid;
+	}
+
+/** Spec Obsoletion Notice ****************************************************/
+	/* obnoxious obsoletion notice for older/abandoned specs. */
+
+	details.annoying-warning {
+		display: block;
+	}
+
+	details.annoying-warning[open] {
+		background: #fdd;
+		color: red;
+		font-weight: bold;
+		text-align: center;
+		padding: .5em;
+		border: thick solid red;
+		border-radius: 1em;
+	}
+@media not print {
+	details.annoying-warning[open] {
+		position: fixed;
+		left: 1em;
+		right: 1em;
+		bottom: 1em;
+		z-index: 1000;
+	}
 }
-:link { color: #00C; background: transparent }
-:visited { color: #609; background: transparent }
-a:active { color: #C00; background: transparent }
-a[href]:hover { background: #ffa }
-a:link img, a:visited img { border-style: none } /* no border on img links */
 
-h1, h2, h3, h4, h5, h6 { text-align: left }
-h1, h2, h3 { color: #005A9C; background: transparent }
-h1 { font: 170% sans-serif }
-h2 { font: 140% sans-serif }
-h3 { font: 120% sans-serif }
-h4 { font: bold 100% sans-serif }
-h5 { font: italic 100% sans-serif }
-h6 { font: small-caps 100% sans-serif }
+	details.annoying-warning:not([open]) > summary {
+		background: #fdd;
+		color: red;
+		font-weight: bold;
+		text-align: center;
+		padding: .5em;
+	}
 
-.hide { display: none }
+/******************************************************************************/
+/*                                    Tables                                  */
+/******************************************************************************/
 
-div.head { margin-bottom: 1em }
-div.head h1 { margin-top: 2em; clear: both }
-div.head table { margin-left: 2em; margin-top: 2em }
+/** Property/Descriptor Definition Tables *************************************/
 
-p.copyright { font-size: small }
-p.copyright small { font-size: small }
+	table.def {
+		page-break-inside: avoid;
+		width: 100%;
+		margin: 1.2em 0;
+		border-left: 0.5em solid #8CCBF2;
+		padding: 0.5em 1em;
+		background: #DEF;
+		border-spacing: 0;
+	}
 
-pre { margin-left: 2em }
+	table.def td,
+	table.def th {
+		padding: 0.5em;
+		vertical-align: baseline;
+		border-bottom: 1px solid #bbd7e9;
+	}
+	
+	table.def > tbody > tr:last-child th,
+	table.def > tbody > tr:last-child td {
+		border-bottom: 0;
+	}
 
-dt { font-weight: bold }
+	table.def th {
+		font-style: italic;
+		font-weight: normal;
+		width: 8.3em;
+		padding-left: 1em;
+	}
 
-ul.toc, ol.toc {
-  list-style: disc;		/* Mac NS has problem with 'none' */
-  list-style: none;
-}
+	/* For when values are extra-complex and need formatting for readability */
+	table td.pre {
+		white-space: pre-wrap;
+	}
+
+	/* A footnote at the bottom of a def table */
+	table.def           td.footnote {
+		padding-top: 0.6em;
+	}
+	table.def           td.footnote::before {
+		content: " ";
+		display: block;
+		height: 0.6em;
+		width: 4em;
+		border-top: thin solid;
+	}
+
+/** Data tables (and properly marked-up index tables) *************************/
+	/*
+		 <table class="data"> highlights structural relationships in a table
+		 when correct markup is used (e.g. thead/tbody, th vs. td, scope attribute)
+
+		 Use class="complex data" for particularly complicated tables --
+		 (This will draw more lines: busier, but clearer.)
+
+		 Use class="long" on table cells with paragraph-like contents
+		 (This will adjust text alignment accordingly.)
+		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
+	*/
+
+	table.data,
+	table.index {
+		margin: 1em auto;
+		border-collapse: collapse;
+		width: 100%;
+		border: hidden;
+	}
+	table.data {
+		text-align: center;
+		width: auto;
+	}
+	table.data caption,
+	table.index caption {
+		width: 100%;
+	}
+
+	table.data td,  table.data th,
+	table.index td, table.index th {
+		padding: 0.5em;
+		border-width: 1px;
+		border-color: silver;
+		border-top-style: solid;
+	}
+
+	table.data thead td:empty {
+		padding: 0;
+		border: 0;
+	}
+
+	table.data  thead th[scope="row"],
+	table.index thead th[scope="row"] {
+		text-align: right;
+		color: inherit;
+	}
+
+	table.data  thead,
+	table.index thead,
+	table.data  tbody,
+	table.index tbody {
+		color: inherit;
+		border-bottom: 2px solid;
+	}
+
+	table.data colgroup,
+	table.index colgroup {
+		border-left: 2px solid;
+	}
+
+	table.data  tbody th:first-child,
+	table.index tbody th:first-child  {
+		text-align: right;
+		color: inherit;
+		border-right: 2px solid;
+		border-top: 1px solid silver;
+		padding-right: 1em;
+	}
+
+	table.data  tbody th[rowspan],
+	table.index tbody th[rowspan],
+	table.data  tbody td[rowspan],
+	table.index tbody td[rowspan]{
+		border-left: 1px solid silver;
+	}
+
+	table.data  tbody th[rowspan]:first-child,
+	table.index tbody th[rowspan]:first-child,
+	table.data  tbody td[rowspan]:first-child,
+	table.index tbody td[rowspan]:first-child{
+		border-left: 0;
+		border-right: 1px solid silver;
+	}
+
+	table.complex.data th,
+	table.complex.data td {
+		border: 1px solid silver;
+	}
+
+	table.data.longlastcol td:last-child,
+	table.data td.long {
+	 vertical-align: baseline;
+	 text-align: left;
+	}
+
+	table.data img {
+		vertical-align: middle;
+	}
+
+
+/******************************************************************************/
+/*                                  Indices                                   */
+/******************************************************************************/
+
+
+/** Table of Contents *********************************************************/
+
+	.toc, .toc ol, .toc ul, .toc li {
+		list-style: none; /* Numbers must be inlined into source */
+		/* because generated content isn't search/selectable and markers can't do multilevel yet */
+		margin:  0;
+		padding: 0;
+		line-height: 1.1;
+	}
+
+	/* ToC not indented until third level, but font style & margins show hierarchy */
+	.toc               { margin: 1em 0;   }
+	.toc > li          { margin-top: 1.5em; font-weight: bold;   }
+	.toc > li li       { margin-top: 0.3em; font-weight: normal; }
+	.toc > li li li    { margin-left:  2em; font-style:  italic; }
+	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
+
+	/* Underlining in the ToC is noisy. Remove it except on hover/focus. */
+	.toc a        { border-bottom-style: none; }
+	.toc a:hover,
+	.toc a:focus  { border-bottom-style: solid; }
+	@supports (text-decoration-color: silver) {
+		.toc a:link,
+		.toc a:visited { border-bottom: none;
+		                 text-decoration-line: none; }
+		.toc a:hover,
+		.toc a:focus   { text-decoration-line: underline; }
+	}
+
+	/* Section numbers in a column of their own */
+	:not(li) > .toc {
+		margin-left: 5em
+	}
+	.toc .secno {
+		float: left;
+		width: 4em;
+		margin-left: -5em;
+	}
+	.toc > li li li .secno {
+		margin-left: -7em;
+	}
+	.toc li {
+		clear: both;
+	}
+
+
+/** Index *********************************************************************/
+
+	/* Index Lists: Layout */
+	ul.index       { margin-left: 0; columns: 15em; -webkit-columns: 15em; text-indent: 1em hanging; }
+	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
+	ul.index li li { margin-left: 1em }
+	ul.index dl    { margin-top: 0; }
+	ul.index dt    { margin: .2em 0 .2em 20px;}
+	ul.index dd    { margin: .2em 0 .2em 40px;}
+	/* Index Lists: Typography */
+	ul.index ul,
+	ul.index dl { font-size: smaller; }
+	ul.index li span {
+		white-space: nowrap;
+		position: absolute;
+		color: transparent; }
+	ul.index li a:hover + span,
+	ul.index li a:focus + span {
+		color: gray;
+	}
+	@media print {
+		ul.index li span { color: gray; }
+	}
+
+/** Index Tables *****************************************************/
+	/* See also the data table styling section, which this effectively subclasses */
+
+	table.index {
+		font-size: small;
+		border-collapse: collapse;
+		border-spacing: 0;
+		text-align: left;
+		margin: 1em 0;
+	}
+
+	table.index td,
+	table.index th {
+		padding: 0.4em;
+		text-align: center;
+	}
+
+	table.index tr:hover td {
+		background: #DEF;
+	}
+
+	/* The link in the first column in the property table (formerly a TD) */
+	table.index.index th:first-child {
+		text-align: left;
+	}
+	table.index th:first-child a {
+		font-weight: bold;
+	}
+
+/******************************************************************************/
+/*                                    Print                                   */
+/******************************************************************************/
+
+	@media print {
+		/* Pages have their own margins. */
+		html {
+			margin: 0;
+		}
+		/* Serif for print. */
+		body {
+			font-family: serif;
+		}
+		/* Camoflage links; they're inactivatable anyway. */
+		a {
+			color: inherit !important;
+			text-decoration: none !important;
+		}
+	}
+	@page {
+		margin: 1.5cm 1.1cm;
+	}
+
+/******************************************************************************/
+/*                                    Legacy                                  */
+/******************************************************************************/
+
+	/* This rule is inherited from past style sheets. No idea what it's for. */
+	.hide { display: none }
