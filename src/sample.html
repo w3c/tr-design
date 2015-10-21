@@ -1,0 +1,1027 @@
+<!doctype html><html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>Sample W3C Specification</title>
+  <link rel="stylesheet" href="W3C-REC.css">
+  <style>
+body {
+  background-image: url(logos/REC.png);
+}
+
+
+  .example::before {
+    content: "Example";
+    content: "Example " counter(example);
+  }
+  </style>
+ </head>
+ <body class="h-entry">
+  <div class="head">
+   <p><a class="logo" href="http://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/Icons/w3c_home" width="72"> </a> </p>
+   <h1 id="title">Sample W3C Specification</h1>
+   <h2 id="subtitle">W3C Working Draft, <time class="dt-updated" datetime="2015-09-30">30 September 2015</time></h2>
+   <div>
+    <dl>
+     <dt>This version:
+     <dd><a class="u-url" href="http://dev.w3.org/csswg/css-text-3/">http://dev.w3.org/csswg/css-text-3/</a>
+     <dt>Latest version:
+     <dd><a href="http://www.w3.org/TR/css-text-3/">http://www.w3.org/TR/css-text-3/</a>
+     <dt>Previous Versions:
+     <dd><a href="http://www.w3.org/TR/2012/WD-css3-text-20121113/" rel="previous">http://www.w3.org/TR/2012/WD-css3-text-20121113/</a>
+     <dt>Feedback:
+     <dd><span><a href="mailto:www-style@w3.org?subject=%5Bcss-text%5D%20YOUR%20TOPIC%20HERE">www-style@w3.org</a> with subject line “<kbd>[css-text] <var>… message topic …</var></kbd>” (<a href="http://lists.w3.org/Archives/Public/www-style/" rel="discussion">archives</a>)</span>
+     <dt>Test Suite:
+     <dd><a href="http://test.csswg.org/suites/css3-text/nightly-unstable/">http://test.csswg.org/suites/css3-text/nightly-unstable/</a>
+     <dt>Issue Tracking:
+     <dd><a href="https://github.com/w3c/csswg-drafts/issues/">GitHub</a>
+     <dd><a href="#issues-index">Inline In Spec</a>
+     <dd><span><a href="http://www.w3.org/Style/CSS/Tracker/products/10">http://www.w3.org/Style/CSS/Tracker/products/10</a></span>
+     <dt class="editor">Editors:
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="http://fantasai.inkedblade.net/contact">Elika J. Etemad / fantasai</a> (<span class="p-org org">Invited Expert</span>)
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:kojiishi@gluesoft.co.jp">Koji Ishii</a> (<span class="p-org org">Invited Expert</span>)
+    </dl>
+   </div>
+   <div></div>
+   <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2015 <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply. </p>
+   <hr title="Separator for header">
+  </div>
+  <h2 id="abstract">Abstract</h2>
+  <div>
+   <p>This shows off some styling
+  </div>
+  <h2 id="status">Status of this document</h2>
+  <div>
+   <p> This is a public copy of the editors’ draft.
+	It is provided for discussion only and may change at any moment.
+	Its publication here does not imply endorsement of its contents by W3C.
+	Don’t cite this document other than as work in progress. </p>
+   <p> The (<a href="http://lists.w3.org/Archives/Public/www-style/">archived</a>) public mailing list <a href="mailto:www-style@w3.org?Subject=%5Bcss-text%5D%20PUT%20SUBJECT%20HERE">www-style@w3.org</a> (see <a href="http://www.w3.org/Mail/Request">instructions</a>)
+	is preferred for discussion of this specification.
+	When sending e-mail,
+	please put the text “css-text” in the subject,
+	preferably like this:
+	“[css-text] <em>…summary of comment…</em>” </p>
+   <p> This document was produced by the <a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> (part of the <a href="http://www.w3.org/Style/">Style Activity</a>). </p>
+   <p> This document was produced by a group operating under
+	the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>.
+	W3C maintains a <a href="http://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group;
+	that page also includes instructions for disclosing a patent.
+	An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>. </p>
+   <p> This document is governed by the <a href="http://www.w3.org/2015/Process-20150901/" id="w3c_process_revision">1 September 2015 W3C Process Document</a>. </p>
+   <p></p>
+  </div>
+  <section id="toc" role=navigation>
+  <h2>Table of Contents</h2>
+  <div>
+   <ul class="toc" role="directory">
+    <li>
+     <a href="#intro"><span class="secno">1</span>  Introduction</a>
+     <ul class="toc">
+      <li><a href="#placement"><span class="secno">1.1</span>  Document Conventions</a>
+     </ul>
+    <li>
+     <a href="#css"><span class="secno">7</span>  Sample CSS Section</a>
+     <ul class="toc">
+      <li><a href="#text-align-property"><span class="secno">7.1</span>  Text Alignment: the <code class="property">text-align</code> shorthand</a>
+      <li><a href="#text-align-all-property"><span class="secno">7.2</span>  Default Text Alignment: the <code class="property">text-align-all</code> property</a>
+      <li><a href="#text-align-last-property"><span class="secno">7.3</span>  Last Line Alignment: the <code class="property">text-align-last</code> property</a>
+      <li>
+       <a href="#text-justify-property"><span class="secno">7.4</span>  Justification Method: the <code class="property">text-justify</code> property</a>
+       <ul class="toc">
+        <li><a href="#expanding-text"><span class="secno">7.4.1</span>  Expanding and Compressing Text</a>
+        <li><a href="#justify-symbols"><span class="secno">7.4.2</span>  Handling Symbols and Punctuation</a>
+        <li><a href="#justify-limits"><span class="secno">7.4.3</span>  Unexpandable Text</a>
+        <li><a href="#justify-cursive"><span class="secno">7.4.4</span>  Cursive Scripts</a>
+        <li><a href="#justify-algos"><span class="secno">7.4.5</span>  Possible Algorithms</a>
+       </ul>
+     </ul>
+    <li>
+    <li>
+     <a href="#index"><span class="secno">A</span> Index</a>
+     <ul class="toc">
+      <li><a href="#index-defined-here"><span class="secno">A.1</span> Terms defined by this specification</a>
+      <li><a href="#index-defined-elsewhere"><span class="secno">A.2</span> Terms defined by reference</a>
+     </ul>
+    <li>
+     <a href="#references"><span class="secno">B</span> References</a>
+     <ul class="toc">
+      <li><a href="#normative"><span class="secno">B.1</span> Normative References</a>
+      <li><a href="#informative"><span class="secno">B.2</span> Informative References</a>
+     </ul>
+    <li><a href="#property-index"><span class="secno">C</span> Property Index</a>
+   </ul>
+  </div>
+  </section>
+  <main>
+<h2 id="intro">
+<span class="secno">1. </span> Introduction</h2>
+   <p>This document shows off some of our specification styling.
+<h3 cid="conventions">
+<span class="secno">1.1 </span>Document conventions</h3>
+  <p>Conformance requirements are expressed with a combination of
+    descriptive assertions and RFC 2119 terminology. The key words "MUST",
+    "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
+    "RECOMMENDED", "MAY", and "OPTIONAL" in the normative parts of this
+    document are to be interpreted as described in RFC 2119.
+    However, for readability, these words do not appear in all uppercase
+    letters in this specification. </p>
+  <p>All of the text of this specification is normative except sections
+    explicitly marked as non-normative, examples, and notes. <a href="#biblio-rfc2119">[RFC2119]</a></p>
+  <p>Examples in this specification are introduced with the words "for example"
+    or are set apart from the normative text with <code>class="example"</code>,
+    like this: </p>
+  <div class="example" id="example-f839f6c8">
+    
+   <p>This is an example of an informative example.</p>
+  </div>
+  <p>Informative notes begin with the word "Note" and are set apart from the
+    normative text with <code>class="note"</code>, like this: </p>
+  <p class="note" role="note">Note, this is an informative note.</p>
+  <p>Advisements are normative sections styled to evoke special attention and are
+    set apart from other normative text with
+    <code>&lt;p class="advisement"></code> or
+    <code>&lt;strong class="advisement"></code>,
+    like this:
+    <strong class="advisement"> UAs MUST provide an accessible alternative. </strong> </p>
+<h2 id="justification">
+<span class="secno">7. </span> Sample CSS Section</h2>
+   <p>Alignment and justification controls how inline content is distributed within a line box. </p>
+   <h3 id="text-align-property"><span class="secno">7.1. </span> Text Alignment: the <a class="property" href="#propdef-text-align">text-align</a> shorthand</h3>
+   <table class="propdef def">
+    <tbody>
+     <tr>
+      <th>Name:
+      <td><dfn class="css" id="propdef-text-align">text-align</dfn>
+     <tr>
+      <th><a href="#values">Value</a>: 
+      <td>start | end | left | right | center |
+              justify | match-parent | justify-all 
+     <tr>
+      <th>Initial:
+      <td>start
+     <tr>
+      <th>Applies to:
+      <td>block containers
+     <tr>
+      <th>Inherited:
+      <td>yes
+     <tr>
+      <th>Percentages:
+      <td>N/A
+     <tr>
+      <th>Media:
+      <td>visual
+     <tr>
+      <th>Computed value:
+      <td>specified value, except for <a class="css" href="#valdef-text-align-match-parent">match-parent</a> which computes as defined below
+     <tr>
+      <th>Animatable: 
+      <td>no 
+     <tr>
+      <th>Canonical order: 
+      <td>N/A 
+   </table>
+   <p>This <a href="https://drafts.csswg.org/css-cascade-4/#shorthand-property">shorthand property</a> sets the <a class="property" href="#propdef-text-align-all">text-align-all</a> and <a class="property" href="#propdef-text-align-last">text-align-last</a> properties
+      and describes how the inline-level content of a block
+      is aligned along the inline axis
+      if the content does not completely fill the line box.
+      Values have the following meanings:</p>
+   <dl>
+    <dt><dfn class="css" id="valdef-text-align-start">start</dfn>
+    <dd>Inline-level content is aligned to the <a href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a> edge of the line box. 
+    <dt><dfn class="css" id="valdef-text-align-end">end</dfn>
+    <dd>Inline-level content is aligned to the <a href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edge of the line box. 
+    <dt><dfn class="css" id="valdef-text-align-left">left</dfn>
+    <dd>Inline-level content is aligned to the <a href="http://www.w3.org/TR/css3-writing-modes/#line-left">line left</a> edge of the line box.
+        (In vertical writing modes,
+         this will be either the physical top or bottom,
+         depending on <a class="property" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-text-orientation">text-orientation</a>.) <a href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a> 
+    <dt><dfn class="css" id="valdef-text-align-right">right</dfn>
+    <dd>Inline-level content is aligned to the <a href="http://www.w3.org/TR/css3-writing-modes/#line-right">line right</a> edge of the line box.
+        (In vertical writing modes,
+         this will be either the physical top or bottom,
+         depending on <a class="property" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-text-orientation">text-orientation</a>.) <a href="#biblio-css3-writing-modes">[CSS3-WRITING-MODES]</a> 
+    <dt><dfn class="css" id="valdef-text-align-center">center</dfn>
+    <dd>Inline-level content is centered within the line box. 
+    <dt><dfn class="css" id="valdef-text-align-justify">justify</dfn>
+    <dd>Text is justified according to the method specified by the <a class="property" href="#propdef-text-justify">text-justify</a> property,
+        in order to exactly fill the line box.
+        Unless otherwise specified by <a class="property" href="#propdef-text-align-last">text-align-last</a>,
+        the last line before a forced break or the end of the block is <a class="css" href="#valdef-text-align-start">start</a>-aligned. 
+    <dt><dfn class="css" id="valdef-text-align-justify-all">justify-all</dfn>
+    <dd>Same as <a class="css" href="#valdef-text-align-justify">justify</a>, except <a class="property" href="#propdef-text-align-last">text-align-last</a> is also set to <a class="css" href="#valdef-text-align-justify">justify</a>,
+        forcing the last line to justify as well. 
+    <dt><dfn class="css" id="valdef-text-align-match-parent">match-parent</dfn>
+    <dd>This value behaves the same as <a class="css" href="https://drafts.csswg.org/css-cascade-4/#valdef-all-inherit">inherit</a> (computes to its parent’s computed value)
+        except that an inherited <a class="css" href="#valdef-text-align-start">start</a> or <a class="css" href="#valdef-text-align-end">end</a> keyword
+        is interpreted against its parent’s <a class="property" href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">direction</a> value
+        and results in a computed value of either <a class="property" href="https://drafts.csswg.org/css-position-3/#propdef-left">left</a> or <a class="property" href="https://drafts.csswg.org/css-position-3/#propdef-right">right</a>. 
+   </dl>
+   <p>All values except <a class="css" href="#valdef-text-align-justify-all">justify-all</a> reset <a class="property" href="#propdef-text-align-last">text-align-last</a> to <a class="css" href="#valdef-text-align-last-auto">auto</a>. </p>
+   <p>A block of text is a stack of <a href="http://www.w3.org/TR/CSS21/visuren.html#line-box">line boxes</a>.
+      This property specifies how the inline-level boxes within each line box
+      align with respect to the start and end sides of the line box.
+      Alignment is not with respect to the <a href="http://www.w3.org/TR/CSS21/visuren.html#viewport">viewport</a> or containing block. </p>
+   <p>In the case of <a class="css" href="#valdef-text-align-justify">justify</a>, the UA may stretch or shrink any inline boxes
+      by <a href="#text-justify-property">adjusting</a> their text. (See <a class="property" href="#propdef-text-justify">text-justify</a>.)
+      If an element’s white space is not <a href="#collapse">collapsible</a>,
+      then the UA is not required to adjust its text for the purpose of justification
+      and may instead treat the text as having no <a href="#justification-opportunity">justification opportunities</a>.
+      If the UA chooses to adjust the text, then it must ensure
+      that <a href="#tab-stop">tab stops</a> continue to line up as required by the <a href="#white-space-rules">white space processing rules</a>. </p>
+   <p>If (after justification, if any) the inline contents of a line box are too long to fit within it,
+      then the contents are <a href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a>-aligned:
+      any content that doesn’t fit overflows the line box’s <a href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edge. </p>
+   <p>See <a href="#bidi-linebox">Bidirectionality and line boxes</a> for details on how to determine the <a href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a> and <a href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edges of a line box. </p>
+   <h3 id="text-align-all-property"><span class="secno">7.2. </span> Default Text Alignment: the <a class="property" href="#propdef-text-align-all">text-align-all</a> property</h3>
+   <table class="propdef def">
+    <tbody>
+     <tr>
+      <th>Name: 
+      <td><dfn class="css" id="propdef-text-align-all">text-align-all</dfn>
+     <tr>
+      <th><a href="#values">Value</a>: 
+      <td>start | end | left | right | center |
+              justify | match-parent 
+     <tr>
+      <th>Initial: 
+      <td>start 
+     <tr>
+      <th>Applies to: 
+      <td>block containers 
+     <tr>
+      <th>Inherited: 
+      <td>yes 
+     <tr>
+      <th>Percentages: 
+      <td>N/A 
+     <tr>
+      <th>Media: 
+      <td>visual 
+     <tr>
+      <th>Computed value: 
+      <td>specified value 
+     <tr>
+      <th>Animatable: 
+      <td>no 
+     <tr>
+      <th>Canonical order: 
+      <td>N/A 
+   </table>
+   <p>This longhand of the <a class="property" href="#propdef-text-align">text-align</a> <a href="https://drafts.csswg.org/css-cascade-4/#shorthand-property">shorthand property</a> specifies the inline alignment of all lines of inline content in the block container,
+    except for last lines overridden by a non-<a class="css" href="#valdef-text-align-last-auto">auto</a> value of <a class="property" href="#propdef-text-align-last">text-align-last</a>.
+    See <a class="property" href="#propdef-text-align">text-align</a> for a full description of values. </p>
+   <p class="advisement"> Authors should use the <a class="property" href="#propdef-text-align">text-align</a> shorthand instead of this property. </p>
+   <h3 id="text-align-last-property"><span class="secno">7.3. </span> Last Line Alignment: the <a class="property" href="#propdef-text-align-last">text-align-last</a> property</h3>
+   <table class="propdef def">
+    <tbody>
+     <tr>
+      <th>Name:
+      <td><dfn class="css" id="propdef-text-align-last">text-align-last</dfn>
+     <tr>
+      <th><a href="#values">Value</a>: 
+      <td>auto | start | end | left | right | center | justify 
+     <tr>
+      <th>Initial:
+      <td>auto
+     <tr>
+      <th>Applies to:
+      <td>block containers
+     <tr>
+      <th>Inherited:
+      <td>yes
+     <tr>
+      <th>Percentages:
+      <td>N/A
+     <tr>
+      <th>Media:
+      <td>visual
+     <tr>
+      <th>Computed value:
+      <td>specified value
+     <tr>
+      <th>Animatable: 
+      <td>no 
+     <tr>
+      <th>Canonical order: 
+      <td>N/A 
+   </table>
+   <p>This property describes how the last line of a block or a line
+      right before a <a href="#forced-line-break">forced line break</a> is aligned.
+      If a line is also the first line of the block
+      or the first line after a <a href="#forced-line-break">forced line break</a>, <a class="property" href="#propdef-text-align-last">text-align-last</a> takes precedence over <a class="property" href="#propdef-text-align-all">text-align-all</a>. </p>
+   <p>If <dfn class="css" id="valdef-text-align-last-auto">auto</dfn> is specified,
+      content on the affected line is aligned per <a class="property" href="#propdef-text-align">text-align</a> unless <a class="property" href="#propdef-text-align">text-align</a> is set to <a class="css" href="#valdef-text-align-justify">justify</a>,
+      in which case it is start-aligned.
+      All other values have the same meanings as in <a class="property" href="#propdef-text-align">text-align</a>. </p>
+   <h3 id="text-justify-property"><span class="secno">7.4. </span> Justification Method: the <a class="property" href="#propdef-text-justify">text-justify</a> property</h3>
+   <table class="propdef def">
+    <tbody>
+     <tr>
+      <th>Name:
+      <td><dfn class="css" id="propdef-text-justify">text-justify</dfn>
+     <tr>
+      <th><a href="#values">Value</a>: 
+      <td>auto | none | inter-word | inter-character 
+     <tr>
+      <th>Initial:
+      <td>auto
+     <tr>
+      <th>Applies to:
+      <td>block containers and, optionally, inline elements
+     <tr>
+      <th>Inherited:
+      <td>yes
+     <tr>
+      <th>Percentages:
+      <td>N/A
+     <tr>
+      <th>Media:
+      <td>visual
+     <tr>
+      <th>Computed value:
+      <td>specified value
+     <tr>
+      <th>Animatable: 
+      <td>no 
+     <tr>
+      <th>Canonical order: 
+      <td>N/A 
+   </table>
+   <p>This property selects the justification method used when a line’s
+      alignment is set to <a class="css" href="#valdef-text-align-justify">justify</a> (see <a class="property" href="#propdef-text-align">text-align</a>).
+      The property applies to block containers, but the UA may (but
+      is not required to) also support it on inline elements.
+      It takes the following values:</p>
+   <dl>
+    <dt><dfn class="css" id="valdef-text-justify-auto">auto</dfn>
+    <dd>
+     <p>The UA determines the justification algorithm to follow, based
+          on a balance between performance and adequate presentation quality.
+          Since justification rules vary by writing system and language,
+          UAs should, where possible, use a justification algorithm appropriate to the text. 
+     <p class="example" id="example-997b671a"> For example, the UA could use by default a justification method that is a
+          simple universal compromise for all writing systems—such as
+          primarily expanding <a href="#word-separator">word separators</a> and between CJK <a href="#typographic-letter-unit">typographic letter units</a> along with secondarily expanding between Southeast Asian <a href="#typographic-letter-unit">typographic letter units</a>.
+          Then, in cases where the <a href="#content-language">content language</a> of the paragraph is known,
+          it could choose a more language-tailored justification behavior
+          e.g. following <a href="#biblio-jlreq">[JLREQ]</a> for Japanese,
+          using cursive elongation for Arabic,
+          using <a class="css" href="#valdef-text-justify-inter-word">inter-word</a> for German,
+          etc. </p>
+     <div class="figure" id="fig-text-justify-cursive">
+      <p> <img alt="Two lines of calligraphic Arabic end together due to a mix of compressed and swash forms." src="images/text-justify-cursive.png" title="Swash forms elongate the first line while a compressed contextual ligature shortens the second, allowing both to end precisely together."></p>
+      <p class="caption">An example of cursively-justified Arabic text,
+          rendered by <a href="http://www.decotype.com/">Tasmeem</a>.
+          Like English, Arabic can be justified by adjusting the spacing between words,
+          but in most styles it can also be justified by calligraphically elongating or compressing the letterforms themselves.
+          In this example, the upper text is extended to fill the line by the use of elongated (kashida) forms and swash forms,
+          while the bottom line is compressed slightly by using a stacked combination for the characters between ت and م.
+          By employing traditional calligraphic techniques,
+          a typesetter can justify the line while preserving flow and color,
+          providing a very high quality justification effect.
+          However, this is by its nature a very script-specific effect. </p>
+     </div>
+     <div class="figure" id="fig-text-justify-compromise">
+      <p> <img alt="Extra space is partly to spaces and partly among CJK and Thai letters." src="images/text-justify-compromise.png"></p>
+      <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: auto</a>:
+            this interpretation uses a universal-compromise justification method,
+            expanding at spaces as well as between CJK and Southeast Asian letters.
+            This effectively uses inter-word + inter-ideograph spacing
+            for lines that have word-separators and/or CJK characters
+            and falls back to inter-cluster behavior for lines that don’t
+            or for which the space stretches too far. </p>
+     </div>
+    <dt><dfn class="css" id="valdef-text-justify-none">none</dfn>
+    <dd>
+     Justification is disabled: there are no <a href="#justification-opportunity">justification opportunities</a> within the text. 
+     <div class="figure" id="fig-text-justify-none">
+      <p> <img alt="No extra space is insesrted." src="images/text-justify-none.png"></p>
+      <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: none</a> </p>
+     </div>
+     <p class="note" role="note">This value is intended for use in user stylesheets
+          to improve readability or for accessibility purposes. </p>
+    <dt><dfn class="css" id="valdef-text-justify-inter-word">inter-word</dfn>
+    <dd>
+     Justification adjusts spacing at <a href="#word-separator">word separators</a> only
+          (effectively varying the used <a class="property" href="#propdef-word-spacing">word-spacing</a> on the line).
+          This behavior is typical for languages that separate words using spaces,
+          like English or Korean. 
+     <div class="figure" id="fig-text-justify-interword">
+      <p> <img alt="Extra space is equally distributed mainly to spaces." src="images/text-justify-interword.png"></p>
+      <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: inter-word</a> </p>
+     </div>
+    <dt><dfn class="css" id="valdef-text-justify-inter-character">inter-character</dfn>
+    <dd>
+     Justification adjusts spacing between each pair of adjacent <a href="#typographic-character-unit">typographic character units</a> (effectively varying the used <a class="property" href="#propdef-letter-spacing">letter-spacing</a> on the line).
+          This value is sometimes used in East Asian systems such as Japanese. 
+     <div class="figure" id="fig-text-justify-distribute">
+      <p> <img alt="Extra space is equally distributed at points between spaces and letters of all writing systems." src="images/text-justify-distribute.png"></p>
+      <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: inter-character</a> </p>
+     </div>
+      For legacy reasons, UAs must also support the alternate keyword <dfn class="css" id="valdef-text-justify-distribute">distribute</dfn> with the exact same meaning and behavior. 
+   </dl>
+   <p class="advisement"> Since optimal justification is language-sensitive,
+      authors should correctly language-tag their content for the best results. </p>
+   <p>The exact justification algorithm is UA-dependent;
+      however, CSS provides some general guidelines below. </p>
+   <h4 id="expanding-text"><span class="secno">7.4.1. </span> Expanding and Compressing Text</h4>
+   <p>When justifying text, the user agent takes the remaining space between
+    the ends of a line’s contents and the edges of its line box, and
+    distributes that space throughout its contents so that the contents
+    exactly fill the line box.
+    The user agent may alternatively distribute negative space,
+    putting more content on the line than would otherwise fit under normal spacing conditions. </p>
+   <p>A <span id="expansion-opportunity"><dfn id="justification-opportunity">justification opportunity</dfn></span> is
+    a point where the justification algorithm may alter spacing within the text.
+    A justification opportunity can be provided by a single <a href="#typographic-character-unit">typographic character unit</a> (such as a <a href="#word-separator">word separator</a>),
+    or by the juxtaposition of two <a href="#typographic-character-unit">typographic character units</a>.
+    Space distributed by justification is <em>in addition to</em> the spacing defined by the <a class="property" href="#propdef-letter-spacing">letter-spacing</a> or <a class="property" href="#propdef-word-spacing">word-spacing</a> properties.
+    However, when space is distributed to a <a href="#word-separator">word separator</a> <a href="#justification-opportunity">justification opportunity</a>,
+    it is applied under the same rules as for <a class="property" href="#propdef-word-spacing">word-spacing</a>.
+    Similarly, when space is distributed to an <a href="#justification-opportunity">justification opportunity</a> between
+    two <a href="#typographic-character-unit">typographic character units</a>,
+    it is applied under the same rules as for <a class="property" href="#propdef-letter-spacing">letter-spacing</a>. </p>
+   <p>A justification algorithm may divide <a href="#justification-opportunity">justification opportunities</a> into different priority levels.
+    All <a href="#justification-opportunity">justification opportunities</a> within a given level
+    are expanded or compressed at the same priority,
+    regardless of which <a href="#typographic-character-unit">typographic character units</a> created that opportunity.
+    For example, if <a href="#justification-opportunity">justification opportunities</a> between two Han characters
+    and between two Latin letters are defined to be at the same level
+    (as they are in the <a class="css" href="#valdef-text-justify-inter-character">inter-character</a> justification style),
+    they are not treated differently because they originate from different <a href="#typographic-character-unit">typographic character units</a>.
+    It is not defined in this level
+    whether or how other factors
+    (such as font size, letter-spacing, glyph shape, position within the line, etc.)
+    may influence the distribution of space to <a href="#justification-opportunity">justification opportunities</a> within the line. </p>
+   <p>The UA may enable or break optional ligatures or use other font features
+  such as alternate glyphs or glyph compression
+  to help justify the text under any method.
+  This behavior is not controlled by this level of CSS.
+  However, UAs <em>must not</em> break required ligatures
+  or otherwise disable features required to correctly shape complex scripts. </p>
+   <h4 id="justify-symbols"><span class="secno">7.4.2. </span> Handling Symbols and Punctuation</h4>
+   <p>When determining <a href="#justification-opportunity">justification opportunities</a>,
+      a <a href="#typographic-character-unit">typographic character unit</a> from the Unicode Symbols (S*) and Punctuation (P*) classes
+      is generally treated the same as a <a href="#typographic-letter-unit">typographic letter unit</a> of the same script
+      (or, if the character’s script property is Common,
+      then as a <a href="#typographic-letter-unit">typographic letter unit</a> of the dominant script). </p>
+   <p>However, by typographic tradition there may be additional rules
+      controlling the justification of symbols and punctuation.
+      Therefore, the UA may reassign specific characters
+      or introduce additional levels of prioritization
+      to handle <a href="#justification-opportunity">justification opportunities</a> involving symbols and punctuation. </p>
+   <p class="example" id="example-d012ef7c"> For example, there are traditionally no <a href="#justification-opportunity">justification opportunities</a> between consecutive
+      U+2014 Em Dash ‘—’,
+      U+2015 Horizontal Bar ‘―’,
+      U+2026 Horizontal Ellipsis ‘…’,
+      or U+2025 Two Dot Leader ‘‥’
+      characters <a href="#biblio-jlreq">[JLREQ]</a>;
+      thus a UA might assign these characters to a “never” prioritization level.
+      As another example, certain fullwidth punctuation characters
+      (such as U+301A Left White Square Bracket ‘〚’)
+      are considered to contain a <a href="#justification-opportunity">justification opportunity</a> in Japanese.
+      The UA might therefore assign these characters to a higher prioritization
+      level than the opportunities between ideographic characters. </p>
+   <h4 id="justify-limits"><span class="secno">7.4.3. </span> Unexpandable Text</h4>
+   <p>If the inline contents of a line cannot be stretched to the full width of the line box,
+      then they must be aligned as specified by the <a class="property" href="#propdef-text-align-last">text-align-last</a> property.
+      (If <a class="property" href="#propdef-text-align-last">text-align-last</a> is <a class="css" href="#valdef-text-align-justify">justify</a>, then
+       they must be aligned as for <a class="css" href="#valdef-text-align-center">center</a> if <a class="property" href="#propdef-text-justify">text-justify</a> is <a class="css" href="#valdef-text-justify-inter-character">inter-character</a>,
+       and as <a class="css" href="#valdef-text-align-start">start</a> otherwise.) </p>
+   <h4 id="justify-cursive"><span class="secno">7.4.4. </span> Cursive Scripts</h4>
+   <p>Justification <em>must not</em> introduce gaps between the joined <a href="#typographic-letter-unit">typographic letter units</a> of <a href="#cursive-script">cursive scripts</a> such as Arabic.
+      If it is able, the UA <em>may</em> translate space distributed to <a href="#justification-opportunity">justification opportunities</a> within a run of such <a href="#typographic-letter-unit">typographic letter units</a> into some form of cursive elongation for that run.
+      It otherwise <em>must</em> assume that no <a href="#justification-opportunity">justification opportunity</a> exists
+      between any pair of <a href="#typographic-letter-unit">typographic letter units</a> in <a href="#cursive-script">cursive script</a> (regardless of whether they join). </p>
+   <div class="example" id="example-de4ec6de">
+     
+    <p>The following are examples of unacceptable justification: </p>
+    <div class="figure">
+     <p><img alt="" src="images/arabic-stretch-spaced.png"> </p>
+     <p class="caption">Adding gaps between every pair of Arabic letters </p>
+    </div>
+    <div class="figure">
+     <p><img alt="" src="images/arabic-stretch-unjoined.png"> </p>
+     <p class="caption">Adding gaps between every pair of unjoined Arabic letters </p>
+    </div>
+   </div>
+   <p>Some font designs allow for the use of the tatweel character for justification.
+    A UA that performs tatweel-based justification must properly handle the rules for its use.
+    Note that correct insertion of tatweel characters depends on context, including
+    the letter-combinations involved, location within the word, and location of the word within the line. </p>
+   <h4 id="justify-algos"><span class="secno">7.4.5. </span> Possible Algorithms</h4>
+   <p>For <a class="css" href="#valdef-text-justify-auto">auto</a> justification, this specification does not define
+  what all of the <a href="#justification-opportunity">justification opportunities</a> are,
+  how they are prioritized, or
+  when and how multiple levels of <a href="#justification-opportunity">justification opportunities</a> interact.
+  However, it does require that </p>
+   <ul>
+    <li> If a <a href="#justification-opportunity">justification opportunity</a> exists within a line,
+      it must be justified. 
+    <li>
+      Unless contraindicated by the typographic traditions of the <a href="#content-language">content language</a> or adjacent symbols/punctuation,
+      each of the following provides a <a href="#justification-opportunity">justification opportunity</a>: 
+     <ul>
+      <li><a href="#word-separator">Word separators</a> 
+      <li>The boundary between a <a href="#typographic-character-unit">typographic character unit</a> of any <a href="#block-scripts">block scripts</a> and any other <a href="#typographic-character-unit">typographic character unit</a> 
+      <li>The boundary between a <a href="#typographic-character-unit">typographic character unit</a> of any <a href="#clustered-scripts">clustered scripts</a> and any other <a href="#typographic-character-unit">typographic character unit</a> 
+     </ul>
+    <li> All <a href="#letter">letters</a> belonging to all <a href="#block-scripts">block scripts</a> are treated the same,
+      and all <a href="#letter">letters</a> belonging to all <a href="#clustered-scripts">clustered scripts</a> are treated the same.
+      For example, no distiction is made between
+      the justification opportunity between a Han letter followed by another Han letter,
+      vs. the justification opportunity between a Han letter followed by a Hangul letter. 
+   </ul>
+   <p>The guidelines in this level of CSS do not describe a complete
+  justification algorithm. They are merely a minimum set of requirements
+  that a complete algorithm should meet. Limiting the set of requirements
+  gives UAs some latitude in choosing a justification algorithm that
+  meets their needs and desired balance of quality, speed, and complexity. </p>
+   <div class="example" id="example-7dd69c0d">
+     
+    <p>For instance, a basic but fast justification algorithm
+    might use a simple greedy method for determining line breaks,
+    then distribute leftover space.
+    This algorithm could follow the guidelines by expanding word spaces first,
+    expanding between letters only if the spaces between words hit a limit defined by the UA. </p>
+    <p>A more sophisticated but harder-to-implement justification algorithm
+    might use a Knuth/Plass method
+    where <a href="#justification-opportunity">justification opportunities</a> and limits were assigned weights
+    and assessed with other line breaking considerations.
+    This algorithm could follow the guidelines by giving more weight
+    to <a href="#word-separator">word separators</a> than letter spacing. </p>
+   </div>
+   <div class="example" id="example-831c9463">
+     
+    <p>A UA can also tailor its justification rules by language,
+    to produce results more closely aligned to the typography of that language.
+    For example, it’s not defined whether expansion or compression is preferred,
+    so a UA may, for example, bias towards compression for CJK languages
+    but towards expansion for Western alphabetic languages. </p>
+    <p>As another example,
+    3.8 Line Adjustment in <a href="#biblio-jlreq">[JLREQ]</a> gives an example of a set of rules for
+    how a text formatter can justify Japanese text.
+    A UA could use this algorithm when the <a class="property" href="#propdef-text-justify">text-justify</a> property is <span class="css">text-justify:auto</span>.
+    However, since the rules described in the document specifically target Japanese,
+    they may produce non-optimal results
+    when used to justify other languages such as English.
+    The UA could adapt the rules to accommodate other scripts by, for instance,
+    omitting the rule to compress half-width spaces (rule a. of 3.8.3).
+    Or it could keep the rule, but only enable it when the content language is known to be Japanese. </p>
+   </div>
+
+  <h2 class="no-num heading settled" id="index">Index</h2>
+  <h3 class="no-num heading settled" id="index-defined-here">Terms defined by this specification</h3>
+  <ul class="indexlist">
+   <li><a href="#valdef-hanging-punctuation-allow-end">allow-end</a><span>, in §9.2</span>
+   <li>
+    auto
+    <ul>
+     <li><a href="#valdef-line-break-auto">value for line-break</a><span>, in §5.3</span>
+     <li><a href="#valdef-hyphens-auto">value for hyphens</a><span>, in §6.1</span>
+     <li><a href="#valdef-text-align-last-auto">value for text-align-last</a><span>, in §7.3</span>
+     <li><a href="#valdef-text-justify-auto">value for text-justify</a><span>, in §7.4</span>
+    </ul>
+   <li><a href="#block-scripts">block scripts</a><span>, in §Unnumbered section</span>
+   <li><a href="#valdef-word-break-break-all">break-all</a><span>, in §5.2</span>
+   <li><a href="#valdef-overflow-wrap-break-word">break-word</a><span>, in §6.2</span>
+   <li><a href="#valdef-text-transform-capitalize">capitalize</a><span>, in §2.1</span>
+   <li><a href="#valdef-text-align-center">center</a><span>, in §7.1</span>
+   <li><a href="#character">character</a><span>, in §1.3.1</span>
+   <li><a href="#clustered-scripts">clustered scripts</a><span>, in §Unnumbered section</span>
+   <li><a href="#collapsible-white-space">collapsible</a><span>, in §4.1.1</span>
+   <li><a href="#collapsible-white-space">collapsible white space</a><span>, in §4.1.1</span>
+   <li><a href="#content-language">content language</a><span>, in §1.3.2</span>
+   <li><a href="#cursive-script">cursive script</a><span>, in §Unnumbered section</span>
+   <li><a href="#valdef-text-justify-distribute">distribute</a><span>, in §7.4</span>
+   <li><a href="#white-space">document white space</a><span>, in §4.1</span>
+   <li><a href="#white-space">document white space characters</a><span>, in §4.1</span>
+   <li><a href="#valdef-text-indent-each-line">each-line</a><span>, in §9.1</span>
+   <li><a href="#unicode-east-asian-width">East Asian Width property</a><span>, in §Unnumbered section</span>
+   <li><a href="#valdef-text-align-end">end</a><span>, in §7.1</span>
+   <li><a href="#valdef-hanging-punctuation-first">first</a><span>, in §9.2</span>
+   <li><a href="#forced-line-break">forced line break</a><span>, in §5</span>
+   <li><a href="#valdef-hanging-punctuation-force-end">force-end</a><span>, in §9.2</span>
+   <li><a href="#valdef-text-transform-full-width">full-width</a><span>, in §2.1</span>
+   <li><a href="#unicode-general-category">General Category</a><span>, in §Unnumbered section</span>
+   <li><a href="#grapheme-cluster">grapheme cluster</a><span>, in §1.3.1</span>
+   <li><a href="#hang">hang</a><span>, in §9.2</span>
+   <li><a href="#valdef-text-indent-hanging">hanging</a><span>, in §9.1</span>
+   <li><a href="#propdef-hanging-punctuation">hanging-punctuation</a><span>, in §9.2</span>
+   <li><a href="#hyphenate">hyphenate</a><span>, in §6</span>
+   <li><a href="#hyphenate">hyphenation</a><span>, in §6</span>
+   <li><a href="#hyphenation-opportunity">hyphenation opportunity</a><span>, in §6</span>
+   <li><a href="#propdef-hyphens">hyphens</a><span>, in §6.1</span>
+   <li><a href="#valdef-text-justify-inter-character">inter-character</a><span>, in §7.4</span>
+   <li><a href="#valdef-text-justify-inter-word">inter-word</a><span>, in §7.4</span>
+   <li><a href="#justification-opportunity">justification opportunity</a><span>, in §7.4.1</span>
+   <li><a href="#valdef-text-align-justify">justify</a><span>, in §7.1</span>
+   <li><a href="#valdef-text-align-justify-all">justify-all</a><span>, in §7.1</span>
+   <li><a href="#valdef-word-break-keep-all">keep-all</a><span>, in §5.2</span>
+   <li><a href="#valdef-hanging-punctuation-last">last</a><span>, in §9.2</span>
+   <li><a href="#valdef-text-align-left">left</a><span>, in §7.1</span>
+   <li>
+    &lt;length>
+    <ul>
+     <li><a href="#valdef-word-spacing-length">value for word-spacing</a><span>, in §8.1</span>
+     <li><a href="#valdef-letter-spacing-length">value for letter-spacing</a><span>, in §8.2</span>
+     <li><a href="#valdef-text-indent-length">value for text-indent</a><span>, in §9.1</span>
+    </ul>
+   <li><a href="#letter">letter</a><span>, in §1.3.1</span>
+   <li><a href="#propdef-letter-spacing">letter-spacing</a><span>, in §8.2</span>
+   <li><a href="#propdef-line-break">line-break</a><span>, in §5.3</span>
+   <li><a href="#line-break">line break</a><span>, in §5</span>
+   <li><a href="#line-breaking-process">line-breaking-process</a><span>, in §5</span>
+   <li><a href="#valdef-line-break-loose">loose</a><span>, in §5.3</span>
+   <li><a href="#valdef-text-transform-lowercase">lowercase</a><span>, in §2.1</span>
+   <li><a href="#valdef-hyphens-manual">manual</a><span>, in §6.1</span>
+   <li><a href="#valdef-text-align-match-parent">match-parent</a><span>, in §7.1</span>
+   <li>
+    none
+    <ul>
+     <li><a href="#valdef-text-transform-none">value for text-transform</a><span>, in §2.1</span>
+     <li><a href="#valdef-hyphens-none">value for hyphens</a><span>, in §6.1</span>
+     <li><a href="#valdef-text-justify-none">value for text-justify</a><span>, in §7.4</span>
+     <li><a href="#valdef-hanging-punctuation-none">value for hanging-punctuation</a><span>, in §9.2</span>
+    </ul>
+   <li>
+    normal
+    <ul>
+     <li><a href="#valdef-white-space-normal">value for white-space</a><span>, in §3</span>
+     <li><a href="#valdef-word-break-normal">value for word-break</a><span>, in §5.2</span>
+     <li><a href="#valdef-line-break-normal">value for line-break</a><span>, in §5.3</span>
+     <li><a href="#valdef-overflow-wrap-normal">value for overflow-wrap</a><span>, in §6.2</span>
+     <li><a href="#valdef-word-spacing-normal">value for word-spacing</a><span>, in §8.1</span>
+     <li><a href="#valdef-letter-spacing-normal">value for letter-spacing</a><span>, in §8.2</span>
+    </ul>
+   <li><a href="#valdef-white-space-nowrap">nowrap</a><span>, in §3</span>
+   <li><a href="#propdef-overflow-wrap">overflow-wrap</a><span>, in §6.2</span>
+   <li>
+    &lt;percentage>
+    <ul>
+     <li><a href="#valdef-word-spacing-percentage">value for word-spacing</a><span>, in §8.1</span>
+     <li><a href="#valdef-text-indent-percentage">value for text-indent</a><span>, in §9.1</span>
+    </ul>
+   <li><a href="#valdef-white-space-pre">pre</a><span>, in §3</span>
+   <li><a href="#valdef-white-space-pre-line">pre-line</a><span>, in §3</span>
+   <li><a href="#preserved">preserved</a><span>, in §4.1.3</span>
+   <li><a href="#valdef-white-space-pre-wrap">pre-wrap</a><span>, in §3</span>
+   <li><a href="#valdef-white-space-pre-wrap-auto">pre-wrap-auto</a><span>, in §3</span>
+   <li><a href="#valdef-text-align-right">right</a><span>, in §7.1</span>
+   <li><a href="#unicode-script">Script property</a><span>, in §Unnumbered section</span>
+   <li><a href="#segment-break">segment break</a><span>, in §4</span>
+   <li><a href="#soft-wrap-break">soft wrap break</a><span>, in §5</span>
+   <li><a href="#soft-wrap-opportunity">soft wrap opportunity</a><span>, in §5</span>
+   <li><a href="#valdef-text-align-start">start</a><span>, in §7.1</span>
+   <li><a href="#stop-or-comma">stop or comma</a><span>, in §9.2</span>
+   <li><a href="#valdef-line-break-strict">strict</a><span>, in §5.3</span>
+   <li><a href="#propdef-tab-size">tab-size</a><span>, in §4.2</span>
+   <li><a href="#tab-stop">tab stop</a><span>, in §4.1.3</span>
+   <li><a href="#propdef-text-align">text-align</a><span>, in §7.1</span>
+   <li><a href="#propdef-text-align-all">text-align-all</a><span>, in §7.2</span>
+   <li><a href="#propdef-text-align-last">text-align-last</a><span>, in §7.3</span>
+   <li><a href="#propdef-text-indent">text-indent</a><span>, in §9.1</span>
+   <li><a href="#propdef-text-justify">text-justify</a><span>, in §7.4</span>
+   <li><a href="#propdef-text-transform">text-transform</a><span>, in §2.1</span>
+   <li><a href="#tracking">tracking</a><span>, in §8.2</span>
+   <li><a href="#typographic-character-unit">typographic character</a><span>, in §1.3.1</span>
+   <li><a href="#typographic-character-unit">typographic character unit</a><span>, in §1.3.1</span>
+   <li><a href="#typographic-letter-unit">typographic letter unit</a><span>, in §1.3.1</span>
+   <li><a href="#unicode-general-category">Unicode category</a><span>, in §Unnumbered section</span>
+   <li><a href="#unicode-east-asian-width">Unicode East Asian Width</a><span>, in §Unnumbered section</span>
+   <li><a href="#unicode-general-category">Unicode General Category</a><span>, in §Unnumbered section</span>
+   <li><a href="#unicode-script">Unicode Script</a><span>, in §Unnumbered section</span>
+   <li><a href="#valdef-text-transform-uppercase">uppercase</a><span>, in §2.1</span>
+   <li><a href="#propdef-white-space">white-space</a><span>, in §3</span>
+   <li><a href="#white-space">white space</a><span>, in §4.1</span>
+   <li><a href="#white-space">white space characters</a><span>, in §4.1</span>
+   <li><a href="#propdef-word-break">word-break</a><span>, in §5.2</span>
+   <li><a href="#word-separator">word separator</a><span>, in §8.1</span>
+   <li><a href="#word-separator">word-separator character</a><span>, in §8.1</span>
+   <li><a href="#propdef-word-spacing">word-spacing</a><span>, in §8.1</span>
+   <li><a href="#propdef-word-wrap">word-wrap</a><span>, in §6.2</span>
+   <li><a href="#wrapping">wrap</a><span>, in §5</span>
+   <li><a href="#wrapping">wrapping</a><span>, in §5</span>
+  </ul>
+  <h3 class="no-num heading settled" id="index-defined-elsewhere">Terms defined by reference</h3>
+  <ul class="indexlist">
+   <li>
+    <a href="#biblio-css-cascade-4">[css-cascade-4]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-cascade-4/#valdef-all-inherit">inherit</a>
+     <li><a href="https://drafts.csswg.org/css-cascade-4/#shorthand-property">shorthand</a>
+     <li><a href="https://drafts.csswg.org/css-cascade-4/#shorthand-property">shorthand property</a>
+    </ul>
+   <li>
+    <a href="#biblio-css-counter-styles-3">[css-counter-styles-3]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-counter-styles-3/#at-ruledef-counter-style">@counter-style</a>
+    </ul>
+   <li>
+    <a href="#biblio-css-position-3">[css-position-3]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-position-3/#propdef-left">left</a>
+     <li><a href="https://drafts.csswg.org/css-position-3/#propdef-right">right</a>
+    </ul>
+   <li>
+    <a href="#biblio-css-sizing-3">[css-sizing-3]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-sizing-3/#min-content-size">min-content size</a>
+    </ul>
+   <li>
+    <a href="#biblio-css-values-3">[css-values]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-values-3/#comb-one">|</a>
+    </ul>
+   <li>
+    <a href="#biblio-css-writing-modes-3">[css-writing-modes-3]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#bidi-paragraph">bidi paragraph</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-direction">direction</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#inline-base-direction">inline base direction</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-text-orientation">text-orientation</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#propdef-unicode-bidi">unicode-bidi</a>
+     <li><a href="https://drafts.csswg.org/css-writing-modes-3/#valdef-text-orientation-upright">upright</a>
+    </ul>
+   <li>
+    <a href="#biblio-css21">[CSS21]</a> defines the following terms:
+    <ul>
+     <li><a href="https://drafts.csswg.org/css2/visuren.html#propdef-display">display</a>
+    </ul>
+  </ul>
+  <h2 class="no-num heading settled" id="references">References</h2>
+  <h3 class="no-num heading settled" id="normative">Normative References</h3>
+  <dl>
+   <dt id="biblio-css21">[CSS21]
+   <dd>Bert Bos; et al. <a href="http://www.w3.org/TR/CSS2">Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</a>. 7 June 2011. REC. URL: <a href="http://www.w3.org/TR/CSS2">http://www.w3.org/TR/CSS2</a>
+   <dt id="biblio-css3ruby">[CSS3RUBY]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-ruby-1/">CSS Ruby Layout Module Level 1</a>. 5 August 2014. WD. URL: <a href="http://www.w3.org/TR/css-ruby-1/">http://www.w3.org/TR/css-ruby-1/</a>
+   <dt id="biblio-uax11">[UAX11]
+   <dd>Asmus Freytag. <a href="http://www.unicode.org/unicode/reports/tr11/tr11-8.html">East Asian Width</a>. 23 March 2001. Unicode Standard Annex #11. URL: <a href="http://www.unicode.org/unicode/reports/tr11/tr11-8.html">http://www.unicode.org/unicode/reports/tr11/tr11-8.html</a>
+   <dt id="biblio-uax14">[UAX14]
+   <dd>Asmus Freytag. <a href="http://www.unicode.org/unicode/reports/tr14/tr14-17.html">Line Breaking Properties</a>. 29 March 2005. Unicode Standard Annex #14. URL: <a href="http://www.unicode.org/unicode/reports/tr14/tr14-17.html">http://www.unicode.org/unicode/reports/tr14/tr14-17.html</a>
+   <dt id="biblio-uax24">[UAX24]
+   <dd>Mark Davis. <a href="http://www.unicode.org/unicode/reports/tr24/tr24-7.html">Script Names</a>. 28 March 2005. Unicode Standard Annex #24. URL: <a href="http://www.unicode.org/unicode/reports/tr24/tr24-7.html">http://www.unicode.org/unicode/reports/tr24/tr24-7.html</a>
+   <dt id="biblio-uax29">[UAX29]
+   <dd>Mark Davis. <a href="http://www.unicode.org/unicode/reports/tr29/tr29-9.html">Text Boundaries</a>. 25 March 2005. Unicode Standard Annex #29. URL: <a href="http://www.unicode.org/unicode/reports/tr29/tr29-9.html">http://www.unicode.org/unicode/reports/tr29/tr29-9.html</a>
+   <dt id="biblio-uax44">[UAX44]
+   <dd>Mark Davis; Ken Whistler. <a href="http://www.unicode.org/reports/tr44/">Unicode Character Database</a>. 25 September 2013. URL: <a href="http://www.unicode.org/reports/tr44/">http://www.unicode.org/reports/tr44/</a>
+   <dt id="biblio-unicode">[UNICODE]
+   <dd><a href="http://www.unicode.org/versions/latest/">The Unicode Standard</a>. URL: <a href="http://www.unicode.org/versions/latest/">http://www.unicode.org/versions/latest/</a>
+   <dt id="biblio-utr50">[UTR50]
+   <dd>Koji Ishii. <a href="http://www.unicode.org/reports/tr50/">Unicode Properties for Vertical Text Layout</a>. 31 August 2013. URL: <a href="http://www.unicode.org/reports/tr50/">http://www.unicode.org/reports/tr50/</a>
+   <dt id="biblio-css-cascade-4">[CSS-CASCADE-4]
+   <dd>Elika Etemad; Tab Atkins Jr.. <a href="http://www.w3.org/TR/css-cascade-4/">CSS Cascading and Inheritance Level 4</a>. 8 September 2015. WD. URL: <a href="http://www.w3.org/TR/css-cascade-4/">http://www.w3.org/TR/css-cascade-4/</a>
+   <dt id="biblio-css-counter-styles-3">[CSS-COUNTER-STYLES-3]
+   <dd>Tab Atkins Jr.. <a href="http://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>. 11 June 2015. CR. URL: <a href="http://www.w3.org/TR/css-counter-styles-3/">http://www.w3.org/TR/css-counter-styles-3/</a>
+   <dt id="biblio-css-position-3">[CSS-POSITION-3]
+   <dd>CSS Positioned Layout Module Level 3 URL: <a href="http://www.w3.org/TR/css3-positioning/">http://www.w3.org/TR/css3-positioning/</a>
+   <dt id="biblio-css-sizing-3">[CSS-SIZING-3]
+   <dd>CSS Intrinsic &amp; Extrinsic Sizing Module Level 3 URL: <a href="http://www.w3.org/TR/css3-sizing/">http://www.w3.org/TR/css3-sizing/</a>
+   <dt id="biblio-css-values">[CSS-VALUES]
+   <dd>Tab Atkins Jr.; Elika Etemad. <a href="http://www.w3.org/TR/css-values/">CSS Values and Units Module Level 3</a>. 11 June 2015. CR. URL: <a href="http://www.w3.org/TR/css-values/">http://www.w3.org/TR/css-values/</a>
+   <dt id="biblio-css-writing-modes-3">[CSS-WRITING-MODES-3]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3</a>. 20 March 2014. CR. URL: <a href="http://www.w3.org/TR/css-writing-modes-3/">http://www.w3.org/TR/css-writing-modes-3/</a>
+   <dt id="biblio-css3-fonts">[CSS3-FONTS]
+   <dd>John Daggett. <a href="http://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a>. 3 October 2013. CR. URL: <a href="http://www.w3.org/TR/css-fonts-3/">http://www.w3.org/TR/css-fonts-3/</a>
+   <dt id="biblio-css3-writing-modes">[CSS3-WRITING-MODES]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3</a>. 20 March 2014. CR. URL: <a href="http://www.w3.org/TR/css-writing-modes-3/">http://www.w3.org/TR/css-writing-modes-3/</a>
+   <dt id="biblio-rfc2119">[RFC2119]
+   <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
+  </dl>
+  <h3 class="no-num heading settled" id="informative">Informative References</h3>
+  <dl>
+   <dt id="biblio-css3-text-decor">[CSS3-TEXT-DECOR]
+   <dd>Elika Etemad; Koji Ishii. <a href="http://www.w3.org/TR/css-text-decor-3/">CSS Text Decoration Module Level 3</a>. 1 August 2013. CR. URL: <a href="http://www.w3.org/TR/css-text-decor-3/">http://www.w3.org/TR/css-text-decor-3/</a>
+   <dt id="biblio-css3val">[CSS3VAL]
+   <dd>Tab Atkins Jr.; Elika Etemad. <a href="http://www.w3.org/TR/css-values/">CSS Values and Units Module Level 3</a>. 11 June 2015. CR. URL: <a href="http://www.w3.org/TR/css-values/">http://www.w3.org/TR/css-values/</a>
+   <dt id="biblio-jis4051">[JIS4051]
+   <dd>Formatting rules for Japanese documents (『日本語文書の組版方法』). 2004. In Japanese 
+   <dt id="biblio-xml10">[XML10]
+   <dd>Tim Bray; et al. <a href="http://www.w3.org/TR/xml">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a>. 26 November 2008. REC. URL: <a href="http://www.w3.org/TR/xml">http://www.w3.org/TR/xml</a>
+   <dt id="biblio-zhmark">[ZHMARK]
+   <dd>标点符号用法 (Punctuation Mark Usage). 1995. 中华人民共和国国家标准 
+   <dt id="biblio-html5">[HTML5]
+   <dd>Ian Hickson; et al. <a href="http://www.w3.org/TR/html5/">HTML5</a>. 28 October 2014. REC. URL: <a href="http://www.w3.org/TR/html5/">http://www.w3.org/TR/html5/</a>
+   <dt id="biblio-jlreq">[JLREQ]
+   <dd>Yasuhiro Anan; et al. <a href="http://www.w3.org/TR/jlreq/">Requirements for Japanese Text Layout</a>. 3 April 2012. NOTE. URL: <a href="http://www.w3.org/TR/jlreq/">http://www.w3.org/TR/jlreq/</a>
+  </dl>
+  <h2 class="no-num heading settled" id="property-index">Property Index</h2>
+  <table class="index">
+   <thead>
+    <tr>
+     <th scope="col">Name
+     <th scope="col">Value
+     <th scope="col">Initial
+     <th scope="col">Applies to
+     <th scope="col">Inh.
+     <th scope="col">%ages
+     <th scope="col">Media
+     <th scope="col">Animatable
+     <th scope="col">Canonical order
+     <th scope="col">Computed value
+     <th scope="col">Computed value
+   <tbody>
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-text-transform">text-transform</a>
+     <td>none | capitalize | uppercase | lowercase | full-width
+     <td>none
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>as specified
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-white-space">white-space</a>
+     <td>normal | pre | nowrap | pre-wrap | pre-wrap-auto | pre-line
+     <td>normal
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>as specified
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-tab-size">tab-size</a>
+     <td>&lt;integer> | &lt;length>
+     <td>8
+     <td>block containers
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>as length
+     <td>N/A
+     <td>
+     <td>the specified integer or length made absolute
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-word-break">word-break</a>
+     <td>normal | keep-all | break-all
+     <td>normal
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-line-break">line-break</a>
+     <td>auto | loose | normal | strict
+     <td>auto
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-hyphens">hyphens</a>
+     <td>none | manual | auto
+     <td>manual
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-overflow-wrap">overflow-wrap</a>
+     <td>normal | break-word
+     <td>normal
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>specified value
+     <td>
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-word-wrap">word-wrap</a>
+     <td>normal | break-word
+     <td>normal
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>specified value
+     <td>
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-text-align">text-align</a>
+     <td>start | end | left | right | center |
+              justify | match-parent | justify-all
+     <td>start
+     <td>block containers
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value, except for match-parent which computes as defined below
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-text-align-all">text-align-all</a>
+     <td>start | end | left | right | center |
+              justify | match-parent
+     <td>start
+     <td>block containers
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-text-align-last">text-align-last</a>
+     <td>auto | start | end | left | right | center | justify
+     <td>auto
+     <td>block containers
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-text-justify">text-justify</a>
+     <td>auto | none | inter-word | inter-character
+     <td>auto
+     <td>block containers and, optionally, inline elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>N/A
+     <td>
+     <td>specified value
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-word-spacing">word-spacing</a>
+     <td>[ normal | &lt;length> | &lt;percentage>]
+     <td>normal
+     <td>all elements
+     <td>yes
+     <td>refers to width of the affected glyph
+     <td>visual
+     <td>as length, percentage, or calc
+     <td>N/A
+     <td>
+     <td>an absolute length
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-letter-spacing">letter-spacing</a>
+     <td>normal | &lt;length>
+     <td>normal
+     <td>all elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>as length
+     <td>N/A
+     <td>
+     <td>an absolute length
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-text-indent">text-indent</a>
+     <td>[ &lt;length>
+              | &lt;percentage>
+              ] &amp;&amp; hanging? &amp;&amp; each-line?
+     <td>0
+     <td>block containers
+     <td>yes
+     <td>refers to width of containing block
+     <td>visual
+     <td>as length, percentage, or calc, but only if keywords match
+     <td>per grammar
+     <td>
+     <td>the percentage as specified or the absolute length,
+            plus any keywords as specified
+    <tr>
+     <th scope="row"><a class="css" href="#propdef-hanging-punctuation">hanging-punctuation</a>
+     <td>none | [ first || [ force-end | allow-end ] || last ]
+     <td>none
+     <td>inline elements
+     <td>yes
+     <td>N/A
+     <td>visual
+     <td>no
+     <td>per grammar
+     <td>
+     <td>as specified
+  </table>
+
+<p role=navigation id="back-to-top"><a href="#"><abbr title="Back to Top">&uarr;</abbr>
