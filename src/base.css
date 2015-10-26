@@ -107,6 +107,7 @@
 	}
 
 	@media screen and (min-width: 60em) {
+		nav#toc,
 		[role=navigation]#toc {
 			position: fixed;
 			top: 0; bottom: 0;
@@ -115,12 +116,14 @@
 			overflow: auto;
 			padding: 0 1em;
 			background: white;
-			box-shadow: 3px 0 3px;
+			box-shadow: inset -3px 0 3px rgba(0,0,0,0.3);
+			z-index: 1;
 		}
 		body {
 			padding-left: 40%;
 			padding-left: calc(26px + 4em + 30%);
 		}
+		nav#toc h2,
 		[role=navigation]#toc h2 {
 			margin-top: 1rem;
 		}
@@ -370,7 +373,6 @@
 
 	/* Backout above styling for W3C logo */
 	a.logo:link, a.logo:visited {
-		padding: 0;
 		border: none;
 		text-decoration: none;
 	}

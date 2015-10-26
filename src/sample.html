@@ -77,7 +77,7 @@ body {
     <li>
      <a href="#intro"><span class="secno">1</span>  Introduction</a>
      <ul class="toc">
-      <li><a href="#placement"><span class="secno">1.1</span>  Document Conventions</a>
+      <li><a href="#conventions"><span class="secno">1.1</span>  Document Conventions</a>
      </ul>
     <li>
      <a href="#css"><span class="secno">7</span>  Sample CSS Section</a>
@@ -116,7 +116,7 @@ body {
 <h2 id="intro">
 <span class="secno">1. </span> Introduction</h2>
    <p>This document shows off some of our specification styling.
-<h3 cid="conventions">
+<h3 id="conventions">
 <span class="secno">1.1 </span>Document conventions</h3>
   <p>Conformance requirements are expressed with a combination of
     descriptive assertions and RFC 2119 terminology. The key words "MUST",
@@ -127,6 +127,7 @@ body {
     letters in this specification. </p>
   <p>All of the text of this specification is normative except sections
     explicitly marked as non-normative, examples, and notes. <a href="#biblio-rfc2119">[RFC2119]</a></p>
+
   <p>Examples in this specification are introduced with the words "for example"
     or are set apart from the normative text with <code>class="example"</code>,
     like this: </p>
@@ -134,15 +135,70 @@ body {
     
    <p>This is an example of an informative example.</p>
   </div>
+
   <p>Informative notes begin with the word "Note" and are set apart from the
     normative text with <code>class="note"</code>, like this: </p>
   <p class="note" role="note">Note, this is an informative note.</p>
+
   <p>Advisements are normative sections styled to evoke special attention and are
     set apart from other normative text with
     <code>&lt;p class="advisement"></code> or
     <code>&lt;strong class="advisement"></code>,
     like this:
     <strong class="advisement"> UAs MUST provide an accessible alternative. </strong> </p>
+
+  <p>Data tables are formatted with horizontal and vertical rules and text-alignment
+    based on their markup (using <code>class="data"</code>).
+    This requires appropriate use of <code>&lt;thead&gt;</code> for the table header,
+    <code>&lt;th&gt;</code> for header cells,
+    <code>&lt;tbody&gt;</code> for row groups,
+    <code>&lt;th scope=row&gt;</code> for row header cells,
+    and <code>&lt;colgroup&gt;</code> for column groups.
+    For example,
+
+  <table class="data">
+    <caption>Summary of <code class="css">white-space</code> property</caption>
+    <colgroup class="header"></colgroup>
+    <colgroup span="3"></colgroup>
+    <thead>
+     <tr>
+      <th>
+      <th>New Lines
+      <th>Spaces and Tabs
+      <th>Text Wrapping
+    <tbody>
+     <tr>
+      <th><a class="css" data-link-type="maybe" href="#valdef-white-space-normal">normal</a>
+      <td>Collapse
+      <td>Collapse
+      <td>Wrap
+     <tr>
+      <th><a class="css" data-link-type="maybe" href="#valdef-white-space-pre">pre</a>
+      <td>Preserve
+      <td>Preserve
+      <td>No wrap
+     <tr>
+      <th><a class="css" data-link-type="maybe" href="#valdef-white-space-nowrap">nowrap</a>
+      <td>Collapse
+      <td>Collapse
+      <td>No wrap
+     <tr>
+      <th><a class="css" data-link-type="maybe" href="#valdef-white-space-pre-wrap">pre-wrap</a>
+      <td>Preserve
+      <td>Preserve
+      <td>Wrap
+     <tr>
+      <th><a class="css" data-link-type="maybe" href="#valdef-white-space-pre-wrap-auto">pre-wrap-auto</a>
+      <td>Preserve
+      <td>Preserve
+      <td>Wrap
+     <tr>
+      <th><a class="css" data-link-type="maybe" href="#valdef-white-space-pre-line">pre-line</a>
+      <td>Preserve
+      <td>Collapse
+      <td>Wrap
+   </table>
+
 <h2 id="justification">
 <span class="secno">7. </span> Sample CSS Section</h2>
    <p>Alignment and justification controls how inline content is distributed within a line box. </p>
