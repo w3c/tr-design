@@ -764,15 +764,20 @@
 	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
 
 	/* Underlining in the ToC is noisy. Remove it except on hover/focus. */
-	.toc a        { border-bottom-style: none; }
+	.toc a           { border-bottom-style: none; }
 	.toc a:hover,
-	.toc a:focus  { border-bottom-style: solid; }
+	.toc a:focus     { border-bottom-style: solid; }
 	@supports (text-decoration-color: silver) {
 		.toc a:link,
 		.toc a:visited { border-bottom: none;
 		                 text-decoration-line: none; }
 		.toc a:hover,
 		.toc a:focus   { text-decoration-line: underline; }
+	}
+
+	/* Make ToC links blocks, to give a bigger, more consistent target/highlight area. */
+	.toc a {
+		display: block;
 	}
 
 	/* Section numbers in a column of their own */
