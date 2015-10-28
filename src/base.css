@@ -95,11 +95,6 @@
 		text-decoration: none;
 	}
 
-	@media print {
-		#back-to-top {
-			display: none;
-		}
-	}
 	@media not print {
 		#back-to-top a {
 			position: fixed;
@@ -113,8 +108,17 @@
 			box-shadow: 0 0 2px;
 		}
 	}
+	@media print {
+		#back-to-top {
+			display: none;
+		}
+	}
 
 	@media screen and (min-width: 80em) {
+		#back-to-top {
+			display: none;
+		}
+
 		nav#toc,
 		[role=navigation]#toc {
 			position: fixed;
