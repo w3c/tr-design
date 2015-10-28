@@ -90,20 +90,28 @@
 	p.copyright,
 	p.copyright small { font-size: small }
 
-	#back-to-top a {
-		position: fixed;
-		bottom: 0; left: 0;
-		width: 22px;
-		height: 22px;
-		padding: 4px 4px 0 0;
-		text-align: center;
-		text-decoration: none;
-		border-top-right-radius: 100%;
-		box-shadow: 0 0 2px;
-	}
 	#back-to-top abbr {
 		border: none;
 		text-decoration: none;
+	}
+
+	@media print {
+		#back-to-top {
+			display: none;
+		}
+	}
+	@media not print {
+		#back-to-top a {
+			position: fixed;
+			bottom: 0; left: 0;
+			width: 22px;
+			height: 22px;
+			padding: 4px 4px 0 0;
+			text-align: center;
+			text-decoration: none;
+			border-top-right-radius: 100%;
+			box-shadow: 0 0 2px;
+		}
 	}
 
 	@media screen and (min-width: 80em) {
