@@ -67,8 +67,8 @@
 		/* Layout */
 		max-width: 50em;           /* limit line length to 50em for readability   */
 		margin: 0 auto;            /* center text within page                     */
-		padding: 2em 1em 2em 42px; /* assume 16px font size for downlevel clients */
-		padding: 2em 1em 2emx calc(26px + 1em); /* leave space for status flag    */
+		padding: 2em 1em 2em 58px; /* assume 16px font size for downlevel clients */
+		padding: 2em 1em 2em calc(26px + 2em); /* leave space for status flag    */
 
 		/* Typography */
 		line-height: 1.35;
