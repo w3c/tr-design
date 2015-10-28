@@ -114,7 +114,7 @@
 		}
 	}
 
-	@media screen and (min-width: 80em) {
+	@media screen and (min-width: 78em) {
 		#back-to-top {
 			display: none;
 		}
@@ -124,7 +124,7 @@
 			position: fixed;
 			top: 0; bottom: 0;
 			left: 0;
-			width: 25.5em;
+			width: 23.5em;
 			overflow: auto;
 			padding: 0 1em;
 			padding-left: 42px;
@@ -134,8 +134,7 @@
 			z-index: 1;
 		}
 		body {
-			padding-left: 31em;
-			padding-left: calc(26px + 29.5em);
+			padding-left: 28em;
 		}
 		nav#toc h2,
 		[role=navigation]#toc h2 {
