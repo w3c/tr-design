@@ -71,7 +71,7 @@
 		padding: 2em 1em 2em calc(26px + 2em); /* leave space for status flag    */
 
 		/* Typography */
-		line-height: 1.35;
+		line-height: 1.5;
 		font-family: sans-serif;
 
 		/* Colors */
@@ -132,10 +132,13 @@
 			background: inherit;
 			background-color: #F8F8F8;
 			z-index: 1;
+			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
 		}
+
 		body {
 			padding-left: 28em;
 		}
+
 		nav#toc h2,
 		[role=navigation]#toc h2 {
 			margin-top: 1rem;
@@ -340,45 +343,40 @@
 /** General Hyperlinks ********************************************************/
 
 	/* We hyperlink a lot, so make it less intrusive */
-	:link, :visited {
+	a[href] {
 		color: inherit;
-		background: transparent;
 		text-decoration: none;
 		border-bottom: 1px solid silver;
 	}
-	@supports (text-decoration-color: silver) {
-		:link, :visited {
+
+	@supports (box-shadow: 0 0 red inset) {
+		a[href] {
 			border-bottom: none;
-			text-decoration: underline;
-			text-decoration-color: silver;
-		}
-		:visited {
-			text-decoration-style: dotted;
+			box-shadow: 0 -.05em hsla(203, 80%, 50%,.3) inset;
+			transition: 200ms;
+			transition-property: box-shadow, background;
 		}
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
 	/* Issue: This style is kindof awful. Pick something better. */
-	:link:hover, :link:focus {
-		background: #ffa;
-		color: blue;
-		text-decoration-color: blue;
-		border-color: navy;
+	a[href]:focus,
+	a[href]:hover {
+		background: hsla(203, 80%, 50%,.05);
+		box-shadow: 0 -.2em hsla(203, 80%, 50%,.2) inset, 
+		            0  .1em hsla(203, 80%, 50%,.2);
 	}
-	:visited:hover, :visited:focus {
-		background: #ffa;
-		color: navy;
-		text-decoration-color: navy;
-		border-color: navy;
-	}
-	:link:active, :visited:active {
+
+	a[href]:active {
 		color: #C00;
 	}
 
-	/* Backout above styling for W3C logo */
-	a.logo:link, a.logo:visited {
+	/* Backout above styling for W3C logo and TOC */
+	a[href].logo,
+	.toc a {
 		border: none;
 		text-decoration: none;
+		box-shadow: none;
 	}
 
 /******************************************************************************/
@@ -762,18 +760,6 @@
 	.toc > li li       { margin-top: 0.3em; font-weight: normal; }
 	.toc > li li li    { margin-left:  2em; font-style:  italic; }
 	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
-
-	/* Underlining in the ToC is noisy. Remove it except on hover/focus. */
-	.toc a           { border-bottom-style: none; }
-	.toc a:hover,
-	.toc a:focus     { border-bottom-style: solid; }
-	@supports (text-decoration-color: silver) {
-		.toc a:link,
-		.toc a:visited { border-bottom: none;
-		                 text-decoration-line: none; }
-		.toc a:hover,
-		.toc a:focus   { text-decoration-line: underline; }
-	}
 
 	/* Make ToC links blocks, to give a bigger, more consistent target/highlight area. */
 	.toc a {
