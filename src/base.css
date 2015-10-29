@@ -67,8 +67,8 @@
 		/* Layout */
 		max-width: 50em;           /* limit line length to 50em for readability   */
 		margin: 0 auto;            /* center text within page                     */
-		padding: 2em 1em 2em 58px; /* assume 16px font size for downlevel clients */
-		padding: 2em 1em 2em calc(26px + 2em); /* leave space for status flag    */
+		padding: 1.6em 1em 2em 58px; /* assume 16px font size for downlevel clients */
+		padding: 1.6em 1em 2em calc(26px + 2em); /* leave space for status flag    */
 
 		/* Typography */
 		line-height: 1.5;
@@ -83,9 +83,47 @@
 /*                         Front Matter & Navigation                          */
 /******************************************************************************/
 
+	
 
 	div.head { margin-bottom: 1em }
-	div.head h1 { margin-top: 2em; clear: both }
+
+	div.head h1 {
+		font-weight: bold;
+		margin: 0 0 .1em;
+		font-size: 220%;
+	}
+	
+	div.head h2 { margin-bottom: 1.5em;}
+
+	.head > :first-child {
+		float: right;
+		margin: 0;
+	}
+	
+	@media screen {
+		a[href].logo {
+			display: inline-block;
+			background: url("logos/w3c-white.svg") no-repeat center / contain content-box border-box;
+			padding: .4rem .7rem;
+			border-radius: .4rem;
+			margin-top: .4em;
+			background-color: hsl(208, 71%, 35%);
+		}
+
+		a.logo img {
+			visibility: hidden;
+		}
+
+		a[href].logo:hover,
+		a[href].logo:focus {
+			background-color: hsla(208, 71%, 35%,.8);
+		}
+
+		a[href].logo:active {
+			background-color: #c00;
+		}
+	}
+	
 
 	p.copyright,
 	p.copyright small { font-size: small }
@@ -108,6 +146,7 @@
 			box-shadow: 0 0 2px;
 		}
 	}
+
 	@media print {
 		#back-to-top {
 			display: none;
@@ -237,8 +276,12 @@
 		margin: 0 0 1em 2em;
 	}
 
+	.head dd + dt {
+		margin-top: .5em;
+	}
+
 	.head dd { /* undo for header */
-		margin-bottom: .5em;
+		margin-bottom: 0;
 	}
 
 	/* Style for algorithms */
@@ -372,7 +415,7 @@
 	/* Issue: This style is kindof awful. Pick something better. */
 	a[href]:focus,
 	a[href]:hover {
-		background: hsla(203, 80%, 50%,.05);
+		background-color: hsla(203, 80%, 50%,.05);
 		box-shadow: 0 -.2em hsla(203, 80%, 50%,.2) inset, 
 		            0  .1em hsla(203, 80%, 50%,.2);
 	}
@@ -772,10 +815,11 @@
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
 	/* Using padding on <a> instead of margins on <li> to increase hit area */
-	.toc a              { padding: .3em;   }
-	.toc > li         { margin: .3em 0; font-weight: bold;   }
-	.toc > li li   { margin: .1em 0; font-weight: normal; }
-	.toc > li li li   { margin-left:  2em; font-style:  italic; }
+	.toc a             { padding: .3em;   }
+	.toc > li          { margin: 1.2em 0; font-weight: bold;   }
+	.toc > li li       { margin: 0; font-weight: normal; }
+	.toc > li li li    { margin-left:  2em; font-style:  italic; }
+	.toc > li li li a { padding: .2em; }
 	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
 
 	/* Make ToC links blocks, to give a bigger, more consistent target/highlight area. */
