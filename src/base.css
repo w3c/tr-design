@@ -26,17 +26,16 @@
  *   - pre and code
  * 
  * Special Sections
- *   - .note       for informative notes             (div, p, span)
+ *   - .note       for informative notes             (div, p, span, aside, details)
  *   - .example    for informative examples          (div, p, pre, span)
  *   - .issue      for issues                        (div, p, span)
- *   - .advisement for short highlighted statements  (div, p, strong)
- *   - .why        for collapsible informative notes (details)
- *   - .annoying-warning for spec obsoletion notices (details)
+ *   - .advisement for loud normative statements     (div, p, strong)
+ *   - .annoying-warning for spec obsoletion notices (div, aside, details)
  * 
  * Definition Boxes
- *   - pre.idl for WebIDL definitions
- *   - table.propdef and table.descdef for CSS property and descriptor definitions
- *   - table.def for tables that define other entities
+ *   - pre.def   for WebIDL definitions
+ *   - table.def for tables that define other entities (e.g. CSS properties)
+ *   - dl.def    for definition lists that define other entitles (e.g. HTML elements)
  * 
  * Numbering
  *   - .secno for section numbers in .toc and headings (<span class='secno'>3.2</span>)
@@ -375,20 +374,6 @@
 
   /* Do something nice. */
 
-/** IDL fragments *************************************************************/
-
-	pre.idl {
-		/* Match blue propdef boxes */
-		padding: .5em 1em;
-		background: #DEF;
-		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
-	}
-	pre.idl :link, pre.idl :visited {
-		color:inherit;
-		background:transparent;
-	}
-
 /******************************************************************************/
 /*                                    Links                                   */
 /******************************************************************************/
@@ -496,7 +481,7 @@
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .why, .advisement, blockquote {
+	.issue, .note, .example, .advisement, blockquote {
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -509,8 +494,11 @@
 
 	div.issue,
 	div.note,
+	details.note,
+	aside.note,
 	div.example,
-	details.why,
+	div.advisement,
+	p.advisement,
 	strong.advisement,
 	blockquote {
 		margin: 1em auto;
@@ -567,18 +555,29 @@
 
 /** Non-normative Note ********************************************************/
 
-	.note, .why {
+	.note {
 		border-color: #52E052;
 		background: #E9FBE9;
 		overflow: auto;
 	}
-	.note::before, .note > .marker {
+
+	.note::before, .note > .marker,
+	details.note > summary::before,
+	details.note > summary > .marker {
 		text-transform: uppercase;
 		display: block;
 		color: hsl(120, 70%, 30%);
 	}
 	/* Add .note::before { content: "Note"; } for autogen label,
 	   or use class="marker" to mark up the label in source. */
+
+	details.note > summary {
+		display: block;
+		color: hsl(120, 70%, 30%);
+	}
+	details.note[open] > summary {
+		border-bottom: 1px silver solid;
+	}
 
 /** Advisement Box ************************************************************/
 	/*  for attention-grabbing normative statements */
@@ -587,45 +586,31 @@
 		border-color: orange;
 		border-style: none solid;
 		background: #FFEECC;
-		text-align: center;
 	}
 	strong.advisement {
 		display: block;
+		text-align: center;
 	}
-	/*.advisement::before { color: #FF8800; } */
-
-/** Collapsible Informative Explanations ***************************************/
-
-	details.why {
-		border-color: #52E052;
-		background: #E9FBE9;
-		display: block;
-	}
-
-	details.why > summary {
-		font-style: italic;
-		display: block;
-	}
-
-	details.why[open] > summary {
-		border-bottom: 1px silver solid;
+	.advisement > .marker {
+		color: #FF8800;
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
 
-	details.annoying-warning {
+	details {
 		display: block;
 	}
 
+	.annoying-warning:not(details),
+	details.annoying-warning:not([open]) > summary,
 	details.annoying-warning[open] {
 		background: #fdd;
 		color: red;
 		font-weight: bold;
-		text-align: center;
 		padding: .5em;
-		border: thick solid red;
-		border-radius: 1em;
+		border: thick red;
+		border-style: solid none;
 	}
 @media not print {
 	details.annoying-warning[open] {
@@ -638,11 +623,16 @@
 }
 
 	details.annoying-warning:not([open]) > summary {
-		background: #fdd;
-		color: red;
-		font-weight: bold;
 		text-align: center;
-		padding: .5em;
+	}
+
+/** Entity Definition Boxes ***************************************************/
+
+	.def {
+		padding: .5em 1em;
+		background: #DEF;
+		margin: 1.2em 0;
+		border-left: 0.5em solid #8CCBF2;
 	}
 
 /******************************************************************************/
@@ -652,12 +642,8 @@
 /** Property/Descriptor Definition Tables *************************************/
 
 	table.def {
-		page-break-inside: avoid;
+		/* inherits .def box styling, see above */
 		width: 100%;
-		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
-		padding: 0.5em 1em;
-		background: #DEF;
 		border-spacing: 0;
 	}
 
