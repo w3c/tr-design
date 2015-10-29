@@ -419,7 +419,7 @@
 
 	/* Special styling for properties */
 	a.property {
-		paddong-bottom: .1em; /* align underline with the rest of the text */
+		padding-bottom: .1em; /* align underline with the rest of the text */
 		font-weight: bold;
 		color: hsla(203, 90%, 30%,.8);
 	}
