@@ -139,7 +139,7 @@ body {
 
   <p>Informative notes begin with the word "Note" and are set apart from the
     normative text with <code>class="note"</code>, like this: </p>
-  <p class="note" role="note">Note, this is an informative note.</p>
+  <p role="note">Note, this is an informative note.</p>
 
   <p>Advisements are normative sections styled to evoke special attention and are
     set apart from other normative text with
@@ -199,6 +199,124 @@ body {
       <td>Collapse
       <td>Wrap
    </table>
+
+<h2 id="conventions">
+<span class="secno">2. </span> Features of the New Style Sheet</h2>
+
+<h3 id="boxes">
+<span class="secno">2.1 </span> Special Boxes</h3>
+
+<h4 id="def">
+<span class="secno">2.1.1 </span> Definition Boxes</h2>
+
+  The <code>.def</code> class is used to distinguish definition boxes,
+  e.g. for WebIDL boxes defining an interface,
+  for CSS property definition tables,
+  for HTML element property <code>&lt;dl></code>s,
+  etc. It can be applied to <code>&lt;table></code>, <code>&lt;pre></code>, or <code>&lt;dl></code>.
+
+   <table class="propdef def">
+    <tbody>
+     <tr>
+      <th>Name:
+      <td><dfn class="css" id="propdef-text-align">text-align</dfn>
+     <tr>
+      <th><a href="#values">Value</a>: 
+      <td>start | end | left | right | center | justify
+     <tr>
+      <th>Initial:
+      <td>start
+     <tr>
+      <th>Applies to:
+      <td>block containers
+     <tr>
+      <th>Inherited:
+      <td>yes
+     <tr>
+      <th>Percentages:
+      <td>N/A
+     <tr>
+      <th>Media:
+      <td>visual
+     <tr>
+      <th>Computed value:
+      <td>specified value, except for <a class="css" href="#valdef-text-align-match-parent">match-parent</a> which computes as defined below
+     <tr>
+      <th>Animatable: 
+      <td>no 
+     <tr>
+      <th>Canonical order: 
+      <td>N/A 
+   </table>
+
+<h4 id="def">
+<span class="secno">2.1.1 </span> Note Boxes</h2>
+
+  The <code>.note</code> class is used to distinguish non-normative notes.
+  
+  <p class="note">
+    <span class="marker">Note:</span>
+    This is a non-normative note.
+    The style sheet allows the document to include a rule for auto-generating the "Note" marker
+    in CSS, but due to bugs in browser implementations,
+    it's recommended to include that text in the document,
+    using <code>class=marker</code>.
+  </p>
+  
+  This class is currently valid on <code>&lt;aside></code>, <code>&lt;details></code>, <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;span></code>.
+  <span class="note">Note, here is an example of an inline note.</span>.
+
+<h4 id="def">
+<span class="secno">2.1.2 </span> Example Boxes</h2>
+
+  The <code>.example</code> class is used to distinguish non-normative examples.
+  
+  <p class="example">
+    <span class="marker">Example 2:</span>
+    This is a non-normative example.
+    The style sheet allows the document to include a rule for auto-generating the "Example #" marker
+    in CSS, but due to bugs in browser implementations,
+    it's recommended to include that text in the document,
+    using <code>class=marker</code>.
+  </p>
+
+<h4 id="def">
+<span class="secno">2.1.3 </span> Issue Boxes</h2>
+
+  The <code>.issue</code> class is used to distinguish open issues.
+  
+  <p class="issue">
+    <span class="marker">Issue 3:</span>
+    This is an issue.
+    The style sheet allows the document to include a rule for auto-generating the "Issue #" marker
+    in CSS, but due to bugs in browser implementations,
+    it's recommended to include that text in the document,
+    using <code>class=marker</code>.
+  </p>
+
+  This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;span></code>.
+  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
+
+
+<h4 id="def">
+<span class="secno">2.1.4 </span> Advisement Boxes</h2>
+
+  The <code>.advisement</code> class is used to highlight important normative statements,
+  such as best practices.
+  
+  <p class="issue">
+    <span class="marker">Best Practice 4:</span>
+    Use semantic markup.
+  </p>
+
+  This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;strong></code>.
+  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
+
+<h4 id="def">
+<span class="secno">2.1.5 </span> Annoying Spec Obsoletion Warning Boxes</h2>
+
+  The <code>.annoying-warning</code> is for spec obsoletion notices.
+  They're a bit scary, and should only occur once per spec.
 
 <h2 id="justification">
 <span class="secno">7. </span> Sample CSS Section</h2>
