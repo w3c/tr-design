@@ -307,11 +307,12 @@
 
 /** General monospace/pre rules ***********************************************/
 
-	pre, code {
-		font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	pre, code, a.property {
+		font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 		font-size: .9em;
 		page-break-inside: avoid;
 	}
+
 	pre {
 		margin-top: 1em;
 		margin-bottom: 1em;
@@ -377,6 +378,12 @@
 		border: none;
 		text-decoration: none;
 		box-shadow: none;
+	}
+
+	/* Special styling for properties */
+	a.property {
+		font-weight: bold;
+		color: hsla(203, 90%, 30%,.8)
 	}
 
 /******************************************************************************/
