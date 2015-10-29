@@ -33,8 +33,9 @@
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
  * 
  * Definition Boxes
- *   - pre.idl for WebIDL definitions
- *   - table.def for tables that define other entities
+ *   - pre.def   for WebIDL definitions
+ *   - table.def for tables that define other entities (e.g. CSS properties)
+ *   - dl.def    for definition lists that define other entitles (e.g. HTML elements)
  * 
  * Numbering
  *   - .secno for section numbers in .toc and headings (<span class='secno'>3.2</span>)
@@ -330,20 +331,6 @@
 
   /* Do something nice. */
 
-/** IDL fragments *************************************************************/
-
-	pre.idl {
-		/* Match blue propdef boxes */
-		padding: .5em 1em;
-		background: #DEF;
-		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
-	}
-	pre.idl :link, pre.idl :visited {
-		color:inherit;
-		background:transparent;
-	}
-
 /******************************************************************************/
 /*                                    Links                                   */
 /******************************************************************************/
@@ -596,6 +583,15 @@
 		text-align: center;
 	}
 
+/** Entity Definition Boxes ***************************************************/
+
+	.def {
+		padding: .5em 1em;
+		background: #DEF;
+		margin: 1.2em 0;
+		border-left: 0.5em solid #8CCBF2;
+	}
+
 /******************************************************************************/
 /*                                    Tables                                  */
 /******************************************************************************/
@@ -603,12 +599,8 @@
 /** Property/Descriptor Definition Tables *************************************/
 
 	table.def {
-		page-break-inside: avoid;
+		/* inherits .def box styling, see above */
 		width: 100%;
-		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
-		padding: 0.5em 1em;
-		background: #DEF;
 		border-spacing: 0;
 	}
 
