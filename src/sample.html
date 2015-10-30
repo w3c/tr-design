@@ -74,11 +74,52 @@ body {
   <section id="toc" role=navigation>
   <h2>Table of Contents</h2>
   <div>
-   <ul class="toc" role="directory">
+   <ul role="directory">
     <li>
-     <a href="#intro"><span class="secno">1</span>  Introduction</a>
-     <ul class="toc">
-      <li><a href="#conventions"><span class="secno">1.1</span>  Document Conventions</a>
+     <a href="#intro"><span class="secno">1</span>
+     Introduction</a>
+     <ul>
+      <li><a href="#conventions"><span class="secno">1.1</span>
+      Document Conventions</a>
+     </ul>
+    <li>
+     <a href="#conventions"><span class="secno">2</span>
+     Features of the New Style Sheet</a>
+     <ul>
+      <li><a href="#boxes"><span class="secno">2.1</span>
+      Special Boxes</a>
+       <ul>
+        <li><a href="#def"><span class="secno">2.1.1</span>
+        Definition Boxes</a>
+        <li><a href="#note"><span class="secno">2.1.2</span>
+        Note Boxes</a>
+        <li><a href="#example"><span class="secno">2.1.3</span>
+        Example Boxes</a>
+        <li><a href="#issue"><span class="secno">2.1.4</span>
+        Issue Boxes</a>
+        <li><a href="#advisement"><span class="secno">2.1.5</span>
+        Advisement Boxes</a>
+        <li><a href="#obsolete"><span class="secno">2.1.5</span>
+        Annoying Spec Obsoletion Boxes</a>
+       </ul>
+      <li><a href="#structural"><span class="secno">2.2</span>
+      Structural Markup</a>
+      <ul>
+        <li><a href="#figure"><span class="secno">2.2.1</span>
+        Figures and Captions</a>
+        <li><a href="#table"><span class="secno">2.2.2</span>
+        Data Tables</a>
+        <li><a href="#switch"><span class="secno">2.2.3</span>
+        Switch Statements</a>
+        <li><a href="#algorithm"><span class="secno">2.1.4</span>
+        Algorithm Lists</a>
+        <li><a href="#advisement"><span class="secno">2.1.5</span>
+        Advisement Boxes</a>
+        <li><a href="#change"><span class="secno">2.1.6</span>
+        Change Marks</a>
+        <li><a href="#inline"><span class="secno">2.1.7</span>
+        Recommended Inline Markup</a>
+       </ul>
      </ul>
     <li>
      <a href="#css"><span class="secno">7</span>  Sample CSS Section</a>
@@ -116,7 +157,24 @@ body {
   <main>
 <h2 id="intro">
 <span class="secno">1. </span> Introduction</h2>
-   <p>This document shows off some of our specification styling.
+  
+  <p>This document shows off some of our specification styling,
+  and describes some of the features of the style sheet.
+
+  <p>If you have a problem using the W3C specification style shet,
+  and it is
+
+  <dl class="switch">
+    <dt>A bug in the style sheet, which should definitely be fixed
+    <dt>A stylistic preference, on which reasonable people can disagree
+    <dd>Report this to the style sheet maintainer, and help us fix it site-wide.
+    <dt>A styling need which is particular to specifications of your technology
+      (e.g. distinction between certain classes of <code>&lt;code></code> elements).
+    <dd>Fix it in a WG-wide style sheet
+    <dt>A styling need which is local to the current construction (e.g. the particular contents of this table need different alignment)
+    <dt>Fix it in a document-specific style sheet.
+  </dl>
+
 <h3 id="conventions">
 <span class="secno">1.1 </span>Document conventions</h3>
   <p>Conformance requirements are expressed with a combination of
@@ -155,7 +213,163 @@ body {
     <code>&lt;tbody&gt;</code> for row groups,
     <code>&lt;th scope=row&gt;</code> for row header cells,
     and <code>&lt;colgroup&gt;</code> for column groups.
-    For example,
+
+<h2 id="conventions">
+<span class="secno">2. </span> Features of the New Style Sheet</h2>
+
+<h3 id="boxes">
+<span class="secno">2.1 </span> Special Boxes</h3>
+
+<h4 id="def">
+<span class="secno">2.1.1 </span> Definition Boxes</h2>
+
+  <p>The <code>.def</code> class is used to distinguish definition boxes,
+  e.g. for WebIDL boxes defining an interface,
+  for CSS property definition tables,
+  for HTML element property <code>&lt;dl></code>s,
+  etc. It can be applied to <code>&lt;table></code>, <code>&lt;pre></code>, or <code>&lt;dl></code>.
+
+   <table class="propdef def">
+    <tbody>
+     <tr>
+      <th>Name:
+      <td><dfn class="css" id="propdef-text-align">text-align</dfn>
+     <tr>
+      <th><a href="#values">Value</a>: 
+      <td>start | end | left | right | center | justify
+     <tr>
+      <th>Initial:
+      <td>start
+     <tr>
+      <th>Applies to:
+      <td>block containers
+     <tr>
+      <th>Inherited:
+      <td>yes
+     <tr>
+      <th>Percentages:
+      <td>N/A
+     <tr>
+      <th>Media:
+      <td>visual
+     <tr>
+      <th>Computed value:
+      <td>specified value, except for <a class="css" href="#valdef-text-align-match-parent">match-parent</a> which computes as defined below
+     <tr>
+      <th>Animatable: 
+      <td>no 
+     <tr>
+      <th>Canonical order: 
+      <td>N/A 
+   </table>
+
+<h4 id="note">
+<span class="secno">2.1.1 </span> Note Boxes</h2>
+
+  <p>The <code>.note</code> class is used to distinguish non-normative notes.
+  
+  <p class="note">
+    <span class="marker">Note:</span>
+    This is a non-normative note.
+    The style sheet allows the document to include a rule for auto-generating the "Note" marker
+    in CSS, but due to bugs in browser implementations,
+    it's recommended to include that text in the document,
+    using <code>class=marker</code>.
+  </p>
+  
+  <p>This class is currently valid on <code>&lt;aside></code>, <code>&lt;details></code>, <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;span></code>.
+  <span class="note">Note, here is an example of an inline note.</span>.
+
+<h4 id="example">
+<span class="secno">2.1.2 </span> Example Boxes</h2>
+
+  <p>The <code>.example</code> class is used to distinguish non-normative examples.
+  
+  <p class="example">
+    <span class="marker">Example 2:</span>
+    This is a non-normative example.
+    The style sheet allows the document to include a rule for auto-generating the "Example #" marker
+    in CSS, but due to bugs in browser implementations,
+    it's recommended to include that text in the document,
+    using <code>class=marker</code>.
+  </p>
+
+<h4 id="issue">
+<span class="secno">2.1.3 </span> Issue Boxes</h2>
+
+  <p>The <code>.issue</code> class is used to distinguish open issues.
+  
+  <p class="issue">
+    <span class="marker">Issue 3:</span>
+    This is an issue.
+    The style sheet allows the document to include a rule for auto-generating the "Issue #" marker
+    in CSS, but due to bugs in browser implementations,
+    it's recommended to include that text in the document,
+    using <code>class=marker</code>.
+  </p>
+
+  <p>This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;span></code>.
+  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
+
+
+<h4 id="advisement">
+<span class="secno">2.1.4 </span> Advisement Boxes</h2>
+
+  <p>The <code>.advisement</code> class is used to highlight important normative statements,
+  such as best practices.
+  
+  <p class="issue">
+    <span class="marker">Best Practice 4:</span>
+    Use semantic markup.
+  </p>
+
+  <p>This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;strong></code>.
+  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
+
+<h4 id="obsolete">
+<span class="secno">2.1.5 </span> Annoying Spec Obsoletion Warning Boxes</h2>
+
+  <p>The <code>.annoying-warning</code> is for spec obsoletion notices.
+  They're a bit scary, and should only occur once per spec.
+
+<h3 id="structural">
+<span class="secno">2.2</span> Structural Markup</h3>
+
+<h4 id="figure">
+<span class="secno">2.2.1</span> Figures and Captions</h3>
+
+  <p>The <code>&lt;figure></code> and <code>&lt;figcaption></code> elements
+  have special styling.
+  
+  <figure>
+    <p><img src="http://drafts.csswg.org/css-writing-modes/diagrams/text-flow-vectors-tb.png">
+    <figcaption><span class="marker">Figure 2.2.1</span> This is a diagram showing off how diagrams render.
+  </figure>
+  
+  <p>The style sheet allows the document to include a rule for auto-generating the "Figure #" marker
+  in CSS, but due to bugs in browser implementations,
+  it's recommended to include that text in the document,
+  using <code>class=marker</code>.
+
+  <p>Spec editors may override styling for <code>&lt;figure&gt;</code> and its image as necessary to fit them into the appropriate layout contexts;
+  however if there are problems with caption styling it is recommended instead to <a href="https://github.com/w3c/tr-design/issues">report them to the style sheet owner</a> for fixing everywhere.
+
+<h4 id="table">
+<span class="secno">2.2.2</span> Data Tables</h3>
+
+  <p>The <code>data</code> class on tables automatically styles data tables
+  with borders, padding, and alignment
+  based on the appropriate use of
+  <ul>
+    <li><code>&lt;caption></code> (table caption)
+    <li><code>&lt;colgroup></code> (column groups)
+    <li><code>&lt;thead></code> (table header group)
+    <li><code>&lt;tbody></code> (table row groups)
+    <li><code>&lt;th></code> (table header cell, vs. table data cell <code>&lt;td></code>)
+    <li><code>scope</code> attribute on <code>&lt;th></code>
+  </ul>
+
+  <p>Example:
 
   <table class="data">
     <caption>Summary of <code class="css">white-space</code> property</caption>
@@ -198,125 +412,112 @@ body {
       <td>Preserve
       <td>Collapse
       <td>Wrap
-   </table>
+  </table>
 
-<h2 id="conventions">
-<span class="secno">2. </span> Features of the New Style Sheet</h2>
+  <p>Spec editors are <em>strongly advised</em> to explore the use of strong, accessible table markup
+  before customizing any table styling,
+  however are encouraged to override the default text alignment when appropriate to the contents of the table.
 
-<h3 id="boxes">
-<span class="secno">2.1 </span> Special Boxes</h3>
+<h4 id="switch">
+<span class="secno">2.2.3</span> Switch Statements</h3>
 
-<h4 id="def">
-<span class="secno">2.1.1 </span> Definition Boxes</h2>
-
-  The <code>.def</code> class is used to distinguish definition boxes,
-  e.g. for WebIDL boxes defining an interface,
-  for CSS property definition tables,
-  for HTML element property <code>&lt;dl></code>s,
-  etc. It can be applied to <code>&lt;table></code>, <code>&lt;pre></code>, or <code>&lt;dl></code>.
-
-   <table class="propdef def">
-    <tbody>
-     <tr>
-      <th>Name:
-      <td><dfn class="css" id="propdef-text-align">text-align</dfn>
-     <tr>
-      <th><a href="#values">Value</a>: 
-      <td>start | end | left | right | center | justify
-     <tr>
-      <th>Initial:
-      <td>start
-     <tr>
-      <th>Applies to:
-      <td>block containers
-     <tr>
-      <th>Inherited:
-      <td>yes
-     <tr>
-      <th>Percentages:
-      <td>N/A
-     <tr>
-      <th>Media:
-      <td>visual
-     <tr>
-      <th>Computed value:
-      <td>specified value, except for <a class="css" href="#valdef-text-align-match-parent">match-parent</a> which computes as defined below
-     <tr>
-      <th>Animatable: 
-      <td>no 
-     <tr>
-      <th>Canonical order: 
-      <td>N/A 
-   </table>
-
-<h4 id="def">
-<span class="secno">2.1.1 </span> Note Boxes</h2>
-
-  The <code>.note</code> class is used to distinguish non-normative notes.
+  <p>The <code>switch</code> class on <code>&lt;dl></code> elements
+  is used to provide more appropriate styling for <code>&lt;dl></code> lists
+  that are used as switch statements.
   
-  <p class="note">
-    <span class="marker">Note:</span>
-    This is a non-normative note.
-    The style sheet allows the document to include a rule for auto-generating the "Note" marker
-    in CSS, but due to bugs in browser implementations,
-    it's recommended to include that text in the document,
-    using <code>class=marker</code>.
-  </p>
+  <p>For example, if you are using a <code>&lt;dl></code> for:
   
-  This class is currently valid on <code>&lt;aside></code>, <code>&lt;details></code>, <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;span></code>.
-  <span class="note">Note, here is an example of an inline note.</span>.
-
-<h4 id="def">
-<span class="secno">2.1.2 </span> Example Boxes</h2>
-
-  The <code>.example</code> class is used to distinguish non-normative examples.
+  <dl class="switch">
+    <dt>A list of definitions
+    <dd>Use <code>&lt;dfn></code> (defining instance)
+      around the term (or entity name) in the <code>&lt;dt></code> element,
+      and put the definition in the <code>&lt;dd></code>.
+      Don't use <code>class=switch</code>
   
-  <p class="example">
-    <span class="marker">Example 2:</span>
-    This is a non-normative example.
-    The style sheet allows the document to include a rule for auto-generating the "Example #" marker
-    in CSS, but due to bugs in browser implementations,
-    it's recommended to include that text in the document,
-    using <code>class=marker</code>.
-  </p>
+    <dt>A branched choice in your technology
+      <dd>Use <code>class=switch</code> on this <code>&lt;dl></code> to provide extra styling
+        that highlights this semantic variant of <code>&lt;dl></code>s,
+        if that would help the readability of your document.
 
-<h4 id="def">
-<span class="secno">2.1.3 </span> Issue Boxes</h2>
+    <dt>Otherwise
+      <dd>Don't use the <code>switch</code> class on this <code>&lt;dl></code>,
+      or <code>&lt;dfn></code> on the contents of the <code>&lt;dt></code> elements.
+      Do consider, however, whether the <code>&lt;d></code> elements would be better off
+      as headings.
+  </dl>
 
-  The <code>.issue</code> class is used to distinguish open issues.
+<h4 id="algorithm">
+<span class="secno">2.2.4</span> Algorithm Lists</h3>
+
+  <p>The <code>algorithm</code> class on <code>&lt;ol></code> elements
+  is used to provide more appropriate styling for deeply-nested ordered lists
+  that are used in complex algorithm procedures.
   
-  <p class="issue">
-    <span class="marker">Issue 3:</span>
-    This is an issue.
-    The style sheet allows the document to include a rule for auto-generating the "Issue #" marker
-    in CSS, but due to bugs in browser implementations,
-    it's recommended to include that text in the document,
-    using <code>class=marker</code>.
-  </p>
-
-  This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;span></code>.
-  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
-
-
-<h4 id="def">
-<span class="secno">2.1.4 </span> Advisement Boxes</h2>
-
-  The <code>.advisement</code> class is used to highlight important normative statements,
-  such as best practices.
+  <p>For example, in order to publish a document using the old publication process, you had to
   
-  <p class="issue">
-    <span class="marker">Best Practice 4:</span>
-    Use semantic markup.
-  </p>
+  <ol class="algorithm">
+    <li>Make sure it is up-to-date with WG resolutions
+    <li>Request a WG resolution to publish
+    <li>Ensure the spec satisfies pubrules:
+      <ol>
+        <li>Validate the HTML
+        <li>Validate the CSS
+        <li>Check for broken links
+        <li>Run the pubrules checker to ensure the template is correct
+      </ol>
+    <li>Send a message to webreq requesting permission to publish including:
+      <ul>
+        <li>A proposed date to publish (either Tuesday or Thursday)
+        <li>A link to the minuted resolution to publish
+        <li>A zipped copy of the specification
+      </ul>
+    <li>Wait for the publication
+    <li>Announce the publication to your group. In the CSSWG, this meant
+      <ol>
+        <li>Send a message to www-style
+        <li>Write blog post on the CSSWG blog
+        <li>Link the blog post from the CSSWG Twitter account
+      </ol>
+  </ol>
 
-  This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;strong></code>.
-  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
+<h4 id="change">
+<span class="secno">2.2.5</span> Change Marks (<code>ins</code>/<code>del</code>)</h3>
 
-<h4 id="def">
-<span class="secno">2.1.5 </span> Annoying Spec Obsoletion Warning Boxes</h2>
+  <p>The style sheet also includes styling for <ins>insertions</ins>
+  and <del>deletions</del> using the standard
+  <code>&lt;ins></code> and <code>&lt;del></code> elements.
 
-  The <code>.annoying-warning</code> is for spec obsoletion notices.
-  They're a bit scary, and should only occur once per spec.
+<h4 id="inline">
+<span class="secno">2.2.6</span> Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<code>code</code>/<code>em</code>/<code>strong</code>)</h3>
+
+  <p>It is strongly recommended to use the HTML semantic classes
+  for their intended purposes, particularly <code>dfn</code>,
+  which should always be accompanied by an <code>id</code>
+  for improved spec cross-linking.
+
+  <p>For those less familiar with HTML's inline semantics, the
+  following elements are commonly used in specifications:
+
+  <dl>
+    <dt><code>dfn</code>
+    <dd>For the definiting instance of a term. Always add an <code>id</code>.
+    <dt><code>var</code>
+    <dd>For variables
+    <dt><code>code</code>
+    <dd>For code
+      <dt><code>samp</code>
+    <dd>For output
+    <dt><code>em</code>
+    <dd>For stress emphasis within a sentence.
+  </dl>
+  
+  <p>It is expected that spec editors may need to subclass these elements
+  to make finer distinctions between, e.g. different types of code snippets.
+  A future revision of the site-wide styles may incorporate some of the more
+  common distinctions.
+  
+  <p class="note">The rest of this document is snippets of various specifications,
+  to compare styling.
 
 <h2 id="justification">
 <span class="secno">7. </span> Sample CSS Section</h2>
@@ -545,7 +746,7 @@ body {
           using <a class="css" href="#valdef-text-justify-inter-word">inter-word</a> for German,
           etc. </p>
      <div class="figure" id="fig-text-justify-cursive">
-      <p> <img alt="Two lines of calligraphic Arabic end together due to a mix of compressed and swash forms." src="images/text-justify-cursive.png" title="Swash forms elongate the first line while a compressed contextual ligature shortens the second, allowing both to end precisely together."></p>
+      <p> <img alt="Two lines of calligraphic Arabic end together due to a mix of compressed and swash forms." src="http://www.w3.org/TR/css-text-3/text-justify-cursive.png" title="Swash forms elongate the first line while a compressed contextual ligature shortens the second, allowing both to end precisely together."></p>
       <p class="caption">An example of cursively-justified Arabic text,
           rendered by <a href="http://www.decotype.com/">Tasmeem</a>.
           Like English, Arabic can be justified by adjusting the spacing between words,
@@ -558,7 +759,7 @@ body {
           However, this is by its nature a very script-specific effect. </p>
      </div>
      <div class="figure" id="fig-text-justify-compromise">
-      <p> <img alt="Extra space is partly to spaces and partly among CJK and Thai letters." src="images/text-justify-compromise.png"></p>
+      <p> <img alt="Extra space is partly to spaces and partly among CJK and Thai letters." src="http://www.w3.org/TR/css-text-3/text-justify-compromise.png"></p>
       <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: auto</a>:
             this interpretation uses a universal-compromise justification method,
             expanding at spaces as well as between CJK and Southeast Asian letters.
@@ -571,7 +772,7 @@ body {
     <dd>
      Justification is disabled: there are no <a href="#justification-opportunity">justification opportunities</a> within the text. 
      <div class="figure" id="fig-text-justify-none">
-      <p> <img alt="No extra space is insesrted." src="images/text-justify-none.png"></p>
+      <p> <img alt="No extra space is insesrted." src="http://www.w3.org/TR/css-text-3/text-justify-none.png"></p>
       <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: none</a> </p>
      </div>
      <p class="note" role="note">This value is intended for use in user stylesheets
@@ -583,7 +784,7 @@ body {
           This behavior is typical for languages that separate words using spaces,
           like English or Korean. 
      <div class="figure" id="fig-text-justify-interword">
-      <p> <img alt="Extra space is equally distributed mainly to spaces." src="images/text-justify-interword.png"></p>
+      <p> <img alt="Extra space is equally distributed mainly to spaces." src="http://www.w3.org/TR/css-text-3/text-justify-interword.png"></p>
       <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: inter-word</a> </p>
      </div>
     <dt><dfn class="css" id="valdef-text-justify-inter-character">inter-character</dfn>
@@ -591,7 +792,7 @@ body {
      Justification adjusts spacing between each pair of adjacent <a href="#typographic-character-unit">typographic character units</a> (effectively varying the used <a class="property" href="#propdef-letter-spacing">letter-spacing</a> on the line).
           This value is sometimes used in East Asian systems such as Japanese. 
      <div class="figure" id="fig-text-justify-distribute">
-      <p> <img alt="Extra space is equally distributed at points between spaces and letters of all writing systems." src="images/text-justify-distribute.png"></p>
+      <p> <img alt="Extra space is equally distributed at points between spaces and letters of all writing systems." src="http://www.w3.org/TR/css-text-3/text-justify-distribute.png"></p>
       <p class="caption">Mixed-script text with <a class="css" href="#propdef-text-justify">text-justify: inter-character</a> </p>
      </div>
       For legacy reasons, UAs must also support the alternate keyword <dfn class="css" id="valdef-text-justify-distribute">distribute</dfn> with the exact same meaning and behavior. 
@@ -673,11 +874,11 @@ body {
      
     <p>The following are examples of unacceptable justification: </p>
     <div class="figure">
-     <p><img alt="" src="images/arabic-stretch-spaced.png"> </p>
+     <p><img alt="" src="http://www.w3.org/TR/css-text-3/arabic-stretch-spaced.png"> </p>
      <p class="caption">Adding gaps between every pair of Arabic letters </p>
     </div>
     <div class="figure">
-     <p><img alt="" src="images/arabic-stretch-unjoined.png"> </p>
+     <p><img alt="" src="http://www.w3.org/TR/css-text-3/arabic-stretch-unjoined.png"> </p>
      <p class="caption">Adding gaps between every pair of unjoined Arabic letters </p>
     </div>
    </div>

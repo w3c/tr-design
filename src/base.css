@@ -43,9 +43,9 @@
  *   - ::before styled for CSS-generated issue/example/figure numbers:
  *     -> Documents wishing to use this only need to add
  *        figcaption::before,
- *        .caption::before { content: "Figure " counter(figure);   }
+ *        .caption::before { content: "Figure "  counter(figure);  }
  *        .example::before { content: "Example " counter(example); }
-  *       .issue::before   { content: "Issue " counter(issue);     }
+ *        .issue::before   { content: "Issue "   counter(issue);   }
  * 
  * Header Stuff (ignore, just don't conflict with these classes)
  *   - .head for the header
