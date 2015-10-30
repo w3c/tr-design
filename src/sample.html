@@ -120,6 +120,18 @@ body {
         <li><a href="#inline"><span class="secno">2.1.7</span>
         Recommended Inline Markup</a>
        </ul>
+      <li><a href="#indexing"><span class="secno">2.3</span>
+      Indexing</a>
+      <ul>
+        <li><a href="#index-toc"><span class="secno">2.3.1</span>
+        Table of Contents</a>
+        <li><a href="#index-lists"><span class="secno">2.3.2</span>
+        Index Lists</a>
+        <li><a href="#index-tables"><span class="secno">2.3.3</span>
+        Switch Statements</a>
+        <li><a href="#numbering"><span class="secno">2.3.4</span>
+        Section Numbers and Anchoring</a>
+       </ul>
      </ul>
     <li>
      <a href="#css"><span class="secno">7</span>  Sample CSS Section</a>
@@ -318,13 +330,13 @@ body {
   <p>The <code>.advisement</code> class is used to highlight important normative statements,
   such as best practices.
   
-  <p class="issue">
+  <p class="advisement">
     <span class="marker">Best Practice 4:</span>
     Use semantic markup.
   </p>
 
   <p>This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;strong></code>.
-  <span class="issue"><span class="marker">Issue 4:</span> Here is an example of an inline issue.</span>.
+  <strong class="advisement">This is a <code>&lt;strong class="advisement"></code> normative statement.</strong>
 
 <h4 id="obsolete">
 <span class="secno">2.1.5 </span> Annoying Spec Obsoletion Warning Boxes</h2>
@@ -518,6 +530,51 @@ body {
   
   <p class="note">The rest of this document is snippets of various specifications,
   to compare styling.
+
+<h2 id="indexing"><span class="secno">2.3</span>
+Indexing</h2>
+
+  <p>Since specs commonly have navigation aids like a table of contents and indexes,
+  the stylesheet also provides <code>toc</code> and <code>index</code> classes for these.
+
+<h3 id="index-toc"><span class="secno">2.3.1</span>
+Table of Contents</h3>
+
+  <p>Each document <em>must</em> include a table of contents
+  using <code>&lt;ol class="toc"></code> and wrapped in a <code>&lt;nav id="toc"></code> element.
+  The markup structure looks like this:
+  
+  <pre>
+<!-- -->&lt;nav id="toc">
+<!-- -->  &lt;h2>Table of Contents&lt;/h2>
+<!-- -->  &lt;ol class="toc">
+<!-- -->    &lt;li>&lt;span class="secno">1.&lt;/span> Introduction
+<!-- -->    &lt;li>&hellip;
+<!-- -->  &lt;/ol>
+<!-- -->&lt;/nav></pre>
+
+<h3 id="index-lists"><span class="secno">2.3.2</span>
+Index Lists</h3>
+
+  <p>Special styling is provided for lists (<code>&lt;ul></code>, <code>&lt;ol></code>)
+  through the <code>index</code> class (<code>&lt;ul class="index"></code>).
+
+<h3 id="index-tables"><span class="secno">2.3.3</span>
+Index Tables</h3>
+
+  <p>Special styling is also provided for index tables
+  (such as for properties, elements, attributes, etc)
+  through the <code>index</code> class (<code>&lt;table class="index"></code>).
+
+<h3 id="numbering"><span class="secno">2.3.4</span>
+Section Numbers and Anchoring</h3>
+
+  <p>Section numbers in table headings should be marked up with <code>class="secno"</code>.
+  These are not styled currently, but might be in the future.
+  As aforementioned, however, the <a href="#index-toc">table of contents</a>
+  <em>must</em> have its numbers marked up with <code>class="secno"</code>.
+  
+  <p class="issue">Insert styling info on section anchors (as in Bikeshed-generated specs).
 
 <h2 id="justification">
 <span class="secno">7. </span> Sample CSS Section</h2>
