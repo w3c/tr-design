@@ -245,7 +245,7 @@
 		background: transparent;
 	}
 	hr:not([title])::before {
-		content: "\1F411\2003\2003\1F411\2003\2003\1F411"; /* Pick a better character */
+		content: "\2727\2003\2003\2727\2003\2003\2727";
 	}
 	/* note: <hr> with title separates document header from contents */
 
