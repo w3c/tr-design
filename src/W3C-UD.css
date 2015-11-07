@@ -1,0 +1,13 @@
+
+/* Style for an "Unofficial Draft" */
+
+@import "base.css";
+
+body {
+  background-image: url(logos/UD);
+  background-color: transparent;
+}
+
+html {
+  background: white url(logos/UD-watermark);
+}
