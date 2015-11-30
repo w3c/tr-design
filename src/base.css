@@ -72,6 +72,8 @@
 		/* Typography */
 		line-height: 1.5;
 		font-family: sans-serif;
+		widows: 2;
+		orphans: 2;
 
 		/* Colors */
 		color: black;
@@ -200,6 +202,7 @@
 
 	h1, h2, h3, h4, h5, h6, dt {
 		page-break-after: avoid;
+		page-break-inside: avoid;
 		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
 		font-family: inherit;    /* Inherit the font family. */
 		line-height: 1.2;        /* Keep wrapped headings compact */
