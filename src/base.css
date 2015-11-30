@@ -49,9 +49,7 @@
  * 
  * Header Stuff (ignore, just don't conflict with these classes)
  *   - .head for the header
- *   - hr[title] for the separator
  *   - .copyright for the copyright
- *   - .logo for the W3C logo
  * 
  ******************************************************************************/
 
@@ -415,7 +413,7 @@
 	}
 
 	/* Backout above styling for W3C logo and TOC */
-	a[href].logo,
+	.head > p:first-child > a,
 	.toc a[href] {
 		border: none;
 		text-decoration: none;
