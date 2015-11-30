@@ -443,6 +443,7 @@
 
 	figure, div.figure, div.sidefigure {
 		page-break-inside: avoid;
+		text-align: center;
 	}
 
 	div.figure, p.figure, div.sidefigure, figure {
@@ -464,12 +465,9 @@
 	}
 	div.figure img, div.sidefigure img, figure img,
 	div.figure object, div.sidefigure object, figure object {
-		display: block;
-		margin: auto;
 		max-width: 100%
 	}
 	p.caption, figcaption, caption {
-		text-align: center;
 		font-style: italic;
 		font-size: 90%;
 	}
