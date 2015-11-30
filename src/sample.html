@@ -170,7 +170,7 @@ body {
   </nav>
   <main>
 <h2 id="intro">
-<span class="secno">1. </span> Introduction</h2>
+<span class="secno">1 </span> Introduction</h2>
   
   <p>This document shows off some of our specification styling,
   and describes some of the features of the style sheet.
@@ -229,7 +229,7 @@ body {
     and <code>&lt;colgroup&gt;</code> for column groups.
 
 <h2 id="conventions">
-<span class="secno">2. </span> Features of the New Style Sheet</h2>
+<span class="secno">2 </span> Features of the New Style Sheet</h2>
 
 <h3 id="boxes">
 <span class="secno">2.1 </span> Special Boxes</h3>
@@ -579,9 +579,9 @@ Section Numbers and Anchoring</h3>
   <p class="issue">Insert styling info on section anchors (as in Bikeshed-generated specs).
 
 <h2 id="css">
-<span class="secno">7. </span> Sample CSS Section</h2>
+<span class="secno">7 </span> Sample CSS Section</h2>
    <p>Alignment and justification controls how inline content is distributed within a line box. </p>
-   <h3 id="text-align-property"><span class="secno">7.1. </span> Text Alignment: the <a class="property" href="#propdef-text-align">text-align</a> shorthand</h3>
+   <h3 id="text-align-property"><span class="secno">7.1 </span> Text Alignment: the <a class="property" href="#propdef-text-align">text-align</a> shorthand</h3>
    <table class="propdef def">
     <tbody>
      <tr>
@@ -668,7 +668,7 @@ Section Numbers and Anchoring</h3>
       then the contents are <a href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a>-aligned:
       any content that doesn’t fit overflows the line box’s <a href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edge. </p>
    <p>See <a href="#bidi-linebox">Bidirectionality and line boxes</a> for details on how to determine the <a href="https://drafts.csswg.org/css-writing-modes-3/#start">start</a> and <a href="https://drafts.csswg.org/css-writing-modes-3/#end">end</a> edges of a line box. </p>
-   <h3 id="text-align-all-property"><span class="secno">7.2. </span> Default Text Alignment: the <a class="property" href="#propdef-text-align-all">text-align-all</a> property</h3>
+   <h3 id="text-align-all-property"><span class="secno">7.2 </span> Default Text Alignment: the <a class="property" href="#propdef-text-align-all">text-align-all</a> property</h3>
    <table class="propdef def">
     <tbody>
      <tr>
@@ -707,7 +707,7 @@ Section Numbers and Anchoring</h3>
     except for last lines overridden by a non-<a class="css" href="#valdef-text-align-last-auto">auto</a> value of <a class="property" href="#propdef-text-align-last">text-align-last</a>.
     See <a class="property" href="#propdef-text-align">text-align</a> for a full description of values. </p>
    <p class="advisement"> Authors should use the <a class="property" href="#propdef-text-align">text-align</a> shorthand instead of this property. </p>
-   <h3 id="text-align-last-property"><span class="secno">7.3. </span> Last Line Alignment: the <a class="property" href="#propdef-text-align-last">text-align-last</a> property</h3>
+   <h3 id="text-align-last-property"><span class="secno">7.3 </span> Last Line Alignment: the <a class="property" href="#propdef-text-align-last">text-align-last</a> property</h3>
    <table class="propdef def">
     <tbody>
      <tr>
@@ -749,7 +749,7 @@ Section Numbers and Anchoring</h3>
       content on the affected line is aligned per <a class="property" href="#propdef-text-align">text-align</a> unless <a class="property" href="#propdef-text-align">text-align</a> is set to <a class="css" href="#valdef-text-align-justify">justify</a>,
       in which case it is start-aligned.
       All other values have the same meanings as in <a class="property" href="#propdef-text-align">text-align</a>. </p>
-   <h3 id="text-justify-property"><span class="secno">7.4. </span> Justification Method: the <a class="property" href="#propdef-text-justify">text-justify</a> property</h3>
+   <h3 id="text-justify-property"><span class="secno">7.4 </span> Justification Method: the <a class="property" href="#propdef-text-justify">text-justify</a> property</h3>
    <table class="propdef def">
     <tbody>
      <tr>
@@ -860,7 +860,7 @@ Section Numbers and Anchoring</h3>
       authors should correctly language-tag their content for the best results. </p>
    <p>The exact justification algorithm is UA-dependent;
       however, CSS provides some general guidelines below. </p>
-   <h4 id="expanding-text"><span class="secno">7.4.1. </span> Expanding and Compressing Text</h4>
+   <h4 id="expanding-text"><span class="secno">7.4.1 </span> Expanding and Compressing Text</h4>
    <p>When justifying text, the user agent takes the remaining space between
     the ends of a line’s contents and the edges of its line box, and
     distributes that space throughout its contents so that the contents
@@ -895,7 +895,7 @@ Section Numbers and Anchoring</h3>
   This behavior is not controlled by this level of CSS.
   However, UAs <em>must not</em> break required ligatures
   or otherwise disable features required to correctly shape complex scripts. </p>
-   <h4 id="justify-symbols"><span class="secno">7.4.2. </span> Handling Symbols and Punctuation</h4>
+   <h4 id="justify-symbols"><span class="secno">7.4.2 </span> Handling Symbols and Punctuation</h4>
    <p>When determining <a href="#justification-opportunity">justification opportunities</a>,
       a <a href="#typographic-character-unit">typographic character unit</a> from the Unicode Symbols (S*) and Punctuation (P*) classes
       is generally treated the same as a <a href="#typographic-letter-unit">typographic letter unit</a> of the same script
@@ -918,13 +918,13 @@ Section Numbers and Anchoring</h3>
       are considered to contain a <a href="#justification-opportunity">justification opportunity</a> in Japanese.
       The UA might therefore assign these characters to a higher prioritization
       level than the opportunities between ideographic characters. </p>
-   <h4 id="justify-limits"><span class="secno">7.4.3. </span> Unexpandable Text</h4>
+   <h4 id="justify-limits"><span class="secno">7.4.3 </span> Unexpandable Text</h4>
    <p>If the inline contents of a line cannot be stretched to the full width of the line box,
       then they must be aligned as specified by the <a class="property" href="#propdef-text-align-last">text-align-last</a> property.
       (If <a class="property" href="#propdef-text-align-last">text-align-last</a> is <a class="css" href="#valdef-text-align-justify">justify</a>, then
        they must be aligned as for <a class="css" href="#valdef-text-align-center">center</a> if <a class="property" href="#propdef-text-justify">text-justify</a> is <a class="css" href="#valdef-text-justify-inter-character">inter-character</a>,
        and as <a class="css" href="#valdef-text-align-start">start</a> otherwise.) </p>
-   <h4 id="justify-cursive"><span class="secno">7.4.4. </span> Cursive Scripts</h4>
+   <h4 id="justify-cursive"><span class="secno">7.4.4 </span> Cursive Scripts</h4>
    <p>Justification <em>must not</em> introduce gaps between the joined <a href="#typographic-letter-unit">typographic letter units</a> of <a href="#cursive-script">cursive scripts</a> such as Arabic.
       If it is able, the UA <em>may</em> translate space distributed to <a href="#justification-opportunity">justification opportunities</a> within a run of such <a href="#typographic-letter-unit">typographic letter units</a> into some form of cursive elongation for that run.
       It otherwise <em>must</em> assume that no <a href="#justification-opportunity">justification opportunity</a> exists
@@ -945,7 +945,7 @@ Section Numbers and Anchoring</h3>
     A UA that performs tatweel-based justification must properly handle the rules for its use.
     Note that correct insertion of tatweel characters depends on context, including
     the letter-combinations involved, location within the word, and location of the word within the line. </p>
-   <h4 id="justify-algos"><span class="secno">7.4.5. </span> Possible Algorithms</h4>
+   <h4 id="justify-algos"><span class="secno">7.4.5 </span> Possible Algorithms</h4>
    <p>For <a class="css" href="#valdef-text-justify-auto">auto</a> justification, this specification does not define
   what all of the <a href="#justification-opportunity">justification opportunities</a> are,
   how they are prioritized, or
