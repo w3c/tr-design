@@ -387,44 +387,32 @@
 	a[href] {
 		color: inherit;
 		text-decoration: none;
-		border-bottom: 1px solid silver;
+		border-bottom: 0.1em solid silver;
+		padding: 0.1em 0.1em 0;
+		margin: -0.1em -0.1em 0;
 	}
-
-	@supports (box-shadow: 0 0 red inset) {
-		a[href] {
-			border-bottom: none;
-			box-shadow: 0 -.05em hsla(203, 80%, 50%,.3) inset;
-			transition: 200ms;
-			transition-property: box-shadow, background;
-		}
+	a:visited {
+		border-bottom-color: gray;
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
-	/* Issue: This style is kindof awful. Pick something better. */
 	a[href]:focus,
 	a[href]:hover {
-		background-color: hsla(203, 80%, 50%,.05);
-		box-shadow: 0 -.2em hsla(203, 80%, 50%,.2) inset, 
-		            0  .1em hsla(203, 80%, 50%,.2);
+		background-color: #f8f8f8;
+		background-color: rgba(75%, 75%, 75%, .25);
+		border-width: 0.2em;
 	}
-
 	a[href]:active {
 		color: #C00;
+		border-color: #C00;
 	}
 
 	/* Backout above styling for W3C logo and TOC */
 	.head > p:first-child > a,
-	.toc a[href] {
+	.toc a[href]:not(:hover):not(:focus) {
 		border: none;
 		text-decoration: none;
 		box-shadow: none;
-	}
-
-	/* Special styling for properties */
-	a.property {
-		padding-bottom: .1em; /* align underline with the rest of the text */
-		font-weight: bold;
-		color: hsla(203, 90%, 30%,.8);
 	}
 
 /******************************************************************************/
@@ -807,7 +795,7 @@
 	.toc > li          { margin: 1.2em 0; font-weight: bold;   }
 	.toc > li li       { margin: 0; font-weight: normal; }
 	.toc > li li li    { margin-left:  2em; font-style:  italic; }
-	.toc > li li li a { padding: .2em; }
+	.toc > li li li a  { padding: .2em; }
 	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
 
 	/* Make ToC links blocks, to give a bigger, more consistent target/highlight area. */
