@@ -388,8 +388,8 @@
 		color: inherit;
 		text-decoration: none;
 		border-bottom: 0.1em solid silver;
-		padding: 0.1em 0.1em 0;
-		margin: -0.1em -0.1em 0;
+		padding: 0 0.1em 0;
+		margin: 0 -0.1em 0;
 	}
 	a:visited {
 		border-bottom-color: gray;
@@ -400,19 +400,17 @@
 	a[href]:hover {
 		background-color: #f8f8f8;
 		background-color: rgba(75%, 75%, 75%, .25);
-		border-width: 0.2em;
+		border-bottom-width: 0.2em;
 	}
 	a[href]:active {
 		color: #C00;
 		border-color: #C00;
 	}
 
-	/* Backout above styling for W3C logo and TOC */
-	.head > p:first-child > a,
-	.toc a[href]:not(:hover):not(:focus) {
+	/* Backout above styling for W3C logo */
+	.head > p:first-child > a {
 		border: none;
 		text-decoration: none;
-		box-shadow: none;
 	}
 
 /******************************************************************************/
@@ -790,17 +788,23 @@
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
-	/* Using padding on <a> instead of margins on <li> to increase hit area */
-	.toc a             { padding: .3em;   }
 	.toc > li          { margin: 1.2em 0; font-weight: bold;   }
 	.toc > li li       { margin: 0; font-weight: normal; }
 	.toc > li li li    { margin-left:  2em; font-style:  italic; }
-	.toc > li li li a  { padding: .2em; }
 	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
 
-	/* Make ToC links blocks, to give a bigger, more consistent target/highlight area. */
 	.toc a {
+		/* More spacing; use padding to make it part of the click target. */
+		padding-top: 0.1em;
+		/* Larger, more consistently-sized click target */
 		display: block;
+		/* Consistent layout across link hover effects */
+		border-bottom-style: solid;
+		border-bottom-width: 0.2em;
+	}
+	.toc a:not(:focus):not(:hover) {
+		/* Allow colors to cascade through from link styling */
+		border-bottom-color: transparent;
 	}
 
 	/* Section numbers in a column of their own */
