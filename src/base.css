@@ -86,6 +86,7 @@
 	
 
 	div.head { margin-bottom: 1em }
+	div.head hr { border-style: solid; }
 
 	div.head h1 {
 		font-weight: bold;
@@ -236,8 +237,8 @@
 	}
 
 /** Section divider ***********************************************************/
-	/* <hr> used to separate TMI into the second half of a section              */
-	hr:not([title]) {
+
+	:not(.head) > hr {
 		font-size: 1.5em;
 		text-align: center;
 		margin: 1em auto;
@@ -245,10 +246,9 @@
 		border: transparent solid 0;
 		background: transparent;
 	}
-	hr:not([title])::before {
+	:not(.head) > hr::before {
 		content: "\2727\2003\2003\2727\2003\2003\2727";
 	}
-	/* note: <hr> with title separates document header from contents */
 
 /******************************************************************************/
 /*                            Paragraphs and Lists                            */
