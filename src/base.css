@@ -865,7 +865,7 @@
 		text-align: center;
 	}
 
-	table.index tr:hover td {
+	table.index tr:hover td:not([rowspan]) {
 		background: #DEF;
 	}
 
