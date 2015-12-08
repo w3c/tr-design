@@ -63,7 +63,7 @@
 
 		/* Layout */
 		max-width: 50em;           /* limit line length to 50em for readability   */
-		margin: 0 auto;            /* center text within page                     */
+		margin: 0;                 /* start-align text within page                     */
 		padding: 1.6em 1em 2em 58px; /* assume 16px font size for downlevel clients */
 		padding: 1.6em 1em 2em calc(26px + 2em); /* leave space for status flag    */
 
