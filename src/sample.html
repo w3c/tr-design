@@ -365,8 +365,10 @@ body {
   it's recommended to include that text in the document,
   using <code>class=marker</code>.
 
-  <p>Spec editors may override styling for <code>&lt;figure&gt;</code> and its image as necessary to fit them into the appropriate layout contexts;
-  however if there are problems with caption styling it is recommended instead to <a href="https://github.com/w3c/tr-design/issues">report them to the style sheet owner</a> for fixing everywhere.
+  <p>Spec editors may override styling for <code>&lt;figure&gt;</code>
+  and its image as necessary to fit them into the appropriate layout contexts;
+  however if there are problems with caption styling it is recommended instead
+  to <a href="https://github.com/w3c/tr-design/issues">report them to the style sheet owner</a> for fixing everywhere.
 
 <h4 id="table">
 <span class="secno">2.2.2</span> Data Tables</h3>
@@ -577,6 +579,26 @@ Section Numbers and Anchoring</h3>
   <em>must</em> have its numbers marked up with <code>class="secno"</code>.
   
   <p class="issue">Insert styling info on section anchors (as in Bikeshed-generated specs).
+
+<h3 id="misc"><span class="secno">2.4</span>
+Miscellaneous</h3>
+
+<h3 id="numbering"><span class="secno">2.4.1</span>
+Overlarge Elements</h3>
+
+  <p>The style sheet currently imposes for readability a maximum measure of 50em.
+  In the case that something is too wide to fit in that space,
+  the <code>overlarge</code> class can be assigned to give it the full space of the viewport.
+
+  <p>Note that this only gives you more space if there's any to be had:
+  on narrow windows and when printing, it will not gain any extra space.
+  Please design your content to render reasonably on smaller canvases;
+  this class will not magically fix such content except on your widescreen device.
+
+  <figure>
+    <p><img class="overlarge" src="http://drafts.csswg.org/css-writing-modes/diagrams/text-flow-vectors-tb.png">
+    <figcaption><span class="marker">Figure 2.2.1</span> This is an overlarge element. It fills the viewport width.
+  </figure>
 
 <h2 id="css">
 <span class="secno">7 </span> Sample CSS Section</h2>

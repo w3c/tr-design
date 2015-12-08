@@ -51,6 +51,14 @@
  *   - .head for the header
  *   - .copyright for the copyright
  * 
+ * Miscellaneous
+ *   - .overlarge for things that should be as wide as possible, even if
+ *     that overflows the body text area. This can be used on an item or
+ *     on its container, depending on the effect desired.
+ *     Note that this styling basically doesn't help at all when printing,
+ *     since A4 paper isn't much wider than the max-width here.
+ *     It's better to design things to fit into a narrower measure if possible.
+ * 
  ******************************************************************************/
 
 
@@ -77,6 +85,11 @@
 		color: black;
 		background: white top left fixed no-repeat;
 		background-size: 25px 380px;
+	}
+
+	.overlarge {
+		width: calc(100vw - 26px - 3em);
+		max-width: none;
 	}
 
 /******************************************************************************/
@@ -178,6 +191,13 @@
 		body {
 			padding-left: 29em;
 			padding-right: 1.5em;
+		}
+		.overlarge {
+			width: calc(100vw - 30.5em);
+		}
+		div.figure img, div.sidefigure img, figure img,
+		div.figure object, div.sidefigure object, figure object {
+			max-width: calc(100vw - 30.5em);
 		}
 
 		nav#toc h2,
@@ -449,7 +469,7 @@
 	}
 	div.figure img, div.sidefigure img, figure img,
 	div.figure object, div.sidefigure object, figure object {
-		max-width: 100%
+		max-width: calc(100vw - 26px - 3em);
 	}
 	p.caption, figcaption, caption {
 		font-style: italic;
