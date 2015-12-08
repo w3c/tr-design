@@ -107,7 +107,7 @@
 			background: url("logos/w3c-white.svg") no-repeat center / contain content-box border-box;
 			padding: .4rem .7rem;
 			border-radius: .4rem;
-			margin-top: .4em;
+			margin: .4rem 0 0 .4rem;
 			background-color: hsl(208, 71%, 35%);
 		}
 
@@ -768,6 +768,43 @@
 		vertical-align: middle;
 	}
 
+
+/* 
+	a.property {
+		font-weight: bold;
+		color: hsla(203, 90%, 30%,.8);
+	}
+
+	table.data,
+	table.index {
+		text-align: center;
+	}
+
+	table.data  thead th[scope="row"],
+	table.index thead th[scope="row"] {
+		text-align: right;
+	}
+
+	table.data  tbody th:first-child,
+	table.index tbody th:first-child  {
+		text-align: right;
+	}
+
+	table.data  tbody th[rowspan]:not([rowspan='1']),
+	table.index tbody th[rowspan]:not([rowspan='1']),
+	table.data  tbody td[rowspan]:not([rowspan='1']),
+	table.index tbody td[rowspan]:not([rowspan='1']) {
+		border-left: 1px solid silver;
+	}
+
+	table.data  tbody th[rowspan]:first-child,
+	table.index tbody th[rowspan]:first-child,
+	table.data  tbody td[rowspan]:first-child,
+	table.index tbody td[rowspan]:first-child{
+		border-left: 0;
+		border-right: 1px solid silver;
+	}
+*/
 
 /******************************************************************************/
 /*                                  Indices                                   */
