@@ -205,7 +205,6 @@
 			margin-top: .8rem;
 			font-variant: small-caps;
 			font-variant: all-small-caps;
-			font-variant: all-petite-caps;
 			text-transform: lowercase;
 			font-weight: bold;
 			color: hsla(203,20%,40%,.7);
@@ -227,7 +226,7 @@
 	}
 
 	h2, h3, h4, h5, h6 {
-		margin-top: 3em;
+		margin-top: 3rem;
 	}
 
 	h1, h2, h3 {
@@ -246,7 +245,7 @@
 /** Subheadings ***************************************************************/
 
 	h1 + h2,
-	#subtitle + h2 {
+	#subtitle {
 		/* #subtitle is a subtitle in an H2 under the H1 */
 		margin-top: 0;
 	}
@@ -290,8 +289,8 @@
 	}
 
 	li {
-		margin: 0.25em 2em 0.5em 0;
-		padding-left: 0;
+		margin: 0.25em 0 0.5em;
+		padding: 0;
 	}
 
 	dl dd {
@@ -609,6 +608,9 @@
 	details {
 		display: block;
 	}
+	summary {
+		font-weight: bolder;
+	}
 
 	.annoying-warning:not(details),
 	details.annoying-warning:not([open]) > summary,
@@ -616,10 +618,15 @@
 		background: #fdd;
 		color: red;
 		font-weight: bold;
-		padding: .5em;
+		padding: .75em 1em;
 		border: thick red;
-		border-style: solid none;
+		border-style: solid;
+		border-radius: 1em;
 	}
+	.annoying-warning :last-child {
+		margin-bottom: 0;
+	}
+
 @media not print {
 	details.annoying-warning[open] {
 		position: fixed;
@@ -647,6 +654,11 @@
 /*                                    Tables                                  */
 /******************************************************************************/
 
+	th, td {
+		text-align: left;
+		text-align: start;
+	}
+
 /** Property/Descriptor Definition Tables *************************************/
 
 	table.def {
@@ -670,7 +682,6 @@
 	table.def th {
 		font-style: italic;
 		font-weight: normal;
-		width: 8.3em;
 		padding-left: 1em;
 	}
 
@@ -712,7 +723,6 @@
 		border: hidden;
 	}
 	table.data {
-		text-align: center;
 		width: auto;
 	}
 	table.data caption,
@@ -722,7 +732,7 @@
 
 	table.data td,  table.data th,
 	table.index td, table.index th {
-		padding: 0.5em;
+		padding: 0.5em 1em;
 		border-width: 1px;
 		border-color: silver;
 		border-top-style: solid;
@@ -884,7 +894,7 @@
 /** Index *********************************************************************/
 
 	/* Index Lists: Layout */
-	ul.index       { margin-left: 0; columns: 15em; -webkit-columns: 15em; text-indent: 1em hanging; }
+	ul.index       { margin-left: 0; columns: 15em; -webkit-columns: 15em; -moz-columns: 15em; text-indent: 1em hanging; }
 	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
 	ul.index li li { margin-left: 1em }
 	ul.index dl    { margin-top: 0; }
@@ -919,17 +929,14 @@
 	table.index td,
 	table.index th {
 		padding: 0.4em;
-		text-align: center;
 	}
 
-	table.index tr:hover td:not([rowspan]) {
-		background: #DEF;
+	table.index tr:hover td:not([rowspan]),
+	table.index tr:hover th:not([rowspan]) {
+		background: #f7f8f9;
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
-	table.index.index th:first-child {
-		text-align: left;
-	}
 	table.index th:first-child a {
 		font-weight: bold;
 	}
