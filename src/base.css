@@ -264,13 +264,8 @@
 	}
 
 	/* Style for algorithms */
-	ol.algorithm ol {
-	 border-left: 1px solid #90b8de;
-	 margin-left: 1em;
-	}
-	ol.algorithm ol.algorithm {
-	 border-left: none;
-	 margin-left: 0;
+	ol.algorithm ol:not(.algorithm) {
+	 border-left: 0.5em solid #DEF;
 	}
 
 	/* Style for switch/case <dl>s */
