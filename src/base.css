@@ -956,11 +956,6 @@
 		body {
 			font-family: serif;
 		}
-		/* Camoflage links; they're inactivatable anyway. */
-		a {
-			color: inherit !important;
-			text-decoration: none !important;
-		}
 	}
 	@page {
 		margin: 1.5cm 1.1cm;
