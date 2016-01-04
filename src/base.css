@@ -169,50 +169,6 @@
 		}
 	}
 
-	@media screen and (min-width: 78em) {
-		#back-to-top {
-			display: none;
-		}
-
-		nav#toc,
-		[role=navigation]#toc {
-			position: fixed;
-			top: 0; bottom: 0;
-			left: 0;
-			width: 23.5em;
-			overflow: auto;
-			padding: 0 1em;
-			padding-left: 42px;
-			padding-left: calc(1em + 26px);
-			background: inherit;
-			background-color: #f7f8f9;
-			z-index: 1;
-			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
-		}
-
-		body {
-			padding-left: 29em;
-			padding-right: 1.5em;
-		}
-		.overlarge {
-			width: calc(100vw - 30.5em);
-		}
-		div.figure img, div.sidefigure img, figure img,
-		div.figure object, div.sidefigure object, figure object {
-			max-width: calc(100vw - 30.5em);
-		}
-
-		nav#toc h2,
-		[role=navigation]#toc h2 {
-			margin-top: .8rem;
-			font-variant: small-caps;
-			font-variant: all-small-caps;
-			text-transform: lowercase;
-			font-weight: bold;
-			color: hsla(203,20%,40%,.7);
-		}
-	}
-
 /******************************************************************************/
 /*                                Sectioning                                  */
 /******************************************************************************/
