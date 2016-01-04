@@ -84,61 +84,61 @@ body {
           Document Conventions</a>
       </ol>
     <li><a href="#conventions"><span class="secno">2</span>
-        Features of the New Style Sheet</a>
+      Features of the New Style Sheet</a>
       <ol>
-        <li><a href="#boxes"><span class="secno">2.1</span>
+        <li><a href="#indexing"><span class="secno">2.1</span>
+          Indexing</a>
+          <ol>
+            <li><a href="#index-toc"><span class="secno">2.1.1</span>
+              Table of Contents</a>
+            <li><a href="#index-lists"><span class="secno">2.1.2</span>
+              Index Lists</a>
+            <li><a href="#index-tables"><span class="secno">2.1.3</span>
+              Switch Statements</a>
+            <li><a href="#numbering"><span class="secno">2.1.4</span>
+              Section Numbers and Anchoring</a>
+          </ol>
+        <li><a href="#boxes"><span class="secno">2.3</span>
           Special Boxes</a>
-        <ol>
-          <li><a href="#def"><span class="secno">2.1.1</span>
-            Definition Boxes</a>
-          <li><a href="#note"><span class="secno">2.1.2</span>
-            Note Boxes</a>
-          <li><a href="#example"><span class="secno">2.1.3</span>
-            Example Boxes</a>
-          <li><a href="#issue"><span class="secno">2.1.4</span>
-            Issue Boxes</a>
-          <li><a href="#advisement"><span class="secno">2.1.5</span>
-            Advisement Boxes</a>
-          <li><a href="#obsolete"><span class="secno">2.1.5</span>
-            Annoying Spec Obsoletion Boxes</a>
-        </ol>
-      <li><a href="#structural"><span class="secno">2.2</span>
-        Structural Markup</a>
-        <ol>
-          <li><a href="#figure"><span class="secno">2.2.1</span>
-            Figures and Captions</a>
-          <li><a href="#table"><span class="secno">2.2.2</span>
-            Data Tables</a>
-          <li><a href="#switch"><span class="secno">2.2.3</span>
-            Switch Statements</a>
-          <li><a href="#algorithm"><span class="secno">2.1.4</span>
-            Algorithm Lists</a>
-          <li><a href="#advisement"><span class="secno">2.1.5</span>
-            Advisement Boxes</a>
-          <li><a href="#change"><span class="secno">2.1.6</span>
-            Change Marks</a>
-          <li><a href="#inline"><span class="secno">2.1.7</span>
-            Recommended Inline Markup</a>
-        </ol>
-      <li><a href="#indexing"><span class="secno">2.3</span>
-        Indexing</a>
-        <ol>
-          <li><a href="#index-toc"><span class="secno">2.3.1</span>
-            Table of Contents</a>
-          <li><a href="#index-lists"><span class="secno">2.3.2</span>
-            Index Lists</a>
-          <li><a href="#index-tables"><span class="secno">2.3.3</span>
-            Switch Statements</a>
-          <li><a href="#numbering"><span class="secno">2.3.4</span>
-            Section Numbers and Anchoring</a>
-        </ol>
-      <li><a href="#misc"><span class="secno">2.4</span>
-        Miscellaneous</a>
-         <ol class="toc">
-          <li><a href="#overlarge"><span class="secno">2.4</span>
-            Overlarge Elements</a>
-         </ol>
-     </ol>
+          <ol>
+            <li><a href="#def"><span class="secno">2.3.1</span>
+              Definition Boxes</a>
+            <li><a href="#note"><span class="secno">2.3.2</span>
+              Note Boxes</a>
+            <li><a href="#example"><span class="secno">2.3.3</span>
+              Example Boxes</a>
+            <li><a href="#issue"><span class="secno">2.3.4</span>
+              Issue Boxes</a>
+            <li><a href="#advisement"><span class="secno">2.3.5</span>
+              Advisement Boxes</a>
+            <li><a href="#obsolete"><span class="secno">2.3.5</span>
+              Annoying Spec Obsoletion Boxes</a>
+          </ol>
+        <li><a href="#structural"><span class="secno">2.2</span>
+          Structural Markup</a>
+          <ol>
+            <li><a href="#figure"><span class="secno">2.2.1</span>
+              Figures and Captions</a>
+            <li><a href="#table"><span class="secno">2.2.2</span>
+              Data Tables</a>
+            <li><a href="#switch"><span class="secno">2.2.3</span>
+              Switch Statements</a>
+            <li><a href="#algorithm"><span class="secno">2.3.4</span>
+              Algorithm Lists</a>
+            <li><a href="#advisement"><span class="secno">2.3.5</span>
+              Advisement Boxes</a>
+            <li><a href="#change"><span class="secno">2.3.6</span>
+              Change Marks</a>
+            <li><a href="#inline"><span class="secno">2.3.7</span>
+              Recommended Inline Markup</a>
+          </ol>
+        <li><a href="#misc"><span class="secno">2.4</span>
+          Miscellaneous</a>
+          <ol class="toc">
+            <li><a href="#overlarge"><span class="secno">2.4</span>
+              Overlarge Elements</a>
+          </ol>
+      </ol>
     <li>
      <a href="#css"><span class="secno">7</span>
      Sample CSS Section</a>
@@ -249,11 +249,56 @@ body {
 <h2 id="conventions">
 <span class="secno">2 </span> Features of the New Style Sheet</h2>
 
+<h2 id="indexing"><span class="secno">2.1</span>
+Indexing</h2>
+
+  <p>Since specs commonly have navigation aids like a table of contents and indexes,
+  the stylesheet also provides <code>toc</code> and <code>index</code> classes for these.
+
+<h3 id="index-toc"><span class="secno">2.1.1</span>
+Table of Contents</h3>
+
+  <p>Each document <em>must</em> include a table of contents
+  using <code>&lt;ol class="toc"></code> and wrapped in a <code>&lt;nav id="toc"></code> element.
+  The markup structure looks like this:
+  
+  <pre>
+<!-- -->&lt;nav id="toc">
+<!-- -->  &lt;h2>Table of Contents&lt;/h2>
+<!-- -->  &lt;ol class="toc">
+<!-- -->    &lt;li>&lt;span class="secno">1.&lt;/span> Introduction
+<!-- -->    &lt;li>&hellip;
+<!-- -->  &lt;/ol>
+<!-- -->&lt;/nav></pre>
+
+<h3 id="index-lists"><span class="secno">2.1.2</span>
+Index Lists</h3>
+
+  <p>Special styling is provided for lists (<code>&lt;ul></code>, <code>&lt;ol></code>)
+  through the <code>index</code> class (<code>&lt;ul class="index"></code>).
+
+<h3 id="index-tables"><span class="secno">2.1.3</span>
+Index Tables</h3>
+
+  <p>Special styling is also provided for index tables
+  (such as for properties, elements, attributes, etc)
+  through the <code>index</code> class (<code>&lt;table class="index"></code>).
+
+<h3 id="numbering"><span class="secno">2.1.4</span>
+Section Numbers and Anchoring</h3>
+
+  <p>Section numbers in table headings should be marked up with <code>class="secno"</code>.
+  These are not styled currently, but might be in the future.
+  As aforementioned, however, the <a href="#index-toc">table of contents</a>
+  <em>must</em> have its numbers marked up with <code>class="secno"</code>.
+  
+  <p class="issue">Insert styling info on section anchors (as in Bikeshed-generated specs).
+
 <h3 id="boxes">
-<span class="secno">2.1 </span> Special Boxes</h3>
+<span class="secno">2.3 </span> Special Boxes</h3>
 
 <h4 id="def">
-<span class="secno">2.1.1 </span> Definition Boxes</h2>
+<span class="secno">2.3.1 </span> Definition Boxes</h2>
 
   <p>The <code>.def</code> class is used to distinguish definition boxes,
   e.g. for WebIDL boxes defining an interface,
@@ -296,7 +341,7 @@ body {
    </table>
 
 <h4 id="note">
-<span class="secno">2.1.1 </span> Note Boxes</h2>
+<span class="secno">2.3.1 </span> Note Boxes</h2>
 
   <p>The <code>.note</code> class is used to distinguish non-normative notes.
   
@@ -313,7 +358,7 @@ body {
   <span class="note">Note, here is an example of an inline note.</span>.
 
 <h4 id="example">
-<span class="secno">2.1.2 </span> Example Boxes</h2>
+<span class="secno">2.3.2 </span> Example Boxes</h2>
 
   <p>The <code>.example</code> class is used to distinguish non-normative examples.
   
@@ -327,7 +372,7 @@ body {
   </p>
 
 <h4 id="issue">
-<span class="secno">2.1.3 </span> Issue Boxes</h2>
+<span class="secno">2.3.3 </span> Issue Boxes</h2>
 
   <p>The <code>.issue</code> class is used to distinguish open issues.
   
@@ -345,7 +390,7 @@ body {
 
 
 <h4 id="advisement">
-<span class="secno">2.1.4 </span> Advisement Boxes</h2>
+<span class="secno">2.3.4 </span> Advisement Boxes</h2>
 
   <p>The <code>.advisement</code> class is used to highlight important normative statements,
   such as best practices.
@@ -359,7 +404,7 @@ body {
   <strong class="advisement">This is a <code>&lt;strong class="advisement"></code> normative statement.</strong>
 
 <h4 id="obsolete">
-<span class="secno">2.1.5 </span> Annoying Spec Obsoletion Warning Boxes</h2>
+<span class="secno">2.3.5 </span> Annoying Spec Obsoletion Warning Boxes</h2>
 
   <p>The <code>.annoying-warning</code> is for spec obsoletion notices.
   They're a bit scary, and should only occur once per spec.
@@ -549,54 +594,6 @@ body {
   to make finer distinctions between, e.g. different types of code snippets.
   A future revision of the site-wide styles may incorporate some of the more
   common distinctions.
-  
-  <p class="note">The rest of this document is snippets of various specifications,
-  to compare styling.
-
-<h2 id="indexing"><span class="secno">2.3</span>
-Indexing</h2>
-
-  <p>Since specs commonly have navigation aids like a table of contents and indexes,
-  the stylesheet also provides <code>toc</code> and <code>index</code> classes for these.
-
-<h3 id="index-toc"><span class="secno">2.3.1</span>
-Table of Contents</h3>
-
-  <p>Each document <em>must</em> include a table of contents
-  using <code>&lt;ol class="toc"></code> and wrapped in a <code>&lt;nav id="toc"></code> element.
-  The markup structure looks like this:
-  
-  <pre>
-<!-- -->&lt;nav id="toc">
-<!-- -->  &lt;h2>Table of Contents&lt;/h2>
-<!-- -->  &lt;ol class="toc">
-<!-- -->    &lt;li>&lt;span class="secno">1.&lt;/span> Introduction
-<!-- -->    &lt;li>&hellip;
-<!-- -->  &lt;/ol>
-<!-- -->&lt;/nav></pre>
-
-<h3 id="index-lists"><span class="secno">2.3.2</span>
-Index Lists</h3>
-
-  <p>Special styling is provided for lists (<code>&lt;ul></code>, <code>&lt;ol></code>)
-  through the <code>index</code> class (<code>&lt;ul class="index"></code>).
-
-<h3 id="index-tables"><span class="secno">2.3.3</span>
-Index Tables</h3>
-
-  <p>Special styling is also provided for index tables
-  (such as for properties, elements, attributes, etc)
-  through the <code>index</code> class (<code>&lt;table class="index"></code>).
-
-<h3 id="numbering"><span class="secno">2.3.4</span>
-Section Numbers and Anchoring</h3>
-
-  <p>Section numbers in table headings should be marked up with <code>class="secno"</code>.
-  These are not styled currently, but might be in the future.
-  As aforementioned, however, the <a href="#index-toc">table of contents</a>
-  <em>must</em> have its numbers marked up with <code>class="secno"</code>.
-  
-  <p class="issue">Insert styling info on section anchors (as in Bikeshed-generated specs).
 
 <h3 id="misc"><span class="secno">2.4</span>
 Miscellaneous</h3>
@@ -617,6 +614,9 @@ Overlarge Elements</h3>
     <p><img class="overlarge" src="http://drafts.csswg.org/css-writing-modes/diagrams/text-flow-vectors-tb.png">
     <figcaption><span class="marker">Figure 2.2.1</span> This is an overlarge element. It fills the viewport width.
   </figure>
+
+<p class="note">The rest of this document is snippets of various specifications,
+to compare styling.
 
 <h2 id="css">
 <span class="secno">7 </span> Sample CSS Section</h2>
