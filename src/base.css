@@ -801,14 +801,15 @@
 		/* because generated content isn't search/selectable and markers can't do multilevel yet */
 		margin:  0;
 		padding: 0;
-		line-height: 1.2;
+		line-height: 1.2rem; /* consistent spacing */
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
-	.toc > li          { margin: 1.2em 0; font-weight: bold;   }
-	.toc > li li       { margin: 0; font-weight: normal; }
-	.toc > li li li    { margin-left:  2em; font-style:  italic; }
-	.toc > li li li li { font-size:  0.9em; font-style:  normal; }
+	.toc > li             { margin: 1.2em 0;   font-weight: bold;   }
+	.toc > li li          { margin: 0;         font-weight: normal; }
+	.toc > li li li       { margin-left:  2em; font-style:  italic; }
+	.toc > li li li li    { margin-left:    0; font-style:  normal; }
+	.toc > li li li li li { margin-left: 1rem; font-style:  italic; font-size: 85%; }
 
 	.toc a {
 		/* More spacing; use padding to make it part of the click target. */
@@ -837,6 +838,16 @@
 
 	.toc > li li li .secno {
 		margin-left: -6em;
+	}
+	.toc > li li li li .secno {
+		font-size: 85%;
+		margin-left: -7.06em;
+		margin-left: -6rem;
+	}
+	.toc > li li li li li .secno {
+		margin-left: -8.24em;
+		margin-left: -7rem;
+		font-size: 100%;
 	}
 
 	.toc li {
