@@ -9,16 +9,23 @@ function toggleSidebar(on) {
   if (on == undefined) {
     on = document.body.className != 'toc-sidebar'
   }
-  toggle = document.getElementById('toc-toggle');
+  toggle1 = document.getElementById('toc-toggle');
+  toggle2 = document.getElementById('toc-toggle-inline');
   if (on) {
+    tocHeight = tocNav.offsetHeight;
     document.body.className = 'toc-sidebar';
-    toggle.innerHTML = "→";
-    toggle.title = "Collapse Sidebar";
+    toggle1.innerHTML = "←";
+    toggle1.title = "Collapse Sidebar";
+    toggle2.innerHTML = "→";
+    toggle2.title = "Collapse Sidebar";
+    window.scrollBy(0, 0 - tocHeight);
   }
   else {
     document.body.className = 'toc-inline';
-    toggle.innerHTML = "←";
-    toggle.title = "Pop Out Sidebar";
+    toggle1.innerHTML = "→";
+    toggle1.title = "Pop Out Sidebar";
+    toggle2.innerHTML = "←";
+    toggle2.title = "Pop Out Sidebar";
     tocNav = document.getElementById('toc');
     window.scrollBy(0, tocNav.offsetHeight);
   }
@@ -26,14 +33,27 @@ function toggleSidebar(on) {
 }
 
 toggle = document.createElement('a');
-toggle.setAttribute('id', 'toc-toggle');
+  /* This should probably be a button, but appearance isn't standards-track.*/
+toggle.setAttribute('id', 'toc-toggle-inline');
+toggle.setAttribute('class', 'toc-toggle');
 toggle.setAttribute('href', '#toc');
 toggle.setAttribute('onclick', 'return toggleSidebar()');
+toggle.innerHTML = "←";
 
 tocNav = document.getElementById('toc');
 tocH = tocNav.getElementsByTagName('h2')[0];
 tocH.appendChild(document.createTextNode(' '));
 tocH.appendChild(toggle);
+
+toggle = toggle.cloneNode(true);
+toggle.setAttribute('id', 'toc-toggle');
+b2t = document.getElementById('back-to-top');
+if (b2t) {
+  b2t.appendChild(toggle);
+}
+else {
+  document.body.appendChild(toggle);
+}
 
 if (window.matchMedia) {
   toggleSidebar(window.matchMedia('screen and (min-width: 78em)').matches);

@@ -145,38 +145,52 @@
 
 /** Back to Top / ToC Toggle **************************************************/
 
-	#back-to-top abbr,
-	#toc-toggle abbr {
-		border: none;
-		text-decoration: none;
+	@media print {
+		#back-to-top,
+		.toc-toggle {
+			display: none;
+		}
 	}
-
-
-	#toc-toggle:active,
-	#back-to-top :active {
-		color: #C00;
-	}
-
 	@media not print {
-		#back-to-top a,
-		body.toc-sidebar #toc-toggle {
+		#back-to-top,
+		body > #toc-toggle {
 			position: fixed;
-			white-space: nowrap;
+			z-index: 2;
 			bottom: 0; left: 0;
-			width: 22px;
-			height: 22px;
-			padding: 4px 4px 0 0;
+			margin: 0;
+			width: 26px;
 			text-align: center;
-			text-decoration: none;
-			border-top-right-radius: 100%;
+			border-top-right-radius: 26px;
 			box-shadow: 0 0 2px;
 			font: 1em monospace;
 			font: 1rem monospace;
 			color: black;
 		}
+		#back-to-top a,
+		body > #toc-toggle {
+			display: block;
+			width: 22px;
+			height: 22px;
+			padding: 4px 4px 0 0;
+			margin: 0;
+			border: none;
+			border-top-right-radius: 26px;
+		}
+		#back-to-top :first-child {
+			display: block;
+			padding-bottom: 22px;
+			margin-bottom: -22px;
+		}
+		#back-to-top > a {
+			background: white;
+			box-shadow: 0 0 2px;
+		}
+		#back-to-top > a:hover,
+		#back-to-top > a:focus {
+			background: #f8f8f8;
+		}
 
-		/* This should probably be a button, but appearance isn't standards-track.*/
-		body.toc-inline #toc-toggle {
+		#toc-toggle-inline {
 			vertical-align: 0.05em;
 			font-size: 80%;
 			color: gray;
@@ -185,35 +199,57 @@
 			background: transparent;
 			position: relative;
 		}
-		body.toc-inline #toc-toggle:hover:not(:active),
-		body.toc-inline #toc-toggle:focus:not(:active) {
+		#toc-toggle-inline:hover:not(:active),
+		#toc-toggle-inline:focus:not(:active) {
 			text-shadow: 1px 1px silver;
 			top: -1px;
 			left: -1px;
 		}
-	}
 
-	@media print {
-		#back-to-top,
-		#toc-toggle {
-			display: none;
+		.toc-toggle:active,
+		#back-to-top :active {
+			color: #C00;
+		}
+
+		#back-to-top abbr {
+			border: none;
+			text-decoration: none;
 		}
 	}
 
 /** ToC Sidebar ***************************************************************/
 
-	#toc-toggle {
-		display: none;
-	}
-
-	@media screen and (min-width: 78em) {
-		#toc-toggle {
-			display: inline;
+	/* Floating sidebar */
+		body.toc-sidebar nav#toc,
+		body.toc-sidebar [role=navigation]#toc {
+			position: fixed;
+			top: 0; bottom: 0;
+			left: 0;
+			width: 23.5em;
+			overflow: auto;
+			padding: 0 1em;
+			padding-left: 42px;
+			padding-left: calc(1em + 26px);
+			background: inherit;
+			background-color: #f7f8f9;
+			z-index: 1;
+			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
 		}
-		body:not(.toc-inline) #back-to-top {
+		body.toc-sidebar nav#toc h2,
+		body.toc-sidebar [role=navigation]#toc h2 {
+			margin-top: .8rem;
+			font-variant: small-caps;
+			font-variant: all-small-caps;
+			text-transform: lowercase;
+			font-weight: bold;
+			color: gray;
+			color: hsla(203,20%,40%,.7);
+		}
+		body.toc-sidebar #back-to-top :first-child {
 			display: none;
 		}
-
+	/* Sidebar with its own space */
+	@media screen and (min-width: 78em) {
 		body:not(.toc-inline) nav#toc,
 		body:not(.toc-inline) [role=navigation]#toc {
 			position: fixed;
@@ -229,23 +265,6 @@
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
 		}
-
-		body:not(.toc-inline) {
-			padding-left: 29em;
-			padding-right: 1.5em;
-		}
-		body:not(.toc-inline) .overlarge {
-			width: calc(100vw - 30.5em);
-		}
-		body:not(.toc-inline) div.figure img,
-		body:not(.toc-inline) div.sidefigure img,
-		body:not(.toc-inline) figure img,
-		body:not(.toc-inline) div.figure object,
-		body:not(.toc-inline)  div.sidefigure object,
-		body:not(.toc-inline)  figure object {
-			max-width: calc(100vw - 30.5em);
-		}
-
 		body:not(.toc-inline) nav#toc h2,
 		body:not(.toc-inline) [role=navigation]#toc h2 {
 			margin-top: .8rem;
@@ -255,6 +274,24 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+		}
+
+		body:not(.toc-inline) {
+			padding-left: 29em;
+			padding-right: 1.5em;
+		}
+		body:not(.toc-inline) .overlarge,
+		body:not(.toc-inline) div.figure img,
+		body:not(.toc-inline) div.sidefigure img,
+		body:not(.toc-inline) figure img,
+		body:not(.toc-inline) div.figure object,
+		body:not(.toc-inline)  div.sidefigure object,
+		body:not(.toc-inline)  figure object {
+			max-width: calc(100vw - 30.5em);
+		}
+
+		body:not(.toc-inline) #back-to-top :first-child {
+			display: none;
 		}
 	}
 
@@ -454,16 +491,15 @@
 	a:visited {
 		border-bottom-color: silver;
 	}
-	.head a {
-		/* thinner line for header, since it's overwhelming otherwise */
-		border-bottom-width: 0.1em;
-	}
+	/* Consider making the border thinner, if not everywhere, then at least
+	   in .head and .index
+	   ... or only make it 2px in p/li/dd/dt/tr/div/pre (running text)  */
 
 	/* Use distinguishing colors when user is interacting with the link */
 	a[href]:focus,
 	a[href]:hover {
-		background-color: #f8f8f8;
-		background-color: rgba(75%, 75%, 75%, .25);
+		background: #f8f8f8;
+		background: rgba(75%, 75%, 75%, .25);
 		border-bottom-width: 0.2em;
 	}
 	a[href]:active {
