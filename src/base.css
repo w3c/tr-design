@@ -849,21 +849,6 @@
 		padding-right: 1em;
 	}
 
-	table.data  tbody th[rowspan],
-	table.index tbody th[rowspan],
-	table.data  tbody td[rowspan],
-	table.index tbody td[rowspan]{
-		border-left: 1px solid silver;
-	}
-
-	table.data  tbody th[rowspan]:first-child,
-	table.index tbody th[rowspan]:first-child,
-	table.data  tbody td[rowspan]:first-child,
-	table.index tbody td[rowspan]:first-child{
-		border-left: 0;
-		border-right: 1px solid silver;
-	}
-
 	table.complex.data th,
 	table.complex.data td {
 		border: 1px solid silver;
