@@ -63,7 +63,6 @@
  * 
  ******************************************************************************/
 
-
 /******************************************************************************/
 /*                                   Body                                     */
 /******************************************************************************/
@@ -98,7 +97,7 @@
 /*                         Front Matter & Navigation                          */
 /******************************************************************************/
 
-	
+/** Header ********************************************************************/
 
 	div.head { margin-bottom: 1em }
 	div.head hr { border-style: solid; }
@@ -144,14 +143,25 @@
 	p.copyright,
 	p.copyright small { font-size: small }
 
-	#back-to-top abbr {
+/** Back to Top / ToC Toggle **************************************************/
+
+	#back-to-top abbr,
+	#toc-toggle abbr {
 		border: none;
 		text-decoration: none;
 	}
 
+
+	#toc-toggle:active,
+	#back-to-top :active {
+		color: #C00;
+	}
+
 	@media not print {
-		#back-to-top a {
+		#back-to-top a,
+		body.toc-sidebar #toc-toggle {
 			position: fixed;
+			white-space: nowrap;
 			bottom: 0; left: 0;
 			width: 22px;
 			height: 22px;
@@ -160,12 +170,91 @@
 			text-decoration: none;
 			border-top-right-radius: 100%;
 			box-shadow: 0 0 2px;
+			font: 1em monospace;
+			font: 1rem monospace;
+			color: black;
+		}
+
+		/* This should probably be a button, but appearance isn't standards-track.*/
+		body.toc-inline #toc-toggle {
+			vertical-align: 0.05em;
+			font-size: 80%;
+			color: gray;
+			color: hsla(203,20%,40%,.7);
+			border-style: none;
+			background: transparent;
+			position: relative;
+		}
+		body.toc-inline #toc-toggle:hover:not(:active),
+		body.toc-inline #toc-toggle:focus:not(:active) {
+			text-shadow: 1px 1px silver;
+			top: -1px;
+			left: -1px;
 		}
 	}
 
 	@media print {
-		#back-to-top {
+		#back-to-top,
+		#toc-toggle {
 			display: none;
+		}
+	}
+
+/** ToC Sidebar ***************************************************************/
+
+	#toc-toggle {
+		display: none;
+	}
+
+	@media screen and (min-width: 78em) {
+		#toc-toggle {
+			display: inline;
+		}
+		body:not(.toc-inline) #back-to-top {
+			display: none;
+		}
+
+		body:not(.toc-inline) nav#toc,
+		body:not(.toc-inline) [role=navigation]#toc {
+			position: fixed;
+			top: 0; bottom: 0;
+			left: 0;
+			width: 23.5em;
+			overflow: auto;
+			padding: 0 1em;
+			padding-left: 42px;
+			padding-left: calc(1em + 26px);
+			background: inherit;
+			background-color: #f7f8f9;
+			z-index: 1;
+			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+		}
+
+		body:not(.toc-inline) {
+			padding-left: 29em;
+			padding-right: 1.5em;
+		}
+		body:not(.toc-inline) .overlarge {
+			width: calc(100vw - 30.5em);
+		}
+		body:not(.toc-inline) div.figure img,
+		body:not(.toc-inline) div.sidefigure img,
+		body:not(.toc-inline) figure img,
+		body:not(.toc-inline) div.figure object,
+		body:not(.toc-inline)  div.sidefigure object,
+		body:not(.toc-inline)  figure object {
+			max-width: calc(100vw - 30.5em);
+		}
+
+		body:not(.toc-inline) nav#toc h2,
+		body:not(.toc-inline) [role=navigation]#toc h2 {
+			margin-top: .8rem;
+			font-variant: small-caps;
+			font-variant: all-small-caps;
+			text-transform: lowercase;
+			font-weight: bold;
+			color: gray;
+			color: hsla(203,20%,40%,.7);
 		}
 	}
 
