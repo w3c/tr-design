@@ -462,10 +462,14 @@
 
 /** General monospace/pre rules ***********************************************/
 
-	pre, code, a.property {
+	pre, code {
 		font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 		font-size: .9em;
 		page-break-inside: avoid;
+	}
+	pre code,
+	code code {
+		font-size: 100%;
 	}
 
 	pre {
