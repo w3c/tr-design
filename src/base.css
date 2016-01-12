@@ -220,6 +220,7 @@
 /** ToC Sidebar ***************************************************************/
 
 	/* Floating sidebar */
+	@media screen {
 		body.toc-sidebar nav#toc,
 		body.toc-sidebar .navigation#toc {
 			position: fixed;
@@ -248,6 +249,8 @@
 		body.toc-sidebar #back-to-top :first-child {
 			display: none;
 		}
+	}
+
 	/* Sidebar with its own space */
 	@media screen and (min-width: 78em) {
 		body:not(.toc-inline) nav#toc,
@@ -980,16 +983,16 @@
 	/* Index Lists: Typography */
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
-	ul.index li span {
-		white-space: nowrap;
-		position: absolute;
-		color: transparent; }
-	ul.index li a:hover + span,
-	ul.index li a:focus + span {
-		color: gray;
-	}
-	@media print {
-		ul.index li span { color: gray; }
+	@media not print {
+		ul.index li span {
+			white-space: nowrap;
+			position: absolute;
+			color: transparent; }
+		ul.index li a:hover + span,
+		ul.index li a:focus + span {
+			color: gray;
+			background: white;
+		}
 	}
 
 /** Index Tables *****************************************************/
