@@ -46,7 +46,7 @@ function removeResizeToggle() {
   toggle.setAttribute('onclick', 'return toggleSidebar()');
   toggle = document.getElementById('toc-toggle-inline');
   toggle.setAttribute('onclick', 'return toggleSidebar()');
-  window.removeEventListener('resize', resizeListener, true);
+  window.removeEventListener('resize', resizeListener);
 }
 
 function createSidebarToggle() {
