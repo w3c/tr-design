@@ -810,9 +810,6 @@
 		border-collapse: collapse;
 		width: 100%;
 		border: hidden;
-		/* Scroll x-overflow */
-		display: block;
-		overflow-x: auto; 
 	}
 	table.data {
 		width: auto;
