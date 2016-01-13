@@ -53,7 +53,11 @@
 
   createSidebarToggle();
   var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
-  sidebarMedia.addEventListener('change', function(e){toggleSidebar(e.matches, true);}, false);
+  if(sidebarMedia.addEventListener) {
+    sidebarMedia.addEventListener('change', function(e){toggleSidebar(e.matches, true);}, false);
+  } else if(sidebarMedia.addListener) {
+    sidebarMedia.addListener(function(e){toggleSidebar(e.matches, true);});
+  }
   toggleSidebar(sidebarMedia.matches, true);
 
   /* If the sidebar has been manually opened and is currently overlaying the text
