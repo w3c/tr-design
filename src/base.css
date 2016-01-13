@@ -808,6 +808,10 @@
 		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
 	*/
 
+	table {
+		hyphens: manual;
+	}
+
 	table.data,
 	table.index {
 		margin: 1em auto;
