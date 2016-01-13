@@ -469,7 +469,7 @@
 
 /** General monospace/pre rules ***********************************************/
 
-	pre, code {
+	pre, code, samp {
 		font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 		font-size: .9em;
 		page-break-inside: avoid;
