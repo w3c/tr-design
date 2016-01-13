@@ -92,6 +92,12 @@
 		width: calc(100vw - 26px - 3em);
 		max-width: none;
 	}
+	div.figure img,    div.sidefigure img,    figure img,
+	div.figure object, div.sidefigure object, figure object,
+	table.data, table.index {
+		max-width: calc(100vw - 26px - 3em);
+		/* See below for sidebar-accommodating override. */
+	}
 
 /******************************************************************************/
 /*                         Front Matter & Navigation                          */
@@ -288,8 +294,10 @@
 		body:not(.toc-inline) div.sidefigure img,
 		body:not(.toc-inline) figure img,
 		body:not(.toc-inline) div.figure object,
-		body:not(.toc-inline)  div.sidefigure object,
-		body:not(.toc-inline)  figure object {
+		body:not(.toc-inline) div.sidefigure object,
+		body:not(.toc-inline) figure object,
+		body:not(.toc-inline) table.data,
+		body:not(.toc-inline) table.index {
 			max-width: calc(100vw - 30.5em);
 		}
 
@@ -555,10 +563,6 @@
 		width: 50%;
 		margin: 0 0 0.5em 0.5em
 	}
-	div.figure img, div.sidefigure img, figure img,
-	div.figure object, div.sidefigure object, figure object {
-		max-width: calc(100vw - 26px - 3em);
-	}
 	p.caption, figcaption, caption {
 		font-style: italic;
 		font-size: 90%;
@@ -810,6 +814,9 @@
 		border-collapse: collapse;
 		width: 100%;
 		border: hidden;
+		/* Scroll x-overflow */
+		display: block;
+		overflow-x: auto; 
 	}
 	table.data {
 		width: auto;
