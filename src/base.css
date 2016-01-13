@@ -227,8 +227,7 @@
 
 	/* Floating sidebar */
 	@media screen {
-		body.toc-sidebar nav#toc,
-		body.toc-sidebar .navigation#toc {
+		body.toc-sidebar #toc {
 			position: fixed;
 			top: 0; bottom: 0;
 			left: 0;
@@ -242,8 +241,7 @@
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
 		}
-		body.toc-sidebar nav#toc h2,
-		body.toc-sidebar .navigation#toc h2 {
+		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
 			font-variant: small-caps;
 			font-variant: all-small-caps;
@@ -259,8 +257,7 @@
 
 	/* Sidebar with its own space */
 	@media screen and (min-width: 78em) {
-		body:not(.toc-inline) nav#toc,
-		body:not(.toc-inline) .navigation#toc {
+		body:not(.toc-inline) #toc {
 			position: fixed;
 			top: 0; bottom: 0;
 			left: 0;
@@ -274,8 +271,7 @@
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
 		}
-		body:not(.toc-inline) nav#toc h2,
-		body:not(.toc-inline) .navigation#toc h2 {
+		body:not(.toc-inline) #toc h2 {
 			margin-top: .8rem;
 			font-variant: small-caps;
 			font-variant: all-small-caps;
