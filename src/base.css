@@ -81,6 +81,9 @@
 		font-family: sans-serif;
 		widows: 2;
 		orphans: 2;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		hyphens: auto;
 
 		/* Colors */
 		color: black;
@@ -470,6 +473,7 @@
 		font-family: Menlo, Consolas, "DejaVu Sans Mono", Monaco, monospace;
 		font-size: .9em;
 		page-break-inside: avoid;
+		hyphens: none;
 	}
 	pre code,
 	code code {
