@@ -507,7 +507,8 @@
 	a[href]:hover {
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
-		border-bottom-width: 0.2em;
+		border-bottom-width: 3px;
+		margin-bottom: -1px;
 	}
 	a[href]:active {
 		color: #C00;
@@ -938,7 +939,8 @@
 		display: block;
 		/* Consistent layout across link hover effects */
 		border-bottom-style: solid;
-		border-bottom-width: 0.2em;
+		border-bottom-width: 3px;
+		margin-bottom: -1px;
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -990,12 +992,10 @@
 	@media not print {
 		ul.index li span {
 			white-space: nowrap;
-			position: absolute;
 			color: transparent; }
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
 			color: gray;
-			background: white;
 		}
 	}
 
