@@ -71,10 +71,10 @@
 		counter-reset: example figure issue;
 
 		/* Layout */
-		max-width: 50em;           /* limit line length to 50em for readability   */
-		margin: 0;                 /* start-align text within page                     */
-		padding: 1.6em 1em 2em 58px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1em 2em calc(26px + 2em); /* leave space for status flag    */
+		max-width: 50em;               /* limit line length to 50em for readability   */
+		margin: 0 auto;                /* center text within page                     */
+		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
+		padding: 1.6em 1.5 2em calc(26px + 1.5em); /* leave space for status flag     */
 
 		/* Typography */
 		line-height: 1.5;
@@ -91,16 +91,6 @@
 		background-size: 25px 380px;
 	}
 
-	.overlarge {
-		width: calc(100vw - 26px - 3em);
-		max-width: none;
-	}
-	div.figure img,    div.sidefigure img,    figure img,
-	div.figure object, div.sidefigure object, figure object,
-	table.data, table.index {
-		max-width: calc(100vw - 26px - 3em);
-		/* See below for sidebar-accommodating override. */
-	}
 
 /******************************************************************************/
 /*                         Front Matter & Navigation                          */
@@ -286,19 +276,8 @@
 
 		body:not(.toc-inline) {
 			padding-left: 29em;
-			padding-right: 1.5em;
 		}
-		body:not(.toc-inline) .overlarge,
-		body:not(.toc-inline) div.figure img,
-		body:not(.toc-inline) div.sidefigure img,
-		body:not(.toc-inline) figure img,
-		body:not(.toc-inline) div.figure object,
-		body:not(.toc-inline) div.sidefigure object,
-		body:not(.toc-inline) figure object,
-		body:not(.toc-inline) table.data,
-		body:not(.toc-inline) table.index {
-			max-width: calc(100vw - 30.5em);
-		}
+		/* See also Overflow section at the bottom */
 
 		body:not(.toc-inline) #back-to-top :first-child {
 			display: none;
@@ -541,16 +520,12 @@
 	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
 
-	figure, div.figure, div.sidefigure {
+	figure, .figure, .sidefigure {
 		page-break-inside: avoid;
-		text-align: center;
-	}
-
-	div.figure, p.figure, div.sidefigure, figure {
 		text-align: center;
 		margin: 2.5em 0;
 	}
-	div.figure pre, div.sidefigure pre, figure pre {
+	.figure pre, .sidefigure pre, figure pre {
 		text-align: left;
 		display: table;
 		margin: 1em auto;
@@ -558,24 +533,24 @@
 	.figure table, figure table {
 		margin: auto;
 	}
-	div.sidefigure, figure.sidefigure {
+	.sidefigure {
 		float: right;
 		width: 50%;
 		margin: 0 0 0.5em 0.5em
 	}
-	p.caption, figcaption, caption {
+	.caption, figcaption, caption {
 		font-style: italic;
 		font-size: 90%;
 	}
-	p.caption::before, figcaption::before, figcaption > .marker {
+	.caption::before, figcaption::before, figcaption > .marker {
 		font-weight: bold;
 	}
-	p.caption, figcaption {
+	.caption, figcaption {
 		counter-increment: figure;
 	}
 
 	/* DL list is indented 2em, but figure inside it is not */
-	dd > div.figure, dd > figure { margin-left: -2em }
+	dd > .figure, dd > figure { margin-left: -2em }
 
 /******************************************************************************/
 /*                             Colored Boxes                                  */
@@ -592,14 +567,10 @@
 		border-right-style: solid;
 	}
 
-	div.issue,
-	div.note,
-	details.note,
-	aside.note,
-	div.example,
-	div.advisement,
-	p.advisement,
-	strong.advisement,
+	.issue,
+	.note,
+	.example,
+	.advisement,
 	blockquote {
 		margin: 1em auto;
 	}
@@ -809,6 +780,8 @@
 	*/
 
 	table {
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 		hyphens: manual;
 	}
 
@@ -824,7 +797,8 @@
 	}
 	table.data caption,
 	table.index caption {
-		width: 100%;
+		max-width: 50em;
+		margin: 0 auto 1em;
 	}
 
 	table.data td,  table.data th,
@@ -1057,3 +1031,48 @@
 
 	/* This rule is inherited from past style sheets. No idea what it's for. */
 	.hide { display: none }
+
+
+
+/******************************************************************************/
+/*                             Overflow Control                               */
+/******************************************************************************/
+
+	.figure img,    .sidefigure img,    figure img,
+	.figure object, .sidefigure object, figure object {
+		max-width: 100%;
+	}
+	.figure .caption, .sidefigure .caption, figcaption {
+		max-width: 50rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media (min-width: 55em) {
+		.overlarge,
+		.figure, .sidefigure, figure {
+			margin-left: calc(13px + 26.5rem - 50vw);
+			margin-right: calc(13px + 26.5rem - 50vw);
+			max-width: none;
+		}
+	}
+	@media screen and (min-width: 78em) {
+		body:not(.toc-inline) .overlarge,
+		body:not(.toc-inline) div.figure img,
+		body:not(.toc-inline) div.sidefigure img,
+		body:not(.toc-inline) figure img,
+		body:not(.toc-inline) div.figure object,
+		body:not(.toc-inline) div.sidefigure object,
+		body:not(.toc-inline) figure object {
+			/* 30.5em body padding 50em content area */
+			margin-left: calc(40em - 50vw) !important;
+			margin-right: calc(40em - 50vw) !important;
+		}
+	}
+
+	@media not print {
+		.overlarge,
+		div.figure, div.sidefigure, figure {
+			overflow-x: auto;
+		}
+	}

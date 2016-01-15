@@ -128,7 +128,7 @@
         <li><a href="#misc"><span class="secno">2.4</span>
           Miscellaneous</a>
           <ol>
-            <li><a href="#overlarge"><span class="secno">2.4</span>
+            <li><a href="#overlarge"><span class="secno">2.4.1</span>
               Overlarge Elements</a>
           </ol>
       </ol>
@@ -640,10 +640,10 @@ Overlarge Elements</h3>
   Please design your content to render reasonably on smaller canvases;
   this class will not magically fix such content except on your widescreen device.
 
-  <figure>
-    <p><img class="overlarge" src="http://drafts.csswg.org/css-writing-modes/diagrams/text-flow-vectors-tb.png">
-    <figcaption><span class="marker">Figure 2.2.1</span> This is an overlarge element. It fills the viewport width.
-  </figure>
+  <div class='example overlarge'>
+    This is an overlarge box. It will try to fill the viewport width.
+    Things can be centered inside it, but left-aligning will be a bit awkward.
+  </div>
 
 <p class="note">The rest of this document is snippets of various specifications,
 to compare styling.
