@@ -938,6 +938,7 @@
 		float: left;
 		width: 4em;
 		margin-left: -4em;
+		white-space: nowrap;
 	}
 
 	.toc > li li li .secno {
