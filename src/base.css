@@ -780,8 +780,8 @@
 	*/
 
 	table {
-		word-wrap: break-word;
-		overflow-wrap: break-word;
+		word-wrap: normal;
+		overflow-wrap: normal;
 		hyphens: manual;
 	}
 
