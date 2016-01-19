@@ -1051,7 +1051,7 @@
 
 	@media (min-width: 55em) {
 		.overlarge,
-		.figure, .sidefigure, figure {
+		.figure, figure {
 			margin-left: calc(13px + 26.5rem - 50vw);
 			margin-right: calc(13px + 26.5rem - 50vw);
 			max-width: none;
@@ -1059,12 +1059,8 @@
 	}
 	@media screen and (min-width: 78em) {
 		body:not(.toc-inline) .overlarge,
-		body:not(.toc-inline) div.figure img,
-		body:not(.toc-inline) div.sidefigure img,
-		body:not(.toc-inline) figure img,
-		body:not(.toc-inline) div.figure object,
-		body:not(.toc-inline) div.sidefigure object,
-		body:not(.toc-inline) figure object {
+		body:not(.toc-inline) .figure,
+		body:not(.toc-inline) figure {
 			/* 30.5em body padding 50em content area */
 			margin-left: calc(40em - 50vw) !important;
 			margin-right: calc(40em - 50vw) !important;
