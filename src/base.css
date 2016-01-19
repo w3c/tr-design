@@ -480,7 +480,9 @@
 		color: inherit;
 		text-decoration: none;
 		border-bottom: 2px solid #949494;
-		margin: 0 -0.1em 0;
+		/* Need a bit of extending for it to look okay */
+		padding: 0 1px 0;
+		margin: 0 -1px 0;
 	}
 	a:visited {
 		border-bottom-color: silver;
