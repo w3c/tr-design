@@ -74,7 +74,7 @@
 		max-width: 50em;               /* limit line length to 50em for readability   */
 		margin: 0 auto;                /* center text within page                     */
 		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1.5 2em calc(26px + 1.5em); /* leave space for status flag     */
+		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag     */
 
 		/* Typography */
 		line-height: 1.5;
