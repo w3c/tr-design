@@ -478,18 +478,16 @@
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
 		color: inherit;
+		color: #005A9C;
 		text-decoration: none;
-		border-bottom: 2px solid #949494;
+		border-bottom: 1px solid #555;
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
 	}
 	a:visited {
-		border-bottom-color: silver;
+		border-bottom-color: #969696;
 	}
-	/* Consider making the border thinner, if not everywhere, then at least
-	   in .head and .index
-	   ... or only make it 2px in p/li/dd/dt/tr/div/pre (running text)  */
 
 	/* Use distinguishing colors when user is interacting with the link */
 	a[href]:focus,
@@ -497,7 +495,7 @@
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
 		border-bottom-width: 3px;
-		margin-bottom: -1px;
+		margin-bottom: -2px;
 	}
 	a[href]:active {
 		color: #C00;
@@ -921,10 +919,12 @@
 		padding-top: 0.1em;
 		/* Larger, more consistently-sized click target */
 		display: block;
-		/* Consistent layout across link hover effects */
-		border-bottom-style: solid;
-		border-bottom-width: 3px;
-		margin-bottom: -1px;
+		/* Reverse color scheme */
+		color: black;
+		border-color: #3980B5;
+	}
+	.toc a:visited {
+		border-color: #054572;
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -980,7 +980,7 @@
 			color: transparent; }
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
-			color: gray;
+			color: #707070;
 		}
 	}
 
@@ -1062,7 +1062,7 @@
 	@media screen and (min-width: 78em) {
 		body:not(.toc-inline) .overlarge,
 		body:not(.toc-inline) .figure,
-		body:not(.toc-inline) figure {
+		body:not(.toc-inline) figure:not(.sidefigure) {
 			/* 30.5em body padding 50em content area */
 			margin-left: calc(40em - 50vw) !important;
 			margin-right: calc(40em - 50vw) !important;
