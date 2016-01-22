@@ -910,8 +910,8 @@
 	/* ToC not indented until third level, but font style & margins show hierarchy */
 	.toc > li             { margin: 1.2em 0;   font-weight: bold;   }
 	.toc > li li          { margin: 0;         font-weight: normal; }
-	.toc > li li li       { margin-left:  2em; font-style:  italic; }
-	.toc > li li li li    { margin-left:    0; font-style:  normal; }
+	.toc > li li li       { margin-left:  1em; font-style:  italic; }
+	.toc > li li li li    { margin-left:  1em; font-style:  normal; }
 	.toc > li li li li li { margin-left: 1rem; font-style:  italic; font-size: 85%; }
 
 	.toc a {
@@ -944,7 +944,7 @@
 	}
 
 	.toc > li li li .secno {
-		margin-left: -6em;
+		margin-left: -5em;
 	}
 	.toc > li li li li .secno {
 		font-size: 85%;
@@ -1073,5 +1073,17 @@
 		.overlarge,
 		div.figure, div.sidefigure, figure {
 			overflow-x: auto;
+			/* See Lea Verou's explanation background-attachment:
+			 * http://lea.verou.me/2012/04/background-attachment-local/
+			 */
+			background-repeat: no-repeat;
+			background-color: white;
+			background-image: linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)), linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)), linear-gradient(left, #c3c3c5, rgba(195, 195, 197, 0)), linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0));
+			background-position: 0 0, 100% 0, 0 0, 100% 0;
+			background-size: 4em 100%, 4em 100%, 1em 100%, 1em 100%;
+			background-attachment: local, local, scroll, scroll; 
+		}
+}
+
 		}
 	}
