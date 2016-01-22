@@ -477,7 +477,6 @@
 
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
-		color: inherit;
 		color: #005A9C;
 		text-decoration: none;
 		border-bottom: 1px solid #555;
@@ -1076,14 +1075,12 @@
 			/* See Lea Verou's explanation background-attachment:
 			 * http://lea.verou.me/2012/04/background-attachment-local/
 			 */
+			background: top left  / 4em 100% linear-gradient(left,  #ffffff, rgba(255, 255, 255, 0)) local,
+			            top right / 4em 100% linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)) local,
+			            top left  / 1em 100% linear-gradient(left,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+			            top right / 1em 100% linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+			            red;
 			background-repeat: no-repeat;
-			background-color: white;
-			background-image: linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)), linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)), linear-gradient(left, #c3c3c5, rgba(195, 195, 197, 0)), linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0));
-			background-position: 0 0, 100% 0, 0 0, 100% 0;
-			background-size: 4em 100%, 4em 100%, 1em 100%, 1em 100%;
-			background-attachment: local, local, scroll, scroll; 
-		}
-}
-
+			xbackground-color: red;
 		}
 	}
