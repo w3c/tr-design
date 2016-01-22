@@ -1052,17 +1052,14 @@
 	}
 
 	@media (min-width: 55em) {
-		.overlarge,
-		.figure, figure {
+		.overlarge {
 			margin-left: calc(13px + 26.5rem - 50vw);
 			margin-right: calc(13px + 26.5rem - 50vw);
 			max-width: none;
 		}
 	}
 	@media screen and (min-width: 78em) {
-		body:not(.toc-inline) .overlarge,
-		body:not(.toc-inline) .figure,
-		body:not(.toc-inline) figure:not(.sidefigure) {
+		body:not(.toc-inline) .overlarge {
 			/* 30.5em body padding 50em content area */
 			margin-left: calc(40em - 50vw) !important;
 			margin-right: calc(40em - 50vw) !important;
@@ -1070,8 +1067,7 @@
 	}
 
 	@media not print {
-		.overlarge,
-		div.figure, div.sidefigure, figure {
+		.overlarge {
 			overflow-x: auto;
 			/* See Lea Verou's explanation background-attachment:
 			 * http://lea.verou.me/2012/04/background-attachment-local/
