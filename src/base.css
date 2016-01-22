@@ -525,6 +525,11 @@
 		text-align: center;
 		margin: 2.5em 0;
 	}
+	.figure img,    .sidefigure img,    figure img,
+	.figure object, .sidefigure object, figure object {
+		max-width: 100%;
+		margin: auto;
+	}
 	.figure pre, .sidefigure pre, figure pre {
 		text-align: left;
 		display: table;
@@ -533,10 +538,12 @@
 	.figure table, figure table {
 		margin: auto;
 	}
-	.sidefigure {
-		float: right;
-		width: 50%;
-		margin: 0 0 0.5em 0.5em
+	@media screen and (min-width: 20em) {
+		.sidefigure {
+			float: right;
+			width: 50%;
+			margin: 0 0 0.5em 0.5em
+		}
 	}
 	.caption, figcaption, caption {
 		font-style: italic;
@@ -1041,11 +1048,8 @@
 /*                             Overflow Control                               */
 /******************************************************************************/
 
-	.figure img,    .sidefigure img,    figure img,
-	.figure object, .sidefigure object, figure object {
-		max-width: 100%;
-	}
 	.figure .caption, .sidefigure .caption, figcaption {
+		/* in case figure is overlarge, limit caption to 50em */
 		max-width: 50rem;
 		margin-left: auto;
 		margin-right: auto;
