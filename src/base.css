@@ -283,6 +283,11 @@
 			display: none;
 		}
 	}
+	@media screen and (min-width: 90em) {
+		body:not(.toc-inline) {
+			margin: 0 4em;
+		}
+	}
 
 /******************************************************************************/
 /*                                Sectioning                                  */
@@ -1067,6 +1072,13 @@
 			/* 30.5em body padding 50em content area */
 			margin-left: calc(40em - 50vw) !important;
 			margin-right: calc(40em - 50vw) !important;
+		}
+	}
+	@media screen and (min-width: 90em) {
+		body:not(.toc-inline) .overlarge {
+			/* 4em html margin 30.5em body padding 50em content area */
+			margin-left: 0 !important;
+			margin-right: calc(84.5em - 100vw) !important;
 		}
 	}
 
