@@ -1087,12 +1087,13 @@
 			overflow-x: auto;
 			/* See Lea Verou's explanation background-attachment:
 			 * http://lea.verou.me/2012/04/background-attachment-local/
-			 */
-			background: top left  / 4em 100% linear-gradient(left,  #ffffff, rgba(255, 255, 255, 0)) local,
-			            top right / 4em 100% linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)) local,
-			            top left  / 1em 100% linear-gradient(left,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            top right / 1em 100% linear-gradient(right, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            red;
+			 *
+			background: top left  / 4em 100% linear-gradient(to right,  #ffffff, rgba(255, 255, 255, 0)) local,
+			            top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
+			            top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+			            top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
+			            white;
 			background-repeat: no-repeat;
+			*/
 		}
 	}
