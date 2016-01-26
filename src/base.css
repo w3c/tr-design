@@ -851,9 +851,15 @@
 		padding-right: 1em;
 	}
 
+	table.data th[colspan],
+	table.data td[colspan] {
+		text-align: center;
+	}
+
 	table.complex.data th,
 	table.complex.data td {
 		border: 1px solid silver;
+		text-align: center;
 	}
 
 	table.data.longlastcol td:last-child,
