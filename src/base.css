@@ -483,7 +483,7 @@
 
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
-		color: #005A9C;
+		color: #034575;
 		text-decoration: none;
 		border-bottom: 1px solid #555;
 		/* Need a bit of extending for it to look okay */
