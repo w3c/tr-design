@@ -804,9 +804,6 @@
 		width: 100%;
 		border: hidden;
 	}
-	table.data {
-		width: auto;
-	}
 	table.data caption,
 	table.index caption {
 		max-width: 50em;
