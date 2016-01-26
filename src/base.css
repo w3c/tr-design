@@ -485,13 +485,13 @@
 	a[href] {
 		color: #034575;
 		text-decoration: none;
-		border-bottom: 1px solid #555;
+		border-bottom: 1px solid #707070;
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
 	}
 	a:visited {
-		border-bottom-color: #969696;
+		border-bottom-color: #BBB;
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
