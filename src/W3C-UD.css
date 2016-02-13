@@ -4,10 +4,10 @@
 @import "base.css";
 
 body {
-  background-image: url(logos/UD);
+  background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD);
   background-color: transparent;
 }
 
 html {
-  background: white url(logos/UD-watermark);
+  background: white url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 }

@@ -117,7 +117,7 @@
 	@media screen {
 		.head > p:first-child > a {
 			display: inline-block;
-			background: url("logos/w3c-white.svg") no-repeat center / contain content-box border-box;
+			background: url("https://www.w3.org/StyleSheets/TR/2016/logos/w3c-white.svg") no-repeat center / contain content-box border-box;
 			padding: .4rem .7rem;
 			border-radius: .4rem;
 			margin: .4rem 0 0 .4rem;
