@@ -5,7 +5,14 @@
  * It is intended to be a very simple script for 2016.                        *
  ******************************************************************************/
 (function(){
-  function toggleSidebar(on, skipScroll) {
+  function toggleSidebar(on) {
+
+    /* Don't scroll to compensate for the ToC if we're above it already. */
+    var headY = 0;
+    var head = document.querySelector('.head');
+    headY += head.offsetTop + head.offsetHeight; // terrible approx of "top of ToC"
+    skipScroll = window.scrollY < headY;
+
     if (on == undefined) {
       on = !document.body.classList.contains('toc-sidebar');
     }
@@ -13,7 +20,6 @@
     var toggle = document.getElementById('toc-toggle');
     var toggleAbbr = toggle.firstChild;
     var tocNav = document.getElementById('toc');
-    console.log(toggleAbbr);
     if (on) {
       var tocHeight = tocNav.offsetHeight;
       document.body.classList.add('toc-sidebar');
@@ -75,11 +81,11 @@
   createSidebarToggle();
   var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
   if(sidebarMedia.addEventListener) {
-    sidebarMedia.addEventListener('change', function(e){toggleSidebar(e.matches, true);}, false);
+    sidebarMedia.addEventListener('change', function(e){toggleSidebar(e.matches);}, false);
   } else if(sidebarMedia.addListener) {
-    sidebarMedia.addListener(function(e){toggleSidebar(e.matches, true);});
+    sidebarMedia.addListener(function(e){toggleSidebar(e.matches);});
   }
-  toggleSidebar(sidebarMedia.matches, true);
+  toggleSidebar(sidebarMedia.matches);
 
   /* If the sidebar has been manually opened and is currently overlaying the text
      (window too small for the MQ to add the margin to body),
