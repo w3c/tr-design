@@ -117,24 +117,28 @@
 	@media screen {
 		.head > p:first-child > a {
 			display: inline-block;
-			background: url("https://www.w3.org/StyleSheets/TR/2016/logos/w3c-white.svg") no-repeat center / contain content-box border-box;
-			padding: .4rem .7rem;
+			margin: 0.4rem 0 0.2rem .4rem;
+		}
+
+		.head img[src*="logos/W3C"] {
+			display: block;
+			border: solid #1a5e9a;
+			border-width: .65rem .7rem .6rem;
 			border-radius: .4rem;
-			margin: .4rem 0 0 .4rem;
-			background-color: hsl(208, 71%, 35%);
+			background: #1a5e9a;
+			color: white;
+			font-weight: bold;
 		}
 
-		.head > p:first-child > a > img {
-			visibility: hidden;
+		.head a:hover > img[src*="logos/W3C"],
+		.head a:focus > img[src*="logos/W3C"] {
+			background: #457cad;
+			border-color: #457cad;
 		}
 
-		.head > p:first-child > a:hover,
-		.head > p:first-child > a:focus {
-			background-color: hsla(208, 71%, 35%,.8);
-		}
-
-		.head > p:first-child > a:active {
-			background-color: #c00;
+		.head a:active > img[src*="logos/W3C"] {
+			background: #c00;
+			border-color: #c00;
 		}
 	}
 	
