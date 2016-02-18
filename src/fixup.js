@@ -11,44 +11,65 @@
     }
 
     var toggle = document.getElementById('toc-toggle');
+    var toggleAbbr = toggle.firstChild;
     var tocNav = document.getElementById('toc');
+    console.log(toggleAbbr);
     if (on) {
       var tocHeight = tocNav.offsetHeight;
       document.body.classList.add('toc-sidebar');
       document.body.classList.remove('toc-inline');
-      toggle.textContent = "←";
-      toggle.title = "Collapse Sidebar";
+      toggleAbbr.textContent = "←";
+      toggleAbbr.title = "Collapse Sidebar";
       if (!skipScroll) {
         window.scrollBy(0, 0 - tocHeight);
       }
+      tocNav.focus();
     }
     else {
       document.body.classList.add('toc-inline');
       document.body.classList.remove('toc-sidebar');
-      toggle.textContent = "→";
-      toggle.title = "Pop Out Sidebar";
+      toggleAbbr.textContent = "→";
+      toggleAbbr.title = "Pop Out Sidebar";
       if (!skipScroll) {
         window.scrollBy(0, tocNav.offsetHeight);
+      }
+      if (toggle.matches(':hover')) {
+        /* Unfocus button when not using keyboard navigation,
+           because I don't know where else to send the focus. */
+        toggle.blur();
       }
     }
   }
 
   function createSidebarToggle() {
+    /* Create the sidebar toggle in JS; it shouldn't exist when JS is off. */
     var toggle = document.createElement('a');
       /* This should probably be a button, but appearance isn't standards-track.*/
     toggle.setAttribute('id', 'toc-toggle');
     toggle.setAttribute('class', 'toc-toggle');
     toggle.setAttribute('href', '#toc');
     toggle.addEventListener('click', function(e){ e.preventDefault(); toggleSidebar(); return false;}, false);
-    toggle.textContent = "←";
+    toggle.innerHTML = "<abbr title='Collapse Sidebar'>←</abbr>";
 
-    var b2t = document.getElementById('back-to-top');
-    if (b2t) {
-      b2t.appendChild(toggle);
+    /* Get <nav id=toc-nav>, or make it if we don't have one. */
+    var tocNav = document.getElementById('toc-nav');
+    if (!tocNav) {
+      tocNav = document.createElement('nav');
+      tocNav.setAttribute('id', 'toc-nav');
+      /* Prepend for better keyboard navigation */
+      document.body.insertBefore(tocNav, document.body.firstChild);
     }
-    else {
-      document.body.appendChild(toggle);
+    /* While we're at it, make sure we have a Jump to Toc link. */
+    var tocJump = document.getElementById('toc-jump');
+    if (!tocJump) {
+      tocJump = document.createElement('a');
+      tocJump.setAttribute('id', 'toc-jump');
+      tocJump.setAttribute('href', '#toc');
+      tocJump.innerHTML = "<abbr title='Jump to Table of Contents'>↑</abbr>";
+      tocNav.appendChild(tocJump);
     }
+
+    tocNav.appendChild(toggle);
   }
 
   createSidebarToggle();
@@ -78,7 +99,6 @@
     wrapper.className = 'overlarge';
     table.parentNode.insertBefore(wrapper, table);
     wrapper.appendChild(table);
-    console.log(table);
   }
 
 })();

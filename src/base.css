@@ -58,8 +58,8 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
- *   - back-to-top link:
- *     <p role=navigation id="back-to-top"><a href="#toc"><abbr title="Back to Top">&uarr;</abbr>
+ *   - back-to-ToC link:
+ *     <nav id="toc-nav"><a href="#toc"><abbr title="Jump to Table of Contents">&uarr;</abbr></nav>
  * 
  ******************************************************************************/
 
@@ -145,48 +145,52 @@
 /** Back to Top / ToC Toggle **************************************************/
 
 	@media print {
-		#back-to-top,
-		.toc-toggle {
+		#toc-nav {
 			display: none;
 		}
 	}
 	@media not print {
-		#back-to-top,
-		body > #toc-toggle {
+		#toc-nav {
 			position: fixed;
 			z-index: 2;
 			bottom: 0; left: 0;
 			margin: 0;
-			width: 26px;
-			text-align: center;
-			border-top-right-radius: 26px;
+			min-width: 1.33em;
+			border-top-right-radius: 2rem;
 			box-shadow: 0 0 2px;
-			font: 1em monospace;
-			font: 1rem monospace;
+			font-size: 1.5em;
 			color: black;
 		}
-		#back-to-top a,
-		body > #toc-toggle {
+		#toc-nav > a {
 			display: block;
-			width: 22px;
-			height: 22px;
-			padding: 4px 4px 0 0;
+			height: 1.33em;
+			padding: .1em;
 			margin: 0;
 			border: none;
-			border-top-right-radius: 26px;
+			border-top-right-radius: 1.33em;
 		}
-		#back-to-top :first-child {
-			display: block;
-			padding-bottom: 22px;
-			margin-bottom: -22px;
+		#toc-nav > #toc-jump {
+			padding-bottom: 2em;
+			margin-bottom: -1.9em;
 		}
-		#back-to-top > a {
+		#toc-nav > a {
 			background: white;
 			box-shadow: 0 0 2px;
 		}
-		#back-to-top > a:hover,
-		#back-to-top > a:focus {
+		#toc-nav > a:hover,
+		#toc-nav > a:focus {
 			background: #f8f8f8;
+			width: auto;
+		}
+		#toc-nav:hover > a > abbr:after,
+		/* This needs :focus-within, ideally */
+		#toc-nav > a:focus > abbr:after {
+			content: " " attr(title);
+			white-space: nowrap;
+			margin: 0 0.5em;
+		}
+		#toc-nav > a:not(:hover):not(:focus) {
+			color: #969696;
 		}
 
 		#toc-toggle-inline {
@@ -205,12 +209,11 @@
 			left: -1px;
 		}
 
-		.toc-toggle:active,
-		#back-to-top :active {
+		#toc-nav :active {
 			color: #C00;
 		}
 
-		#back-to-top abbr {
+		#toc-nav abbr {
 			border: none;
 			text-decoration: none;
 		}
@@ -243,7 +246,7 @@
 			color: gray;
 			color: hsla(203,20%,40%,.7);
 		}
-		body.toc-sidebar #back-to-top :first-child {
+		body.toc-sidebar #toc-jump {
 			display: none;
 		}
 	}
@@ -279,7 +282,7 @@
 		}
 		/* See also Overflow section at the bottom */
 
-		body:not(.toc-inline) #back-to-top :first-child {
+		body:not(.toc-inline) #toc-jump {
 			display: none;
 		}
 	}
