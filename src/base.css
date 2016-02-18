@@ -163,34 +163,36 @@
 		}
 		#toc-nav > a {
 			display: block;
+			white-space: nowrap;
+
 			height: 1.33em;
 			padding: .1em;
 			margin: 0;
+
+			background: white;
+			box-shadow: 0 0 2px;
 			border: none;
 			border-top-right-radius: 1.33em;
+			background: white;
 		}
 		#toc-nav > #toc-jump {
 			padding-bottom: 2em;
 			margin-bottom: -1.9em;
 		}
-		#toc-nav > a {
-			background: white;
-			box-shadow: 0 0 2px;
-		}
+
 		#toc-nav > a:hover,
 		#toc-nav > a:focus {
 			background: #f8f8f8;
-			width: auto;
 		}
+		#toc-nav > a:not(:hover):not(:focus) {
+			color: #707070;
+		}
+
 		#toc-nav:hover > a > abbr:after,
 		/* This needs :focus-within, ideally */
 		#toc-nav > a:focus > abbr:after {
 			content: " " attr(title);
-			white-space: nowrap;
 			margin: 0 0.5em;
-		}
-		#toc-nav > a:not(:hover):not(:focus) {
-			color: #969696;
 		}
 
 		#toc-toggle-inline {
