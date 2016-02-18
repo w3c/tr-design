@@ -377,15 +377,11 @@
 	}
 
 	dl dd {
-		margin: 0 0 1em 2em;
+		margin: 0 0 .5em 2em;
 	}
 
-	.head dd + dt {
-		margin-top: .5em;
-	}
-
-	.head dd { /* undo for header */
-		margin-bottom: 0;
+	.head dd + dd { /* compact for header */
+		margin-top: -.5em;
 	}
 
 	/* Style for algorithms */
