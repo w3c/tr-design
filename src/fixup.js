@@ -11,7 +11,7 @@
     var headY = 0;
     var head = document.querySelector('.head');
     headY += head.offsetTop + head.offsetHeight; // terrible approx of "top of ToC"
-    skipScroll = window.scrollY < headY;
+    var skipScroll = window.scrollY < headY;
 
     if (on == undefined) {
       on = !document.body.classList.contains('toc-sidebar');
