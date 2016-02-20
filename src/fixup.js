@@ -6,6 +6,12 @@
  ******************************************************************************/
 (function() {
   "use strict";
+  var collapseSidebarText = '<span aria-hidden="true">←</span> '
+                          + '<span>Collapse Sidebar</span>';
+  var expandSidebarText   = '<span aria-hidden="true">→</span> '
+                          + '<span>Pop Out Sidebar</span>';
+  var tocJumpText         = '<span aria-hidden="true">↑</span> '
+                          + '<span>Jump to Table of Contents</span>';
 
   function toggleSidebar(on) {
     if (on == undefined) {
@@ -22,14 +28,12 @@
     var skipScroll = window.scrollY < headY;
 
     var toggle = document.getElementById('toc-toggle');
-    var toggleAbbr = toggle.firstChild;
     var tocNav = document.getElementById('toc');
     if (on) {
       var tocHeight = tocNav.offsetHeight;
       document.body.classList.add('toc-sidebar');
       document.body.classList.remove('toc-inline');
-      toggleAbbr.textContent = "←";
-      toggleAbbr.title = "Collapse Sidebar";
+      toggle.innerHTML = collapseSidebarText;
       if (!skipScroll) {
         window.scrollBy(0, 0 - tocHeight);
       }
@@ -38,8 +42,7 @@
     else {
       document.body.classList.add('toc-inline');
       document.body.classList.remove('toc-sidebar');
-      toggleAbbr.textContent = "→";
-      toggleAbbr.title = "Pop Out Sidebar";
+      toggle.innerHTML = expandSidebarText;
       if (!skipScroll) {
         window.scrollBy(0, tocNav.offsetHeight);
       }
@@ -59,7 +62,7 @@
     toggle.setAttribute('class', 'toc-toggle');
     toggle.setAttribute('href', '#toc');
     toggle.addEventListener('click', function(e){ e.preventDefault(); toggleSidebar(); return false;}, false);
-    toggle.innerHTML = "<abbr title='Collapse Sidebar'>←</abbr>";
+    toggle.innerHTML = collapseSidebarText;
 
     /* Get <nav id=toc-nav>, or make it if we don't have one. */
     var tocNav = document.getElementById('toc-nav');
@@ -75,7 +78,7 @@
       tocJump = document.createElement('a');
       tocJump.setAttribute('id', 'toc-jump');
       tocJump.setAttribute('href', '#toc');
-      tocJump.innerHTML = "<abbr title='Jump to Table of Contents'>↑</abbr>";
+      tocJump.innerHTML = tocJumpText;
       tocNav.appendChild(tocJump);
     }
 

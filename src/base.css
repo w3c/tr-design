@@ -58,8 +58,7 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
- *   - back-to-ToC link:
- *     <nav id="toc-nav"><a href="#toc"><abbr title="Jump to Table of Contents">&uarr;</abbr></nav>
+ *   - js-added ToC jump links (see fixup.js)
  * 
  ******************************************************************************/
 
@@ -170,7 +169,7 @@
 			white-space: nowrap;
 
 			height: 1.33em;
-			padding: .1em;
+			padding: .1em 0.3em;
 			margin: 0;
 
 			background: white;
@@ -192,11 +191,12 @@
 			color: #707070;
 		}
 
-		#toc-nav:hover > a > abbr:after,
-		/* This needs :focus-within, ideally */
-		#toc-nav > a:focus > abbr:after {
-			content: " " attr(title);
-			margin: 0 0.5em;
+		#toc-nav:not(:hover) > a:not(:focus) > span + span {
+			/* Ideally this uses :focus-within on #toc-nav */
+			display: none;
+		}
+		#toc-nav > a > span + span {
+			padding-right: 0.2em;
 		}
 
 		#toc-toggle-inline {
@@ -217,11 +217,6 @@
 
 		#toc-nav :active {
 			color: #C00;
-		}
-
-		#toc-nav abbr {
-			border: none;
-			text-decoration: none;
 		}
 	}
 
