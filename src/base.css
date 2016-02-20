@@ -190,6 +190,9 @@
 		#toc-nav > a:not(:hover):not(:focus) {
 			color: #707070;
 		}
+		#toc-nav > a[href="#toc"]:focus:last-child {
+			padding-bottom: 1.5rem; /* statusbar gets in the way; remove once browsers fix */
+		}
 
 		#toc-nav:not(:hover) > a:not(:focus) > span + span {
 			/* Ideally this uses :focus-within on #toc-nav */
