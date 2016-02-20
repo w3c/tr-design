@@ -4,7 +4,9 @@
  * This code handles some fixup to improve the table of contents.             *
  * It is intended to be a very simple script for 2016.                        *
  ******************************************************************************/
-(function(){
+(function() {
+  "use strict";
+
   function toggleSidebar(on) {
 
     /* Don't scroll to compensate for the ToC if we're above it already. */
