@@ -94,7 +94,7 @@
      then auto-close the sidebar once you click on something in there. */
   document.getElementById('toc').addEventListener('click', function(e) {
     if(e.target.tagName.toLowerCase() == "a" && document.body.classList.contains('toc-sidebar') && !sidebarMedia.matches) {
-      toggleSidebar();
+      toggleSidebar(false);
     }
   }, false);
 
