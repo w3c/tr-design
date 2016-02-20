@@ -14,10 +14,13 @@ and that waits until after the new publication system is sorted out.)
 
 If you're familiar with GitHub then contributing is simple: just fork and make pull requests.
 Absolutely everyone is welcome (and even encouraged) to contribute to improve the design of W3C specifications.
-Bugfixes, code cleanup, and simple improvements will be unilaterally approved by the Design Point Person.
+Bugfixes, code cleanup, and simple improvements will be unilaterally approved by the *Design Point Person*.
 For more significant changes to the visual styles,
 discussion on spec-prod@w3.org is encouraged to get feedback and consensus.
 (Think of it as a design critique.)
+
+**Do not commit directly to any the common branches** (`gh-pages` and `2016` at the time of writing) unless you are the *Design Point Person* for the project.
+Instead, fork the desired branch and submit a pull request.
 
 ## Guidelines for a proper design
 
@@ -55,12 +58,13 @@ The dates above are deadlines but the earlier the better, especially when consid
 
 One _Design Point Person_ per year is in charge of managing general proposals,
 producing and proposing the final design,
-ensuring [wide reviews](http://www.w3.org/2014/Process-20140801/#wide-review),
+ensuring [wide reviews](https://www.w3.org/2015/Process-20150901/#wide-review),
 addressing issues and pull requests,
 and obtaining the W3C Director approval.
+Only the *Design Point Person*&nbsp;&mdash;&nbsp;and, occasionally, W3C staff&nbsp;&mdash;&nbsp;should commit to the common branches of the project.
 This individual must engage with the Web Community at large and is appointed by the W3C Director.
 
-NOTE: For 2015, the Design Point Person is @fantasai.
+NOTE: For 2015, the *Design Point Person* is @fantasai.
 
 If the W3C Director cannot approve a new design within a given year, the design of the current year remains effective for the following year.
 
@@ -69,6 +73,14 @@ The W3C Director MAY delegate responsibility (generally to other individuals in 
 ### Bug Fixing
 
 Bug fixing MAY happen on a continuous basis for all style sheets. Published styles are include in releases/ for maintenance purposes.
+
+#### Branches
+
+At any point in time, branch `gh-pages` is used for work on *next year's TR design*, until the first candidate release is branched out from it.
+From that moment on, `gh-pages` becomes the development branch for the following cycle.
+
+Branches with years in their names (eg, `2016`) are used exclusively for bug-fixing candidate releases for that specific year.
+Commits to `gh-pages` will *not* be propagated to yearly branches.
 
 ### Considerations
 
