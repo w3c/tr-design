@@ -8,6 +8,9 @@
   "use strict";
 
   function toggleSidebar(on) {
+    if (on == undefined) {
+      on = !document.body.classList.contains('toc-sidebar');
+    }
 
     /* Don't scroll to compensate for the ToC if we're above it already. */
     var headY = 0;
@@ -17,10 +20,6 @@
       headY += head.offsetTop + head.offsetHeight;
     }
     var skipScroll = window.scrollY < headY;
-
-    if (on == undefined) {
-      on = !document.body.classList.contains('toc-sidebar');
-    }
 
     var toggle = document.getElementById('toc-toggle');
     var toggleAbbr = toggle.firstChild;
