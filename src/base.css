@@ -250,6 +250,7 @@
 		body.toc-sidebar #toc-jump:not(:focus) {
 			width: 0;
 			height: 0;
+			padding: 0;
 			position: absolute;
 			overflow: hidden;
 		}
@@ -286,9 +287,10 @@
 		}
 		/* See also Overflow section at the bottom */
 
-		body:not(.toc-inline) #toc-jump {
+		body:not(.toc-inline) #toc-jump:not(:focus) {
 			width: 0;
 			height: 0;
+			padding: 0;
 			position: absolute;
 			overflow: hidden;
 		}
