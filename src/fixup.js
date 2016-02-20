@@ -60,7 +60,7 @@
     /* Get <nav id=toc-nav>, or make it if we don't have one. */
     var tocNav = document.getElementById('toc-nav');
     if (!tocNav) {
-      tocNav = document.createElement('nav');
+      tocNav = document.createElement('p');
       tocNav.setAttribute('id', 'toc-nav');
       /* Prepend for better keyboard navigation */
       document.body.insertBefore(tocNav, document.body.firstChild);
