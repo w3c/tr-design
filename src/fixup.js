@@ -80,9 +80,7 @@
 
   createSidebarToggle();
   var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
-  if(sidebarMedia.addEventListener) {
-    sidebarMedia.addEventListener('change', function(e){toggleSidebar(e.matches);}, false);
-  } else if(sidebarMedia.addListener) {
+  if(sidebarMedia.addListener) {
     sidebarMedia.addListener(function(e){toggleSidebar(e.matches);});
   }
   toggleSidebar(sidebarMedia.matches);
