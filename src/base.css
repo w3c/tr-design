@@ -252,8 +252,11 @@
 			color: gray;
 			color: hsla(203,20%,40%,.7);
 		}
-		body.toc-sidebar #toc-jump {
-			display: none;
+		body.toc-sidebar #toc-jump:not(:focus) {
+			width: 0;
+			height: 0;
+			position: absolute;
+			overflow: hidden;
 		}
 	}
 
@@ -289,7 +292,10 @@
 		/* See also Overflow section at the bottom */
 
 		body:not(.toc-inline) #toc-jump {
-			display: none;
+			width: 0;
+			height: 0;
+			position: absolute;
+			overflow: hidden;
 		}
 	}
 	@media screen and (min-width: 90em) {
