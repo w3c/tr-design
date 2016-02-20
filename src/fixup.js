@@ -12,7 +12,10 @@
     /* Don't scroll to compensate for the ToC if we're above it already. */
     var headY = 0;
     var head = document.querySelector('.head');
-    headY += head.offsetTop + head.offsetHeight; // terrible approx of "top of ToC"
+    if (head) {
+      // terrible approx of "top of ToC"
+      headY += head.offsetTop + head.offsetHeight;
+    }
     var skipScroll = window.scrollY < headY;
 
     if (on == undefined) {
