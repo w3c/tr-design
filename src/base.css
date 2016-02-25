@@ -921,21 +921,6 @@ Possible extra rowspan handling
 
 /** Table of Contents *********************************************************/
 
-	.toc, .toc ol, .toc ul, .toc li {
-		list-style: none; /* Numbers must be inlined into source */
-		/* because generated content isn't search/selectable and markers can't do multilevel yet */
-		margin:  0;
-		padding: 0;
-		line-height: 1.2rem; /* consistent spacing */
-	}
-
-	/* ToC not indented until third level, but font style & margins show hierarchy */
-	.toc > li             { margin: 1.2em 0;   font-weight: bold;   }
-	.toc > li li          { margin: 0;         font-weight: normal; }
-	.toc > li li li       { margin-left:  1em; font-style:  italic; }
-	.toc > li li li li    { margin-left:  1em; font-style:  normal; }
-	.toc > li li li li li { margin-left: 1rem; font-style:  italic; font-size: 85%; }
-
 	.toc a {
 		/* More spacing; use padding to make it part of the click target. */
 		padding-top: 0.1em;
@@ -953,31 +938,72 @@ Possible extra rowspan handling
 		border-bottom-color: transparent;
 	}
 
+	.toc, .toc ol, .toc ul, .toc li {
+		list-style: none; /* Numbers must be inlined into source */
+		/* because generated content isn't search/selectable and markers can't do multilevel yet */
+		margin:  0.3rem 0;
+		padding: 0;
+		line-height: 1.1rem; /* consistent spacing */
+	}
+
+	/* ToC not indented until third level, but font style & margins show hierarchy */
+	.toc > li             { font-weight: bold;   }
+	.toc > li li          { font-weight: normal; }
+	.toc > li li li       { font-style:  italic; }
+	.toc > li li li li    { font-style:  normal; }
+	.toc > li li li li li { font-style:  italic;
+	                        font-size:   85%;    }
+
+	.toc > li             { margin: 1.5em 0;     }
+	.toc > li li li       { margin-left: 2em;
+	                        margin-left: 2rem;   }
+
 	/* Section numbers in a column of their own */
 	:not(li) > .toc {
-		margin-left: 4em;
+		margin-left: 5em;
 	}
 
 	.toc .secno {
 		float: left;
 		width: 4em;
-		margin-left: -4em;
 		white-space: nowrap;
-	}
-
-	.toc > li li li .secno {
-		margin-left: -5em;
 	}
 	.toc > li li li li .secno {
 		font-size: 85%;
-		margin-left: -7.06em;
-		margin-left: -6rem;
 	}
 	.toc > li li li li li .secno {
-		margin-left: -8.24em;
-		margin-left: -7rem;
 		font-size: 100%;
 	}
+
+	:not(li) > .toc              { margin-left:  5rem; }
+	.toc .secno                  { margin-left: -5rem; }
+	.toc > li li li .secno       { margin-left: -7rem; }
+	.toc > li li li li .secno    { margin-left: -9rem; }
+	.toc > li li li li li .secno { margin-left: -11rem; }
+
+	/* Tighten up indentation in narrow ToCs */
+	@media (max-width: 30em) {
+		:not(li) > .toc              { margin-left:  4rem; }
+		.toc .secno                  { margin-left: -4rem; }
+		.toc > li li li              { margin-left:  1rem; }
+		.toc > li li li .secno       { margin-left: -5rem; }
+		.toc > li li li li .secno    { margin-left: -6rem; }
+		.toc > li li li li li .secno { margin-left: -7rem; }
+	}
+	@media screen and (min-width: 78em) {
+		body:not(.toc-inline) :not(li) > .toc              { margin-left:  4rem; }
+		body:not(.toc-inline) .toc .secno                  { margin-left: -4rem; }
+		body:not(.toc-inline) .toc > li li li              { margin-left:  1rem; }
+		body:not(.toc-inline) .toc > li li li .secno       { margin-left: -5rem; }
+		body:not(.toc-inline) .toc > li li li li .secno    { margin-left: -6rem; }
+		body:not(.toc-inline) .toc > li li li li li .secno { margin-left: -7rem; }
+	}
+	body.toc-sidebar :not(li) > .toc              { margin-left:  4rem; }
+	body.toc-sidebar .toc .secno                  { margin-left: -4rem; }
+	body.toc-sidebar .toc > li li li              { margin-left:  1rem; }
+	body.toc-sidebar .toc > li li li .secno       { margin-left: -5rem; }
+	body.toc-sidebar .toc > li li li li .secno    { margin-left: -6rem; }
+	body.toc-sidebar .toc > li li li li li .secno { margin-left: -7rem; }
 
 	.toc li {
 		clear: both;
