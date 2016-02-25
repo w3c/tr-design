@@ -69,7 +69,6 @@
 	that page also includes instructions for disclosing a patent.
 	An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the W3C Patent Policy</a>. </p>
    <p> This document is governed by the <a href="http://www.w3.org/2015/Process-20150901/" id="w3c_process_revision">1 September 2015 W3C Process Document</a>. </p>
-   <p></p>
   </div>
 <nav id="toc">
   <h2>Table of Contents</h2>
@@ -340,7 +339,7 @@ Section Numbers and Anchoring</h3>
     <tbody>
      <tr>
       <th>Name:
-      <td><dfn class="css" id="propdef-text-align">text-align</dfn>
+      <td><dfn class="css" id="propdef-example">text-align</dfn>
      <tr>
       <th><a href="#values">Value</a>: 
       <td>start | end | left | right | center | justify
@@ -449,7 +448,8 @@ Section Numbers and Anchoring</h3>
   have special styling.
   
   <figure>
-    <p><img src="http://drafts.csswg.org/css-writing-modes/diagrams/text-flow-vectors-tb.png"></p>
+    <p><img src="http://drafts.csswg.org/css-writing-modes/diagrams/text-flow-vectors-tb.png"
+    alt="Text flow diagram showing the block flow direction downward (second line of text below first), the line orientation upward (upright glyphs), and the inline base direction left to right (characters ordered left to right within each line)">
     <figcaption><span class="marker">Figure 2.2.1</span> This is a diagram showing off how diagrams render.</figcaption>
   </figure>
   
@@ -486,7 +486,7 @@ Section Numbers and Anchoring</h3>
     <colgroup span="3"></colgroup>
     <thead>
      <tr>
-      <th>
+      <th><code>white-space</code>
       <th>New Lines
       <th>Spaces and Tabs
       <th>Text Wrapping
@@ -660,7 +660,7 @@ to compare styling.
     <tbody>
      <tr>
       <th>Name:
-      <td><dfn class="css" id="propdef-text-align-2">text-align</dfn>
+      <td><dfn class="css" id="propdef-text-align">text-align</dfn>
      <tr>
       <th><a href="#values">Value</a>: 
       <td>start | end | left | right | center |
@@ -879,7 +879,9 @@ to compare styling.
           using <a class="css" href="#valdef-text-justify-inter-word">inter-word</a> for German,
           etc. </p>
      <div class="figure" id="fig-text-justify-cursive">
-      <p> <img alt="Two lines of calligraphic Arabic end together due to a mix of compressed and swash forms." src="http://drafts.csswg.org/css-text-3/images/text-justify-cursive.png" title="Swash forms elongate the first line while a compressed contextual ligature shortens the second, allowing both to end precisely together."></p>
+      <p><img alt="Two unequal lines of calligraphic Arabic text can be drawn to end together due to a mix of compressed and swash forms."
+              src="http://drafts.csswg.org/css-text-3/images/text-justify-cursive.png"
+              title="Swash forms elongate the first line while a compressed contextual ligature shortens the second, allowing both to end precisely together."></p>
       <p class="caption">An example of cursively-justified Arabic text,
           rendered by <a href="http://www.decotype.com/">Tasmeem</a>.
           Like English, Arabic can be justified by adjusting the spacing between words,
@@ -1007,11 +1009,11 @@ to compare styling.
      
     <p>The following are examples of unacceptable justification: </p>
     <div class="figure">
-     <p><img alt="" src="http://drafts.csswg.org/css-text-3/images/arabic-stretch-spaced.png"> </p>
+     <img alt="" src="http://drafts.csswg.org/css-text-3/images/arabic-stretch-spaced.png">
      <p class="caption">Adding gaps between every pair of Arabic letters </p>
     </div>
     <div class="figure">
-     <p><img alt="" src="http://drafts.csswg.org/css-text-3/images/arabic-stretch-unjoined.png"> </p>
+     <img alt="" src="http://drafts.csswg.org/css-text-3/images/arabic-stretch-unjoined.png">
      <p class="caption">Adding gaps between every pair of unjoined Arabic letters </p>
     </div>
    </div>
