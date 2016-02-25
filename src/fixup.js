@@ -13,6 +13,12 @@
   var tocJumpText         = '<span aria-hidden="true">↑</span> '
                           + '<span>Jump to Table of Contents</span>';
 
+  var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
+  var autoToggle   = function(e){ toggleSidebar(e.matches) };
+  if(sidebarMedia.addListener) {
+    sidebarMedia.addListener(autoToggle);
+  }
+
   function toggleSidebar(on) {
     if (on == undefined) {
       on = !document.body.classList.contains('toc-sidebar');
@@ -61,8 +67,17 @@
     toggle.setAttribute('id', 'toc-toggle');
     toggle.setAttribute('class', 'toc-toggle');
     toggle.setAttribute('href', '#toc');
-    toggle.addEventListener('click', function(e){ e.preventDefault(); toggleSidebar(); return false;}, false);
     toggle.innerHTML = collapseSidebarText;
+
+    sidebarMedia.addListener(autoToggle);
+    var toggler = function(e) {
+      e.preventDefault();
+      toggleSidebar();
+      sidebarMedia.removeListener(autoToggle);
+      return false;
+    }
+    toggle.addEventListener('click', toggler, false);
+
 
     /* Get <nav id=toc-nav>, or make it if we don't have one. */
     var tocNav = document.getElementById('toc-nav');
@@ -86,10 +101,6 @@
   }
 
   createSidebarToggle();
-  var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
-  if(sidebarMedia.addListener) {
-    sidebarMedia.addListener(function(e){toggleSidebar(e.matches);});
-  }
   toggleSidebar(sidebarMedia.matches);
 
   /* If the sidebar has been manually opened and is currently overlaying the text
