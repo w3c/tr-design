@@ -101,17 +101,23 @@
     tocNav.appendChild(toggle);
   }
 
-  createSidebarToggle();
-  toggleSidebar(sidebarMedia.matches);
+  var toc = document.getElementById('toc');
+  if (toc) {
+    createSidebarToggle();
+    toggleSidebar(sidebarMedia.matches);
 
-  /* If the sidebar has been manually opened and is currently overlaying the text
-     (window too small for the MQ to add the margin to body),
-     then auto-close the sidebar once you click on something in there. */
-  document.getElementById('toc').addEventListener('click', function(e) {
-    if(e.target.tagName.toLowerCase() == "a" && document.body.classList.contains('toc-sidebar') && !sidebarMedia.matches) {
-      toggleSidebar(false);
-    }
-  }, false);
+    /* If the sidebar has been manually opened and is currently overlaying the text
+       (window too small for the MQ to add the margin to body),
+       then auto-close the sidebar once you click on something in there. */
+    toc.addEventListener('click', function(e) {
+      if(e.target.tagName.toLowerCase() == "a" && document.body.classList.contains('toc-sidebar') && !sidebarMedia.matches) {
+        toggleSidebar(false);
+      }
+    }, false);
+  }
+  else {
+    console.warn("Can't find Table of Contents. Please use <nav id='toc'> around the ToC.");
+  }
 
   /* Wrap tables in case they overflow */
   var tables = document.querySelectorAll(':not(.overlarge) > table.data, :not(.overlarge) > table.index');
