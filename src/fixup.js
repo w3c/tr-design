@@ -64,9 +64,9 @@
     /* Create the sidebar toggle in JS; it shouldn't exist when JS is off. */
     var toggle = document.createElement('a');
       /* This should probably be a button, but appearance isn't standards-track.*/
-    toggle.setAttribute('id', 'toc-toggle');
-    toggle.setAttribute('class', 'toc-toggle');
-    toggle.setAttribute('href', '#toc');
+    toggle.id = 'toc-toggle';
+    toggle.class = 'toc-toggle';
+    toggle.href = '#toc';
     toggle.innerHTML = collapseSidebarText;
 
     sidebarMedia.addListener(autoToggle);
@@ -83,7 +83,7 @@
     var tocNav = document.getElementById('toc-nav');
     if (!tocNav) {
       tocNav = document.createElement('p');
-      tocNav.setAttribute('id', 'toc-nav');
+      tocNav.id = 'toc-nav';
       /* Prepend for better keyboard navigation */
       document.body.insertBefore(tocNav, document.body.firstChild);
     }
@@ -91,8 +91,8 @@
     var tocJump = document.getElementById('toc-jump');
     if (!tocJump) {
       tocJump = document.createElement('a');
-      tocJump.setAttribute('id', 'toc-jump');
-      tocJump.setAttribute('href', '#toc');
+      tocJump.id = 'toc-jump';
+      tocJump.href = '#toc';
       tocJump.innerHTML = tocJumpText;
       tocNav.appendChild(tocJump);
     }
