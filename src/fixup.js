@@ -44,6 +44,7 @@
         window.scrollBy(0, 0 - tocHeight);
       }
       tocNav.focus();
+      sidebarMedia.addListener(autoToggle); // auto-collapse when out of room
     }
     else {
       document.body.classList.add('toc-inline');
@@ -72,8 +73,8 @@
     sidebarMedia.addListener(autoToggle);
     var toggler = function(e) {
       e.preventDefault();
+      sidebarMedia.removeListener(autoToggle); // persist explicit off states
       toggleSidebar();
-      sidebarMedia.removeListener(autoToggle);
       return false;
     }
     toggle.addEventListener('click', toggler, false);
