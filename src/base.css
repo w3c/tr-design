@@ -2,14 +2,14 @@
  *                   Style sheet for the W3C specifications                   *
  *
  * Special classes handled by this style sheet include:
- * 
+ *
  * Indices
  *   - .toc for the Table of Contents (<ol class="toc">)
  *     -> <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
  *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
- * 
+ *
  * Structural Markup
  *   - table.data for general data tables
  *     -> use 'scope' attribute, <colgroup>, <thead>, and <tbody> for best results !
@@ -21,22 +21,22 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
- * 
+ *
  * Code
  *   - pre and code
- * 
+ *
  * Special Sections
  *   - .note       for informative notes             (div, p, span, aside, details)
  *   - .example    for informative examples          (div, p, pre, span)
  *   - .issue      for issues                        (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
- * 
+ *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
  *   - table.def for tables that define other entities (e.g. CSS properties)
  *   - dl.def    for definition lists that define other entitles (e.g. HTML elements)
- * 
+ *
  * Numbering
  *   - .secno for section numbers in .toc and headings (<span class='secno'>3.2</span>)
  *   - .marker for source-inserted example/figure/issue numbers (<span class='marker'>Issue 4</span>)
@@ -46,11 +46,11 @@
  *        .caption::before { content: "Figure "  counter(figure);  }
  *        .example::before { content: "Example " counter(example); }
  *        .issue::before   { content: "Issue "   counter(issue);   }
- * 
+ *
  * Header Stuff (ignore, just don't conflict with these classes)
  *   - .head for the header
  *   - .copyright for the copyright
- * 
+ *
  * Miscellaneous
  *   - .overlarge for things that should be as wide as possible, even if
  *     that overflows the body text area. This can be used on an item or
@@ -59,7 +59,7 @@
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
  *   - js-added ToC jump links (see fixup.js)
- * 
+ *
  ******************************************************************************/
 
 /******************************************************************************/
@@ -105,14 +105,14 @@
 		margin: 0 0 .1em;
 		font-size: 220%;
 	}
-	
+
 	div.head h2 { margin-bottom: 1.5em;}
 
 	.head > :first-child {
 		float: right;
 		margin: 0;
 	}
-	
+
 	@media screen {
 		.head > p:first-child > a {
 			display: inline-block;
@@ -140,7 +140,7 @@
 			border-color: #c00;
 		}
 	}
-	
+
 
 	p.copyright,
 	p.copyright small { font-size: small }
@@ -770,7 +770,7 @@
 		vertical-align: baseline;
 		border-bottom: 1px solid #bbd7e9;
 	}
-	
+
 	table.def > tbody > tr:last-child th,
 	table.def > tbody > tr:last-child td {
 		border-bottom: 0;
