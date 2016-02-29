@@ -1021,7 +1021,7 @@ Possible extra rowspan handling
 /** Index *********************************************************************/
 
 	/* Index Lists: Layout */
-	ul.index       { margin-left: 0; columns: 15em; -webkit-columns: 15em; -moz-columns: 15em; text-indent: 1em hanging; }
+	ul.index       { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
 	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
 	ul.index li li { margin-left: 1em }
 	ul.index dl    { margin-top: 0; }
