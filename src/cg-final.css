@@ -2,5 +2,23 @@
 
 body {
   background-image: url('logos/back-cg-final.png');
+  background-size: auto !important;
 }
 
+@media screen and (min-width: 28em) {
+    body {
+        padding-left: 160px;
+    }
+}
+
+@media screen and (min-width: 78em) {
+    body:not(.toc-inline) #toc {
+        padding-top: 160px;
+    };
+}
+
+@media screen {
+    body.toc-sidebar #toc {
+        padding-top: 160px;
+    };
+}
