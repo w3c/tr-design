@@ -13,11 +13,13 @@ body {
 @media screen and (min-width: 78em) {
     body:not(.toc-inline) #toc {
         padding-top: 160px;
+        background-attachment: local !important;
     };
 }
 
 @media screen {
     body.toc-sidebar #toc {
         padding-top: 160px;
+        background-attachment: local !important;
     };
 }

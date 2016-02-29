@@ -3,7 +3,6 @@
 body {
   background-image: url('logos/back-bg-draft.png');
   background-size: auto !important;
-  background-position: top left;
 }
 
 @media screen and (min-width: 28em) {
@@ -15,11 +14,13 @@ body {
 @media screen and (min-width: 78em) {
     body:not(.toc-inline) #toc {
         padding-top: 150px;
+        background-attachment: local !important;
     };
 }
 
 @media screen {
     body.toc-sidebar #toc {
         padding-top: 150px;
+        background-attachment: local !important;
     };
 }
