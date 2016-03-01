@@ -1,0 +1,26 @@
+@import url('base.css');
+
+body {
+  background-image: url('logos/back-bg-final.png');
+  background-size: auto !important;
+}
+
+@media screen and (min-width: 28em) {
+    body {
+        padding-left: 150px;
+    }
+}
+
+@media screen and (min-width: 78em) {
+    body:not(.toc-inline) #toc {
+        padding-top: 150px;
+        background-attachment: local !important;
+    };
+}
+
+@media screen {
+    body.toc-sidebar #toc {
+        padding-top: 150px;
+        background-attachment: local !important;
+    };
+}
