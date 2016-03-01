@@ -108,39 +108,35 @@
 
 	div.head h2 { margin-bottom: 1.5em;}
 
-	.head > :first-child {
-		float: right;
+	.head p:not(.copyright) {
 		margin: 0;
 	}
 
-	@media screen {
-		.head > p:first-child > a {
-			display: inline-block;
-			margin: 0.4rem 0 0.2rem .4rem;
-		}
-
-		.head img[src*="logos/W3C"] {
-			display: block;
-			border: solid #1a5e9a;
-			border-width: .65rem .7rem .6rem;
-			border-radius: .4rem;
-			background: #1a5e9a;
-			color: white;
-			font-weight: bold;
-		}
-
-		.head a:hover > img[src*="logos/W3C"],
-		.head a:focus > img[src*="logos/W3C"] {
-			background: #457cad;
-			border-color: #457cad;
-		}
-
-		.head a:active > img[src*="logos/W3C"] {
-			background: #c00;
-			border-color: #c00;
-		}
+	.head p:not(.copyright) > a {
+		float: right;
+		margin: 0.4rem 0 0.2rem .4rem;
 	}
 
+	.head img[src*="logos/W3C"] {
+		display: block;
+		border: solid #1a5e9a;
+		border-width: .65rem .7rem .6rem;
+		border-radius: .4rem;
+		background: #1a5e9a;
+		color: white;
+		font-weight: bold;
+	}
+
+	.head a:hover > img[src*="logos/W3C"],
+	.head a:focus > img[src*="logos/W3C"] {
+		background: #457cad;
+		border-color: #457cad;
+	}
+
+	.head a:active > img[src*="logos/W3C"] {
+		background: #c00;
+		border-color: #c00;
+	}
 
 	p.copyright,
 	p.copyright small { font-size: small }
