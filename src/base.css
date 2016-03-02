@@ -329,6 +329,7 @@
 		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
 		font-family: inherit;    /* Inherit the font family. */
 		line-height: 1.2;        /* Keep wrapped headings compact */
+		hyphens: manual;         /* Hyphenated headings look weird */
 	}
 
 	h2, h3, h4, h5, h6 {
