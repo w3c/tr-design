@@ -109,6 +109,7 @@
 	div.head h2 { margin-bottom: 1.5em;}
 
 /** W3C Logo ******************************************************************/
+
 	.head p:not(.copyright) {
 		margin: 0;
 	}
@@ -139,6 +140,8 @@
 		background: #c00;
 		border-color: #c00;
 	}
+
+	/* see also additional rules in Link Styling section */
 
 /** Copyright *****************************************************************/
 
@@ -529,9 +532,11 @@
 	}
 
 	/* Backout above styling for W3C logo */
-	.head > p:first-child > a {
+	.head p:not(.copyright) > a,
+	.head > a:first-child {
 		border: none;
 		text-decoration: none;
+		background: transparent;
 	}
 
 /******************************************************************************/
