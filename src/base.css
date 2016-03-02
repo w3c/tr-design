@@ -937,7 +937,7 @@ Possible extra rowspan handling
 
 	.toc a {
 		/* More spacing; use padding to make it part of the click target. */
-		padding-top: 0.1em;
+		padding-top: 0.1rem;
 		/* Larger, more consistently-sized click target */
 		display: block;
 		/* Reverse color scheme */
@@ -968,9 +968,9 @@ Possible extra rowspan handling
 	.toc > li li li li li { font-style:  italic;
 	                        font-size:   85%;    }
 
-	.toc > li             { margin: 1.5em 0;     }
+	.toc > li             { margin: 1.5rem 0;    }
 	.toc > li li          { margin: 0.3rem 0;    }
-	.toc > li li li       { margin-left: 2em;
+	.toc > li li li       { margin-left: 2rem;
 	                        margin-left: 2rem;   }
 
 	/* Section numbers in a column of their own */
@@ -980,7 +980,7 @@ Possible extra rowspan handling
 
 	.toc .secno {
 		float: left;
-		width: 4em;
+		width: 4rem;
 		white-space: nowrap;
 	}
 	.toc > li li li li .secno {
