@@ -108,11 +108,13 @@
 
 	div.head h2 { margin-bottom: 1.5em;}
 
+/** W3C Logo ******************************************************************/
 	.head p:not(.copyright) {
 		margin: 0;
 	}
 
-	.head p:not(.copyright) > a {
+	.head p:not(.copyright) > a,
+	.head > a:first-child {
 		float: right;
 		margin: 0.4rem 0 0.2rem .4rem;
 	}
@@ -137,6 +139,8 @@
 		background: #c00;
 		border-color: #c00;
 	}
+
+/** Copyright *****************************************************************/
 
 	p.copyright,
 	p.copyright small { font-size: small }
