@@ -110,11 +110,11 @@
 
 /** W3C Logo ******************************************************************/
 
-	.head p:not(.copyright) {
+	.head p:not(.copyright):first-child {
 		margin: 0;
 	}
 
-	.head p:not(.copyright) > a,
+	.head p:not(.copyright):first-child > a,
 	.head > a:first-child {
 		float: right;
 		margin: 0.4rem 0 0.2rem .4rem;
