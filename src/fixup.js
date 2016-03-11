@@ -89,6 +89,8 @@
     if (!tocNav) {
       tocNav = document.createElement('p');
       tocNav.id = 'toc-nav';
+      /* Mark for removal if generated document is saved */
+      tocNav.classList.add('removeOnSave');
       /* Prepend for better keyboard navigation */
       document.body.insertBefore(tocNav, document.body.firstChild);
     }
