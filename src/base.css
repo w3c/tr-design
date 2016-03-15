@@ -5,7 +5,7 @@
  *
  * Indices
  *   - .toc for the Table of Contents (<ol class="toc">)
- *     -> <span class="secno"> for the section numbers
+ *     + <span class="secno"> for the section numbers
  *   - #toc for the Table of Contents (<nav id="toc">)
  *   - ul.index for Indices (<a href="#ref">term</a><span>, in §N.M</span>)
  *   - table.index for Index Tables (e.g. for properties or elements)
