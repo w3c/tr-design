@@ -6,7 +6,7 @@
 <style>
 	@media print {
 		rect {
-			xfill-opacity: 1;
+			fill-opacity: 1;
 		}
 	}
 </style>
