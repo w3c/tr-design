@@ -19,19 +19,21 @@
     sidebarMedia.addListener(autoToggle);
   }
 
-  function toggleSidebar(on) {
+  function toggleSidebar(on, skipScroll) {
     if (on == undefined) {
       on = !document.body.classList.contains('toc-sidebar');
     }
 
-    /* Don't scroll to compensate for the ToC if we're above it already. */
-    var headY = 0;
-    var head = document.querySelector('.head');
-    if (head) {
-      // terrible approx of "top of ToC"
-      headY += head.offsetTop + head.offsetHeight;
+    if (!skipScroll) {
+      /* Don't scroll to compensate for the ToC if we're above it already. */
+      var headY = 0;
+      var head = document.querySelector('.head');
+      if (head) {
+        // terrible approx of "top of ToC"
+        headY += head.offsetTop + head.offsetHeight;
+      }
+      skipScroll = window.scrollY < headY;
     }
-    var skipScroll = window.scrollY < headY;
 
     var toggle = document.getElementById('toc-toggle');
     var tocNav = document.getElementById('toc');
@@ -106,7 +108,7 @@
     if (!document.getElementById('toc-toggle')) {
       createSidebarToggle();
     }
-    toggleSidebar(sidebarMedia.matches);
+    toggleSidebar(sidebarMedia.matches, true);
 
     /* If the sidebar has been manually opened and is currently overlaying the text
        (window too small for the MQ to add the margin to body),
