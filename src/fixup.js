@@ -103,7 +103,9 @@
 
   var toc = document.getElementById('toc');
   if (toc) {
-    createSidebarToggle();
+    if (!document.getElementById('toc-toggle')) {
+      createSidebarToggle();
+    }
     toggleSidebar(sidebarMedia.matches);
 
     /* If the sidebar has been manually opened and is currently overlaying the text
