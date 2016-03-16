@@ -969,8 +969,7 @@ Possible extra rowspan handling
 
 	.toc > li             { margin: 1.5rem 0;    }
 	.toc > li li          { margin: 0.3rem 0;    }
-	.toc > li li li       { margin-left: 2rem;
-	                        margin-left: 2rem;   }
+	.toc > li li li       { margin-left: 2rem;   }
 
 	/* Section numbers in a column of their own */
 	:not(li) > .toc {
