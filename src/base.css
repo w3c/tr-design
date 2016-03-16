@@ -132,8 +132,7 @@
 
 	.head a:hover > img[src*="logos/W3C"],
 	.head a:focus > img[src*="logos/W3C"] {
-		background: #457cad;
-		border-color: #457cad;
+		opacity: .8;
 	}
 
 	.head a:active > img[src*="logos/W3C"] {
