@@ -972,10 +972,6 @@ Possible extra rowspan handling
 	.toc > li li li       { margin-left: 2rem;   }
 
 	/* Section numbers in a column of their own */
-	:not(li) > .toc {
-		margin-left: 5em;
-	}
-
 	.toc .secno {
 		float: left;
 		width: 4rem;
