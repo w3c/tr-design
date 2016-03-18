@@ -128,10 +128,15 @@
   var numTables = tables.length;
   for (var i = 0; i < numTables; i++) {
     var table = tables[i];
-    var wrapper = document.createElement('div');
-    wrapper.className = 'overlarge';
-    table.parentNode.insertBefore(wrapper, table);
-    wrapper.appendChild(table);
+    if (!table.matches('.example *, .note *, .advisement *, .def *, .issue *')) {
+      /* Overflowing colored boxes looks terrible, and also
+         the kinds of tables inside these boxes
+         are less likely to need extra space. */
+      var wrapper = document.createElement('div');
+      wrapper.className = 'overlarge';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
   }
 
 })();
