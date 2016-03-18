@@ -117,6 +117,10 @@
               Figures and Captions</a>
             <li><a href="#table"><span class="secno">2.3.2</span>
               Data Tables</a>
+              <ol>
+                <li><a href="#table-tailoring"><span class="secno">2.3.2.1</span>
+                Customizing Table Styling</a>
+              </ol>
             <li><a href="#switch"><span class="secno">2.3.3</span>
               Switch Statements</a>
             <li><a href="#algorithm"><span class="secno">2.3.4</span>
@@ -523,13 +527,28 @@ Section Numbers and Anchoring</h3>
       <td>Wrap
   </table>
 
+<h5 id="table-tailoring">
+<span class="secno">2.3.2.1</span> Customizing Table Styling</h4>
+
   <p>Spec editors are <em>strongly advised</em> to explore the use of strong, accessible table markup
   before customizing any table styling,
-  however are encouraged to override the default text alignment when appropriate to the contents of the table.
+  since that often fixes the styling by giving the style sheet more information to work with.
+  However, editors are also encouraged to override the default text alignment
+  when appropriate to the contents of the table,
+  since appropriate alignment depends greatly on the type of content in the table
+  (not just on its structural relationships).
 
   <p>For tables with particularly complex spanning relationships,
   the <code>class="complex data"</code> class may be used,
   which will add additional inter-cell lines.
+
+  <p>Tables have a default maximum size of 50em,
+  but will grow beyond this to prevent their contents from overflowing.
+  If a table seems cramped,
+  and there's no good way to rearrange the data,
+  you can release this maximum by adding <code>table.data { max-width: none; }</code>.
+  (Note that this won't affect printed pages or narrow screens,
+  because they don't have any extra space to donate to the cramped table.)
 
 <h4 id="switch">
 <span class="secno">2.3.3</span> Switch Statements</h4>
