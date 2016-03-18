@@ -829,6 +829,7 @@
 		margin: 1em auto;
 		border-collapse: collapse;
 		border: hidden;
+		width: 100%;
 	}
 	table.data caption,
 	table.index caption {
@@ -1049,7 +1050,6 @@ Possible extra rowspan handling
 		border-spacing: 0;
 		text-align: left;
 		margin: 1em 0;
-		width: 100%;
 	}
 
 	table.index td,
