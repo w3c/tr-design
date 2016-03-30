@@ -231,22 +231,6 @@
 
 	/* Floating sidebar */
 	@media screen {
-		body.toc-sidebar #toc {
-			position: fixed;
-			top: 0; bottom: 0;
-			left: 0;
-			width: 23.5em;
-			max-width: 80%;
-			max-width: calc(100% - 2em - 26px);
-			overflow: auto;
-			padding: 0 1em;
-			padding-left: 42px;
-			padding-left: calc(1em + 26px);
-			background: inherit;
-			background-color: #f7f8f9;
-			z-index: 1;
-			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
-		}
 		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
 			font-variant: small-caps;
