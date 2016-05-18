@@ -31,8 +31,8 @@ Instead, fork the desired branch and submit a pull request.
 5. Consider the impact of the design on the W3C publication ecosystem: publication tools, authoring tools, editors
 6. Ensure that the W3C Brand and general W3C website integration are respected, per the W3C Communications Team;
 7. Consider the Web user agent compatibility risks (past, present, and future) and the long term maintenance.
-8. Consider the impact on the CSS validation
-9. Ensure that the document can be printed appropriately
+8. Use valid CSS and follow CSS best practices.
+9. Ensure that the document can be printed beautifully.
 
 Discussions happen through issues, pull requests, and on spec-prod@w3.org.
 
