@@ -64,13 +64,17 @@
   }
 
   function createSidebarToggle() {
-    /* Create the sidebar toggle in JS; it shouldn't exist when JS is off. */
-    var toggle = document.createElement('a');
+    /* Search to see if the toggle control is already present. */
+    var toggle = document.getElementById('toc-toggle');
+    if (!toggle) {
+      /* Create the sidebar toggle in JS; it shouldn't exist when JS is off. */
+      toggle = document.createElement('a');
       /* This should probably be a button, but appearance isn't standards-track.*/
-    toggle.id = 'toc-toggle';
-    toggle.class = 'toc-toggle';
-    toggle.href = '#toc';
-    toggle.innerHTML = collapseSidebarText;
+      toggle.id = 'toc-toggle';
+      toggle.class = 'toc-toggle';
+      toggle.href = '#toc';
+      toggle.innerHTML = collapseSidebarText;
+    }
 
     sidebarMedia.addListener(autoToggle);
     var toggler = function(e) {
@@ -87,6 +91,8 @@
     if (!tocNav) {
       tocNav = document.createElement('p');
       tocNav.id = 'toc-nav';
+      /* Mark for removal if generated document is saved */
+      tocNav.classList.add('removeOnSave');
       /* Prepend for better keyboard navigation */
       document.body.insertBefore(tocNav, document.body.firstChild);
     }
@@ -99,8 +105,9 @@
       tocJump.innerHTML = tocJumpText;
       tocNav.appendChild(tocJump);
     }
-
-    tocNav.appendChild(toggle);
+    if (!document.getElementById('toc-toggle')) {
+      tocNav.appendChild(toggle);
+    }
   }
 
   var toc = document.getElementById('toc');
