@@ -97,7 +97,7 @@
 
 /** Header ********************************************************************/
 
-	div.head { margin-bottom: 1em }
+	div.head { margin-bottom: 1em; }
 	div.head hr { border-style: solid; }
 
 	div.head h1 {
@@ -145,7 +145,7 @@
 /** Copyright *****************************************************************/
 
 	p.copyright,
-	p.copyright small { font-size: small }
+	p.copyright small { font-size: small; }
 
 /** Back to Top / ToC Toggle **************************************************/
 
@@ -174,7 +174,6 @@
 			padding: .1em 0.3em;
 			margin: 0;
 
-			background: white;
 			box-shadow: 0 0 2px;
 			border: none;
 			border-top-right-radius: 1.33em;
@@ -468,7 +467,7 @@
 
 	sup {
 		vertical-align: super;
-		font-size: 80%
+		font-size: 80%;
 	}
 
 /******************************************************************************/
@@ -573,7 +572,7 @@
 		.sidefigure {
 			float: right;
 			width: 50%;
-			margin: 0 0 0.5em 0.5em
+			margin: 0 0 0.5em 0.5em;
 		}
 	}
 	.caption, figcaption, caption {
@@ -588,7 +587,7 @@
 	}
 
 	/* DL list is indented 2em, but figure inside it is not */
-	dd > .figure, dd > figure { margin-left: -2em }
+	dd > .figure, dd > figure { margin-left: -2em; }
 
 /******************************************************************************/
 /*                             Colored Boxes                                  */
@@ -636,7 +635,6 @@
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
-		text-transform: uppercase;
 		color: #AE1E1E;
 		padding-right: 1em;
 		text-transform: uppercase;
@@ -1023,7 +1021,7 @@ Possible extra rowspan handling
 	/* Index Lists: Layout */
 	ul.index       { margin-left: 0; columns: 15em; text-indent: 1em hanging; }
 	ul.index li    { margin-left: 0; list-style: none; break-inside: avoid; }
-	ul.index li li { margin-left: 1em }
+	ul.index li li { margin-left: 1em; }
 	ul.index dl    { margin-top: 0; }
 	ul.index dt    { margin: .2em 0 .2em 20px;}
 	ul.index dd    { margin: .2em 0 .2em 40px;}
@@ -1033,7 +1031,8 @@ Possible extra rowspan handling
 	@media not print {
 		ul.index li span {
 			white-space: nowrap;
-			color: transparent; }
+			color: transparent;
+		}
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
 			color: #707070;
@@ -1089,7 +1088,7 @@ Possible extra rowspan handling
 /******************************************************************************/
 
 	/* This rule is inherited from past style sheets. No idea what it's for. */
-	.hide { display: none }
+	.hide { display: none; }
 
 
 
