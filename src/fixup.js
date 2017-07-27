@@ -69,7 +69,7 @@
       /* This should probably be a button, but appearance isn't standards-track.*/
     toggle.id = 'toc-toggle';
     toggle.class = 'toc-toggle';
-    toggle.href = '#toc';
+    toggle.style = 'cursor: pointer;';
     toggle.innerHTML = collapseSidebarText;
 
     sidebarMedia.addListener(autoToggle);
