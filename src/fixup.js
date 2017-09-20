@@ -142,13 +142,12 @@
 
   /* Deprecation warning */
   var request = new XMLHttpRequest();
-  request.open('GET', '//www.w3.org/TR/tr-outdated-spec.json', true);
+
+  request.open('GET', '//www.w3.org/TR/tr-outdated-spec');
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
-      var outdatedSpecs = JSON.parse(request.responseText);
-      const pathname = window.location.pathname;
-      var spec = Object.keys(outdatedSpecs).filter(function(k) {return pathname.indexOf(k) === 0;}).shift();
-      if (spec) {
+      var currentSpec = JSON.parse(request.responseText);
+      if (currentSpec) {
         var css = 'a#deprecationnote:hover{ background-color: transparent }'
         ,   style = document.createElement('style');
         if (style.styleSheet) {
@@ -166,7 +165,7 @@
         var outdatedValue = "bottom:50%; left:0; right:0; margin:0 auto 0 auto; width:50%; background:maroon; color:white; border-radius:1em; box-shadow:0 0 1em red; padding:2em; text-align:center; z-index:2;";
         node.style.cssText = "position:fixed; " + outdatedValue;
 
-        var warning = '<strong>This version is outdated!</strong><div>For the latest version, please look at the <a id="deprecationnote" style="color:white" href="' + outdatedSpecs[spec] + '"> ' + outdatedSpecs[spec] + '</a>.</div><input onclick="collapseWarning(false)" style="margin:0; border:0; padding:0.25em 0.5em; background:transparent; color:black; position:absolute; top:0em; right:0; font:1.25em sans-serif; text-align:center;" type="button" value="&#9662; collapse">';
+        var warning = '<strong>This version is outdated!</strong><div>For the latest version, please look at the <a id="deprecationnote" style="color:white" href="' + currentSpec + '"> ' + currentSpec + '</a>.</div><input onclick="collapseWarning(false)" style="margin:0; border:0; padding:0.25em 0.5em; background:transparent; color:black; position:absolute; top:0em; right:0; font:1.25em sans-serif; text-align:center;" type="button" value="&#9662; collapse">';
         node.innerHTML = warning;
 
         document.querySelector("body").appendChild(node);
@@ -176,7 +175,7 @@
         mediaQueryList.addListener(function(mql) {
           if (mql.matches) {
             node.style.cssText = "position:absolute; border-style:solid; border-color:red; " + outdatedValue;
-            node.innerHTML = '<strong>This version is outdated!</strong><div>For the latest version, please look at the <a id="deprecationnote" style="color:white" href="' + outdatedSpecs[spec] + '"> ' + outdatedSpecs[spec] + '</a>.</div>';
+            node.innerHTML = '<strong>This version is outdated!</strong><div>For the latest version, please look at the <a id="deprecationnote" style="color:white" href="' + currentSpec + '"> ' + currentSpec + '</a>.</div>';
           } else {
             node.style.cssText = "position:fixed; " + outdatedValue;
             node.innerHTML = warning;
