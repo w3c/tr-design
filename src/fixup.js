@@ -152,7 +152,7 @@
         var node = document.createElement("p");
         node.classList.add("outdated-warning");
 
-        var warning = '<strong>This version is outdated!</strong><div>For the latest version, please look at the <a id="outdated-note" href="' + currentSpec + '"> ' + currentSpec + '</a>.</div><input onclick="collapseWarning(false)" type="button" value="&#9662; collapse">';
+        var warning = '<strong>' + currentSpec.header + '</strong><div>' + currentSpec.warning + '<a id="outdated-note" href="' + currentSpec.latestUrl + '"> ' + currentSpec.latestUrl + '</a>.</div><input onclick="collapseWarning(false)" type="button" value="&#9662; collapse">';
         node.innerHTML = warning;
 
         document.querySelector("body").appendChild(node);
