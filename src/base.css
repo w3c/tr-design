@@ -1111,6 +1111,10 @@ a#outdated-note:hover {
 	text-align:center;
 }
 
+.outdated-warning span {
+	display: block;
+}
+
 .outdated-collapsed {
 	bottom: 0;
 	border-radius: 0;

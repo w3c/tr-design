@@ -145,19 +145,31 @@
 
   request.open('GET', '//www.w3.org/TR/tr-outdated-spec');
   request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-      var currentSpec = JSON.parse(request.responseText);
-      if (currentSpec) {
-        document.body.classList.add('outdated-spec');
-        var node = document.createElement("p");
-        node.classList.add("outdated-warning");
-
-        var warning = '<strong>' + currentSpec.header + '</strong><div>' + currentSpec.warning + '<a id="outdated-note" href="' + currentSpec.latestUrl + '"> ' + currentSpec.latestUrl + '</a>.</div><input onclick="collapseWarning(false)" type="button" value="&#9662; collapse">';
-        node.innerHTML = warning;
-
-        document.querySelector("body").appendChild(node);
-      }
+    if (request.status < 200 && request.status > 400) {
+      return;
     }
+    try {
+      var currentSpec = JSON.parse(request.responseText);
+    } catch (err) {
+      console.error(err);
+      return;
+    }
+    document.body.classList.add('outdated-spec');
+    var node = document.createElement("p");
+    node.classList.add("outdated-warning");
+
+    var warning =
+      "<strong>" +
+      currentSpec.header +
+      "</strong><span>" +
+      currentSpec.warning +
+      '<a id="outdated-note" href="' +
+      currentSpec.latestUrl +
+      '"> ' +
+      currentSpec.latestUrl +
+      '</a>.</span><input onclick="collapseWarning(false)" type="button" value="&#9662; collapse">';
+    node.innerHTML = warning;
+    document.body.appendChild(node);
   };
 
   request.onerror = function() {
