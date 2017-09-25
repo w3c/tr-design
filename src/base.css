@@ -1071,7 +1071,7 @@ Possible extra rowspan handling
 /** Outdated warning **********************************************************/
 
 a#outdated-note {
-  color: white;
+	color: white;
 }
 
 a#outdated-note:hover {
