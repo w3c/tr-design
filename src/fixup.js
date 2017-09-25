@@ -185,15 +185,9 @@
       return function collapseWarning(event) {
         var button = event.target;
         isOpen = !isOpen;
-        if (isOpen) {
-          node.classList.remove("outdated-collapsed");
-          button.innerText = '\u25BE collapse';
-          document.body.classList.add("outdated-spec");
-          return;
-        }
-        node.classList.add("outdated-collapsed");
-        button.innerText = '\u25B4 expand';
-        document.body.classList.remove("outdated-spec");
+        node.classList.toggle("outdated-collapsed");
+        document.body.classList.toggle("outdated-spec");
+        button.innerText = (isOpen) ? '\u25BE collapse' : '\u25B4 expand';
       }
     }
     document.body.appendChild(node);
