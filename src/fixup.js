@@ -145,7 +145,7 @@
 
   request.open('GET', '//www.w3.org/TR/tr-outdated-spec');
   request.onload = function() {
-    if (request.status < 200 && request.status > 400) {
+    if (request.status < 200 && request.status >= 400) {
       return;
     }
     try {
@@ -154,21 +154,48 @@
       console.error(err);
       return;
     }
-    document.body.classList.add('outdated-spec');
+    document.body.classList.add("outdated-spec");
     var node = document.createElement("p");
     node.classList.add("outdated-warning");
 
-    var warning =
-      "<strong>" +
-      currentSpec.header +
-      "</strong><span>" +
-      currentSpec.warning +
-      '<a id="outdated-note" href="' +
-      currentSpec.latestUrl +
-      '"> ' +
-      currentSpec.latestUrl +
-      '</a>.</span><input onclick="collapseWarning(false)" type="button" value="&#9662; collapse">';
-    node.innerHTML = warning;
+    var frag = document.createDocumentFragment();
+    var heading = document.createElement("strong");
+    heading.innerHTML = currentSpec.header;
+    frag.appendChild(heading);
+
+    var anchor = document.createElement("a");
+    anchor.id = "outdated-note";
+    anchor.href = currentSpec.latestUrl;
+    anchor.innerText = currentSpec.latestUrl + ".";
+
+    var warning = document.createElement("span");
+    warning.innerText = currentSpec.warning;
+    warning.appendChild(anchor);
+    frag.appendChild(warning);
+
+    var button = document.createElement("button");
+    var handler = makeClickHandler(node);
+    button.addEventListener("click", handler);
+    button.innerHTML = "&#9662; collapse";
+    frag.appendChild(button);
+    node.appendChild(frag);
+
+    function makeClickHandler(node) {
+      var isOpen = true;
+      return function collapseWarning(event) {
+        var button = event.target;
+        isOpen = !isOpen;
+        if (isOpen) {
+          node.classList.remove("outdated-collapsed");
+          button.innerText = '\u25BE collapse';
+          document.body.classList.add("outdated-spec");
+          return;
+        }
+        node.classList.add("outdated-collapsed");
+        button.innerText = '\u25B4 expand';
+        document.body.classList.remove("outdated-spec");
+      }
+    }
     document.body.appendChild(node);
   };
 
@@ -178,19 +205,3 @@
 
   request.send();
 })();
-
-function collapseWarning(details) {
-  var node = document.querySelector(".outdated-warning")
-  ,   button = document.querySelector(".outdated-warning input");
-  if (details) {
-    node.classList.remove("outdated-collapsed");
-    button.value = '\u25BE collapse';
-    document.body.classList.add('outdated-spec');
-    button.onclick = function() {collapseWarning(false)};
-  } else {
-    node.classList.add("outdated-collapsed");
-    button.value = '\u25B4 expand';
-    document.body.classList.remove('outdated-spec');
-    button.onclick = function() {collapseWarning(true)};
-  }
-}

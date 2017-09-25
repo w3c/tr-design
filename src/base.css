@@ -1098,7 +1098,7 @@ a#outdated-note:hover {
 	z-index: 2;
 }
 
-.outdated-warning input {
+.outdated-warning button {
 	position: absolute;
 	top: 0;
 	right:0;
