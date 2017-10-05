@@ -151,6 +151,7 @@
     try {
       var currentSpec = JSON.parse(request.responseText);
     } catch (err) {
+      console.error(err);
       return;
     }
     document.body.classList.add("outdated-spec");
@@ -192,5 +193,11 @@
     document.body.appendChild(node);
   };
 
-  request.send();
+  request.onerror = function() {
+    console.error("Request to https://www.w3.org/TR/tr-outdated-spec failed.");
+  };
+
+  if (document.location.hostname === "www.w3.org") {
+    request.send();
+  }
 })();
