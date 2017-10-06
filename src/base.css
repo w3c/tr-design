@@ -516,6 +516,9 @@
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
 	}
+	a#toc-toggle {
+		color: #034575;
+	}
 	a:visited {
 		border-bottom-color: #BBB;
 	}

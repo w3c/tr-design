@@ -19,7 +19,7 @@ For more significant changes to the visual styles,
 discussion on spec-prod@w3.org is encouraged to get feedback and consensus.
 (Think of it as a design critique.)
 
-**Do not commit directly to any the common branches** (`gh-pages` and `2016` at the time of writing) unless you are the *Design Point Person* for the project.
+**Do not commit directly to any of the common branches** (`gh-pages` and `2016` at the time of writing) unless you are the *Design Point Person* for the project.
 Instead, fork the desired branch and submit a pull request.
 
 ## Guidelines for a proper design
