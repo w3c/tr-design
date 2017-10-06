@@ -146,7 +146,7 @@
 
     request.open('GET', '//www.w3.org/TR/tr-outdated-spec');
     request.onload = function() {
-      if (request.status < 200 && request.status >= 400) {
+      if (request.status < 200 || request.status >= 400) {
         return;
       }
       try {
