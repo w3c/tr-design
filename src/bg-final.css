@@ -1,12 +1,9 @@
 @import url('base.css');
 
-body {
-  background-image: url('logos/back-bg-final.png');
-  background-size: auto !important;
-}
-
 @media screen and (min-width: 28em) {
     body {
+        background-image: url('logos/back-bg-final.png');
+        background-size: auto !important;
         padding-left: 150px;
     }
 }
