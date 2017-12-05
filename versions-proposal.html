@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>High Resolution Time Level 2</title>
+
+
+    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD">
+    <meta name="description" content="This specification defines an API that provides the time origin, and current time in sub-millisecond resolution, such that it is not subject to system clock skew or adjustments.">
+</head>
+
+<body class="h-entry" id="respecDocument" aria-busy="false">
+    <div class="head" role="contentinfo" id="respecHeader">
+        <p>
+            <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" width="72" height="48"></a>
+        </p>
+        <h1 class="title p-name" id="title">High Resolution Time</h1>
+        <h2 id="w3c-working-draft-04-october-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Working Draft <time class="dt-published" datetime="2017-10-04">04 October 2017</time></h2>
+        <details>
+        <summary>Specification Metadata</summary>
+        <div>
+            <dl>
+            <dt data-ref='canonical'>Canonical version:</dt>
+            <dd><a href="https://www.w3.org/TR/hr-time/">https://www.w3.org/TR/hr-time/</a></dd>
+<!--
+            <dt data-ref='latest'>Latest version:</dt>
+            <dd><a href="https://www.w3.org/TR/hr-time/latest">https://www.w3.org/TR/hr-time/latest</a></dd>
+            <dt data-ref='upcoming'>Upcoming version:</dt>
+            <dd><a href="https://www.w3.org/TR/hr-time/upcoming">https://www.w3.org/TR/hr-time/upcoming</a></dd>
+-->
+            <dt data-ref='all'>List of the different versions:</dt>
+            <dd><a href="https://www.w3.org/TR/hr-time/all">https://www.w3.org/TR/hr-time/all</a></dd>
+<!--
+            <dt data-ref='level'>Latest published Level 2 version:</dt>
+            <dd><a href="https://www.w3.org/TR/hr-time-2/">https://www.w3.org/TR/hr-time-2/</a></dd>
+-->
+            <dt data-ref='this'>This version:</dt>
+            <dd><a class="u-url" href="https://www.w3.org/TR/2017/WD-hr-time-2-20171004/">https://www.w3.org/TR/2017/WD-hr-time-2-20171004/</a></dd>
+            <dt data-ref='previous'>History:</dt>
+            <dd><a class="u-url" href="https://www.w3.org/standards/history/hr-time">https://www.w3.org/standards/history/hr-time</a></dd>
+            <dt data-ref='ed'>Latest editor's draft:</dt>
+            <dd><a href="https://www.w3.org/TR/hr-time/ed">https://www.w3.org/TR/hr-time/ed</a></dd>
+            <dt>Editors:</dt>
+            <dd class="p-author h-card vcard" data-editor-id="56102"><span class="p-name fn">Ilya Grigorik</span>, Google Inc., <span class="ed_mailto"><a class="u-email email" href="mailto:igrigorik@gmail.com">igrigorik@gmail.com</a></span></dd>
+            <dd class="p-author h-card vcard" data-editor-id="45726"><span class="p-name fn">James Simonsen</span>, Google Inc., <span class="ed_mailto"><a class="u-email email" href="mailto:simonjam@google.com">simonjam@google.com</a></span> (Until January 2015)</dd>
+            <dd class="p-author h-card vcard" data-editor-id="44357"><span class="p-name fn">Jatinder Mann</span>, Microsoft Corp., <span class="ed_mailto"><a class="u-email email" href="mailto:jmann@microsoft.com">jmann@microsoft.com</a></span> (Until February 2014)</dd>
+
+            <dt>Repository:</dt>
+            <dd>
+                <a href="https://github.com/w3c/hr-time/">
+                      We are on Github.
+                    </a>
+            </dd>
+            <dd>
+                <a href="https://github.com/w3c/hr-time/issues?q=milestone:%22Level%202%22">
+                      File a bug.
+                    </a>
+            </dd>
+            <dd>
+                <a href="https://github.com/w3c/hr-time/commits/gh-pages/index.html">
+                      Commit history.
+                    </a>
+            </dd>
+            <dt>Mailing list:</dt>
+            <dd>
+                <a href="https://lists.w3.org/Archives/Public/public-web-perf/">
+                      public-web-perf@w3.org
+                    </a>
+            </dd>
+            <dt>Implementation:</dt>
+            <dd>
+                <a href="http://caniuse.com/#feat=high-resolution-time">
+                      Can I use High Resolution Time?
+                    </a>
+            </dd>
+            <dd>
+                <a href="http://w3c-test.org/hr-time/">
+                      Test Suite
+                    </a>
+            </dd>
+            <dd>
+                <a href="https://github.com/w3c/web-platform-tests/tree/master/hr-time">
+                      Test Suite repository
+                    </a>
+            </dd>
+        </dl>
+        </div>
+        </details>
+        <p class="copyright">
+            <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2017
+
+            <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+            <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+            <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+            <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+            <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+            <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a> rules apply.
+        </p>
+        <hr title="Separator for header">
+    </div>
+
+<script>
+    (function () {
+        try {
+            var shouldOpen = (window.localStorage.getItem("tr-spec-information") === "hide");
+            var details = document.querySelector("div.head details");
+            details.querySelector("summary").style.cursor = "pointer";// not the default behavior in user agents?
+            if (shouldOpen && details.open === false) details.open = true;
+        } catch (e) { }
+    })();
+
+    var w3cnotice = (function () {
+        // THIS FUNCTION WILL NEED SOME REWRITING LATER
+        function _notice(shortname, branch) {
+        console.log("Creating a notice for " + shortname);
+        var notice = document.createElement("dialog");
+        if (notice.show === undefined) {
+            notice.style.display = "none";
+            notice.open = false;
+            notice.show = function () {
+                notice.style.display = "block";
+                notice.open = true;
+                notice.focus();
+            }
+            notice.close = function () {
+                notice.style.display = "none";
+                notice.open = false;
+            }
+        }
+        // populate the dialog
+        var p = document.createElement("p");
+        var strong = document.createElement("strong");
+        var span = document.createElement("span");
+        var a = document.createElement("a");
+        var b = document.createElement("button");
+        var link = "https//www.w3.org/TR/" + shortname + "/" + branch + "/";
+        a.href = link;
+        a.appendChild(document.createTextNode(link));
+        strong.appendChild(document.createTextNode("You're not on the " + branch + "!"));
+        strong.style.display = "block";strong.style.textAlign = "center";
+        span.appendChild(document.createTextNode("For the " + branch + " version, please look at "));
+        span.appendChild(a);
+        span.appendChild(document.createTextNode("."));
+        span.style.display = "block";
+        b.appendChild(document.createTextNode("× close"));
+        b.addEventListener("click", function () { notice.close() });
+        // b.style.position = "relative";b.style.top = "-2.5em";
+        b.style.display = "block"; b.style.float = "right"; b.style.marginTop="1em";
+        p.appendChild(strong);
+        p.appendChild(span);
+        p.appendChild(b);
+        notice.style.position = "fixed";notice.style.bottom = "1em";notice.style.right="1em";
+        notice.appendChild(p);
+        return notice;
+       }
+       return _notice;
+    })();
+
+    (function () {
+        var loc = window.location.href;
+        if (false) {// @@REMOVE ME
+        if (!loc.match(/^https?:\/\/www.w3.org\/TR\/\D+/)) {
+            // abort
+            console.log("DEBUG: aborted due to window.location.href");
+            return null;
+        }
+        }
+        try {
+            // one of null, "latest", "upcoming", "ed"
+            var v = window.localStorage.getItem("tr-spec-version");
+            if (v !== null && v === ("upcoming" || v === "ed")) {
+                var note = w3cnotice("hr-time", v);
+                var h2 = document.querySelector("h2");
+                h2.parentNode.insertBefore(note, h2);
+                note.show();
+            }
+            document.getElementById("spec-status-internal").textContent = (v !== null)? v : "none";
+        } catch (e) { console.log(e); }
+    })();
+</script>
+
+<section id="abstract" class="introductory">
+        <h2 id="abstract-0">Abstract</h2>
+        <p>This specification is a sample of what a real specification would like in the future. It has nothing to do with High Resolution except for the fact that HRT is used as a sample.</p>
+    </section>
+    <section id="sotd" class="introductory">
+        <h2 id="status-of-this-document">Status of This Document</h2>
+        <p>
+            <em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em>
+        </p>
+        <p>[insert here usual W3C stuff]</p>
+        <p>This document isn't meant to change drastically how specifications will look like after the 2018 GRS (great redesign of specifications scheduled for 2018). For that,
+            you can look at ideas such as the <a href="http://fantasai.inkedblade.net/style/design/w3c-restyle/">2012 one</a>.
+        </p>
+
+
+    </section>
+    <nav id="toc">
+        <h2 class="introductory" id="table-of-contents">Table of Contents</h2>
+        <ol class="toc" role="directory">
+                <li class="tocline"><a href="#considerations" class="tocxref"><span class="secno">1. </span>Considerations</a></li>
+                <li class="tocline"><a href="#origin" class="tocxref"><span class="secno">2. </span>The Origin of the Proposal</a></li>
+            <li class="tocline"><a href="#levels" class="tocxref"><span class="secno">3. </span> About levels</a></li>
+            <li class="tocline"><a href="#latest" class="tocxref"><span class="secno">4. </span> The Meaning of Latest</a></li>
+            <li class="tocline"><a href="#upcoming" class="tocxref"><span class="secno">5. </span> The Meaning of Upcoming</a></li>
+            <li class="tocline"><a href="#ed" class="tocxref"><span class="secno">6. </span> The Meaning of Ed</a></li>
+            <li class="tocline"><a href="#canonical" class="tocxref"><span class="secno">7. </span> The Meaning of Canonical</a></li>
+            <li class="tocline"><a href="#acknowledgments" class="tocxref"><span class="secno">A. </span>Acknowledgments</a></li>
+        </ol>
+    </nav>
+    <section id="introduction" class="informative">
+        <!--OddPage-->
+        <p>DUMMY DOCUMENT DO NOT USE!</p>
+    </section>
+
+    <section id="considerations">
+        <h2>1. Considerations</h2>
+
+        <p>This document is a reflection on how to change our header links in the beginning of December 2017.</p>
+        
+        <p>Not all headers included in this document need to be used. The important part is for the tooling to find its stuff and for the users
+            not to be confused too much.
+        </p>
+        
+        <p>This document contains the advanced ability of selecting which spec you would like to see. Your current specification
+            preference is [<span id='spec-status-internal'></span>]. You may change this by using
+            <a style='border: none' href="/2017/11/spec-preferences.html">specification preferences</a>. (hint: change your preference to "upcoming" or "ed"
+        and reload this document to see the effect).</p>
+            
+    </section>
+
+    <section id="origin">
+        <h2>2. The Origin of the Proposal</h2>
+
+        <p>See the notes from the <a href="https://www.w3.org/2017/11/08-tr-minutes.html">TPAC 2017 session</a>.</p>
+
+        <p>The original meaning of latest, upcoming, all can be found in the <a href="https://github.com/w3c/tr-pages/wiki/Latest-versions-proposal-for-leveled-specifications">Latest versions proposal for leveled specifications</a>.</p>
+
+    </section>
+
+    <section id="levels">
+            <h2>3. About levels</h2>
+    
+            <p>The title of a specification doesn't need to reflect its level number.</p>
+
+            <p>
+                Some Groups feel strongly about the levels of their specification, others prefer not to deal with them.
+            </p>
+
+            <p>Level is a number, not interpreted by the underlying system except for its sequence order.</p>
+            
+            <p>The underlying links must have the information about the level. Not all headers reflected in this document have to be there
+                (eg "Latest published Level 2 version" isn't necessary).</p>
+   
+    </section>
+    
+        <section id="latest">
+        <h2>4. The meaning of Latest</h2>
+
+        <p>"Latest" will return the most "stabilized" document available.</p>
+
+        <p>As such, it points to the first document in the following list:</p>
+        <ol>
+        <li>
+        the <strong>highest</strong> level being a CR, a PR, or a REC that is not obsoleted/superceded/rescinded
+        </li><li>
+        the <strong>highest</strong> level being a Note if not retired
+        </li><li>
+        the <strong>lowest</strong> level being a WD
+        </li><li>
+        the obsoleted/superceded/rescinded REC
+        </li><li>
+        the retired Note
+        </li></ol>
+    </section>
+
+    <section id="upcoming">
+            <h2>5. The meaning of Upcoming</h2>
+    
+            <p>"upcoming" will return the "tip" document available.</p>
+    
+            <p>As such, it points to the first document in the following list:</p>
+            <ol>
+            <li>
+                    the latest version of the <strong>highest</strong> level not obsoleted/superceded/rescinded/retired   
+            </li><li>
+                    the obsoleted/superceded/rescinded/retired document
+            </li></ol>
+        </section>
+
+        <section id="ed">
+                <h2>6. The meaning of Ed</h2>
+        
+                <p>"ed" will redirect to the "nightly version" of the upcoming document <strong>if available</strong>.</p>
+                <p>As such, it redirects to the document known as "editor's draft" that is associated with the <em><a href='#upcoming'>upcoming</a></em> document, if known.</p>
+                <p class='issue'>should we just use "Nighlty build" instead of Editor's draft?</p>
+        
+            </section>
+    
+        <section id="canonical">
+        <h2>7. The Meaning of Canonical</h2>
+
+        <p class="issue">Canonical version header may differ from rel=canonical. Leaning towards saying that it's ok. (laternative is that we should use a different name (eg "current version", "common version", "widespread version", "present-day version", "general version", "universal version", "prevalent version", "communal version", "community version", "collective version")</p>
+        
+    </section>
+    
+    <p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p>
+    <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+</body>
+
+</html>
