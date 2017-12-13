@@ -243,9 +243,9 @@
             <p>We distinguish between:</p>
 
             <ul>
-                <li><code>https://www.w3.org/&lt;shortname>/</code>, the <strong>shortname URL</strong> of a specification. This returns the document returned by <a href='#latest'>/latest</a> or 
+                <li><code>https://www.w3.org/TR/&lt;shortname>/</code>, the <strong>shortname URL</strong> of a specification. This returns the document returned by <a href='#latest'>/latest</a> or 
                     <a href="#upcoming">/upcoming</a> (depending on the Group choice).</li>
-                <li><code>https://www.w3.org/&lt;shortname>-&lt;level>/</code>, the <strong>leveled shortname URL</strong> of a specification. This returns the <a href="#keepingup">non-outdated document</a> for
+                <li><code>https://www.w3.org/TR/&lt;shortname>-&lt;level>/</code>, the <strong>leveled shortname URL</strong> of a specification. This returns the <a href="#keepingup">non-outdated document</a> for
                     a specific <code>&lt;level></code>.</li>
             </ul>
             <p>with:</p>
@@ -299,7 +299,7 @@
         <section id="latest">
         <h2>6. /latest/</h2>
 
-        <p>"Latest" will return the most "stabilized" document available. Those links are created automatically for all <code>https://www.w3.org/&lt;shortname>/</code>. For example,
+        <p>"Latest" will return the most "stabilized" document available. Those links are created automatically for all <code>https://www.w3.org/TR/&lt;shortname>/</code>. For example,
             <a href='https://www.w3.org/hr-time/latest/'>https://www.w3.org/hr-time/latest/</a></p>
 
         <p>As such, it points to the <strong>first document</strong> in the following list:</p>
@@ -320,7 +320,7 @@
     <section id="upcoming">
             <h2>7. /upcoming/</h2>
     
-            <p>"upcoming" will return the "tip" document available. Those links are created automatically for all <code>https://www.w3.org/&lt;shortname>/</code>. For example,
+            <p>"upcoming" will return the "tip" document available. Those links are created automatically for all <code>https://www.w3.org/TR/&lt;shortname>/</code>. For example,
                 <a href='https://www.w3.org/hr-time/upcoming/'>https://www.w3.org/hr-time/upcoming/</a></p>
     
             <p>As such, it points to the <strong>first document</strong> in the following list:</p>
@@ -361,10 +361,10 @@
     <section id="history">
             <h2>10. History</h2>
     
-            <p>This is intended to replace what used to "Previous version" and represents the history for all level versions for a given shortname. For example,
+            <p>This is intended to replace what used to be "Previous version" and represents the history for all snapshot for a given shortname URL. For example,
                     <a href='https://www.w3.org/standards/history/hr-time'>https://www.w3.org/standards/history/hr-time</a></p>
 
-            <p class="note">History pages aren't handling all level versions currently. We're looking at changing that.</p>
+            <p class="note">History pages aren't handling all snapshots currently. We're looking at changing that.</p>
             
             <p class="issue">Should this be https://www.w3.org/TR/hr-time/history/ ?!?</p>
         </section>    
@@ -377,12 +377,32 @@
         
             </section>
 
-
+            <section id="all">
+                    <h2>12. This version</h2>
+    
+                    <p>This is the dated snapshot of the document:</p>
+                    <p>
+                            <code>https://www.w3.org/TR/&lt;YYYY>/&lt;status>-&lt;shortname>-&lt;level>-&lt;YYYY>&lt;MM>&lt;DD>/</code>, the <strong>dated snapshot</strong> of a specification. 
+                            This returns the document for
+                            a specific <code>&lt;level></code> published on a specific date, even if it has been <a href="#keepingup">outdated</a>.
+                    </p>
+                    <p>with:</p>
+                    <ul>
+                        <li id='status-rule'><code>&lt;status> ::= [A-Z][-A-Z]+</code> (see <a href="https://www.w3.org/pubrules/doc">pubrules documentation</a>)</li>
+                        <li id='yyyy-rule'><code>&lt;YYYY> ::= [2-9][0-9][0-9][0-9]</code></li>
+                        <li id='mm-rule'><code>&lt;MM> ::= 0[1-9] | 1[0-2]</code></li>
+                        <li id='dd-rule'><code>&lt;DD> ::= [0-2][0-9] | 3[0-1]</code></li>
+                    </ul>
+                    
+                    <p class="issue">Should we stop using "This version" and use "This snapshot" instead? This would avoid confusion with levels, etc.</p>
+                </section>
+    
+    
         <section id="normativerefs">
                 <h2>12. Normative references</h2>
         
                 <p>For the purpose of normative references, you may use the <em>shortname URL</em>, the <em>leveled shortname URL</em>, or a <em>dated URL</em> depending on the 
-                nature of the dependen.</p>
+                nature of the dependency.</p>
     
                 <p class="issue">Not using the <em>dated URL</em> will increase the likelyhood of getting borken fragments over the years. We should encourage editing tools and editors to maintain an history of
                 fragments to avoid <a href='https://twitter.com/i/web/status/940561542080356353'>disappointing the readers</a>.</p>
