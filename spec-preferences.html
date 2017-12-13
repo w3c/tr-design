@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Specification metadata preferences</title>
+    <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.5;
+      max-width: 50em;
+      margin: 0 auto;
+      color: black;
+      background: white;
+    }
+    h1, h2 {
+     font: 100% sans-serif;
+     line-height: 1.2;
+     color: #005A9C;
+     background: transparent;
+     font-weight: bold;
+     margin-top: 1em;
+     margin-bottom: 0;
+     margin-left: .1em;
+     font-size: 220%;
+    }
+    .head img[src*="logos/W3C"] {
+      display: block;
+      border: solid #1a5e9a;
+      border-width: .65rem .7rem .6rem;
+      border-radius: .4rem;
+      background: #1a5e9a;
+      color: white;
+      font-weight: bold;
+    }
+    .head p:first-child > a {
+      float: right;
+      margin: 0.4rem 0 0.2rem .4rem;
+    }
+    a[href] {
+      color: #034575;
+    }
+    a:visited {
+      border-bottom-color: #BBB;
+    }
+    p {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    p.copyright { border-top: 2px solid black; margin-top: 2em;}
+    dialog.error p, p.error { background-color: red; padding: 0.5ex; color: white; font-weight: bold; }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <p>
+            <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" width="72" height="48"></a>
+        </p>
+        <h1 class="title" id="title">Specification preferences</h1>
+    </div>
+<p style='clear: both'>This document allows you to setup your specification preferences. This is intended to annotate specifications for advanced users
+    and is not intended to replace the specification content.</p>
+<p>
+    These preferences are stored in your user agent local storage area and are used in accordance to
+    our <em>Public Web Browsing (non-logged-in)</em> <a href="http://www.w3.org/Consortium/Legal/privacy-statement">W3C privacy
+         statement</a>. They may be subject to occasional clean up, at the behest of
+    the user agent or the OS.
+</p>
+
+<p id='js' role="alertdialog" aria-label="Error" class='error'>You need to enable Jascript to use preferences.</p>
+<script>
+    document.getElementById('js').style.display = "none";
+</script>
+<dialog id='error' role="alertdialog" aria-label="Error" class='error'>
+    <p>ERROR: Can't access or store values</p>
+</dialog>
+<script>
+    (function () {
+        var dialog = document.getElementById("error");
+        if (dialog.show === undefined) {
+            dialog.style.display = "none";
+            dialog.open = false;
+            dialog.show = function () {
+                dialog.style.display = "block";
+                dialog.open = true;
+                dialog.focus();
+            }
+        }
+    })();
+</script>
+    
+<h2>Document state preference</h2>
+
+<p>When accessing a W3C technical report using its shortname, e.g. <a href='https://www.w3.org/TR/CSP/'>https://www.w3.org/TR/CSP/</a>, the 
+W3C will give you the most relevant version as chosen the W3C Group. It is possible to get notified if your general preference differs
+from the one choosen by the Group by setting your preference below.</p>
+
+<form>
+  <fieldset id='tr-spec-version'>
+    <legend>Select your document preference:</legend>
+    <p><input type="radio" name="docpref" value="none" id="inone" checked><label for="inone">None</label></p>
+    <p><input type="radio" name="docpref" value="latest" id="ilatest"> <label for="ilatest">Latest: use the most stabilized document available.</label></p>
+    <p><input type="radio" name="docpref" value="upcoming" id="iupcoming"> <label for="iupcoming">Upcoming: use the most leading-edge document available.</label></p>
+    <p><input type="radio" name="docpref" value="ed" id="ied"> <label for="ied">Editor's draft: use the nightly draft from the Working Group
+            (those may not reflect the consensus of the Working Group or may not be available)</label></p>
+  </fieldset>
+</form>
+
+<h2>Document Metadata</h2>
+
+<p>When accessing a W3C technical report, the specification metadata are hidden by default. It is possible to 
+       change this default by setting your preference below.</p>
+<form>
+    <fieldset id='tr-spec-information'>
+        <legend>Select your document information preference:</legend>
+        <p><input type="radio" name="infopref" value="hide" id="ihide" checked><label for="ihide">Hide</label></p>
+        <p><input type="radio" name="infopref" value="open" id="iopen"> <label for="iopen">Visible</label></p>
+    </fieldset>
+</form>
+    <script>
+var w3capp =
+(function () {
+  var _app = {};
+
+ // Storage
+ 
+ // we use local storage due to simplicity
+
+ function setItem(item, value) {
+    window.localStorage.setItem(item, value);
+ }
+
+ function getItem(item) {
+    return window.localStorage.getItem(item);
+ }
+
+ function removeItem(item) {
+    window.localStorage.removeItem(item);
+ }
+
+ function hasStorage() {
+    try {
+        setItem("check-storage", "echo");
+        return (getItem("check-storage") === "echo");
+    } catch (e) { console.error(e); }
+    return false;
+ }
+
+ // Item UI handling based on fieldset elements containing input elements
+
+ function initItem(fieldset) {
+    var item = fieldset.id;
+    var currentValue = getItem(item);
+    var defaultInput = fieldset.querySelector("input[checked]");
+
+    if (currentValue !== null) {
+      var elt = fieldset.querySelector("input[value=" + currentValue + "]");
+      if (elt !== null) elt.checked = true;
+    }
+
+    var inputs = fieldset.querySelectorAll("input");
+    for (var index = 0; index < inputs.length; index++) {
+      var element = inputs[index];
+      element.addEventListener("change", function (e) {
+        var value =  setItem(item, e.target.value);
+        if (value !== defaultInput.value) {
+          setItem(item, value);
+        } else {
+          removeItem(item);
+        }
+      });
+    }
+ }
+
+// set up the UI
+_app.init = function () {
+    if (!hasStorage()) {
+        document.getElementById("error").show();
+    } else {
+      document.querySelectorAll('fieldset').forEach(initItem);
+    }
+}
+return _app;
+})();
+
+w3capp.init();
+
+</script>
+        
+
+<p class="copyright">
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2017
+
+        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+        <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a> rules apply.
+    </p>
+</body>
+
+</html>
