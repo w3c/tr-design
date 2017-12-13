@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>High Resolution Time Level 2</title>
-
-
     <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD">
     <meta name="description" content="This specification defines an API that provides the time origin, and current time in sub-millisecond resolution, such that it is not subject to system clock skew or adjustments.">
 </head>
-
 <body class="h-entry" id="respecDocument" aria-busy="false">
     <div class="head" role="contentinfo" id="respecHeader">
         <p>
@@ -23,7 +18,7 @@
         <summary>Specification Metadata</summary>
         <div>
             <dl>
-            <dt data-ref='canonical'>Canonical version:</dt>
+            <dt title='The preferred URL to access this specification'>Canonical version:</dt>
             <dd><a href="https://www.w3.org/TR/hr-time/">https://www.w3.org/TR/hr-time/</a></dd>
 <!--
             <dt data-ref='latest'>Latest version:</dt>
@@ -35,12 +30,12 @@
             <dt data-ref='level'>Latest published Level 2 version:</dt>
             <dd><a href="https://www.w3.org/TR/hr-time-2/">https://www.w3.org/TR/hr-time-2/</a></dd>
 -->
-            <dt data-ref='this'>This version:</dt>
+            <dt title='The dated version of the document'>This version:</dt>
             <dd><a class="u-url" href="https://www.w3.org/TR/2017/WD-hr-time-2-20171004/">https://www.w3.org/TR/2017/WD-hr-time-2-20171004/</a></dd>
-            <dt data-ref='previous'>History:</dt>
+            <dt title='Publication history for High Resolution Time'>History:</dt>
             <dd><a class="u-url" href="https://www.w3.org/standards/history/hr-time">https://www.w3.org/standards/history/hr-time</a></dd>
-            <dt data-ref='ed'>Latest editor's draft:</dt>
-            <dd><a href="https://www.w3.org/TR/hr-time/ed">https://www.w3.org/TR/hr-time/ed</a></dd>
+            <dt title='Nightly draft build from the editors'>Latest editor's draft:</dt>
+            <dd><a href="https://w3c.github.io/hr-time/">https://w3c.github.io/hr-time/</a></dd>
             <dt>Editors:</dt>
             <dd class="p-author h-card vcard" data-editor-id="56102"><span class="p-name fn">Ilya Grigorik</span>, Google Inc., <span class="ed_mailto"><a class="u-email email" href="mailto:igrigorik@gmail.com">igrigorik@gmail.com</a></span></dd>
             <dd class="p-author h-card vcard" data-editor-id="45726"><span class="p-name fn">James Simonsen</span>, Google Inc., <span class="ed_mailto"><a class="u-email email" href="mailto:simonjam@google.com">simonjam@google.com</a></span> (Until January 2015)</dd>
@@ -201,12 +196,16 @@
         <ol class="toc" role="directory">
                 <li class="tocline"><a href="#considerations" class="tocxref"><span class="secno">1. </span>Considerations</a></li>
                 <li class="tocline"><a href="#origin" class="tocxref"><span class="secno">2. </span>The Origin of the Proposal</a></li>
-            <li class="tocline"><a href="#levels" class="tocxref"><span class="secno">3. </span> About levels</a></li>
-            <li class="tocline"><a href="#latest" class="tocxref"><span class="secno">4. </span> The Meaning of Latest</a></li>
-            <li class="tocline"><a href="#upcoming" class="tocxref"><span class="secno">5. </span> The Meaning of Upcoming</a></li>
-            <li class="tocline"><a href="#ed" class="tocxref"><span class="secno">6. </span> The Meaning of Ed</a></li>
-            <li class="tocline"><a href="#canonical" class="tocxref"><span class="secno">7. </span> The Meaning of Canonical</a></li>
-            <li class="tocline"><a href="#canonical" class="tocxref"><span class="secno">8. </span> History</a></li>
+            <li class="tocline"><a href="#shortnames" class="tocxref"><span class="secno">3. </span> Shortnames and leveled shortnames</a></li>
+            <li class="tocline"><a href="#levels" class="tocxref"><span class="secno">4. </span> About using level numbers in specification</a></li>
+            <li class="tocline"><a href="#keepingup" class="tocxref"><span class="secno">5. </span> On obsolete/superceded/rescinded/retired/outdated</a></li>
+            <li class="tocline"><a href="#latest" class="tocxref"><span class="secno">6. </span> /latest/</a></li>
+            <li class="tocline"><a href="#upcoming" class="tocxref"><span class="secno">7. </span> /upcoming/</a></li>
+            <li class="tocline"><a href="#ed" class="tocxref"><span class="secno">8. </span> /ed/</a></li>
+            <li class="tocline"><a href="#canonical" class="tocxref"><span class="secno">9. </span> Canonical version</a></li>
+            <li class="tocline"><a href="#history" class="tocxref"><span class="secno">10. </span> History</a></li>
+            <li class="tocline"><a href="#history" class="tocxref"><span class="secno">11. </span> /all/</a></li>
+            <li class="tocline"><a href="#all" class="tocxref"><span class="secno">12. </span> Normative references</a></li>
             <li class="tocline"><a href="#acknowledgments" class="tocxref"><span class="secno">A. </span>Acknowledgments</a></li>
         </ol>
     </nav>
@@ -226,7 +225,7 @@
         
         <p>This document contains the advanced ability of selecting which spec you would like to see. Your current specification
             preference is [<span id='spec-status-internal'></span>]. You may change this by using
-            <a style='border: none' href="/2017/11/spec-preferences.html">specification preferences</a>. (hint: change your preference to "upcoming" or "ed"
+            <a style='border: none' href="https://www.w3.org/2017/11/spec-preferences.html">specification preferences</a>. (hint: change your preference to "upcoming" or "ed"
         and reload this document to see the effect).</p>
             
     </section>
@@ -236,95 +235,173 @@
 
         <p>See the notes from the <a href="https://www.w3.org/2017/11/08-tr-minutes.html">TPAC 2017 session</a>.</p>
 
-        <p>The original meaning of latest, upcoming, all can be found in the <a href="https://github.com/w3c/tr-pages/wiki/Latest-versions-proposal-for-leveled-specifications">Latest versions proposal for leveled specifications</a>.</p>
+        <p>The original meaning of latest, upcoming, all can also be found in the <a href="https://github.com/w3c/tr-pages/wiki/Latest-versions-proposal-for-leveled-specifications">Latest versions proposal for leveled specifications</a>.</p>
 
         <section id='usecases'>
-            <h2>2.1 Use Cases</h2>
+            <h3>2.1 Use Cases</h3>
             <ul>
                 <li>Allow more predictability in the system for shortnames</li>
                 <li>Allow reference tools, such as specref, to better navigate through the W3C references (and consequently, the editing tools like specref can use that)</li>
                 <li>Reduce confusion around versioning by harmonizing its handling while giving the possibility to Groups to stop displaying it</li>
-                <li>Clean-up the main /TR page by "downgrading" old versions that aren't yet obsoleted/superceded</li>
+                <li>Clean-up the main <a href="https://www.w3.org/TR">/TR</a> page by "downgrading" old level versions that aren't yet obsolete/superceded/rescinded</li>
             </ul>
         </section>
 
     </section>
 
-    <section id="levels">
-            <h2>3. About levels</h2>
+    <section id="shrortnames">
+            <h2>3. Shortnames and leveled shortnames</h2>
     
-            <p>The title of a specification doesn't need to reflect its level number.</p>
+            <p>We distinguish between:</p>
 
-            <p>
-                Some Groups feel strongly about the levels of their specification, others prefer not to deal with them.
-            </p>
-
-            <p>Level is a number, not interpreted by the underlying system except for its sequence order.</p>
-            
-            <p>The underlying links must have the information about the level. Not all headers reflected in this document have to be there
-                (eg "Latest published Level 2 version" isn't necessary).</p>
+            <ul>
+                <li><code>https://www.w3.org/&lt;shortname>/</code>, the <strong>shortname URL</strong> of a specification. This returns the document returned by <a href='#latest'>/latest</a> or 
+                    <a href="#upcoming">/upcoming</a> (depending on the Group choice).</li>
+                <li><code>https://www.w3.org/&lt;shortname>-&lt;level>/</code>, the <strong>leveled shortname URL</strong> of a specification. This returns the <a href="#keepingup">non-outdated document</a> for
+                    a specific <code>&lt;level></code>.</li>
+            </ul>
+            <p>with:</p>
+            <ul>
+                <li id='shortname-rule'><code>&lt;shortname> ::= [-a-zA-Z]+</code></li>
+                <li id='level-rule'><code>&lt;level> ::= [.0-9]+</code></li>
+            </ul>
    
+            <p class='note'>When looking at a specification use the <strong>shortname URL</strong> of a specification, it is not possible to know if you're looking at <a href='#latest'>/latest</a> or 
+                <a href="#upcoming">/upcoming</a>. One may use <a style='border: none' href="https://www.w3.org/2017/11/spec-preferences.html">specification preferences</a> to set proper expectations.</p>
     </section>
     
+    <section id="levels">
+            <h2>4. About using level numbers in specification</h2>
+    
+            <p><strong>The title of a specification MAY reflect the <code>&lt;level></code> of a specification.
+                The dated URL of the specification (aka This Version) and the leveled shortname URL of the specification MUST contain the <code>&lt;level></code>.</strong></p>
+
+            <p>
+                Some Groups feel strongly about the levels of their specification, others prefer not to deal with them. We give the choice.
+            </p>
+
+            <p><a href='#level-rule'>&lt;Level></a> is a number, not interpreted by the underlying system except for its sequence order. You may use for example <code>2</code>, <code>2.0</code>, <code>2018</code>.</p>
+            
+            <p>You may add additional specification metadata headers  in your document, such as a "Latest published Level 2 version" for the leveled shortname URL.</p>
+   
+    </section>
+    <section id="keepingup">
+            <h2>5. On obsolete/superceded/rescinded/retired/outdated</h2>
+
+
+            <ul>
+                <li id='obsolete'><em>obsolete</em>, <em id='superceded'>superceded</em>, and <em id='rescinded'>rescinded</em> are <a href="https://w3c.github.io/w3process/#maturity-levels">maturity levels</a> defined by
+                    the <a href="https://www.w3.org/Consortium/Process/">W3C Process</a>. (<code>superceded</code> is actually proposed in <a href='https://w3c.github.io/w3process/#rec-rescind'>Process 2018</a>)</li>
+                <li id='retired'><em>retired</em> is an indication for Group notes when work on a specification ceased (see <a href="https://www.w3.org/Consortium/Process/#tr-end">Stopping Work on a specification</a>)</li>
+                <li id='outdated'><em>outdated</em> is applied automatically by the W3C server when a dated document has been outdated by a new dated publication, when the <a href='level-rule'>level</a> matches.</li>
+            </ul>
+
+            <section id="outdated-text">
+                    <h3>5.1 Outdated warning</h3>
+                    <p>Currently, we are displaying 2 types of outdated warnings:</p>
+
+                    <ol>
+                        <li>For Recommendations that aren't obsolete/superceded/rescinded and don't have a more recent edited recommendation, we indicate that a more recent document with incorporated errata (an Edited CR or an Edited PR) is available.</li>
+                        <li>or we display a note indicated "This version is outdated!".</li>
+                    </ol>
+                    <p>In all cases, we direct the reader to the leveled shortname URL instead.</p>
+        </section>
+        
+</section>    
         <section id="latest">
-        <h2>4. The meaning of Latest</h2>
+        <h2>6. /latest/</h2>
 
-        <p>"Latest" will return the most "stabilized" document available.</p>
+        <p>"Latest" will return the most "stabilized" document available. Those links are created automatically for all <code>https://www.w3.org/&lt;shortname>/</code>. For example,
+            <a href='https://www.w3.org/hr-time/latest/'>https://www.w3.org/hr-time/latest/</a></p>
 
-        <p>As such, it points to the first document in the following list:</p>
+        <p>As such, it points to the <strong>first document</strong> in the following list:</p>
         <ol>
         <li>
-        the <strong>highest</strong> level being a CR, a PR, or a REC that is not obsoleted/superceded/rescinded
+        the <strong>highest</strong> level being a CR, an Edited CR, a PR, an Edited PR, or a REC that is not obsolete/superceded/rescinded/retired/outdated
         </li><li>
         the <strong>highest</strong> level being a Note if not retired
         </li><li>
         the <strong>lowest</strong> level being a WD
         </li><li>
-        the obsoleted/superceded/rescinded REC
+        the obsolete/superceded/rescinded REC
         </li><li>
         the retired Note
         </li></ol>
     </section>
 
     <section id="upcoming">
-            <h2>5. The meaning of Upcoming</h2>
+            <h2>7. /upcoming/</h2>
     
-            <p>"upcoming" will return the "tip" document available.</p>
+            <p>"upcoming" will return the "tip" document available. Those links are created automatically for all <code>https://www.w3.org/&lt;shortname>/</code>. For example,
+                <a href='https://www.w3.org/hr-time/upcoming/'>https://www.w3.org/hr-time/upcoming/</a></p>
     
-            <p>As such, it points to the first document in the following list:</p>
+            <p>As such, it points to the <strong>first document</strong> in the following list:</p>
             <ol>
             <li>
-                    the latest version of the <strong>highest</strong> level not obsoleted/superceded/rescinded/retired   
+                    the <strong>highest</strong> level that is not obsolete/superceded/rescinded/retired/outdated
             </li><li>
-                    the obsoleted/superceded/rescinded/retired document
+                    the obsolete/superceded/rescinded/retired document
             </li></ol>
         </section>
 
         <section id="ed">
-                <h2>6. The meaning of Ed</h2>
+                <h2>8. /ed/</h2>
         
-                <p>"ed" will redirect to the "nightly version" of the upcoming document <strong>if available</strong>.</p>
+                <p><strong>If available</strong>, "ed" will redirect to the "nightly build" of the upcoming document.</p>
                 <p>As such, it redirects to the document known as "editor's draft" that is associated with the <em><a href='#upcoming'>upcoming</a></em> document, if known.</p>
                 <p class='issue'>should we just use "Nighlty build" instead of Editor's draft?</p>
         
             </section>
+
     
         <section id="canonical">
-        <h2>7. The Meaning of Canonical</h2>
+        <h2>9. Canonical version</h2>
 
-        <p class="issue">Canonical version header may differ from rel=canonical. Leaning towards saying that it's ok. (laternative is that we should use a different name (eg "current version", "common version", "widespread version", "present-day version", "general version", "universal version", "prevalent version", "communal version", "community version", "collective version")</p>
+        <p>
+            This represents the preferred URL you want people to use to access the specification. It helps search engines to be able to consolidate the information they have for the individual URLs
+            (such as links to them) on a single, preferred URL. It is either the <em>shortname URL</code> or the <code>leveled shortname URL</code>.
+        </p>
+
+        <p class="note">Canonical version header shouldn't differ from rel=canonical.</p>
         
+        <p class="issue"><a href="https://tools.ietf.org/html/rfc6596">RFC6596</a> indicates that the canonical link relation specifies the preferred URL from
+            resources with duplicative or superset content. Sometimes, we do remove content from one published dated version to another, so we're not following RFC6595 strictly.
+            However, we consider the consolidation of search results to take priority here given that one can always access the history of the specification.
+        </p>
     </section>
 
     <section id="history">
-            <h2>8. History</h2>
+            <h2>10. History</h2>
     
-            <p>This is intended to replace what used to "Previous version" and represents the history for all versions of the shortname.</p>
+            <p>This is intended to replace what used to "Previous version" and represents the history for all level versions for a given shortname. For example,
+                    <a href='https://www.w3.org/standards/history/hr-time'>https://www.w3.org/standards/history/hr-time</a></p>
 
-            <p class="issue">History pages aren't handling /latest and /upcoming properly currently. We're looking at changing that.</p>
+            <p class="note">History pages aren't handling all level versions currently. We're looking at changing that.</p>
             
-        </section>
+            <p class="issue">Should this be https://www.w3.org/TR/hr-time/history/ ?!?</p>
+        </section>    
+
+        <section id="all">
+                <h2>11. /all/</h2>
+
+                <p>This represents the list of all non-outdated specifications for all level versions for a given shortname. For example,
+                        <a href='https://www.w3.org/hr-time/all/'>https://www.w3.org/hr-time/all/</a></p>
+        
+            </section>
+
+
+        <section id="normativerefs">
+                <h2>12. Normative references</h2>
+        
+                <p>For the purpose of normative references, you may use the <em>shortname URL</em>, the <em>leveled shortname URL</em>, or a <em>dated URL</em> depending on the 
+                nature of the dependen.</p>
     
+                <p class="issue">Not using the <em>dated URL</em> will increase the likelyhood of getting borken fragments over the years. We should encourage editing tools and editors to maintain an history of
+                fragments to avoid <a href='https://twitter.com/i/web/status/940561542080356353'>disappointing the readers</a>.</p>
+                
+            </section>    
+    
+
     <p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p>
     <script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
 </body>
