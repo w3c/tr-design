@@ -1098,6 +1098,11 @@ a#outdated-note:hover {
 	z-index: 2;
 }
 
+.edited-rec-warning {
+	background: orange;
+	box-shadow: 0 0 1em;
+}
+
 .outdated-warning button {
 	position: absolute;
 	top: 0;
