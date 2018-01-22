@@ -158,6 +158,9 @@
       document.body.classList.add("outdated-spec");
       var node = document.createElement("p");
       node.classList.add("outdated-warning");
+      if (currentSpec.style) {
+          node.classList.add(currentSpec.style);
+      }
 
       var frag = document.createDocumentFragment();
       var heading = document.createElement("strong");
