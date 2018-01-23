@@ -164,7 +164,7 @@ var w3capp =
     for (var index = 0; index < inputs.length; index++) {
       var element = inputs[index];
       element.addEventListener("change", function (e) {
-        var value =  setItem(item, e.target.value);
+        var value =  e.target.value;
         if (value !== defaultInput.value) {
           setItem(item, value);
         } else {
