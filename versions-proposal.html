@@ -95,7 +95,7 @@
 <script>
     (function () {
         try {
-            var shouldOpen = (window.localStorage.getItem("tr-spec-information") === "hide");
+            var shouldOpen = (window.localStorage.getItem("tr-spec-information") === "open");
             var details = document.querySelector("div.head details");
             details.querySelector("summary").style.cursor = "pointer";// not the default behavior in user agents?
             if (shouldOpen && details.open === false) details.open = true;
@@ -167,7 +167,6 @@
                 h2.parentNode.insertBefore(note, h2);
                 note.show();
             }
-            document.getElementById("spec-status-internal").textContent = (v !== null)? v : "none";
         } catch (e) { console.log(e); }
     })();
 </script>
