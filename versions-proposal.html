@@ -161,7 +161,7 @@
         try {
             // one of null, "latest", "upcoming", "ed"
             var v = window.localStorage.getItem("tr-spec-version");
-            if (v !== null && v === ("upcoming" || v === "ed")) {
+            if (false && v !== null && (v === "upcoming" || v === "ed")) { //deactivated for now since I can't understand :-]
                 var note = w3cnotice("hr-time", v);
                 var h2 = document.querySelector("h2");
                 h2.parentNode.insertBefore(note, h2);
