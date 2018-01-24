@@ -441,6 +441,19 @@ Section Numbers and Anchoring</h3>
 
   <p>The <code>.annoying-warning</code> is for spec obsoletion notices.
   They're a bit scary, and should only occur once per spec.
+  It can be used with a block-level element, or,
+  if you want the notice to appear fixed to the bottom of the viewport,
+  with a <code>&lt;details></code> element
+  (which will allow the notice to be dismissed by closing the element).
+
+  For example,
+
+  <pre>
+    &lt;details class="annoying-warning">
+      &lt;summary>Not Ready For Implementation&lt;/summary>
+      &lt;p>This specification is not ready for implementation. See issues x, y, z for details.
+    &lt;/details>
+  </pre>
 
 <h3 id="structural">
 <span class="secno">2.3</span> Structural Markup</h3>
