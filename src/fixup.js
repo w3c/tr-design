@@ -158,6 +158,10 @@
       document.body.classList.add("outdated-spec");
       var node = document.createElement("p");
       node.classList.add("outdated-warning");
+      node.tabIndex = -1;
+      node.setAttribute("role", "dialog");
+      node.setAttribute("aria-modal", true);
+      node.setAttribute("aria-label", "outdatedWarning");
       if (currentSpec.style) {
           node.classList.add(currentSpec.style);
       }
@@ -194,7 +198,18 @@
           button.innerText = (isOpen) ? '\u25BE collapse' : '\u25B4 expand';
         }
       }
+
       document.body.appendChild(node);
+      button.focus();
+      window.onkeydown = function (event) {
+        if (event.keyCode == 27 && !node.classList.contains("outdated-collapsed")) button.click();
+      }
+      document.addEventListener("focus", function(event) {
+        if (!node.classList.contains("outdated-collapsed") && !node.contains(event.target)) {
+          event.stopPropagation();
+          node.focus();
+        }
+      }, true);
     };
 
     request.onerror = function() {
