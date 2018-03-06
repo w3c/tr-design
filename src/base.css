@@ -1098,7 +1098,7 @@ a#outdated-note:hover {
 }
 
 .edited-rec-warning {
-	background: orange;
+	background: darkorange;
 	box-shadow: 0 0 1em;
 }
 
@@ -1110,7 +1110,7 @@ a#outdated-note:hover {
 	border: 0;
 	padding: 0.25em 0.5em;
 	background: transparent;
-	color: black;
+	color: white;
 	font:1em sans-serif;
 	text-align:center;
 }
