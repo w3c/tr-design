@@ -204,12 +204,12 @@
       document.body.appendChild(node);
       button.focus();
       window.onkeydown = function (event) {
-        if (event.keyCode === ESCAPEKEY && !node.classList.contains("outdated-collapsed")) {
+        var isCollapsed = node.classList.contains("outdated-collapsed");
+        if (event.keyCode === ESCAPEKEY && !isCollapsed) {
           button.click();
         }
       }
 
-      /* use capture to enable event delegation as focus doesn't bubble up */
       document.addEventListener("focus", function(event) {
         var isCollapsed = node.classList.contains("outdated-collapsed");
         var containsTarget = node.contains(event.target);
@@ -217,7 +217,7 @@
           event.stopPropagation();
           node.focus();
         }
-      }, true);
+      }, true); // use capture to enable event delegation as focus doesn't bubble up
     };
 
     request.onerror = function() {
