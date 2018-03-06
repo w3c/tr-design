@@ -7,6 +7,7 @@
  ******************************************************************************/
 (function() {
   "use strict";
+  var ESCAPEKEY = 27;
   var collapseSidebarText = '<span aria-hidden="true">←</span> '
                           + '<span>Collapse Sidebar</span>';
   var expandSidebarText   = '<span aria-hidden="true">→</span> '
@@ -160,14 +161,15 @@
       node.classList.add("outdated-warning");
       node.tabIndex = -1;
       node.setAttribute("role", "dialog");
-      node.setAttribute("aria-modal", true);
-      node.setAttribute("aria-label", "outdatedWarning");
+      node.setAttribute("aria-modal", "true");
+      node.setAttribute("aria-labelledby", "outdatedWarning");
       if (currentSpec.style) {
           node.classList.add(currentSpec.style);
       }
 
       var frag = document.createDocumentFragment();
       var heading = document.createElement("strong");
+      heading.id = "outdatedWarning";
       heading.innerHTML = currentSpec.header;
       frag.appendChild(heading);
 
@@ -202,10 +204,16 @@
       document.body.appendChild(node);
       button.focus();
       window.onkeydown = function (event) {
-        if (event.keyCode == 27 && !node.classList.contains("outdated-collapsed")) button.click();
+        if (event.keyCode === ESCAPEKEY && !node.classList.contains("outdated-collapsed")) {
+          button.click();
+        }
       }
+
+      /* use capture to enable event delegation as focus doesn't bubble up */
       document.addEventListener("focus", function(event) {
-        if (!node.classList.contains("outdated-collapsed") && !node.contains(event.target)) {
+        var isCollapsed = node.classList.contains("outdated-collapsed");
+        var containsTarget = node.contains(event.target);
+        if (!isCollapsed && !containsTarget) {
           event.stopPropagation();
           node.focus();
         }
