@@ -484,6 +484,8 @@
 		page-break-inside: avoid;
 		hyphens: none;
 		text-transform: none;
+		text-align: left;
+		text-align: start;
 	}
 	pre code,
 	code code {
