@@ -142,18 +142,18 @@
   }
 
   /* fragment identifiers backward compatibility mapping */
-  if (document.location.hash !== "") {
+  if (location.hash &&
+    !document.getElementById(location.hash.substr(1)) && // not broken link
+    document.getElementById("fragment_id_mapping") // we can remap
+   ) {
     var idMapElement = document.getElementById("fragment_id_mapping");
     function updateHash(hashMap) {
-      var oldHash = document.location.hash.substr(1);
-      var newHash = hashMap[oldHash];
+      var newHash = hashMap[document.location.hash.substr(1)];
       if (typeof newHash == "string") {
-        if (document.getElementById(oldHash) === null) {
-          if (document.getElementById(newHash) !== null) {
-            document.location.hash = '#' + newHash;
-          } else {
-            console.warn("No element found for identifier " + newHash);
-          }
+        if (document.getElementById(newHash) !== null) {
+          document.location.hash = '#' + newHash;
+        } else {
+          console.warn("No element found for identifier " + newHash);
         }
       }
     }
