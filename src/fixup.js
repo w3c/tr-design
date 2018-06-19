@@ -145,10 +145,15 @@
   if (document.location.hash !== "") {
     var idMapElement = document.getElementById("fragment_id_mappping");
     function updateHash(hashMap) {
-      var newHash = hashMap[document.location.hash.substr(1)];
+      var oldHash = document.location.hash.substr(1);
+      var newHash = hashMap[oldHash];
       if (typeof newHash == "string") {
-        if (document.getElementById(newHash) === null) {
-          document.location.hash = '#' + newHash;
+        if (document.getElementById(oldHash) === null) {
+          if (document.getElementById(newHash) !== null) {
+            document.location.hash = '#' + newHash;
+          } else {
+            console.warn("No element found for identifier " + newHash);
+          }
         }
       }
     }
