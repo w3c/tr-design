@@ -143,7 +143,7 @@
 
   /* fragment identifiers backward compatibility mapping */
   if (location.hash &&
-    !document.getElementById(location.hash.substr(1) && // not broken link
+    !document.getElementById(location.hash.substr(1)) && // not broken link
     document.getElementById("fragment_id_mapping") // we can remap
    ) {
     var idMapElement = document.getElementById("fragment_id_mapping");
