@@ -161,7 +161,6 @@
       updateHash(JSON.parse(idMapElement.textContent));
     } catch (err) {
       console.error(err);
-      return;
     }
   }
 
