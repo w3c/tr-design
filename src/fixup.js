@@ -147,7 +147,9 @@
     function updateHash(hashMap) {
       var newHash = hashMap[document.location.hash.substr(1)];
       if (typeof newHash == "string") {
-        document.location.hash = '#' + newHash;
+        if (document.getElementById(newHash) === null) {
+          document.location.hash = '#' + newHash;
+        }
       }
     }
     try {
