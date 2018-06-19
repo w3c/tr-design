@@ -143,7 +143,7 @@
 
   /* fragment identifiers backward compatibility mapping */
   if (document.location.hash !== "") {
-    var idMapElement = document.getElementById("fragment_id_mappping");
+    var idMapElement = document.getElementById("fragment_id_mapping");
     function updateHash(hashMap) {
       var oldHash = document.location.hash.substr(1);
       var newHash = hashMap[oldHash];
