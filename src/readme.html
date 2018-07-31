@@ -439,21 +439,38 @@ Section Numbers and Anchoring</h3>
 <h4 id="obsolete">
 <span class="secno">2.2.5 </span> Annoying Spec Obsoletion Warning Boxes</h4>
 
-  <p>The <code>.annoying-warning</code> is for spec obsoletion notices.
+  <p>The <code>.annoying-warning</code> is for spec obsoletion notices,
+  which are typically placed in the Status or Introduction section of a document.
   They're a bit scary, and should only occur once per spec.
-  It can be used with a block-level element, or,
+
+  <p>The class can be used with a block-level element, or,
   if you want the notice to appear fixed to the bottom of the viewport,
-  with a <code>&lt;details></code> element
+  with an open <code>&lt;details></code> element
   (which will allow the notice to be dismissed by closing the element).
 
   For example,
 
   <pre>
-    &lt;details class="annoying-warning">
+    &lt;details open class="annoying-warning">
       &lt;summary>Not Ready For Implementation&lt;/summary>
       &lt;p>This specification is not ready for implementation. See issues x, y, z for details.
     &lt;/details>
   </pre>
+
+  <p>which renders as (in the closed state):
+
+  <details class='annoying-warning'>
+    <summary>Scary Out-of-Date Notice</summary>
+    <p>This is an <code>.annoying-warning</code>.
+    You should be scared and go away&hellip;
+    possibly by clicking a link to relevant issues or newer spec work
+    described in this notice.
+    You can also make it go away by closing it.
+  </details>
+
+  <p>You can see the open state&mdash;which we recommend to make the default
+  with the the addition of the <code>open</code> attribute&mdash;by
+  opening the disclosure in the example above.
 
 <h3 id="structural">
 <span class="secno">2.3</span> Structural Markup</h3>
