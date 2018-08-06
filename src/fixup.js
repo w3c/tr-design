@@ -141,6 +141,29 @@
     }
   }
 
+  /* fragment identifiers backward compatibility mapping */
+  if (location.hash &&
+    !document.getElementById(location.hash.substr(1)) && // not broken link
+    document.getElementById("fragment_id_mapping") // we can remap
+   ) {
+    var idMapElement = document.getElementById("fragment_id_mapping");
+    function updateHash(hashMap) {
+      var newHash = hashMap[document.location.hash.substr(1)];
+      if (typeof newHash == "string") {
+        if (document.getElementById(newHash) !== null) {
+          document.location.hash = '#' + newHash;
+        } else {
+          console.warn("No element found for identifier " + newHash);
+        }
+      }
+    }
+    try {
+      updateHash(JSON.parse(idMapElement.textContent));
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   /* Deprecation warning */
   if (document.location.hostname === "www.w3.org") {
     var request = new XMLHttpRequest();
