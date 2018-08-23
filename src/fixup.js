@@ -116,8 +116,15 @@
        (window too small for the MQ to add the margin to body),
        then auto-close the sidebar once you click on something in there. */
     toc.addEventListener('click', function(e) {
-      if(e.target.tagName.toLowerCase() == "a" && document.body.classList.contains('toc-sidebar') && !sidebarMedia.matches) {
-        toggleSidebar(false);
+      if(document.body.classList.contains('toc-sidebar') && !sidebarMedia.matches) {
+        var el = e.target;
+        while (el != toc) { // find closest <a>
+          if (el.tagName.toLowerCase() == "a") {
+            toggleSidebar(false);
+            return;
+          }
+          el = el.parentElement;
+        }
       }
     }, false);
   }
