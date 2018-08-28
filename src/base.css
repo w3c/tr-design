@@ -486,6 +486,7 @@
 		text-transform: none;
 		text-align: left;
 		text-align: start;
+		font-variant: normal;
 	}
 	pre code,
 	code code {
