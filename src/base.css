@@ -958,7 +958,9 @@ Possible extra rowspan handling
 		/* because generated content isn't search/selectable and markers can't do multilevel yet */
 		margin:  0;
 		padding: 0;
-		line-height: 1.1rem; /* consistent spacing */
+	}
+	.toc {
+		line-height: 1.1em; /* consistent spacing */
 	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
