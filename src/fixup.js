@@ -149,10 +149,10 @@
   }
 
   /* Deprecation warning */
-  if (document.location.hostname === "www.w3.org") {
+  if (document.location.hostname === "www.w3.org" && /^\/TR\/\d{4}\//.test(document.location.pathname)) {
     var request = new XMLHttpRequest();
 
-    request.open('GET', '//www.w3.org/TR/tr-outdated-spec');
+    request.open('GET', 'https://www.w3.org/TR/tr-outdated-spec');
     request.onload = function() {
       if (request.status < 200 || request.status >= 400) {
         return;
