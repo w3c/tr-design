@@ -1,9 +1,5 @@
 @import url('base.css');
 
-html {
-  background: white url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
-}
-
 @media screen and (min-width: 28em) {
     body {
         background-image: url('logos/back-cg-draft.png');
@@ -24,4 +20,12 @@ html {
         padding-top: 160px;
         background-attachment: local !important;
     };
+}
+
+body {
+    background-color: transparent;
+}
+
+html {
+    background: white url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 }
