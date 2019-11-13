@@ -21,3 +21,11 @@
         background-attachment: local !important;
     };
 }
+
+body {
+    background-color: transparent;
+}
+
+html {
+    background: white url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+}
