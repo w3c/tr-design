@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Versioning Proposal (level 1)</title>
     <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-WD">
+    <style>
+        .obsolete { opacity: 0.3;}
+    </style>
     <meta name="description" content="This specification defines an API that provides the time origin, and current time in sub-millisecond resolution, such that it is not subject to system clock skew or adjustments.">
 </head>
 <body class="h-entry" id="respecDocument" aria-busy="false">
@@ -177,6 +180,12 @@
     </section>
     <section id="sotd" class="introductory">
         <h2 id="status-of-this-document">Status of This Document</h2>
+        <p style='padding: 0.5ex; border: 2px solid red; background: red; color: white; font-weight: bold; text-align: center'>
+            This document is NOT the official versioning policy of W3C.<br>It is a a sample document meant to illustrate.
+        </p>
+        <p>
+            See <a href='https://www.w3.org/2005/05/tr-versions'>Version Management in W3C Technical Reports</a> instead for the W3C policy on /TR links/versioning.
+        </p>
         <p>This document isn't meant to change drastically how specifications will look like after the 2018 GRS (great redesign of specifications scheduled for 2018). For that,
             you can look at ideas such as the <a href="http://fantasai.inkedblade.net/style/design/w3c-restyle/">2012 one</a>.
         </p>
@@ -236,7 +245,7 @@
 
     </section>
 
-    <section id="shrortnames">
+    <section id="shrortnames" class='obsolete'>
             <h2>3. Shortnames and leveled shortnames</h2>
 
             <p>We distinguish between:</p>
@@ -257,7 +266,7 @@
                 <a href="#upcoming">/upcoming</a>. One may use <a style='border: none' href="spec-preferences.html">specification preferences</a> to set proper expectations.</p>
     </section>
 
-    <section id="levels">
+    <section id="levels" class='obsolete'>
             <h2>4. About using level numbers in specification</h2>
 
             <p><strong>The title of a specification MAY reflect the <code>&lt;level></code> of a specification.
@@ -272,7 +281,7 @@
             <p>You may add additional specification metadata headers  in your document, such as a "Latest published Level 2 version" for the leveled shortname URL.</p>
 
     </section>
-    <section id="keepingup">
+    <section id="keepingup" class='obsolete'>
             <h2>5. On obsolete/superceded/rescinded/retired/outdated</h2>
 
 
@@ -295,7 +304,7 @@
         </section>
 
 </section>
-        <section id="latest">
+        <section id="latest" class='obsolete'>
         <h2>6. /latest/</h2>
 
         <p>"Latest" will return the most "stabilized" document available. Those links are created automatically for all <code>https://www.w3.org/TR/&lt;shortname>/</code>. For example,
@@ -318,7 +327,7 @@
         </li></ol>
     </section>
 
-    <section id="upcoming">
+    <section id="upcoming" class='obsolete'>
             <h2>7. /upcoming/</h2>
 
             <p>"upcoming" will return the "tip" document available. Those links are created automatically for all <code>https://www.w3.org/TR/&lt;shortname>/</code>. For example,
@@ -333,7 +342,7 @@
             </li></ol>
         </section>
 
-        <section id="ed">
+        <section id="ed" class='obsolete'>
                 <h2>8. /ed/</h2>
 
                 <p><strong>If available</strong>, "ed" will redirect to the "nightly build" of the upcoming document.</p>
@@ -342,7 +351,7 @@
 
         </section>
 
-        <section id="canonical">
+        <section id="canonical" class='obsolete'>
         <h2>9. Canonical version</h2>
 
         <p>
@@ -358,7 +367,7 @@
         </p>
     </section>
 
-    <section id="history">
+    <section id="history" class='obsolete'>
             <h2>10. History</h2>
 
             <p>This is intended to replace what used to be "Previous version" and represents the history for all snapshot for a given shortname URL. For example,
@@ -367,7 +376,7 @@
             <p class="note">History pages aren't handling all snapshots currently. We're looking at changing that.</p>
         </section>
 
-        <section id="all">
+        <section id="all" class='obsolete'>
                 <h2>11. /all/</h2>
 
                 <p>This represents the list of all non-outdated specifications for all level versions for a given shortname. For example,
@@ -375,7 +384,7 @@
 
             </section>
 
-            <section id="all">
+            <section id="all" class='obsolete'>
                     <h2>12. This version</h2>
 
                     <p>This is the dated snapshot of the document:</p>
@@ -396,7 +405,7 @@
                 </section>
 
 
-        <section id="normativerefs">
+        <section id="normativerefs" class='obsolete'>
                 <h2>12. Normative references</h2>
 
                 <p>For the purpose of normative references, you may use the <em>shortname URL</em>, the <em>leveled shortname URL</em>, or a <em>dated URL</em> depending on the
