@@ -64,6 +64,121 @@
  *
  ******************************************************************************/
 
+:root {
+  --main-bg-color: white;
+  --main-text-color: black;
+  --heading-color: #005A9C;
+  --link-color: #034575;
+  --link-hover-bg-color: rgba(75%, 75%, 75%, .25);
+  --toc-nav-a-focus-background-color: #f8f8f8;
+  --toc-nav-a-not-focus-not-hover-color: #707070;
+  --toc-toggle-inline-color: hsla(203,20%,40%,.7);
+  --toc-nav-active-color: #C00;
+  --toc-sidebar-bg-color: #f7f8f9;
+  --toc-a-visited-color: #054572;
+  --del-color: red;
+  --ins-color: #080;
+  --blockquote-border-color: silver;
+  --toc-toggle-inline-text-shadow-color: silver;
+  --link-visited-border-bottom-color: #BBB;
+  --link-border-bottom-color: #707070;
+  --issue-border-color: #E05252;
+  --issue-bg-color: #FBE9E9;
+  --issue-marker-color: #AE1E1;
+  --example-border-color: #E0CB52;
+  --example-bg-color: #FCFAEE;
+  --example-marker-color: #827017;
+  --note-border-color: #52E052;
+  --note-bg-color: #E9FBE9;
+  --note-marker-color: hsl(120, 70%, 30%);
+  --advisement-border-color: orange;
+  --advisement-bg-color: #FFEECC;
+  --advisement-marker-color: #B35F00;
+  --annoying-warning-bg-color: hsla(40,100%,50%,0.95);
+  --annoying-warning-border-color: red;
+  --annoying-warning-box-shadow-color: black;
+  --def-bg-color: #DEF;
+  --def-border-left-color: #8CCBF2;
+  --table-def-border-bottom-color: #bbd7e9;
+  --table-border-color: silver ;
+  --table-cell-hover-bg-color: #f7f8f9 ;
+  --toc-border-color: #3980B5;
+  --outdated-warning-border-color: red;
+  --outdated-warning-shadow-color: red;
+  --outdated-warning-bg-color: maroon;
+  --outdated-spec-bg-color: rgba(0,0,0,0.5);
+  --edited-rec-warning-bg-color: darkorange;
+  --logo-border-color: #1a5e9a;
+  --logo-bg-color: #1a5e9a;
+  --toc-sidebar-box-shadow-color: rgba(0,0,0,.1);
+  --alg-border-color: #DEF;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-bg-color: rgb(24, 26, 27);
+		--main-text-color: rgb(232, 230, 227);
+		--heading-color: rgb(110, 194, 255);
+		--link-color: rgb(136, 204, 252);
+		--link-hover-bg-color: rgba(75%, 75%, 75%, .25);
+		--toc-nav-a-focus-background-color: black;
+		--toc-nav-a-not-focus-not-hover-color: #707070;
+		--toc-toggle-inline-color: hsla(203,20%,40%,.7);
+		--toc-nav-active-color: #C00;
+		--toc-sidebar-bg-color: rgb(27, 28, 29);
+		--toc-a-visited-color: #054572;
+		--del-color: red;
+		--ins-color: #080;
+		--blockquote-border-color: silver;
+		--toc-toggle-inline-text-shadow-color: silver;
+		--link-visited-border-bottom-color: #BBB;
+		--link-border-bottom-color: #707070;
+		--issue-border-color: rgb(151, 27, 27);
+		--issue-bg-color: rgb(54, 10, 10);
+		--issue-marker-color: rgb(231, 117, 117);
+		--example-border-color: rgb(151, 133, 27);
+		--example-bg-color: rgba(52, 46, 9, 0.3);
+		--example-marker-color: rgb(235, 219, 141);
+		--note-border-color: rgb(27, 151, 27);
+		--note-bg-color: rgb(10, 54, 10);
+		--note-marker-color: rgb(141, 235, 141);
+		--advisement-border-color: orange;
+		--advisement-bg-color: #FFEECC;
+		--advisement-marker-color: #B35F00;
+		--annoying-warning-bg-color: rgb(54, 10, 10);
+		--annoying-warning-border-color: rgb(201, 0, 0);
+		--annoying-warning-box-shadow-color: black;
+		--def-bg-color: #21355e7d;
+		--def-border-left-color: #09466c;
+		--table-def-border-bottom-color: #bbd7e9;
+		--table-border-color: silver ;
+		--toc-border-color: #3980B5;
+		--outdated-warning-border-color: red;
+		--outdated-warning-shadow-color: red;
+		--outdated-warning-bg-color: maroon;
+		--outdated-spec-bg-color: rgba(0,0,0,0.5);
+		--edited-rec-warning-bg-color: darkorange;
+		--logo-border-color: #1a5e9a;
+		--logo-bg-color: #1a5e9a;
+		--toc-sidebar-box-shadow-color: rgba(0,0,0,.1);
+		--alg-border-color: #DEF;
+	}
+	::-webkit-scrollbar {
+		background-color: #1c1e1f;
+		color: #c5c1b9;
+	}
+	::-webkit-scrollbar-corner {
+		background-color: #181a1b;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #2a2c2e;
+	}
+	::selection {
+		background-color: #005ccc;
+		color: #ffffff;
+	}
+}
+
 /******************************************************************************/
 /*                                   Body                                     */
 /******************************************************************************/
@@ -86,8 +201,8 @@
 		overflow-wrap: break-word;
 
 		/* Colors */
-		color: black;
-		background: white top left fixed no-repeat;
+		color: var(--main-text-color);
+		background: var(--main-bg-color) top left fixed no-repeat;
 		background-size: 25px auto;
 	}
 
@@ -123,11 +238,11 @@
 
 	.head img[src*="logos/W3C"] {
 		display: block;
-		border: solid #1a5e9a;
+		border: solid var(--logo-border-color);
 		border-width: .65rem .7rem .6rem;
 		border-radius: .4rem;
-		background: #1a5e9a;
-		color: white;
+		background: var(--logo-bg-color);
+		color: var(--main-bg-color);
 		font-weight: bold;
 	}
 
@@ -137,8 +252,8 @@
 	}
 
 	.head a:active > img[src*="logos/W3C"] {
-		background: #c00;
-		border-color: #c00;
+		background: var(--toc-nav-active-color);
+		border-color: var(--toc-nav-active-color);
 	}
 
 	/* see also additional rules in Link Styling section */
@@ -165,7 +280,7 @@
 			border-top-right-radius: 2rem;
 			box-shadow: 0 0 2px;
 			font-size: 1.5em;
-			color: black;
+			color: var(--main-text-color);
 		}
 		#toc-nav > a {
 			display: block;
@@ -178,7 +293,7 @@
 			box-shadow: 0 0 2px;
 			border: none;
 			border-top-right-radius: 1.33em;
-			background: white;
+			background: var(--main-bg-color);
 		}
 		#toc-nav > #toc-jump {
 			padding-bottom: 2em;
@@ -187,10 +302,10 @@
 
 		#toc-nav > a:hover,
 		#toc-nav > a:focus {
-			background: #f8f8f8;
+			background: var(--toc-nav-a-focus-background-color);
 		}
 		#toc-nav > a:not(:hover):not(:focus) {
-			color: #707070;
+			color: var(--toc-nav-a-not-focus-not-hover-color);
 		}
 
 		/* statusbar gets in the way on keyboard focus; remove once browsers fix */
@@ -209,21 +324,21 @@
 		#toc-toggle-inline {
 			vertical-align: 0.05em;
 			font-size: 80%;
-			color: gray;
-			color: hsla(203,20%,40%,.7);
+			#color: gray;
+			color: var(--toc-toggle-inline-color);
 			border-style: none;
 			background: transparent;
 			position: relative;
 		}
 		#toc-toggle-inline:hover:not(:active),
 		#toc-toggle-inline:focus:not(:active) {
-			text-shadow: 1px 1px silver;
+			text-shadow: 1px 1px var(--toc-toggle-inline-text-shadow-color);
 			top: -1px;
 			left: -1px;
 		}
 
 		#toc-nav :active {
-			color: #C00;
+			color: var(--toc-nav-active-color);
 		}
 	}
 
@@ -243,9 +358,9 @@
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
 			background: inherit;
-			background-color: #f7f8f9;
+			background-color: var(--toc-sidebar-bg-color);
 			z-index: 1;
-			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--toc-sidebar-box-shadow-color) inset;
 		}
 		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
@@ -253,8 +368,8 @@
 			font-variant: all-small-caps;
 			text-transform: lowercase;
 			font-weight: bold;
-			color: gray;
-			color: hsla(203,20%,40%,.7);
+			#color: gray;
+			color: var(--toc-toggle-inline-color);
 		}
 		body.toc-sidebar #toc-jump:not(:focus) {
 			width: 0;
@@ -283,9 +398,9 @@
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
 			background: inherit;
-			background-color: #f7f8f9;
+			background-color: var(--toc-sidebar-bg-color);
 			z-index: 1;
-			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--toc-sidebar-box-shadow-color) inset;
 		}
 		body:not(.toc-inline) #toc h2 {
 			margin-top: .8rem;
@@ -293,8 +408,8 @@
 			font-variant: all-small-caps;
 			text-transform: lowercase;
 			font-weight: bold;
-			color: gray;
-			color: hsla(203,20%,40%,.7);
+			#color: gray;
+			color: var(--toc-toggle-inline-color);
 		}
 
 		body:not(.toc-inline) {
@@ -336,7 +451,7 @@
 	}
 
 	h1, h2, h3 {
-		color: #005A9C;
+		color: var(--heading-color);
 		background: transparent;
 	}
 
@@ -410,7 +525,7 @@
 	/* Style for algorithms */
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
-	 border-left: 0.5em solid #DEF;
+	 border-left: 0.5em solid var(--alg-border-color);
 	}
 
 	/* Style for switch/case <dl>s */
@@ -462,8 +577,8 @@
 
 /** Change Marking ************************************************************/
 
-	del { color: red;  text-decoration: line-through; }
-	ins { color: #080; text-decoration: underline;    }
+	del { color: var(--del-color);  text-decoration: line-through; }
+	ins { color: var(--ins-color); text-decoration: underline; }
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
@@ -513,28 +628,28 @@
 
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
-		color: #034575;
+		color: var(--link-color);
 		text-decoration: none;
-		border-bottom: 1px solid #707070;
+		border-bottom: 1px solid var(--link-border-bottom-color);
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
 	}
 	a:visited {
-		border-bottom-color: #BBB;
+		border-bottom-color: var(--link-visited-border-bottom-color);
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
 	a[href]:focus,
 	a[href]:hover {
-		background: #f8f8f8;
-		background: rgba(75%, 75%, 75%, .25);
+		#background: #f8f8f8;
+		background: var(--link-hover-bg-color);
 		border-bottom-width: 3px;
 		margin-bottom: -2px;
 	}
 	a[href]:active {
-		color: #C00;
-		border-color: #C00;
+		color: var(--toc-nav-active-color);
+		border-color: var(--toc-nav-active-color);
 	}
 
 	/* Backout above styling for W3C logo */
@@ -631,19 +746,19 @@
 /** Blockquotes ***************************************************************/
 
 	blockquote {
-		border-color: silver;
+		border-color: var(--blockquote-border-color);
 	}
 
 /** Open issue ****************************************************************/
 
 	.issue {
-		border-color: #E05252;
-		background: #FBE9E9;
+		border-color: var(--issue-border-color);
+		background: var(--issue-bg-color);
 		counter-increment: issue;
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
-		color: #AE1E1E;
+		color: var(--issue-marker-color);
 		padding-right: 1em;
 		text-transform: uppercase;
 	}
@@ -653,15 +768,15 @@
 /** Example *******************************************************************/
 
 	.example {
-		border-color: #E0CB52;
-		background: #FCFAEE;
+		border-color: var(--example-border-color);
+		background: var(--example-bg-color);
 		counter-increment: example;
 		overflow: auto;
 		clear: both;
 	}
 	.example::before, .example > .marker {
 		text-transform: uppercase;
-		color: #827017;
+		color: var(--example-marker-color);
 		min-width: 7.5em;
 		display: block;
 	}
@@ -671,8 +786,8 @@
 /** Non-normative Note ********************************************************/
 
 	.note {
-		border-color: #52E052;
-		background: #E9FBE9;
+		border-color: var(--note-border-color);
+		background: var(--note-bg-color);
 		overflow: auto;
 	}
 
@@ -681,32 +796,32 @@
 	details.note > summary > .marker {
 		text-transform: uppercase;
 		display: block;
-		color: hsl(120, 70%, 30%);
+		color: var(--note-marker-color);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
 	   or use class="marker" to mark up the label in source. */
 
 	details.note > summary {
-		color: hsl(120, 70%, 30%);
+		color: var(--note-marker-color);
 	}
 	details.note[open] > summary {
-		border-bottom: 1px silver solid;
+		border-bottom: 1px var(--blockquote-border-color) solid;
 	}
 
 /** Advisement Box ************************************************************/
 	/*  for attention-grabbing normative statements */
 
 	.advisement {
-		border-color: orange;
+		border-color: var(--advisement-border-color);
 		border-style: none solid;
-		background: #FFEECC;
+		background: var(--advisement-bg-color);
 	}
 	strong.advisement {
 		display: block;
 		text-align: center;
 	}
 	.advisement > .marker {
-		color: #B35F00;
+		color: var(--advisement-marker-color);
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
@@ -722,12 +837,12 @@
 	.annoying-warning:not(details),
 	details.annoying-warning:not([open]) > summary,
 	details.annoying-warning[open] {
-		background: hsla(40,100%,50%,0.95);
-		color: black;
+		background: var(--annoying-warning-bg-color);
+		color: var(--main-text-color);
 		padding: .75em 1em;
-		border: red;
+		border: var(--annoying-warning-border-color);
 		border-style: solid none;
-		box-shadow: 0 2px 8px black;
+		box-shadow: 0 2px 8px var(--annoying-warning-box-shadow-color);
 		text-align: center;
 	}
 	.annoying-warning :last-child {
@@ -752,9 +867,9 @@
 
 	.def {
 		padding: .5em 1em;
-		background: #DEF;
+		background: var(--def-bg-color);
 		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
+		border-left: 0.5em solid var(--def-border-left-color);
 	}
 
 /******************************************************************************/
@@ -778,7 +893,7 @@
 	table.def th {
 		padding: 0.5em;
 		vertical-align: baseline;
-		border-bottom: 1px solid #bbd7e9;
+		border-bottom: 1px solid var(--table-def-border-bottom-color);
 	}
 
 	table.def > tbody > tr:last-child th,
@@ -846,7 +961,7 @@
 	table.index td, table.index th {
 		padding: 0.5em 1em;
 		border-width: 1px;
-		border-color: silver;
+		border-color: var(--table-border-color);
 		border-top-style: solid;
 	}
 
@@ -870,7 +985,7 @@
 	table.data  tbody th:first-child,
 	table.index tbody th:first-child  {
 		border-right: 2px solid;
-		border-top: 1px solid silver;
+		border-top: 1px solid var(--table-border-color);
 		padding-right: 1em;
 	}
 
@@ -881,7 +996,7 @@
 
 	table.complex.data th,
 	table.complex.data td {
-		border: 1px solid silver;
+		border: 1px solid var(--table-border-color);
 		text-align: center;
 	}
 
@@ -945,11 +1060,11 @@ Possible extra rowspan handling
 		/* Larger, more consistently-sized click target */
 		display: block;
 		/* Reverse color scheme */
-		color: black;
-		border-color: #3980B5;
+		color: var(--main-text-color);
+		border-color: var(--toc-border-color);
 	}
 	.toc a:visited {
-		border-color: #054572;
+		border-color: var(--toc-a-visited-color);
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -965,7 +1080,7 @@ Possible extra rowspan handling
 	.toc {
 		line-height: 1.1em; /* consistent spacing */
 	}
-
+	
 	/* ToC not indented until third level, but font style & margins show hierarchy */
 	.toc > li             { font-weight: bold;   }
 	.toc > li li          { font-weight: normal; }
@@ -1044,7 +1159,7 @@ Possible extra rowspan handling
 		}
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
-			color: #707070;
+			color: var(--toc-nav-a-not-focus-not-hover-color);
 		}
 	}
 
@@ -1066,7 +1181,7 @@ Possible extra rowspan handling
 
 	table.index tr:hover td:not([rowspan]),
 	table.index tr:hover th:not([rowspan]) {
-		background: #f7f8f9;
+		background: var(--table-cell-hover-bg-color);
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
@@ -1077,7 +1192,7 @@ Possible extra rowspan handling
 /** Outdated warning **********************************************************/
 
 a#outdated-note {
-	color: white;
+	color: var(--main-bg-color);
 }
 
 a#outdated-note:hover {
@@ -1085,7 +1200,7 @@ a#outdated-note:hover {
 }
 
 .outdated-spec {
-	background-color: rgba(0,0,0,0.5);
+	background-color: var(--outdated-spec-bg-color);
 }
 
 .outdated-warning {
@@ -1095,17 +1210,17 @@ a#outdated-note:hover {
 	right: 0;
 	margin: 0 auto;
 	width: 50%;
-	background: maroon;
-	color: white;
+	background: var(--outdated-warning-bg-color);
+	color: var(--main-bg-color);
 	border-radius: 1em;
-	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--outdated-warning-shadow-color);
 	padding: 2em;
 	text-align: center;
 	z-index: 2;
 }
 
 .edited-rec-warning {
-	background: darkorange;
+	background: var(--edited-rec-warning-bg-color);
 	box-shadow: 0 0 1em;
 }
 
@@ -1117,7 +1232,7 @@ a#outdated-note:hover {
 	border: 0;
 	padding: 0.25em 0.5em;
 	background: transparent;
-	color: white;
+	color: var(--main-bg-color);
 	font:1em sans-serif;
 	text-align:center;
 }
@@ -1150,7 +1265,7 @@ a#outdated-note:hover {
 		.outdated-warning {
 			position: absolute;
 			border-style: solid;
-			border-color: red;
+			border-color: var(--outdated-warning-border-color);
 		}
 
 		.outdated-warning input {
@@ -1219,7 +1334,7 @@ a#outdated-note:hover {
 			            top right / 4em 100% linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0)) local,
 			            top left  / 1em 100% linear-gradient(to right,  #c3c3c5, rgba(195, 195, 197, 0)) scroll,
 			            top right / 1em 100% linear-gradient(to left, #c3c3c5, rgba(195, 195, 197, 0)) scroll,
-			            white;
+			            var(--main-bg-color);
 			background-repeat: no-repeat;
 			*/
 		}
