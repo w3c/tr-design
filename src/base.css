@@ -541,7 +541,7 @@
 	.head p:not(.copyright) > a,
 	.head > a:first-child {
 		border: none;
-		text-decoration: none;
+		text-decoration: underline;
 		background: transparent;
 	}
 
