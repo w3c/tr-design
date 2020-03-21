@@ -1038,7 +1038,7 @@ Possible extra rowspan handling
 	ul.index ul,
 	ul.index dl { font-size: smaller; }
 	@media not print {
-		ul.index li span {
+		ul.index li a + span {
 			white-space: nowrap;
 			color: transparent;
 		}
