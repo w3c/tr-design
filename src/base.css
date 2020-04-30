@@ -663,7 +663,7 @@
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
-		color: #AE1E1E;
+		color: #831616;
 		padding-right: 1em;
 		text-transform: uppercase;
 	}
@@ -681,7 +681,7 @@
 	}
 	.example::before, .example > .marker {
 		text-transform: uppercase;
-		color: #827017;
+		color: #574b0f;
 		min-width: 7.5em;
 		display: block;
 	}
