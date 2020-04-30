@@ -538,7 +538,7 @@
 	}
 
 	/* Backout above styling for W3C logo */
-	.head p:not(.copyright) > a,
+	.head p:not(.copyright):first-child > a,
 	.head > a:first-child {
 		border: none;
 		text-decoration: none;
