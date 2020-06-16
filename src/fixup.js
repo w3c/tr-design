@@ -217,11 +217,11 @@
         }
       }
 
-      window.onclick = function(event) {
+      window.addEventListener("click", function(event) {
         if (!node.contains(event.target) && !node.classList.contains("outdated-collapsed")) {
           button.click();
         }
-      }
+      });
 
       document.addEventListener("focus", function(event) {
         var isCollapsed = node.classList.contains("outdated-collapsed");
