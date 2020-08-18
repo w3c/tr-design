@@ -2,10 +2,11 @@
 
 These are mockup versions of W3C Document for [Process 2020](https://www.w3.org/2020/Process-20200915/).
 
+* FPWD, WDs, and PRs: add required link to GH issues in the headers and remove requirements in the SOTD
 * Candidate Recommendation 6.2.7: same as Candidate Recommendation Snapshot 6.2.8.1
 * [Candidate Recommendation Snapshot 6.2.8.1](https://htmlpreview.github.io/?https://github.com/w3c/tr-design/blob/gh-pages/p2020mockup/cr-6.2.8.1.html)
   1. "Snapshot" appears under the status sub-title
-  1. SOTD talks about "Snapshot of a Candidate Recommendation"
+  1. SOTD talks about "a Candidate Recommendation Snapshot"
   1. "to indicate that the document has received wide review and to encourage early implementation by the developer community."
 * [Candidate Recommendation Draft 6.2.8.2](https://htmlpreview.github.io/?https://github.com/w3c/tr-design/blob/gh-pages/p2020mockup/cr-6.2.8.2.html)
   1. "Draft" appears under the status sub-title
