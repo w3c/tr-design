@@ -1,6 +1,6 @@
 These are mockup versions of W3C Document for Process 2020.
 
-* [Candidate Recommendation 6.2.7](https://htmlpreview.github.io/?https://github.com/w3c/tr-design/blob/gh-pages/p2020mockup/cr-6.2.7.html) (@@the first CR is a CR Snapshot, so do we need a separate mockup?)
+* Candidate Recommendation 6.2.7: same as Candidate Recommendation Snapshot 6.2.8.1
 * [Candidate Recommendation Snapshot 6.2.8.1](https://htmlpreview.github.io/?https://github.com/w3c/tr-design/blob/gh-pages/p2020mockup/cr-6.2.8.1.html)
   1. "Snapshot" appears under the status sub-title
   1. SOTD talks about "Snapshot of a Candidate Recommendation"
