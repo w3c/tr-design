@@ -11,7 +11,7 @@
 <body class="h-entry" data-cite="WebIDL html dom webidl ecma-262">
   <div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48"></a>
-      <h1 id="title" class="title p-name">High Resolution Time</h1>
+      <h1 id="title" class="title p-name">High Resolution Time Level 2</h1>
 
       <h2>
         W3C Candidate Recommendation
@@ -20,17 +20,18 @@
       </h2>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/TR/2020/CR-hr-time-20200106/">https://www.w3.org/TR/2020/CR-hr-time-20200106/</a>
+                <a class="u-url" href="https://www.w3.org/TR/2020/CRD-hr-time-2-20200106/">https://www.w3.org/TR/2020/CRD-hr-time-2-20200106/</a>
               </dd><dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/TR/hr-time/">https://www.w3.org/TR/hr-time/</a>
               </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/hr-time/">https://w3c.github.io/hr-time/</a></dd>
         <dt>Test suite:</dt><dd><a href="https://wpt.fyi/hr-time/">https://wpt.fyi/hr-time/</a></dd>
-        <dt>Implementation report:</dt><dd>
+        <dt>Implementation report:</dt>(@@required) <dd>
                 <a href="https://wpt.fyi/hr-time/">https://wpt.fyi/hr-time/</a>
               </dd>
 
         <dt>Previous version:</dt><dd><a href="https://www.w3.org/TR/2019/CR-hr-time-20191121/">https://www.w3.org/TR/2019/CR-hr-time-20191121/</a></dd>
+        <dt>History:</dt>(this may be used in replacement of or in adddition to "Previous version") <dd><a href="hhttps://www.w3.org/standards/history/hr-time-2">https://www.w3.org/standards/history/hr-time-2</a></dd>
 
         <dt>Editor:</dt>
         <dd class="p-author h-card vcard" data-editor-id="56102"><a class="ed_mailto u-email email p-name" href="mailto:igrigorik@gmail.com">Ilya Grigorik</a>
@@ -47,7 +48,7 @@
         <dt>Participate:</dt><dd>
       <a href="https://github.com/w3c/hr-time/">GitHub w3c/hr-time</a>
     </dd><dd>
-      <a href="https://github.com/w3c/hr-time/issues/">File a bug</a>
+      (@@required) <a href="https://github.com/w3c/hr-time/issues/">File a bug</a> (@@Could also say "File a comment")
     </dd><dd>
       <a href="https://github.com/w3c/hr-time/commits/gh-pages">Commit history</a>
     </dd><dd>
@@ -94,41 +95,39 @@
       Candidate Recommendation Draft.
     </p>
     <p>
-      <a href="https://github.com/w3c/hr-time/issues/">GitHub Issues</a> are preferred for
-            discussion of this specification.
-    </p>
-    <p>
-      <abbr title="World Wide Web Consortium">W3C</abbr> publishes a Candidate Recommendation Draft
-      to allow for wider review of the changes and for ease of reference to the integrated specification.
-    </p>
-    <p>
-      Please see the Working Group's <a href="https://wpt.fyi/hr-time/">implementation report</a>.
-    </p>
-    <p>
       Publication as a Candidate Recommendation does not imply endorsement by the
-      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or
-      obsoleted by other documents at any time. It is inappropriate to cite this
-      document as other than work in progress.
+      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. A Candidate Recommendation Draft integrate
+      changes from the previous Candidate Recommendation that the Working Group intends to include in
+      a subsequent updates.
+    </p>
+    (@@choose one of the 2 following paragraphs)
+    <p>
+      This document may be updated, replaced or obsoleted at any time. It is inappropriate to
+      cite this document as other than work in progress.
+    </p>
+    <p>
+      This document is maintained and updated at any time. Some parts of
+      this document are work in progress.
     </p>
     <p>
         This document was produced by a group
         operating under the
-        <a href="https://lists.w3.org/Archives/Member/member-psig/2020JanMar/att-0051/PP-update-2020-5.doc"><abbr title="World Wide Web Consortium">W3C</abbr>
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>
           Patent Policy</a>.
           <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
              <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/45211/status">public list of any
                             patent disclosures</a>  made in connection with the deliverables of
             the group; that page also includes instructions for disclosing a patent. An individual who has actual
             knowledge of a patent which the individual believes contains
-            <a href="https://lists.w3.org/Archives/Member/member-psig/2020JanMar/att-0051/PP-update-2020-5.doc">Essential Claim(s)</a>
+            <a href="https://www.w3.org/Consortium/Patent-Policy/">Essential Claim(s)</a>
             must disclose the information in accordance with
-            <a href="https://lists.w3.org/Archives/Member/member-psig/2020JanMar/att-0051/PP-update-2020-5.doc">section 6
+            <a href="https://www.w3.org/Consortium/Patent-Policy/">section 6
               of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
 
 
     </p><p>
                   This document is governed by the
-                  <a id="w3c_process_revision" href="https://w3c.github.io/w3process/">XX XXXX 2020 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                  <a id="w3c_process_revision" href="https://www.w3.org/2020/Process-20200915/">15 September 2020 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                 </p>
               </section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">1.1 </bdi>Examples</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-time-origin"><bdi class="secno">2. </bdi>Time Origin</a></li><li class="tocline"><a class="tocxref" href="#sec-domhighrestimestamp"><bdi class="secno">3. </bdi>The <span data-dfn-type="typedef" data-export="" data-idl="typedef" data-title="DOMHighResTimeStamp" data-dfn-for=""><code>DOMHighResTimeStamp</code></span> typedef</a></li><li class="tocline"><a class="tocxref" href="#sec-performance"><bdi class="secno">4. </bdi>The <span data-dfn-type="interface" data-export="" data-idl="interface" data-title="Performance" data-dfn-for=""><code>Performance</code></span> interface</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#now-method"><bdi class="secno">4.1 </bdi><code>now()</code> method</a></li><li class="tocline"><a class="tocxref" href="#timeorigin-attribute"><bdi class="secno">4.2 </bdi><code>timeOrigin</code> attribute</a></li><li class="tocline"><a class="tocxref" href="#tojson-method"><bdi class="secno">4.3 </bdi><code>toJSON()</code> method</a></li></ol></li><li class="tocline"><a class="tocxref" href="#extensions-to-windoworworkerglobalscope-mixin"><bdi class="secno">5. </bdi>Extensions to <code>WindowOrWorkerGlobalScope</code> mixin</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#the-performance-attribute"><bdi class="secno">5.1 </bdi>The <code>performance</code> attribute</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-monotonic-clock"><bdi class="secno">6. </bdi>Monotonic Clock</a></li><li class="tocline"><a class="tocxref" href="#sec-privacy-security"><bdi class="secno">7. </bdi>Privacy and Security</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#clock-resolution"><bdi class="secno">7.1 </bdi>Clock resolution</a></li><li class="tocline"><a class="tocxref" href="#clock-drift"><bdi class="secno">7.2 </bdi>Clock drift</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">8. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#idl-index"><bdi class="secno">9. </bdi>IDL Index</a></li><li class="tocline"><a class="tocxref" href="#acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">B.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.2 </bdi>Informative references</a></li></ol></li></ol></nav>
   <section id="introduction" class="informative">
