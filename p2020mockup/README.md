@@ -28,6 +28,13 @@ These are mockup versions of W3C Document for [Process 2020](https://www.w3.org/
 * [Recommendation (new features) 6.2.11.4](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.4.html)
   1. "published by the ... Group as a revised Recommendation. It includes [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition), introducing new features since the Previous Recommentation."
   1. MUST add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
-* Note that 6.2.11.3 and 6.2.11.4 can be combined. Thus, the pubrules requirements for those two would apply if the Recommendation contains proposed corrections and proposed additions.
+* Note that [6.2.11.3 and 6.2.11.4](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.34.html)
+
+Advise to be added:
+
+* For PRs:
+  1. If it is the intention to incorporate new features in future updates of the Recommendation, please make sure to identify the document as intending to [allow new features](https://www.w3.org/2020/Process-20200915/#allow-new-features). Recommended text is "Future updates to this Recommendation may incorporate [new features](https://www.w3.org/2020/Process-20200915/#allow-new-features)."
+* For RECs:
+  1. If your Recommendation is allowed to incorporate new features (signaling its intent in a Proposed Recommendation published in the past), please make sure to identify the document as intending to [allow new features](https://www.w3.org/2020/Process-20200915/#allow-new-features). Recommended text is "Future updates to this Recommendation may incorporate [new features](https://www.w3.org/2020/Process-20200915/#allow-new-features)."
 
 
