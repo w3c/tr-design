@@ -361,6 +361,10 @@
 	h5 + h6 {
 		margin-top: 1.2em; /* = 1 x line-height */
 	}
+	h3.dim {
+		opacity: 0.7;
+		font-size: 80%;
+	}
 
 /** Section divider ***********************************************************/
 
@@ -437,6 +441,22 @@
 	 width: 1em;
 	 text-align: right;
 	 line-height: 0.5em;
+	}
+	.correction {
+		background: rgba(255, 255, 0, 0.5);
+		border-left: 10px solid yellow;
+		padding-left: 10px;
+	}
+	p.correction:before {
+		content: "PROPOSED CORRECTION: ";
+	}
+	.addition {
+		background: rgba(0, 255, 0, 50%);
+		border-left: 10px solid green;
+		padding-left: 10px;
+	}
+	p.addition:before {
+		content: "PROPOSED ADDITION: ";
 	}
 
 /** Terminology Markup ********************************************************/
