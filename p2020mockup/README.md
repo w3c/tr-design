@@ -7,12 +7,16 @@ These are mockup versions of W3C Document for [Process 2020](https://www.w3.org/
 * [Candidate Recommendation Snapshot 6.2.8.1](https://w3c.github.io/tr-design/p2020mockup/cr-6.2.8.1.html)
   1. "Snapshot" appears under the status sub-title
   1. SOTD talks about "a Candidate Recommendation Snapshot"
-  1. "to indicate that the document has received wide review and to encourage early implementation by the developer community."
+  1. "has received wide review and is intended to gather implementation experience."
+  1. Requires a deadline for comments
+  1. Choose between 2 sentences to give signal whether it's a living standard or not. (optional)
 * [Candidate Recommendation Draft 6.2.8.2](https://w3c.github.io/tr-design/p2020mockup/cr-6.2.8.2.html)
   1. "Draft" appears under the status sub-title
   1. SOTD talks about "a Candidate Recommendation Draft"
-  1. "allow for wider review of the changes and for ease of reference to the integrated specification."
+  1. "integrate changes from the previous Candidate Recommendation that the Working Group intends to include in a subsequent Candidate Recommendation Snapshot."
   1. Does not include a deadline for comments, since any substantive changes would require the Group to publish a Snapshot before moving to Proposed Recommendation.
+  1. No requirements for deadline for comments
+  1. Choose between 2 sentences to give signal whether it's a living standard or not.
 * [Recommendation 6.2.10](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.10.html)
   1. If the Proposed Recommendation intended to allow new features in Recommendation revisions, add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
 * [Recommendation (no text change) 6.2.11.1](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.1.html)
