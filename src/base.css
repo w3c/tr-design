@@ -151,8 +151,8 @@
 
 	--indexinfo-text: #707070;
 
-	--propindex-hover-text: black;
-	--propindex-hover-bg: #f7f8f9;
+	--indextable-hover-text: black;
+	--indextable-hover-bg: #f7f8f9;
 
 	--outdatedspec-bg: rgba(0, 0, 0, .5);
 	--outdatedspec-text: black;
@@ -1233,9 +1233,9 @@ Possible extra rowspan handling
 	table.index tr:hover td:not([rowspan]),
 	table.index tr:hover th:not([rowspan]) {
 		color: black;
-		color: var(--propindex-hover-text);
+		color: var(--indextable-hover-text);
 		background: #f7f8f9;
-		background: var(--propindex-hover-bg);
+		background: var(--indextable-hover-bg);
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
