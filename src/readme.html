@@ -106,6 +106,8 @@
             <li><a href="#advisement"><span class="secno">2.2.5</span>
               Advisement Boxes</a>
             <li><a href="#obsolete"><span class="secno">2.2.6</span>
+              Amendment Boxes</a>
+            <li><a href="#obsolete"><span class="secno">2.2.7</span>
               Annoying Spec Obsoletion Boxes</a>
           </ol>
         <li><a href="#structural"><span class="secno">2.3</span>
@@ -473,7 +475,7 @@ Section Numbers and Anchoring</h3>
 
   <div class="example">
     Example markup,
-    showing the difference between in-the-box and out-of-the-box <code>ins</code>/<code>del</code> usage.
+    showing a change described using in-the-box <code>ins</code>/<code>del</code>.
 
 <pre>
 &lt;div class="amendment" id="c1">
@@ -499,8 +501,28 @@ Section Numbers and Anchoring</h3>
         to show how they both look.
       </blockquote>
     </div>
+  </div>
 
-    <p>Here’s a<ins class=c1>n</ins> <del class=c1>deletion</del> <ins class="c1">insertion</ins>
+  <div class="example">
+    Example markup,
+    showing an amendment using out-of-the-box (in-context) <code>ins</code>/<code>del</code> markup.
+
+<pre>
+&lt;div class="amendment" id="c2">
+  &lt;span class="marker">Candidate Change 2:&lt;/span>
+  Explanation of the change, maybe link to related discussion.
+&lt;/div>
+
+&lt;p>Here’s a&lt;ins class=c2>n&lt;/ins> &lt;del class=c2>deletion&lt;/del> &lt;ins class=c2>insertion&lt;/ins>
+    to show how they both look.
+</pre>
+
+    <div class="amendment" id="c1">
+      <span class="marker">Candidate Change 2:</span>
+      Explanation of the change, maybe link to related discussion.
+    </div>
+
+    <p>Here’s a<ins class=c1>n</ins> <del class=c1>deletion</del> <ins class=c1>insertion</ins>
         to show how they both look.
   </div>
 
