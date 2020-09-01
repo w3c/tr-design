@@ -64,6 +64,111 @@
  *
  ******************************************************************************/
 
+
+/******************************************************************************/
+/*                                  Colors                                    */
+/******************************************************************************/
+
+/* Any --text-* not paired with a --bg-* is assumed to have a transparent bg */
+:root {
+	--text: black;
+	--bg: white;
+
+	--bg-logo: #1a5e9a;
+	--bg-logo-active: #c00;
+
+	--text-tocnav-normal: #707070;
+	--bg-tocnav-normal: var(--bg);
+	--text-tocnav-hover: var(--text-tocnav-normal);
+	--bg-tocnav-hover: #f8f8f8;
+	--text-tocnav-active: #c00;
+	--bg-tocnav-active: var(--bg-tocnav-normal);
+
+	--text-tocsidebar: var(--text);
+	--bg-tocsidebar: #f7f8f9;
+	--shadow-tocsidebar: rgba(0,0,0,.1);
+	--text-tocsidebar-heading: hsla(203,20%,40%,.7);
+
+	--text-toclink: black;
+	--underline-toclink: #3980b5;
+	--text-toclink-visited: var(--text-toclink);
+	--underline-toclink-visited: #054572;
+
+	--text-heading: #005a9c;
+	--text-hr: var(--text);
+
+	--border-algo: #def;
+
+	--text-correction: var(--text);
+	--bg-correction: rgba(255, 255, 0, 0.5);
+	--border-correction: yellow;
+	--text-addition: var(--text);
+	--bg-addition: rgba(0, 255, 0, 0.5);
+	--border-addition: green;
+
+	--text-del: red;
+	--bg-del: transparent;
+	--text-ins: #080;
+	--bg-ins: transparent;
+
+	--text-a-normal: #034575;
+	--underline-a-normal: #707070;
+	--text-a-visited: purple;
+	--underline-a-visited: #bbb;
+	--bg-a-hover: rgba(75%, 75%, 75%, .25);
+	--text-a-active: #c00;
+	--underline-a-active: #c00;
+
+	--border-blockquote: silver;
+	--bg-blockquote: var(--bg);
+	--text-blockquote: var(--text);
+
+	--border-issue: #e05252;
+	--bg-issue: #fbe9e9;
+	--text-issue: var(--text);
+	--text-issueheading: #831616;
+
+	--border-example: #e0cb52;
+	--bg-example: #fcfaee;
+	--text-example: var(--text);
+	--text-exampleheading: #574b0f;
+
+	--border-note: #52e052;
+	--bg-note: #e9fbe9;
+	--text-note: var(--text);
+	--text-noteheading: hsl(120, 70%, 30%);
+	--underline-notesummary: silver;
+
+	--border-advisement: orange;
+	--bg-advisement: #fec;
+	--text-advisement: var(--text);
+	--text-advisementheading: #b35f00;
+
+	--border-warning: red;
+	--bg-warning: hsla(40,100%,50%,0.95);
+	--text-warning: var(--text);
+
+	--border-def: #8ccbf2;
+	--bg-def: #def;
+	--text-def: var(--text);
+	--border-defrow: #bbd7e9;
+
+	--border-datacell: silver;
+
+	--text-indexinfo: #707070;
+
+	--text-propindex-hover: black;
+	--bg-propindex-hover: #f7f8f9;
+
+	--bg-outdatedspec: rgba(0, 0, 0, .5);
+	--text-outdatedspec: black;
+	--bg-outdated: maroon;
+	--text-outdated: white;
+	--shadow-outdated: red;
+
+	--bg-editedrec: darkorange;
+}
+
 /******************************************************************************/
 /*                                   Body                                     */
 /******************************************************************************/
@@ -87,7 +192,9 @@
 
 		/* Colors */
 		color: black;
+		color: var(--text);
 		background: white top left fixed no-repeat;
+		background-color: var(--bg);
 		background-size: 25px auto;
 	}
 
@@ -124,10 +231,11 @@
 	.head img[src*="logos/W3C"] {
 		display: block;
 		border: solid #1a5e9a;
+		border: solid var(--bg-logo);
 		border-width: .65rem .7rem .6rem;
 		border-radius: .4rem;
 		background: #1a5e9a;
-		color: white;
+		background: var(--bg-logo);
 		font-weight: bold;
 	}
 
@@ -138,7 +246,9 @@
 
 	.head a:active > img[src*="logos/W3C"] {
 		background: #c00;
+		background: var(--bg-logo-active);
 		border-color: #c00;
+		border-color: var(--bg-logo-active);
 	}
 
 	/* see also additional rules in Link Styling section */
@@ -165,7 +275,6 @@
 			border-top-right-radius: 2rem;
 			box-shadow: 0 0 2px;
 			font-size: 1.5em;
-			color: black;
 		}
 		#toc-nav > a {
 			display: block;
@@ -178,19 +287,29 @@
 			box-shadow: 0 0 2px;
 			border: none;
 			border-top-right-radius: 1.33em;
+
+			color: #707070;
+			color: var(--text-tocnav-normal);
 			background: white;
+			background: var(--bg-tocnav-normal);
 		}
+		#toc-nav > a:hover,
+		#toc-nav > a:focus {
+			color: black;
+			color: var(--text-tocnav-hover);
+			background: #f8f8f8;
+			background: var(--bg-tocnav-hover);
+		}
+		#toc-nav > a:active {
+			color: #C00;
+			color: var(--text-tocnav-active);
+			background: white;
+			background: var(--bg-tocnav-active);
+		}
+
 		#toc-nav > #toc-jump {
 			padding-bottom: 2em;
 			margin-bottom: -1.9em;
-		}
-
-		#toc-nav > a:hover,
-		#toc-nav > a:focus {
-			background: #f8f8f8;
-		}
-		#toc-nav > a:not(:hover):not(:focus) {
-			color: #707070;
 		}
 
 		/* statusbar gets in the way on keyboard focus; remove once browsers fix */
@@ -204,10 +323,6 @@
 		}
 		#toc-nav > a > span + span {
 			padding-right: 0.2em;
-		}
-
-		#toc-nav :active {
-			color: #C00;
 		}
 	}
 
@@ -226,10 +341,14 @@
 			padding: 0 1em;
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
+			color: black;
+			color: var(--text-tocsidebar);
 			background: inherit;
 			background-color: #f7f8f9;
+			background-color: var(--bg-tocsidebar);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--shadow-tocsidebar) inset;
 		}
 		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
@@ -239,6 +358,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+			color: var(--text-tocsidebar-heading);
 		}
 		body.toc-sidebar #toc-jump:not(:focus) {
 			width: 0;
@@ -266,10 +386,14 @@
 			padding: 0 1em;
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
+			color: black;
+			color: var(--text-tocsidebar);
 			background: inherit;
 			background-color: #f7f8f9;
+			background-color: var(--bg-tocsidebar);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
+			box-shadow: -.1em 0 .25em var(--shadow-tocsidebar) inset;
 		}
 		body:not(.toc-inline) #toc h2 {
 			margin-top: .8rem;
@@ -279,6 +403,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
+			color: var(--text-tocsidebar-heading);
 		}
 
 		body:not(.toc-inline) {
@@ -321,7 +446,7 @@
 
 	h1, h2, h3 {
 		color: #005A9C;
-		background: transparent;
+		color: var(--text-heading);
 	}
 
 	h1 { font-size: 170%; }
@@ -357,6 +482,8 @@
 		text-align: center;
 		margin: 1em auto;
 		height: auto;
+		color: black;
+		color: var(--text-hr);
 		border: transparent solid 0;
 		background: transparent;
 	}
@@ -399,6 +526,7 @@
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
 	 border-left: 0.5em solid #DEF;
+	 border-left: 0.5em solid var(--border-algo);
 	}
 
 	/* Style for switch/case <dl>s */
@@ -427,16 +555,24 @@
 	 line-height: 0.5em;
 	}
 	.correction {
+		color: black;
+		color: var(--text-correction);
 		background: rgba(255, 255, 0, 0.5);
+		background: var(--bg-correction);
 		border-left: 10px solid yellow;
+		border-left: 10px solid var(--border-correction);
 		padding-left: 10px;
 	}
 	p.correction:before {
 		content: "PROPOSED CORRECTION: ";
 	}
 	.addition {
+		color: black;
+		color: var(--text-addition);
 		background: rgba(0, 255, 0, 50%);
+		background: var(--bg-addition);
 		border-left: 10px solid green;
+		border-left: 10px solid var(--border-addition);
 		padding-left: 10px;
 	}
 	p.addition:before {
@@ -466,8 +602,20 @@
 
 /** Change Marking ************************************************************/
 
-	del { color: red;  text-decoration: line-through; }
-	ins { color: #080; text-decoration: underline;    }
+	del {
+		color: red;
+		color: var(--text-del);
+		background: transparent;
+		background: var(--bg-del);
+		text-decoration: line-through;
+	}
+	ins {
+		color: #080;
+		color: var(--text-ins);
+		background: transparent;
+		background: var(--bg-ins);
+		text-decoration: underline;
+	}
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
@@ -518,8 +666,10 @@
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
 		color: #034575;
+		color: var(--text-a-normal);
 		text-decoration: none;
 		border-bottom: 1px solid #707070;
+		border-bottom: 1px solid var(--underline-a-normal);
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
@@ -533,12 +683,15 @@
 	a[href]:hover {
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
+		background: var(--bg-a-hover);
 		border-bottom-width: 3px;
 		margin-bottom: -2px;
 	}
 	a[href]:active {
 		color: #C00;
+		color: var(--text-a-active);
 		border-color: #C00;
+		border-color: var(--underline-a-active);
 	}
 
 	/* Backout above styling for W3C logo */
@@ -632,24 +785,40 @@
 		margin-bottom: 0;
 	}
 
+
+	.issue::before, .issue > .marker,
+	.example::before, .example > .marker,
+	.note::before, .note > .marker {
+		text-transform: uppercase;
+		display: block;
+	}
+
 /** Blockquotes ***************************************************************/
 
 	blockquote {
 		border-color: silver;
+		border-color: var(--border-blockquote);
+		background: white;
+		background: var(--bg-blockquote);
+		color: black;
+		color: var(--text-blockquote);
 	}
 
 /** Open issue ****************************************************************/
 
 	.issue {
 		border-color: #E05252;
+		border-color: var(--border-issue);
 		background: #FBE9E9;
+		background: var(--bg-issue);
+		color: black;
+		color: var(--text-issue);
 		counter-increment: issue;
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
 		color: #831616;
-		padding-right: 1em;
-		text-transform: uppercase;
+		color: var(--text-issueheading);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
 	   or use class="marker" to mark up the issue number in source. */
@@ -658,16 +827,18 @@
 
 	.example {
 		border-color: #E0CB52;
+		border-color: var(--border-example);
 		background: #FCFAEE;
+		background: var(--bg-example);
+		color: black;
+		color: var(--text-example);
 		counter-increment: example;
 		overflow: auto;
 		clear: both;
 	}
 	.example::before, .example > .marker {
-		text-transform: uppercase;
 		color: #574b0f;
-		min-width: 7.5em;
-		display: block;
+		color: var(--text-exampleheading);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
 	   or use class="marker" to mark up the example number in source. */
@@ -676,25 +847,25 @@
 
 	.note {
 		border-color: #52E052;
+		border-color: var(--border-note);
 		background: #E9FBE9;
+		background: var(--bg-note);
+		color: black;
+		color: var(--text-note);
 		overflow: auto;
 	}
 
 	.note::before, .note > .marker,
-	details.note > summary::before,
-	details.note > summary > .marker {
-		text-transform: uppercase;
-		display: block;
+	details.note > summary {
 		color: hsl(120, 70%, 30%);
+		color: var(--text-noteheading);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
 	   or use class="marker" to mark up the label in source. */
 
-	details.note > summary {
-		color: hsl(120, 70%, 30%);
-	}
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
+		border-bottom: 1px var(--underline-notesummary) solid;
 	}
 
 /** Advisement Box ************************************************************/
@@ -702,15 +873,20 @@
 
 	.advisement {
 		border-color: orange;
+		border-color: var(--border-advisement);
 		border-style: none solid;
 		background: #FFEECC;
+		background: var(--bg-advisement);
+		color: black;
+		color: var(--text-advisement);
 	}
 	strong.advisement {
 		display: block;
 		text-align: center;
 	}
-	.advisement > .marker {
+	.advisement::before, .advisement > .marker {
 		color: #B35F00;
+		color: var(--text-advisementheading);
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
@@ -727,9 +903,12 @@
 	details.annoying-warning:not([open]) > summary,
 	details.annoying-warning[open] {
 		background: hsla(40,100%,50%,0.95);
+		background: var(--bg-warning);
 		color: black;
+		color: var(--text-warning);
 		padding: .75em 1em;
 		border: red;
+		border: var(--border-warning);
 		border-style: solid none;
 		box-shadow: 0 2px 8px black;
 		text-align: center;
@@ -757,8 +936,12 @@
 	.def {
 		padding: .5em 1em;
 		background: #DEF;
+		background: var(--bg-def);
 		margin: 1.2em 0;
 		border-left: 0.5em solid #8CCBF2;
+		border-left: 0.5em solid var(--border-def);
+		color: black;
+		color: var(--text-def);
 	}
 
 /******************************************************************************/
@@ -783,6 +966,7 @@
 		padding: 0.5em;
 		vertical-align: baseline;
 		border-bottom: 1px solid #bbd7e9;
+		border-bottom: 1px solid var(--rowborder-def);
 	}
 
 	table.def > tbody > tr:last-child th,
@@ -803,10 +987,10 @@
 	}
 
 	/* A footnote at the bottom of a def table */
-	table.def           td.footnote {
+	table.def td.footnote {
 		padding-top: 0.6em;
 	}
-	table.def           td.footnote::before {
+	table.def td.footnote::before {
 		content: " ";
 		display: block;
 		height: 0.6em;
@@ -851,6 +1035,7 @@
 		padding: 0.5em 1em;
 		border-width: 1px;
 		border-color: silver;
+		border-color: var(--border-datacell);
 		border-top-style: solid;
 	}
 
@@ -875,6 +1060,7 @@
 	table.index tbody th:first-child  {
 		border-right: 2px solid;
 		border-top: 1px solid silver;
+		border-top: 1px solid var(--border-datacell);
 		padding-right: 1em;
 	}
 
@@ -886,6 +1072,7 @@
 	table.complex.data th,
 	table.complex.data td {
 		border: 1px solid silver;
+		border: 1px solid var(--border-datacell);
 		text-align: center;
 	}
 
@@ -950,10 +1137,15 @@ Possible extra rowspan handling
 		display: block;
 		/* Reverse color scheme */
 		color: black;
+		color: var(--text-toclink);
 		border-color: #3980B5;
+		border-color: var(--underline-toclink);
 	}
 	.toc a:visited {
+		color: black;
+		color: var(--text-toclink-visited);
 		border-color: #054572;
+		border-color: var(--underline-toclink-visited);
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -1049,6 +1241,7 @@ Possible extra rowspan handling
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
 			color: #707070;
+			color: var(--text-indexinfo);
 		}
 	}
 
@@ -1070,7 +1263,10 @@ Possible extra rowspan handling
 
 	table.index tr:hover td:not([rowspan]),
 	table.index tr:hover th:not([rowspan]) {
+		color: black;
+		color: var(--text-propindex-hover);
 		background: #f7f8f9;
+		background: var(--bg-propindex-hover);
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
@@ -1080,16 +1276,11 @@ Possible extra rowspan handling
 
 /** Outdated warning **********************************************************/
 
-a#outdated-note {
-	color: white;
-}
-
-a#outdated-note:hover {
-	background: transparent;
-}
-
 .outdated-spec {
+	color: black;
+	color: var(--text-outdatedspec);
 	background-color: rgba(0,0,0,0.5);
+	background-color: var(--bg-outdatedspec);
 }
 
 .outdated-warning {
@@ -1100,16 +1291,28 @@ a#outdated-note:hover {
 	margin: 0 auto;
 	width: 50%;
 	background: maroon;
+	background: var(--bg-outdated);
 	color: white;
+	color: var(--text-outdated);
 	border-radius: 1em;
 	box-shadow: 0 0 1em red;
+	box-shadow: 0 0 1em var(--shadow-outdated);
 	padding: 2em;
 	text-align: center;
 	z-index: 2;
 }
 
+.outdated-warning a#outdated-note {
+	color: white;
+	color: var(--text-outdated);
+}
+.outdated-warning a#outdated-note:hover {
+	background: transparent;
+}
+
 .edited-rec-warning {
 	background: darkorange;
+	background: var(--bg-editedrec);
 	box-shadow: 0 0 1em;
 }
 
@@ -1122,6 +1325,7 @@ a#outdated-note:hover {
 	padding: 0.25em 0.5em;
 	background: transparent;
 	color: white;
+	color: var(--text-outdated);
 	font:1em sans-serif;
 	text-align:center;
 }
@@ -1192,7 +1396,7 @@ a#outdated-note:hover {
 		   1. When item < content column, centers item in column.
 		   2. When content < item < available, left-aligns.
 		   3. When item > available, fills available and is scrollable.
-		*/ 
+		*/
 		display: grid;
 		grid-template-columns: minmax(0, 50em);
 	}
