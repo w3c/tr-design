@@ -70,7 +70,7 @@
 /******************************************************************************/
 
 /* Any --* not paired with a --bg-* is assumed to have a transparent bg */
--text:root {
+:root {
 	--text: black;
 	--bg: white;
 
