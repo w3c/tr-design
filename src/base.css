@@ -1282,8 +1282,6 @@ Possible extra rowspan handling
 
 .outdated-warning a#outdated-note {
 	color: currentcolor;
-}
-.outdated-warning a#outdated-note:hover {
 	background: transparent;
 }
 
