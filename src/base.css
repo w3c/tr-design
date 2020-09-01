@@ -295,7 +295,7 @@
 			background: var(--tocnav-hover-bg);
 		}
 		#toc-nav > a:active {
-			color: #C00;
+			color: #c00;
 			color: var(--tocnav-active-text);
 			background: white;
 			background: var(--tocnav-active-bg);
@@ -439,7 +439,7 @@
 	}
 
 	h1, h2, h3 {
-		color: #005A9C;
+		color: #005a9c;
 		color: var(--heading-text);
 	}
 
@@ -515,7 +515,7 @@
 	/* Style for algorithms */
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
-	 border-left: 0.5em solid #DEF;
+	 border-left: 0.5em solid #def;
 	 border-left: 0.5em solid var(--algo-border);
 	}
 
@@ -643,7 +643,7 @@
 	a:visited {
 		color: #034575;
 		color: var(--a-visited-text);
-		border-bottom-color: #BBB;
+		border-bottom-color: #bbb;
 		border-bottom-color: var(--a-visited-underline);
 	}
 
@@ -657,9 +657,9 @@
 		margin-bottom: -2px;
 	}
 	a[href]:active {
-		color: #C00;
+		color: #c00;
 		color: var(--a-active-text);
-		border-color: #C00;
+		border-color: #c00;
 		border-color: var(--a-active-underline);
 	}
 
@@ -776,9 +776,9 @@
 /** Open issue ****************************************************************/
 
 	.issue {
-		border-color: #E05252;
+		border-color: #e05252;
 		border-color: var(--issue-border);
-		background: #FBE9E9;
+		background: #fbe9e9;
 		background: var(--issue-bg);
 		color: black;
 		color: var(--issue-text);
@@ -795,9 +795,9 @@
 /** Example *******************************************************************/
 
 	.example {
-		border-color: #E0CB52;
+		border-color: #e0cb52;
 		border-color: var(--example-border);
-		background: #FCFAEE;
+		background: #fcfaee;
 		background: var(--example-bg);
 		color: black;
 		color: var(--example-text);
@@ -815,9 +815,9 @@
 /** Non-normative Note ********************************************************/
 
 	.note {
-		border-color: #52E052;
+		border-color: #52e052;
 		border-color: var(--note-border);
-		background: #E9FBE9;
+		background: #e9fbe9;
 		background: var(--note-bg);
 		color: black;
 		color: var(--note-text);
@@ -844,7 +844,7 @@
 		border-color: orange;
 		border-color: var(--advisement-border);
 		border-style: none solid;
-		background: #FFEECC;
+		background: #fec;
 		background: var(--advisement-bg);
 		color: black;
 		color: var(--advisement-text);
@@ -854,7 +854,7 @@
 		text-align: center;
 	}
 	.advisement::before, .advisement > .marker {
-		color: #B35F00;
+		color: #b35f00;
 		color: var(--advisementheading-text);
 	}
 
@@ -904,10 +904,10 @@
 
 	.def {
 		padding: .5em 1em;
-		background: #DEF;
+		background: #def;
 		background: var(--def-bg);
 		margin: 1.2em 0;
-		border-left: 0.5em solid #8CCBF2;
+		border-left: 0.5em solid #8ccbf2;
 		border-left: 0.5em solid var(--def-border);
 		color: black;
 		color: var(--def-text);
@@ -1107,7 +1107,7 @@ Possible extra rowspan handling
 		/* Reverse color scheme */
 		color: black;
 		color: var(--toclink-text);
-		border-color: #3980B5;
+		border-color: #3980b5;
 		border-color: var(--toclink-underline);
 	}
 	.toc a:visited {
