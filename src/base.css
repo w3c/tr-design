@@ -596,8 +596,10 @@
 	}
 
 	/* for amendments (candidate/proposed changes) */
-	.amendment ins, ins[class^=c]:not(.proposed) { text-decoration-style: dotted; }
-	.amendment del, del[class^=c]:not(.proposed) { text-decoration-style: dotted; }
+	.amendment ins, .correction ins, .addition ins,
+	ins[class^=c]:not(.proposed) { text-decoration-style: dotted; }
+	.amendment del, .correction del, .addition del,
+	del[class^=c]:not(.proposed) { text-decoration-style: dotted; }
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
@@ -743,7 +745,8 @@
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .advisement, blockquote, .amendment {
+	.issue, .note, .example, .advisement, blockquote,
+	.amendment, .correction, .addition {
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -759,13 +762,17 @@
 	.example,
 	.advisement,
 	blockquote,
-	.amendment {
+	.amendment,
+	.correction,
+	.addition {
 		margin: 1em auto;
 	}
 	.note  > p:first-child,
 	.issue > p:first-child,
 	blockquote > :first-child,
-	.amendment > p:first-child {
+	.amendment > p:first-child,
+	.correction > p:first-child,
+	.addition > p:first-child{
 		margin-top: 0;
 	}
 	blockquote > :last-child {
@@ -886,14 +893,18 @@
 
 /** Amendment Box *************************************************************/
 
-	.amendment {
+	.amendment, .correction, .addition {
 		border-color: #330099;
 		border-color: var(--amendment-border);
 		background: #F5F0FF;
 		background: var(--amendment-bg);
 	}
 	.amendment::before, .amendment > .marker,
-	details.amendment > summary::before, details.amendment > summary > .marker {
+	details.amendment > summary::before, details.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	details.correction > summary::before, details.correction > summary > .marker,
+	.addition::before, .addition > .marker,
+	details.addition > summary::before, details.addition > summary > .marker {
 		color: #220066;
 		color: var(--amendmentheading-text);
 	}
