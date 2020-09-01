@@ -710,6 +710,11 @@
 		border-style: none;
 	}
 
+	img, svg {
+		/* This isn't color-scheme aware, on purpose. */
+		background: white;
+	}
+
 	/* For autogen numbers, add
 	   .caption::before, figcaption::before { content: "Figure " counter(figure) ". "; }
 	*/
