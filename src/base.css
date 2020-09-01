@@ -94,7 +94,7 @@
 	--tocsidebar-shadow: rgba(0,0,0,.1);
 	--tocsidebar-heading-text: hsla(203,20%,40%,.7);
 
-	--toclink-text: black;
+	--toclink-text: var(--text);
 	--toclink-underline: #3980b5;
 	--toclink-visited-text: var(--toclink-text);
 	--toclink-visited-underline: #054572;
