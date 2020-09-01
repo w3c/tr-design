@@ -69,7 +69,7 @@
 /*                                  Colors                                    */
 /******************************************************************************/
 
-/* Any --* not paired with a --bg-* is assumed to have a transparent bg */
+/* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
 :root {
 	--text: black;
 	--bg: white;
