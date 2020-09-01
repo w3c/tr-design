@@ -99,13 +99,6 @@
 
 	--border-algo: #def;
 
-	--text-correction: var(--text);
-	--bg-correction: rgba(255, 255, 0, 0.5);
-	--border-correction: yellow;
-	--text-addition: var(--text);
-	--bg-addition: rgba(0, 255, 0, 0.5);
-	--border-addition: green;
-
 	--text-del: red;
 	--bg-del: transparent;
 	--text-ins: #080;
@@ -470,10 +463,6 @@
 	h5 + h6 {
 		margin-top: 1.2em; /* = 1 x line-height */
 	}
-	h3.dim {
-		opacity: 0.7;
-		font-size: 80%;
-	}
 
 /** Section divider ***********************************************************/
 
@@ -553,30 +542,6 @@
 	 width: 1em;
 	 text-align: right;
 	 line-height: 0.5em;
-	}
-	.correction {
-		color: black;
-		color: var(--text-correction);
-		background: rgba(255, 255, 0, 0.5);
-		background: var(--bg-correction);
-		border-left: 10px solid yellow;
-		border-left: 10px solid var(--border-correction);
-		padding-left: 10px;
-	}
-	p.correction:before {
-		content: "PROPOSED CORRECTION: ";
-	}
-	.addition {
-		color: black;
-		color: var(--text-addition);
-		background: rgba(0, 255, 0, 50%);
-		background: var(--bg-addition);
-		border-left: 10px solid green;
-		border-left: 10px solid var(--border-addition);
-		padding-left: 10px;
-	}
-	p.addition:before {
-		content: "PROPOSED ADDITION: ";
 	}
 
 /** Terminology Markup ********************************************************/
