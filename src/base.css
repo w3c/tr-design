@@ -107,7 +107,7 @@
 
 	--a-normal-text: #034575;
 	--a-normal-underline: #707070;
-	--a-visited-text: purple;
+	--a-visited-text: var(--a-normal-text);
 	--a-visited-underline: #bbb;
 	--a-hover-bg: rgba(75%, 75%, 75%, .25);
 	--a-active-text: #c00;
@@ -641,7 +641,10 @@
 		margin: 0 -1px 0;
 	}
 	a:visited {
+		color: #034575;
+		color: var(--a-visited-text);
 		border-bottom-color: #BBB;
+		border-bottom-color: var(--a-visited-underline);
 	}
 
 	/* Use distinguishing colors when user is interacting with the link */
