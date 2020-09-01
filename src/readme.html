@@ -434,8 +434,134 @@ Section Numbers and Anchoring</h3>
   <p>This class is currently valid on <code>&lt;div></code>, <code>&lt;p></code>, and <code>&lt;strong></code>.
   <strong class="advisement">This is a <code>&lt;strong class="advisement"></code> normative statement.</strong>
 
+<h4 id="advisement">
+<span class="secno">2.2.6 </span> Amendment Boxes</h4>
+
+  <p>The <code>.amendment</code> class is valid on
+  <code>&lt;div></code>, <code>&lt;aside></code>, and <code>&lt;details></code>
+  to annotate
+  <a href="https://www.w3.org/2020/Process-20200915/#candidate-changes">candidate changes</a>
+  <ins class="c2">and <a href="https://www.w3.org/2020/Process-20200915/#change-review">proposed changes</a></ins>.
+  Such an amendment annotation
+  (together with, potentially, its associated <code>ins</code>/<code>del</code> markup)
+  must describe the changes in sufficient detail that the exact wording of
+  both the original and the altered specification can be known.
+
+  <p class="note"><span class="marker">Note:</span> Under the W3C <a href="https://www.w3.org/Consortium/Process/">Process</a>
+  and <a href="https://www.w3.org/Consortium/Patent-Policy/">Patent Policy</a>,
+  unlike notes, issues, and examples (which are purely informative annotations),
+  amendments are expected to have the same level of group consensus as the rest of the document,
+  and are subject to requirements of the patent policy.
+
+  <p>If the amendment is altering existing wording, it is recommended that
+  <code>ins</code>/<code>del</code> be used,
+  either within a <code>blockquote</code> of the affected text within the box,
+  or in-place in the rest of the document.
+  If simply adding prose,
+  it is not necessary to use <code>ins</code> so long as it is clear to the reader
+  what, exactly, is being added.
+
+  <p><strong>The <code>.amendment</code> box <em>must</em> have
+  an <code>id</code> value beginning with <code>c</code>
+  and each <code>ins</code>/<code>del</code> change associated with it
+  but not contained by it <em>must</em> have a <code>class</code>
+  matching the ID.</strong>
+  For stability across revisions,
+  it is recommended that this ID be encoded in the document source
+  rather than auto-generated from the contents of the document
+  e.g. via preprocessor.
+
+  <div class="example">
+    Example markup,
+    showing the difference between in-the-box and out-of-the-box <code>ins</code>/<code>del</code> usage.
+
+<pre>
+&lt;div class="amendment" id="c1">
+  &lt;span class="marker">Candidate Change 1:&lt;/span>
+  Explanation of the change, maybe link to related discussion.
+
+  &lt;blockquote>
+    &lt;p>Here’s a&lt;ins>n&lt;/ins> &lt;del>deletion&lt;/del> &lt;ins>insertion&lt;/ins>
+    to show how they both look.
+  &lt;/blockquote>
+&lt;/div>
+
+&lt;p>Here’s a&lt;ins class=c1>n&lt;/ins> &lt;del class=c1>deletion&lt;/del> &lt;ins class=c1>insertion&lt;/ins>
+    to show how they both look.
+</pre>
+
+    <div class="amendment" id="c1">
+      <span class="marker">Candidate Change 1:</span>
+      Explanation of the change, maybe link to related discussion.
+
+      <blockquote>
+        <p>Here’s a<ins>n</ins> <del>deletion</del> <ins>insertion</ins>
+        to show how they both look.
+      </blockquote>
+    </div>
+
+    <p>Here’s a<ins class=c1>n</ins> <del class=c1>deletion</del> <ins class="c1">insertion</ins>
+        to show how they both look.
+  </div>
+
+  <p>Provided correct <code>ins</code>/<code>del</code> markup,
+  JavaScript support via <code>fixup.js</code> will allow swapping
+  between the original and altered wording.</p>
+
+  <div class="amendment" id="c2">
+    <span class="marker">Candidate Change 2:</span>
+    Adding the <code>.proposed</code> class for
+    <a href="https://www.w3.org/2020/Process-20200915/#change-review">proposed changes</a>,
+    see <a href="https://github.com/w3c/w3process/issues/408">Issue 408</a>.
+    This example candidate change shows what it might look like to annotate
+    as an out-of-the-box diff.
+    This technique is useful particularly for changes which have widespread impact
+    across the specification.
+  </div>
+
+  <ins class="c2"><p><a href="https://www.w3.org/2020/Process-20200915/#change-review">Proposed changes</a>
+  (those under formal review by the AC / legal)
+  must have the <code>.proposed</code> class in addition to <code>.amendment</code>,
+  and any associated <code>ins</code>/<code>del</code> markup outside the box
+  must also be marked <code>.proposed</code>.</p></ins>
+
+  <div class="amendment" id="c3">
+    <span class="marker">Candidate Change 3:</span>
+    This example candidate change shows what it might look like to annotate
+    adding the <code>.proposed</code> class for
+    <a href="https://www.w3.org/2020/Process-20200915/#change-review">Proposed changes</a>
+    as an in-the-box diff.
+    It collects all the changes together,
+    but might be harder to understand
+    for changes where the context is complex and/or important.
+    (<a href="https://github.com/w3c/w3process/issues/408">Issue 408</a>)
+
+    <blockquote>
+      <p>The <code>.amendment</code> class is valid on
+      <code>&lt;div></code>, <code>&lt;aside></code>, and <code>&lt;details></code>
+      to annotate
+      <a href="https://www.w3.org/2020/Process-20200915/#candidate-changes">candidate changes</a>
+      <ins>and <a href="https://www.w3.org/2020/Process-20200915/#change-review">proposed changes</a></ins>.
+      &hellip;</p>
+    </blockquote>
+
+    <blockquote>
+      <ins><p><a href="https://www.w3.org/2020/Process-20200915/#change-review">Proposed changes</a>
+      (those under formal review by the AC / legal)
+      must have the <code>.proposed</code> class in addition to <code>.amendment</code>,
+      and any associated <code>ins</code>/<code>del</code> markup outside the box
+      must also be marked <code>.proposed</code>.</p></ins>
+    </blockquote>
+  </div>
+
+  <p class=note><span class='marker'>Note:</span>
+  Omitted <code>&lt;/p></code> tags can confuse the HTML parser
+  when using <code>ins</code>/<code>del</code> as block-level markup.
+  Please look over your <code>ins</code>/<code>del</code> handiwork
+  before publishing it. :)
+
 <h4 id="obsolete">
-<span class="secno">2.2.6 </span> Annoying Spec Obsoletion Warning Boxes</h4>
+<span class="secno">2.2.7 </span> Annoying Spec Obsoletion Warning Boxes</h4>
 
   <p>The <code>.annoying-warning</code> is for spec obsoletion notices,
   which are typically placed in the Status or Introduction section of a document.

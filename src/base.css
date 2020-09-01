@@ -21,6 +21,7 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
+ *     -> ins/del.c### for candidate and proposed changes (amendments)
  *
  * Code
  *   - pre and code
@@ -31,6 +32,8 @@
  *   - .issue      for issues                        (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
+ *   - .amendment  for “candidate changes”           (div, aside, details)
+ *   - .amendment.proposed for “proposed changes”    (div, aside, details)
  *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
@@ -60,6 +63,7 @@
  *     Note that this styling basically doesn't help at all when printing,
  *     since A4 paper isn't much wider than the max-width here.
  *     It's better to design things to fit into a narrower measure if possible.
+ *
  *   - js-added ToC jump links (see fixup.js)
  *
  ******************************************************************************/
@@ -101,9 +105,9 @@
 
 	--algo-border: #def;
 
-	--del-text: red;
+	--del-text: #AA0000;
 	--del-bg: transparent;
-	--ins-text: #080;
+	--ins-text: #006100;
 	--ins-bg: transparent;
 
 	--a-normal-text: #034575;
@@ -138,6 +142,11 @@
 	--advisement-bg: #fec;
 	--advisement-text: var(--text);
 	--advisementheading-text: #b35f00;
+
+	--amendment-border: #330099;
+	--amendment-bg: #F5F0FF;
+	--amendment-text: var(--text);
+	--amendmentheading-text: #220066;
 
 	--warning-border: red;
 	--warning-bg: hsla(40,100%,50%,0.95);
@@ -572,19 +581,23 @@
 /** Change Marking ************************************************************/
 
 	del {
-		color: red;
+		color: #AA0000;
 		color: var(--del-text);
 		background: transparent;
 		background: var(--del-bg);
 		text-decoration: line-through;
 	}
 	ins {
-		color: #080;
+		color: #006100;
 		color: var(--ins-text);
 		background: transparent;
 		background: var(--ins-bg);
 		text-decoration: underline;
 	}
+
+	/* for amendments (candidate/proposed changes) */
+	.amendment ins, ins[class^=c]:not(.proposed) { text-decoration-style: dotted; }
+	.amendment del, del[class^=c]:not(.proposed) { text-decoration-style: dotted; }
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
@@ -730,7 +743,7 @@
 /*                             Colored Boxes                                  */
 /******************************************************************************/
 
-	.issue, .note, .example, .advisement, blockquote {
+	.issue, .note, .example, .advisement, blockquote, .amendment {
 		padding: .5em;
 		border: .5em;
 		border-left-style: solid;
@@ -745,12 +758,14 @@
 	.note,
 	.example,
 	.advisement,
-	blockquote {
+	blockquote,
+	.amendment {
 		margin: 1em auto;
 	}
 	.note  > p:first-child,
 	.issue > p:first-child,
-	blockquote > :first-child {
+	blockquote > :first-child,
+	.amendment > p:first-child {
 		margin-top: 0;
 	}
 	blockquote > :last-child {
@@ -761,7 +776,9 @@
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
 	.note::before, .note > .marker,
-	details.note > summary > .marker {
+	details.note > summary > .marker,
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary > .marker {
 		text-transform: uppercase;
 		padding-right: 1em;
 	}
@@ -865,6 +882,20 @@
 	.advisement::before, .advisement > .marker {
 		color: #b35f00;
 		color: var(--advisementheading-text);
+	}
+
+/** Amendment Box *************************************************************/
+
+	.amendment {
+		border-color: #330099;
+		border-color: var(--amendment-border);
+		background: #F5F0FF;
+		background: var(--amendment-bg);
+	}
+	.amendment::before, .amendment > .marker,
+	details.amendment > summary::before, details.amendment > summary > .marker {
+		color: #220066;
+		color: var(--amendmentheading-text);
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
