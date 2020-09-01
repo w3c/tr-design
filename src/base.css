@@ -763,10 +763,12 @@
 	.note::before, .note > .marker,
 	details.note > summary > .marker {
 		text-transform: uppercase;
+		padding-right: 1em;
 	}
 
 	.example::before, .example > .marker {
 		display: block;
+		padding-right: 0em;
 	}
 
 /** Blockquotes ***************************************************************/
