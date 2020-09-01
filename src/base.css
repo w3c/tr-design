@@ -69,97 +69,98 @@
 /*                                  Colors                                    */
 /******************************************************************************/
 
-/* Any --text-* not paired with a --bg-* is assumed to have a transparent bg */
-:root {
+/* Any --* not paired with a --bg-* is assumed to have a transparent bg */
+-text:root {
 	--text: black;
 	--bg: white;
 
-	--bg-logo: #1a5e9a;
-	--bg-logo-active: #c00;
+	--logo-bg: #1a5e9a;
+	--logo-active-bg: #c00;
 
-	--text-tocnav-normal: #707070;
-	--bg-tocnav-normal: var(--bg);
-	--text-tocnav-hover: var(--text-tocnav-normal);
-	--bg-tocnav-hover: #f8f8f8;
-	--text-tocnav-active: #c00;
-	--bg-tocnav-active: var(--bg-tocnav-normal);
+	--tocnav-normal-text: #707070;
+	--tocnav-normal-bg: var(--bg);
+	--tocnav-hover-text: var(--tocnav-normal-text);
+	--tocnav-hover-bg: #f8f8f8;
+	--tocnav-active-text: #c00;
+	--tocnav-active-bg: var(--tocnav-normal-bg);
 
-	--text-tocsidebar: var(--text);
-	--bg-tocsidebar: #f7f8f9;
-	--shadow-tocsidebar: rgba(0,0,0,.1);
-	--text-tocsidebar-heading: hsla(203,20%,40%,.7);
+	--tocsidebar-text: var(--text);
+	--tocsidebar-bg: #f7f8f9;
+	--tocsidebar-shadow: rgba(0,0,0,.1);
+	--tocsidebar-heading-text: hsla(203,20%,40%,.7);
 
-	--text-toclink: black;
-	--underline-toclink: #3980b5;
-	--text-toclink-visited: var(--text-toclink);
-	--underline-toclink-visited: #054572;
+	--toclink-text: black;
+	--toclink-underline: #3980b5;
+	--toclink-visited-text: var(--toclink-text);
+	--toclink-visited-underline: #054572;
 
-	--text-heading: #005a9c;
-	--text-hr: var(--text);
+	--heading-text: #005a9c;
 
-	--border-algo: #def;
+	--hr-text: var(--text);
 
-	--text-del: red;
-	--bg-del: transparent;
-	--text-ins: #080;
-	--bg-ins: transparent;
+	--algo-border: #def;
 
-	--text-a-normal: #034575;
-	--underline-a-normal: #707070;
-	--text-a-visited: purple;
-	--underline-a-visited: #bbb;
-	--bg-a-hover: rgba(75%, 75%, 75%, .25);
-	--text-a-active: #c00;
-	--underline-a-active: #c00;
+	--del-text: red;
+	--del-bg: transparent;
+	--ins-text: #080;
+	--ins-bg: transparent;
 
-	--border-blockquote: silver;
-	--bg-blockquote: var(--bg);
-	--text-blockquote: var(--text);
+	--a-normal-text: #034575;
+	--a-normal-underline: #707070;
+	--a-visited-text: purple;
+	--a-visited-underline: #bbb;
+	--a-hover-bg: rgba(75%, 75%, 75%, .25);
+	--a-active-text: #c00;
+	--a-active-underline: #c00;
 
-	--border-issue: #e05252;
-	--bg-issue: #fbe9e9;
-	--text-issue: var(--text);
-	--text-issueheading: #831616;
+	--blockquote-border: silver;
+	--blockquote-bg: var(--bg);
+	--blockquote-text: var(--text);
 
-	--border-example: #e0cb52;
-	--bg-example: #fcfaee;
-	--text-example: var(--text);
-	--text-exampleheading: #574b0f;
+	--issue-border: #e05252;
+	--issue-bg: #fbe9e9;
+	--issue-text: var(--text);
+	--issueheading-text: #831616;
 
-	--border-note: #52e052;
-	--bg-note: #e9fbe9;
-	--text-note: var(--text);
-	--text-noteheading: hsl(120, 70%, 30%);
-	--underline-notesummary: silver;
+	--example-border: #e0cb52;
+	--example-bg: #fcfaee;
+	--example-text: var(--text);
+	--exampleheading-text: #574b0f;
 
-	--border-advisement: orange;
-	--bg-advisement: #fec;
-	--text-advisement: var(--text);
-	--text-advisementheading: #b35f00;
+	--note-border: #52e052;
+	--note-bg: #e9fbe9;
+	--note-text: var(--text);
+	--noteheading-text: hsl(120, 70%, 30%);
+	--notesummary-underline: silver;
 
-	--border-warning: red;
-	--bg-warning: hsla(40,100%,50%,0.95);
-	--text-warning: var(--text);
+	--advisement-border: orange;
+	--advisement-bg: #fec;
+	--advisement-text: var(--text);
+	--advisementheading-text: #b35f00;
 
-	--border-def: #8ccbf2;
-	--bg-def: #def;
-	--text-def: var(--text);
-	--border-defrow: #bbd7e9;
+	--warning-border: red;
+	--warning-bg: hsla(40,100%,50%,0.95);
+	--warning-text: var(--text);
 
-	--border-datacell: silver;
+	--def-border: #8ccbf2;
+	--def-bg: #def;
+	--def-text: var(--text);
+	--defrow-border: #bbd7e9;
 
-	--text-indexinfo: #707070;
+	--datacell-border: silver;
 
-	--text-propindex-hover: black;
-	--bg-propindex-hover: #f7f8f9;
+	--indexinfo-text: #707070;
 
-	--bg-outdatedspec: rgba(0, 0, 0, .5);
-	--text-outdatedspec: black;
-	--bg-outdated: maroon;
-	--text-outdated: white;
-	--shadow-outdated: red;
+	--propindex-hover-text: black;
+	--propindex-hover-bg: #f7f8f9;
 
-	--bg-editedrec: darkorange;
+	--outdatedspec-bg: rgba(0, 0, 0, .5);
+	--outdatedspec-text: black;
+	--outdated-bg: maroon;
+	--outdated-text: white;
+	--outdated-shadow: red;
+
+	--editedrec-bg: darkorange;
 }
 
 /******************************************************************************/
@@ -224,11 +225,11 @@
 	.head img[src*="logos/W3C"] {
 		display: block;
 		border: solid #1a5e9a;
-		border: solid var(--bg-logo);
+		border: solid var(--logo-bg);
 		border-width: .65rem .7rem .6rem;
 		border-radius: .4rem;
 		background: #1a5e9a;
-		background: var(--bg-logo);
+		background: var(--logo-bg);
 		font-weight: bold;
 	}
 
@@ -239,9 +240,9 @@
 
 	.head a:active > img[src*="logos/W3C"] {
 		background: #c00;
-		background: var(--bg-logo-active);
+		background: var(--logo-active-bg);
 		border-color: #c00;
-		border-color: var(--bg-logo-active);
+		border-color: var(--logo-active-bg);
 	}
 
 	/* see also additional rules in Link Styling section */
@@ -282,22 +283,22 @@
 			border-top-right-radius: 1.33em;
 
 			color: #707070;
-			color: var(--text-tocnav-normal);
+			color: var(--tocnav-normal-text);
 			background: white;
-			background: var(--bg-tocnav-normal);
+			background: var(--tocnav-normal-bg);
 		}
 		#toc-nav > a:hover,
 		#toc-nav > a:focus {
 			color: black;
-			color: var(--text-tocnav-hover);
+			color: var(--tocnav-hover-text);
 			background: #f8f8f8;
-			background: var(--bg-tocnav-hover);
+			background: var(--tocnav-hover-bg);
 		}
 		#toc-nav > a:active {
 			color: #C00;
-			color: var(--text-tocnav-active);
+			color: var(--tocnav-active-text);
 			background: white;
-			background: var(--bg-tocnav-active);
+			background: var(--tocnav-active-bg);
 		}
 
 		#toc-nav > #toc-jump {
@@ -335,13 +336,13 @@
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
 			color: black;
-			color: var(--text-tocsidebar);
+			color: var(--tocsidebar-text);
 			background: inherit;
 			background-color: #f7f8f9;
-			background-color: var(--bg-tocsidebar);
+			background-color: var(--tocsidebar-bg);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
-			box-shadow: -.1em 0 .25em var(--shadow-tocsidebar) inset;
+			box-shadow: -.1em 0 .25em var(--tocsidebar-shadow) inset;
 		}
 		body.toc-sidebar #toc h2 {
 			margin-top: .8rem;
@@ -351,7 +352,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
-			color: var(--text-tocsidebar-heading);
+			color: var(--tocsidebar-heading-text);
 		}
 		body.toc-sidebar #toc-jump:not(:focus) {
 			width: 0;
@@ -380,13 +381,13 @@
 			padding-left: 42px;
 			padding-left: calc(1em + 26px);
 			color: black;
-			color: var(--text-tocsidebar);
+			color: var(--tocsidebar-text);
 			background: inherit;
 			background-color: #f7f8f9;
-			background-color: var(--bg-tocsidebar);
+			background-color: var(--tocsidebar-bg);
 			z-index: 1;
 			box-shadow: -.1em 0 .25em rgba(0,0,0,.1) inset;
-			box-shadow: -.1em 0 .25em var(--shadow-tocsidebar) inset;
+			box-shadow: -.1em 0 .25em var(--tocsidebar-shadow) inset;
 		}
 		body:not(.toc-inline) #toc h2 {
 			margin-top: .8rem;
@@ -396,7 +397,7 @@
 			font-weight: bold;
 			color: gray;
 			color: hsla(203,20%,40%,.7);
-			color: var(--text-tocsidebar-heading);
+			color: var(--tocsidebar-heading-text);
 		}
 
 		body:not(.toc-inline) {
@@ -439,7 +440,7 @@
 
 	h1, h2, h3 {
 		color: #005A9C;
-		color: var(--text-heading);
+		color: var(--heading-text);
 	}
 
 	h1 { font-size: 170%; }
@@ -472,7 +473,7 @@
 		margin: 1em auto;
 		height: auto;
 		color: black;
-		color: var(--text-hr);
+		color: var(--hr-text);
 		border: transparent solid 0;
 		background: transparent;
 	}
@@ -515,7 +516,7 @@
 	ol.algorithm ol:not(.algorithm),
 	.algorithm > ol ol:not(.algorithm) {
 	 border-left: 0.5em solid #DEF;
-	 border-left: 0.5em solid var(--border-algo);
+	 border-left: 0.5em solid var(--algo-border);
 	}
 
 	/* Style for switch/case <dl>s */
@@ -569,16 +570,16 @@
 
 	del {
 		color: red;
-		color: var(--text-del);
+		color: var(--del-text);
 		background: transparent;
-		background: var(--bg-del);
+		background: var(--del-bg);
 		text-decoration: line-through;
 	}
 	ins {
 		color: #080;
-		color: var(--text-ins);
+		color: var(--ins-text);
 		background: transparent;
-		background: var(--bg-ins);
+		background: var(--ins-bg);
 		text-decoration: underline;
 	}
 
@@ -631,10 +632,10 @@
 	/* We hyperlink a lot, so make it less intrusive */
 	a[href] {
 		color: #034575;
-		color: var(--text-a-normal);
+		color: var(--a-normal-text);
 		text-decoration: none;
 		border-bottom: 1px solid #707070;
-		border-bottom: 1px solid var(--underline-a-normal);
+		border-bottom: 1px solid var(--a-normal-underline);
 		/* Need a bit of extending for it to look okay */
 		padding: 0 1px 0;
 		margin: 0 -1px 0;
@@ -648,15 +649,15 @@
 	a[href]:hover {
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
-		background: var(--bg-a-hover);
+		background: var(--a-hover-bg);
 		border-bottom-width: 3px;
 		margin-bottom: -2px;
 	}
 	a[href]:active {
 		color: #C00;
-		color: var(--text-a-active);
+		color: var(--a-active-text);
 		border-color: #C00;
-		border-color: var(--underline-a-active);
+		border-color: var(--a-active-underline);
 	}
 
 	/* Backout above styling for W3C logo */
@@ -767,28 +768,28 @@
 
 	blockquote {
 		border-color: silver;
-		border-color: var(--border-blockquote);
+		border-color: var(--blockquote-border);
 		background: white;
-		background: var(--bg-blockquote);
+		background: var(--blockquote-bg);
 		color: black;
-		color: var(--text-blockquote);
+		color: var(--blockquote-text);
 	}
 
 /** Open issue ****************************************************************/
 
 	.issue {
 		border-color: #E05252;
-		border-color: var(--border-issue);
+		border-color: var(--issue-border);
 		background: #FBE9E9;
-		background: var(--bg-issue);
+		background: var(--issue-bg);
 		color: black;
-		color: var(--text-issue);
+		color: var(--issue-text);
 		counter-increment: issue;
 		overflow: auto;
 	}
 	.issue::before, .issue > .marker {
 		color: #831616;
-		color: var(--text-issueheading);
+		color: var(--issueheading-text);
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
 	   or use class="marker" to mark up the issue number in source. */
@@ -797,18 +798,18 @@
 
 	.example {
 		border-color: #E0CB52;
-		border-color: var(--border-example);
+		border-color: var(--example-border);
 		background: #FCFAEE;
-		background: var(--bg-example);
+		background: var(--example-bg);
 		color: black;
-		color: var(--text-example);
+		color: var(--example-text);
 		counter-increment: example;
 		overflow: auto;
 		clear: both;
 	}
 	.example::before, .example > .marker {
 		color: #574b0f;
-		color: var(--text-exampleheading);
+		color: var(--exampleheading-text);
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
 	   or use class="marker" to mark up the example number in source. */
@@ -817,25 +818,25 @@
 
 	.note {
 		border-color: #52E052;
-		border-color: var(--border-note);
+		border-color: var(--note-border);
 		background: #E9FBE9;
-		background: var(--bg-note);
+		background: var(--note-bg);
 		color: black;
-		color: var(--text-note);
+		color: var(--note-text);
 		overflow: auto;
 	}
 
 	.note::before, .note > .marker,
 	details.note > summary {
 		color: hsl(120, 70%, 30%);
-		color: var(--text-noteheading);
+		color: var(--noteheading-text);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
 	   or use class="marker" to mark up the label in source. */
 
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
-		border-bottom: 1px var(--underline-notesummary) solid;
+		border-bottom: 1px var(--notesummary-underline) solid;
 	}
 
 /** Advisement Box ************************************************************/
@@ -843,12 +844,12 @@
 
 	.advisement {
 		border-color: orange;
-		border-color: var(--border-advisement);
+		border-color: var(--advisement-border);
 		border-style: none solid;
 		background: #FFEECC;
-		background: var(--bg-advisement);
+		background: var(--advisement-bg);
 		color: black;
-		color: var(--text-advisement);
+		color: var(--advisement-text);
 	}
 	strong.advisement {
 		display: block;
@@ -856,7 +857,7 @@
 	}
 	.advisement::before, .advisement > .marker {
 		color: #B35F00;
-		color: var(--text-advisementheading);
+		color: var(--advisementheading-text);
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
@@ -873,12 +874,12 @@
 	details.annoying-warning:not([open]) > summary,
 	details.annoying-warning[open] {
 		background: hsla(40,100%,50%,0.95);
-		background: var(--bg-warning);
+		background: var(--warning-bg);
 		color: black;
-		color: var(--text-warning);
+		color: var(--warning-text);
 		padding: .75em 1em;
 		border: red;
-		border: var(--border-warning);
+		border: var(--warning-border);
 		border-style: solid none;
 		box-shadow: 0 2px 8px black;
 		text-align: center;
@@ -906,12 +907,12 @@
 	.def {
 		padding: .5em 1em;
 		background: #DEF;
-		background: var(--bg-def);
+		background: var(--def-bg);
 		margin: 1.2em 0;
 		border-left: 0.5em solid #8CCBF2;
-		border-left: 0.5em solid var(--border-def);
+		border-left: 0.5em solid var(--def-border);
 		color: black;
-		color: var(--text-def);
+		color: var(--def-text);
 	}
 
 /******************************************************************************/
@@ -936,7 +937,7 @@
 		padding: 0.5em;
 		vertical-align: baseline;
 		border-bottom: 1px solid #bbd7e9;
-		border-bottom: 1px solid var(--rowborder-def);
+		border-bottom: 1px solid var(--def-rowborder);
 	}
 
 	table.def > tbody > tr:last-child th,
@@ -1005,7 +1006,7 @@
 		padding: 0.5em 1em;
 		border-width: 1px;
 		border-color: silver;
-		border-color: var(--border-datacell);
+		border-color: var(--datacell-border);
 		border-top-style: solid;
 	}
 
@@ -1030,7 +1031,7 @@
 	table.index tbody th:first-child  {
 		border-right: 2px solid;
 		border-top: 1px solid silver;
-		border-top: 1px solid var(--border-datacell);
+		border-top: 1px solid var(--datacell-border);
 		padding-right: 1em;
 	}
 
@@ -1042,7 +1043,7 @@
 	table.complex.data th,
 	table.complex.data td {
 		border: 1px solid silver;
-		border: 1px solid var(--border-datacell);
+		border: 1px solid var(--datacell-border);
 		text-align: center;
 	}
 
@@ -1107,15 +1108,15 @@ Possible extra rowspan handling
 		display: block;
 		/* Reverse color scheme */
 		color: black;
-		color: var(--text-toclink);
+		color: var(--toclink-text);
 		border-color: #3980B5;
-		border-color: var(--underline-toclink);
+		border-color: var(--toclink-underline);
 	}
 	.toc a:visited {
 		color: black;
-		color: var(--text-toclink-visited);
+		color: var(--toclink-visited-text);
 		border-color: #054572;
-		border-color: var(--underline-toclink-visited);
+		border-color: var(--toclink-visited-underline);
 	}
 	.toc a:not(:focus):not(:hover) {
 		/* Allow colors to cascade through from link styling */
@@ -1211,7 +1212,7 @@ Possible extra rowspan handling
 		ul.index li a:hover + span,
 		ul.index li a:focus + span {
 			color: #707070;
-			color: var(--text-indexinfo);
+			color: var(--indexinfo-text);
 		}
 	}
 
@@ -1234,9 +1235,9 @@ Possible extra rowspan handling
 	table.index tr:hover td:not([rowspan]),
 	table.index tr:hover th:not([rowspan]) {
 		color: black;
-		color: var(--text-propindex-hover);
+		color: var(--propindex-hover-text);
 		background: #f7f8f9;
-		background: var(--bg-propindex-hover);
+		background: var(--propindex-hover-bg);
 	}
 
 	/* The link in the first column in the property table (formerly a TD) */
@@ -1248,9 +1249,9 @@ Possible extra rowspan handling
 
 .outdated-spec {
 	color: black;
-	color: var(--text-outdatedspec);
+	color: var(--outdatedspec-text);
 	background-color: rgba(0,0,0,0.5);
-	background-color: var(--bg-outdatedspec);
+	background-color: var(--outdatedspec-bg);
 }
 
 .outdated-warning {
@@ -1261,12 +1262,12 @@ Possible extra rowspan handling
 	margin: 0 auto;
 	width: 50%;
 	background: maroon;
-	background: var(--bg-outdated);
+	background: var(--outdated-bg);
 	color: white;
-	color: var(--text-outdated);
+	color: var(--outdated-text);
 	border-radius: 1em;
 	box-shadow: 0 0 1em red;
-	box-shadow: 0 0 1em var(--shadow-outdated);
+	box-shadow: 0 0 1em var(--outdated-shadow);
 	padding: 2em;
 	text-align: center;
 	z-index: 2;
@@ -1274,7 +1275,7 @@ Possible extra rowspan handling
 
 .outdated-warning a#outdated-note {
 	color: white;
-	color: var(--text-outdated);
+	color: var(--outdated-text);
 }
 .outdated-warning a#outdated-note:hover {
 	background: transparent;
@@ -1282,7 +1283,7 @@ Possible extra rowspan handling
 
 .edited-rec-warning {
 	background: darkorange;
-	background: var(--bg-editedrec);
+	background: var(--editedrec-bg);
 	box-shadow: 0 0 1em;
 }
 
@@ -1295,7 +1296,7 @@ Possible extra rowspan handling
 	padding: 0.25em 0.5em;
 	background: transparent;
 	color: white;
-	color: var(--text-outdated);
+	color: var(--outdated-text);
 	font:1em sans-serif;
 	text-align:center;
 }
