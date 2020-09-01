@@ -206,22 +206,6 @@
 			padding-right: 0.2em;
 		}
 
-		#toc-toggle-inline {
-			vertical-align: 0.05em;
-			font-size: 80%;
-			color: gray;
-			color: hsla(203,20%,40%,.7);
-			border-style: none;
-			background: transparent;
-			position: relative;
-		}
-		#toc-toggle-inline:hover:not(:active),
-		#toc-toggle-inline:focus:not(:active) {
-			text-shadow: 1px 1px silver;
-			top: -1px;
-			left: -1px;
-		}
-
 		#toc-nav :active {
 			color: #C00;
 		}
