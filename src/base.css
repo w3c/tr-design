@@ -757,8 +757,12 @@
 
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
-	.note::before, .note > .marker {
+	.note::before, .note > .marker,
+	details.note > summary > .marker {
 		text-transform: uppercase;
+	}
+
+	.example::before, .example > .marker {
 		display: block;
 	}
 
