@@ -76,6 +76,7 @@
 
 	--logo-bg: #1a5e9a;
 	--logo-active-bg: #c00;
+	--logo-text: white;
 
 	--tocnav-normal-text: #707070;
 	--tocnav-normal-bg: var(--bg);
@@ -230,6 +231,8 @@
 		border-radius: .4rem;
 		background: #1a5e9a;
 		background: var(--logo-bg);
+		color: white;
+		color: var(--logo-text);
 		font-weight: bold;
 	}
 
