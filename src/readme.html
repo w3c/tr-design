@@ -108,9 +108,11 @@
             <li><a href="#amendment"><span class="secno">2.2.6</span>
               Amendment Boxes</a>
               <ol>
-                <li><a href="#proposed-changes"><span class="secno">2.2.6.1</span>
-                  Proposed Changes</a>
-                <li><a href="#preprocessor-changes"><span class="secno">2.2.6.2</span>
+                <li><a href="#correction-addition"><span class="secno">2.2.6.1</span>
+                  Distinguishing Corrections vs. Additions</a>
+                <li><a href="#proposed-changes"><span class="secno">2.2.6.2</span>
+                  Distinguishing Proposed Changes</a>
+                <li><a href="#preprocessor-changes"><span class="secno">2.2.6.3</span>
                   Preprocessor Advice</a>
               </ol>
             <li><a href="#obsolete"><span class="secno">2.2.7</span>
@@ -464,7 +466,7 @@ Section Numbers and Anchoring</h3>
   <p>If the amendment is altering existing wording, it is recommended that
   <code>&lt;ins></code>/<code>&lt;del></code> be used,
   either within a <code>blockquote</code> of the affected text within the box,
-  or in-place in the rest of the document.
+  or in-place in the document.
   (If purely adding sections prose,
   it is not necessary to use <code>&lt;ins></code> so long as it is clear to the reader
   what, exactly, is being added.)
@@ -501,6 +503,9 @@ Section Numbers and Anchoring</h3>
   or are scattered throughout the document&mdash;are
   easier to describe by annotating the “live” spec with <code>&lt;ins></code>/<code>&lt;del></code>,
   and just having a summary in the amendment box.
+  Editorial judgement should optimize for making sure changes are
+  both understandable and noticeable
+  to readers of the affected sections of the document.
 
   <p><strong>The amendment box <em>must</em> have
   an <code>id</code> value beginning with <code>c</code>
@@ -556,12 +561,41 @@ Section Numbers and Anchoring</h3>
     </pre>
   </div>
 
+<h5 id="correction-addition">
+<span class="secno">2.2.6.1 </span> Distinguishing Corrections vs. Additions</h4>
+
+  Amendments to a <a href="https://www.w3.org/2020/Process-20200915/#revising-rec">W3C Recommendation</a>
+  are treated differently depending on whether they are
+  corrections (changes to existing features) or additions (new features).
+  When the <code>.correction</code> or <code>.addition</code> classes are used
+  in place of <code>.amendment</code> to distinguish,
+  the label must also be changed to match.
+
+  <div class="correction" id="c3">
+    <span class="marker">Candidate Corrections 3:</span>
+    Explanation of the correction, maybe link to related discussion.
+  </div>
+
+  <p>Here’s a<ins>n</ins> <del>deletion</del> <ins>insertion</ins>
+      improving the specification of an existing feature.
+
+  <div class="addition" id="c4">
+    <span class="marker">Candidate Addition 4:</span>
+    Explanation of the addition, maybe link to related discussion and motivation.
+    <blockquote>
+      <dl>
+        <dt>new value</dt>
+        <dd>Description of new feature.
+      </dl>
+    </blockquote>
+  </div>
+
 <h5 id="proposed-changes">
-<span class="secno">2.2.6.1 </span> Distinguishing Proposed Changes</h4>
+<span class="secno">2.2.6.2 </span> Distinguishing Proposed Changes</h4>
 
   <p><a href="https://www.w3.org/2020/Process-20200915/#change-review">Proposed changes</a>
   (those under formal review by the AC / legal)
-  must have the <code>.proposed</code> class in addition to <code>.amendment</code>.
+  must have the <code>.proposed</code> class in addition to <code>.amendment</code>/<code>.correction</code>/<code>.addition</code>.
   Also, any associated <code>&lt;ins></code>/<code>&lt;del></code> markup outside the box
   must also be marked <code>.proposed</code>.
 
@@ -576,7 +610,7 @@ Section Numbers and Anchoring</h3>
   </div>
 
 <h5 id="preprocessor-changes">
-<span class="secno">2.2.6.2 </span> Preprocessor Advice</h4>
+<span class="secno">2.2.6.3 </span> Preprocessor Advice</h4>
 
   <p>For stability across revisions,
   it is recommended that the amendment’s ID be encoded in the document source
