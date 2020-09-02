@@ -899,6 +899,10 @@
 		background: #F5F0FF;
 		background: var(--amendment-bg);
 	}
+	.amendment.proposed, .correction.proposed, .addition.proposed {
+		border-style: solid;
+		border-block-width: 0.25em;
+	}
 	.amendment::before, .amendment > .marker,
 	details.amendment > summary::before, details.amendment > summary > .marker,
 	.correction::before, .correction > .marker,
@@ -907,6 +911,14 @@
 	details.addition > summary::before, details.addition > summary > .marker {
 		color: #220066;
 		color: var(--amendmentheading-text);
+	}
+	.amendment.proposed::before, .amendment.proposed > .marker,
+	details.amendment.proposed > summary::before, details.amendment.proposed > summary > .marker,
+	.correction.proposed::before, .correction.proposed > .marker,
+	details.correction.proposed > summary::before, details.correction.proposed > summary > .marker,
+	.addition.proposed::before, .addition.proposed > .marker,
+	details.addition.proposed > summary::before, details.addition.proposed > summary > .marker {
+		font-weight: bold;
 	}
 
 /** Spec Obsoletion Notice ****************************************************/
