@@ -119,8 +119,6 @@
 	--a-active-underline: #c00;
 
 	--blockquote-border: silver;
-	--blockquote-bg: var(--bg);
-	--blockquote-text: var(--text);
 
 	--issue-border: #e05252;
 	--issue-bg: #fbe9e9;
@@ -800,10 +798,6 @@
 	blockquote {
 		border-color: silver;
 		border-color: var(--blockquote-border);
-		background: white;
-		background: var(--blockquote-bg);
-		color: black;
-		color: var(--blockquote-text);
 	}
 
 /** Open issue ****************************************************************/
