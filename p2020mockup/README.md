@@ -37,7 +37,7 @@ These are mockup versions of W3C Document for [Process 2020](https://www.w3.org/
 Advise to be added:
 
 * For PRs:
-  1. If it is the intention to incorporate new features in future updates of the Recommendation, please make sure to identify the document as intending to [allow new features](https://www.w3.org/2020/Process-20200915/#allow-new-features). Recommended text is "Future updates to this Recommendation may incorporate [new features](https://www.w3.org/2020/Process-20200915/#allow-new-features)."
+  1. If it is the intention to incorporate new features in future updates of the Recommendation, please make sure to identify the document as intending to [allow new features](https://www.w3.org/2020/Process-20200915/#allow-new-features). Recommended text is "Future updates to this specification may incorporate [new features](https://www.w3.org/2020/Process-20200915/#allow-new-features)."
 * For RECs:
   1. If your Recommendation is allowed to incorporate new features (signaling its intent in a Proposed Recommendation published in the past), please make sure to identify the document as intending to [allow new features](https://www.w3.org/2020/Process-20200915/#allow-new-features). Recommended text is "Future updates to this Recommendation may incorporate [new features](https://www.w3.org/2020/Process-20200915/#allow-new-features)."
 
