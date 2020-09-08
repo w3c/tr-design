@@ -751,34 +751,29 @@
 		border: .5em;
 		border-left-style: solid;
 		page-break-inside: avoid;
+		margin: 1em auto;
 	}
 	span.issue, span.note {
 		padding: .1em .5em .15em;
 		border-right-style: solid;
 	}
 
-	.issue,
-	.note,
-	.example,
-	.advisement,
-	blockquote,
-	.amendment,
-	.correction,
-	.addition {
-		margin: 1em auto;
-	}
 	.note  > p:first-child,
 	.issue > p:first-child,
 	blockquote > :first-child,
 	.amendment > p:first-child,
 	.correction > p:first-child,
-	.addition > p:first-child{
+	.addition > p:first-child {
 		margin-top: 0;
 	}
-	blockquote > :last-child {
+	.note  > p:last-child,
+	.issue > p:last-child,
+	blockquote > :last-child,
+	.amendment > p:last-child,
+	.correction > p:last-child,
+	.addition > p:last-child {
 		margin-bottom: 0;
 	}
-
 
 	.issue::before, .issue > .marker,
 	.example::before, .example > .marker,
