@@ -597,9 +597,13 @@
 
 	/* for amendments (candidate/proposed changes) */
 	.amendment ins, .correction ins, .addition ins,
-	ins[class^=c]:not(.proposed) { text-decoration-style: dotted; }
+	ins[class^=c] { text-decoration-style: dotted; }
 	.amendment del, .correction del, .addition del,
-	del[class^=c]:not(.proposed) { text-decoration-style: dotted; }
+	del[class^=c] { text-decoration-style: dotted; }
+	.amendment.proposed ins, .correction.proposed ins, .addition.proposed ins,
+	ins[class^=c].proposed { text-decoration-style: double; }
+	.amendment.proposed del, .correction.proposed del, .addition.proposed del,
+	del[class^=c].proposed { text-decoration-style: double; }
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
