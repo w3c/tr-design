@@ -239,7 +239,6 @@
       frag.appendChild(heading);
 
       var anchor = document.createElement("a");
-      anchor.id = "outdated-note";
       anchor.href = currentSpec.latestUrl;
       anchor.innerText = currentSpec.latestUrl + ".";
 

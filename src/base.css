@@ -1331,7 +1331,7 @@ Possible extra rowspan handling
 	z-index: 2;
 }
 
-.outdated-warning a#outdated-note {
+.outdated-warning a {
 	color: currentcolor;
 	background: transparent;
 }
