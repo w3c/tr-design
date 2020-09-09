@@ -132,6 +132,60 @@
     console.warn("Can't find Table of Contents. Please use <nav id='toc'> around the ToC.");
   }
 
+  /* Amendment Diff Toggling */
+  var showDiff = function(event) {
+    var a = event.target.parentElement.parentElement;
+    var ins = document.querySelectorAll("ins." + a.id + ", #" + a.id + " ins" );
+    var del = document.querySelectorAll("del." + a.id + ", #" + a.id + " del" );
+    ins.forEach( function(e) { e.hidden = false; e.removeAttribute('style') });
+    del.forEach( function(e) { e.hidden = false; e.removeAttribute('style') });
+    a.querySelectorAll("button[value=diff]")[0].disabled = true;
+    a.querySelectorAll("button[value=old]")[0].disabled = false;
+    a.querySelectorAll("button[value=new]")[0].disabled = false;
+  }
+  var showOld = function(event) {
+    var a = event.target.parentElement.parentElement;
+    var ins = document.querySelectorAll("ins." + a.id + ", #" + a.id + " ins" );
+    var del = document.querySelectorAll("del." + a.id + ", #" + a.id + " del" );
+    ins.forEach( function(e) { e.hidden = true;  e.removeAttribute('style') });
+    del.forEach( function(e) { e.hidden = false; e.style.all = 'unset' });
+    a.querySelectorAll("button[value=diff]")[0].disabled = false;
+    a.querySelectorAll("button[value=old]")[0].disabled = true;
+    a.querySelectorAll("button[value=new]")[0].disabled = false;
+  }
+  var showNew = function(event) {
+    var a = event.target.parentElement.parentElement;
+    var ins = document.querySelectorAll("ins." + a.id + ", #" + a.id + " ins" );
+    var del = document.querySelectorAll("del." + a.id + ", #" + a.id + " del" );
+    ins.forEach( function(e) { e.hidden = false; e.style.all = 'unset'      });
+    del.forEach( function(e) { e.hidden = true;  e.removeAttribute('style') });
+    a.querySelectorAll("button[value=diff]")[0].disabled = false;
+    a.querySelectorAll("button[value=old]")[0].disabled = false;
+    a.querySelectorAll("button[value=new]")[0].disabled = true;
+  }
+  var amendments = document.querySelectorAll('.amendment, .correction, .addition');
+  amendments.forEach( function(amendment) {
+    var tbar = document.createElement('form');
+    tbar.lang = 'en'; tbar.class = 'amendment-toggles';
+
+    var toggle = document.createElement('button');
+    toggle.value = 'diff'; toggle.innerHTML = 'Show Change'; toggle.disabled = true;
+    toggle.addEventListener('click', showDiff, false);
+    tbar.appendChild(toggle);
+
+    toggle = document.createElement('button');
+    toggle.value = 'old'; toggle.innerHTML = 'Show Current';
+    toggle.addEventListener('click', showOld, false);
+    tbar.appendChild(toggle);
+
+    toggle = document.createElement('button');
+    toggle.value = 'new'; toggle.innerHTML = 'Show Future';
+    toggle.addEventListener('click', showNew, false);
+    tbar.appendChild(toggle);
+
+    amendment.appendChild(tbar);
+  });
+
   /* Wrap tables in case they overflow */
   var tables = document.querySelectorAll(':not(.overlarge) > table.data, :not(.overlarge) > table.index');
   var numTables = tables.length;
