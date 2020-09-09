@@ -164,7 +164,11 @@
     a.querySelectorAll("button[value=new]")[0].disabled = true;
   }
   var amendments = document.querySelectorAll('.amendment, .correction, .addition');
-  amendments.forEach( function(amendment) {
+  amendments.forEach( function(a) {
+    var ins = document.querySelectorAll("ins." + a.id + ", #" + a.id + " ins" );
+    var del = document.querySelectorAll("del." + a.id + ", #" + a.id + " del" );
+    if (ins.length == 0 && del.length == 0) { return; }
+
     var tbar = document.createElement('form');
     tbar.lang = 'en'; tbar.class = 'amendment-toggles';
 
@@ -183,7 +187,7 @@
     toggle.addEventListener('click', showNew, false);
     tbar.appendChild(toggle);
 
-    amendment.appendChild(tbar);
+    a.appendChild(tbar);
   });
 
   /* Wrap tables in case they overflow */
