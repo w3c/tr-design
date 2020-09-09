@@ -169,7 +169,7 @@
     var del = document.querySelectorAll("del." + a.id + ", #" + a.id + " del" );
     if (ins.length == 0 && del.length == 0) { return; }
 
-    var tbar = document.createElement('form');
+    var tbar = document.createElement('div');
     tbar.lang = 'en'; tbar.class = 'amendment-toggles';
 
     var toggle = document.createElement('button');
