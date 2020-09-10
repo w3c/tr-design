@@ -98,7 +98,9 @@ specification as a standard for the Web.
   through 12 November 2019. Advisory Committee Representatives should consult their
   <a href='https://www.w3.org/2002/09/wbs/myQuestionnaires'>WBS questionnaires</a>.
 </p>
- <p class='addition'>Proposed additions are marked in the document.</p>
+<div class='addition proposed'>
+  <p>Proposed additions are marked in the document.</p>
+</div>
 <p>
 
     This document was produced by a group
@@ -300,8 +302,10 @@ accurate enough to allow measurement while preventing timing attacks - see
 <pre class="idl def" data-cite="WebIDL DOM" id="webidl-x934063708"><span class="idlHeader"><a class="self-link" href="#webidl-x934063708">WebIDL</a></span><span data-idl="" class="idlInterface" id="idl-def-performance" data-title="Performance">[<span class="extAttr"><a data-xref-type="extended-attribute" data-cite-path="" data-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed">Exposed</a>=(<a data-xref-type="interface" data-cite-path="window-object.html" data-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window">Window</a>,<a data-xref-type="interface" data-lt="WorkerGlobalScope" data-cite-path="workers.html" data-type="interface" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">Worker</a>)</span>]
 interface <a class="internalDFN idlID" data-link-for="" data-link-type="interface" href="#dom-performance"><code>Performance</code></a> : <span class="idlSuperclass"><a data-xref-type="_IDL_" data-cite-path="" data-type="interface" href="https://dom.spec.whatwg.org/#eventtarget">EventTarget</a></span> {<span data-idl="" class="idlMethod" id="idl-def-performance-now" data-title="now" data-dfn-for="Performance"><span class="idlType">
 <a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-now"><code>now</code></a>();</span>
-<span data-idl="" class="idlMethod addition" id="idl-def-performance-shiny" data-title="shiny" data-dfn-for="Performance"><span class="idlType"><a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-shiny"><code>shiny</code></a>();</span><span data-idl="" class="idlAttribute" id="idl-def-performance-timeorigin" data-title="timeOrigin" data-dfn-for="Performance">
-readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="attribute" href="#dom-performance-timeorigin"><code>timeOrigin</code></a>;</span><span data-idl="" class="idlMethod" id="idl-def-performance-tojson" data-title="toJSON" data-dfn-for="Performance">
+<div class='addition proposed' id='addition1-related'>
+  <span class="marker">Proposed addition 1:</span>
+  <span data-idl="" class="idlMethod addition" id="idl-def-performance-shiny" data-title="shiny" data-dfn-for="Performance"><span class="idlType"><a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-shiny"><code>shiny</code></a>();</span>
+</div>  <span data-idl="" class="idlAttribute" id="idl-def-performance-timeorigin" data-title="timeOrigin" data-dfn-for="Performance">readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="attribute" href="#dom-performance-timeorigin"><code>timeOrigin</code></a>;</span><span data-idl="" class="idlMethod" id="idl-def-performance-tojson" data-title="toJSON" data-dfn-for="Performance">
 [<span class="extAttr"><a data-xref-type="extended-attribute" data-cite-path="" data-type="extended-attribute" href="https://heycam.github.io/webidl/#Default">Default</a></span>]<span class="idlType"> <a data-xref-type="interface" data-cite-path="" data-type="interface" href="https://heycam.github.io/webidl/#idl-object">object</a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-tojson"><code>toJSON</code></a>();</span>
 };</span></pre>
 <section id="now-method">
@@ -310,7 +314,8 @@ readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-do
   <dfn data-dfn-type="method" data-export="" id="dom-performance-now" data-idl="operation" data-title="now()" data-dfn-for="Performance" data-type="DOMHighResTimeStamp" data-lt="now()" data-local-lt="Performance.now|Performance.now()|now"><code>now()</code></dfn> method <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-current-high-resolution-time" class="internalDFN" data-link-type="dfn">current high resolution
   time</a>.</p>
 </section>
-<section id="shiny-method" class='addition'>
+<section id="shiny-method" class='addition proposed' id='addition1'>
+  <span class="marker">Proposed addition 1:</span>
   <h3 id="x4-1-shiny-method"><bdi class="secno">4.2 </bdi><code>shiny()</code> method<a class="self-link" aria-label="§" href="#shiny-method"></a></h3>
   <p data-tests="basic.any.html, basic.any.worker.html">The
   <dfn data-dfn-type="method" data-export="" id="dom-performance-shiny" data-idl="operation" data-title="shiny()" data-dfn-for="Performance" data-type="DOMHighResTimeStamp" data-lt="shiny()" data-local-lt="Performance.shiny|Performance.shiny()|shiny"><code>shiny()</code></dfn> method <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-current-high-resolution-time" class="internalDFN" data-link-type="dfn">current high resolution

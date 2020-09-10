@@ -97,7 +97,9 @@ specification as a standard for the Web.
   <a href='https://www.w3.org/2002/09/wbs/myQuestionnaires'>WBS questionnaires</a>.
 </p>
 
-<p class='correction'>Proposed corrections are marked in the document.</p>
+<div class='correction proposed'>
+  <p>Proposed corrections are marked in the document.</p>
+</div>
 <p>
 
     This document was produced by a group
@@ -332,7 +334,8 @@ readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-do
   attributes and methods from the <a data-link-for="Realm" data-xref-for="Realm" data-cite-path="webappapis.html" data-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global">global object</a>.</p>
   <pre class="idl def" data-cite="WebIDL HTML" id="webidl-x2037739231"><span class="idlHeader"><a class="self-link" href="#webidl-x2037739231">WebIDL</a></span><span data-idl="" class="idlInterface mixin" id="idl-def-windoworworkerglobalscope-partial-1" data-title="WindowOrWorkerGlobalScope">partial interface mixin <a data-idl="partial" data-link-type="interface" data-title="WindowOrWorkerGlobalScope" data-xref-type="interface" class="idlID" data-dfn-for="WindowOrWorkerGlobalScope" id="dfn-windoworworkerglobalscope" data-cite-path="webappapis.html" data-type="interface" href="https://html.spec.whatwg.org/multipage/webappapis.html#windoworworkerglobalscope">WindowOrWorkerGlobalScope</a> {<span data-idl="" class="idlAttribute" id="idl-def-windoworworkerglobalscope-performance" data-title="performance" data-dfn-for="WindowOrWorkerGlobalScope">
 [<span class="extAttr"><a data-xref-type="extended-attribute" data-cite-path="" data-type="extended-attribute" href="https://heycam.github.io/webidl/#Replaceable">Replaceable</a></span>] readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-windoworworkerglobalscope-performance" class="internalDFN" data-link-type="idl">Performance</a></span> <a class="internalDFN idlName" data-link-for="WindowOrWorkerGlobalScope" data-link-type="attribute" href="#dom-windoworworkerglobalscope-performance"><code>performance</code></a>;
-<span class='correction'>      readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-windoworworkerglobalscope-performance" class="internalDFN" data-link-type="idl">Performance</a></span> <a class="internalDFN idlName" data-link-for="WindowOrWorkerGlobalScope" data-link-type="attribute" href="#dom-windoworworkerglobalscope-performance"><code>performance</code></a>;</span></span>
+<div class='correction proposed' id='change1'><span class="marker">Proposed Correction 1:</span><br>
+  <del>[<span class="extAttr"><a data-xref-type="extended-attribute" data-cite-path="" data-type="extended-attribute" href="https://heycam.github.io/webidl/#Replaceable">Replaceable</a></span>]</del> readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-windoworworkerglobalscope-performance" class="internalDFN" data-link-type="idl">Performance</a></span> <a class="internalDFN idlName" data-link-for="WindowOrWorkerGlobalScope" data-link-type="attribute" href="#dom-windoworworkerglobalscope-performance"><code>performance</code></a>;</span></div>
 };</span></pre>
 </section>
 </section>
@@ -353,11 +356,15 @@ monotonically increasing and not subject to system clock adjustments or
 system clock skew, and whose reference point is the [<cite><a class="bibref" data-link-type="biblio" href="#bib-ecma-262" title="ECMAScript Language Specification">ECMA-262</a></cite>]
 <dfn data-no-export="" data-dfn-type="dfn" id="dfn-time"><a href="https://tc39.es/ecma262/#sec-time-values-and-time-range">time</a></dfn> definition - see
 <a href="#sec-privacy-security" class="sec-ref">§&nbsp;<bdi class="secno">7. </bdi>Privacy and Security</a>.</p>
-<p class='correction' data-link-for="Performance" data-tests="test_cross_frame_start.html">The time values returned when
-  getting <code>performance.</code><a data-xref-type="_IDL_" href="#dom-performance-timeorigin" class="internalDFN" data-link-type="idl"><code><code>timeOrigin</code></code></a> <em class="rfc2119" title="MUST">MUST</em> use different <dfn data-export="" data-dfn-type="dfn" id="dfn-global-monotonic-clock">global monotonic clock</dfn> that are not shared by <a href="#dfn-time-origin" class="internalDFN" data-link-type="dfn">time origin</a>s, are
-  not monotonically increasing and not subject to system clock adjustments or
-  system clock skew.</p>
-
+<div class='correction proposed' id='change2'>
+  <span class="marker">Proposed Correction 2:</span>
+  <p data-link-for="Performance" data-tests="test_cross_frame_start.html">The time values returned when
+  getting <code>performance.</code><a data-xref-type="_IDL_" href="#dom-performance-timeorigin" class="internalDFN" data-link-type="idl"><code><code>timeOrigin</code></code></a> <em class="rfc2119" title="MUST">MUST</em> use <del>same</del><ins>different</ins> <dfn data-export="" data-dfn-type="dfn" id="dfn-global-monotonic-clock">global monotonic clock</dfn> that <del>is</del><ins>are not</ins> shared by <a href="#dfn-time-origin" class="internalDFN" data-link-type="dfn">time origin</a>s, <del>is</del><ins>are
+  not</ins> monotonically increasing and not subject to system clock adjustments or
+  system clock skew<del>, and whose reference point is the [<cite><a class="bibref" data-link-type="biblio" href="#bib-ecma-262" title="ECMAScript Language Specification">ECMA-262</a></cite>]
+    <dfn data-no-export="" data-dfn-type="dfn" id="dfn-time"><a href="https://tc39.es/ecma262/#sec-time-values-and-time-range">time</a></dfn> definition - see
+    <a href="#sec-privacy-security" class="sec-ref">§&nbsp;<bdi class="secno">7. </bdi>Privacy and Security</a></del>.</p>
+</div>
 <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>Note</span></div><p class="">The user agent can reset its global monotonic clock across
 browser restarts, or whenever starting an isolated browsing session—e.g.
 incognito or similar browsing mode. As a result, developers should not use
