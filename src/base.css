@@ -32,8 +32,10 @@
  *   - .issue      for issues                        (div, p, span)
  *   - .advisement for loud normative statements     (div, p, strong)
  *   - .annoying-warning for spec obsoletion notices (div, aside, details)
- *   - .amendment  for “candidate changes”           (div, aside, details)
- *   - .amendment.proposed for “proposed changes”    (div, aside, details)
+ *   - .correction for "candidate corrections"       (div, aside, details, section)
+ *   - .addition   for "candidate additions"         (div, aside, details, section)
+ *   - .correction.proposed for "proposed corrections" (div, aside, details, section)
+ *   - .addition.proposed   for "proposed additions"   (div, aside, details, section)
  *
  * Definition Boxes
  *   - pre.def   for WebIDL definitions
