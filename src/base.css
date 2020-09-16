@@ -897,6 +897,7 @@
 		border-color: var(--amendment-border);
 		background: #F5F0FF;
 		background: var(--amendment-bg);
+		counter-increment: amendment;
 	}
 	.amendment.proposed, .correction.proposed, .addition.proposed {
 		border-style: solid;
@@ -919,6 +920,11 @@
 	details.addition.proposed > summary::before, details.addition.proposed > summary > .marker {
 		font-weight: bold;
 	}
+
+	.correction::before { content: 'Candidate Correction ' counter(amendment) ': '; }
+	.addition::before   { content: 'Candidate Addition '   counter(amendment) ': '; }
+	.proposed.correction::before { content: 'Proposed Correction ' counter(amendment) ': '; }
+	.proposed.addition::before   { content: 'Proposed Addition '   counter(amendment) ': '; }
 
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
