@@ -9,5 +9,5 @@ body {
 }
 
 html {
-  background: white url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+  background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
 }
