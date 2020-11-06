@@ -28,6 +28,6 @@ body {
 
 html {
     background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
-    background-image: var(--ud-bgimage);
+    background-image: var(--unofficial-watermark);
     background-repeat: repeat-x;
 }
