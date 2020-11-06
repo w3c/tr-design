@@ -6,5 +6,7 @@
 body {
   background: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD) no-repeat fixed,
               url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark) repeat-x;
+  background-image: url(url(https://www.w3.org/StyleSheets/TR/2016/logos/UD),
+                    var(--unofficial-watermark);
   background-color: var(--bg-);
 }

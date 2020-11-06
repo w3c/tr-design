@@ -80,6 +80,8 @@
 	--text: black;
 	--bg: white;
 
+	--unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+
 	--logo-bg: #1a5e9a;
 	--logo-active-bg: #c00;
 	--logo-text: white;
