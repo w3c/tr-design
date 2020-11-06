@@ -1,9 +1,19 @@
 @import url('base.css');
 
-@media screen and (min-width: 28em) {
+body::before {
+    content: url('logos/back-bg-draft.png');
+    float: left;
+    margin: -1.6em 0 0 calc(-26px - 1.5em);
+}
+
+@media (min-width: 40em) {
+    body::before {
+        content: none;
+    }
     body {
+        background-repeat: no-repeat;
+        background-size: auto;
         background-image: url('logos/back-bg-draft.png');
-        background-size: auto !important;
         padding-left: 150px;
     }
 }
@@ -11,13 +21,13 @@
 @media screen and (min-width: 78em) {
     body:not(.toc-inline) #toc {
         padding-top: 150px;
-        background-attachment: local !important;
+        background-attachment: local;
     };
 }
 
-@media screen {
+@media screen and (min-width: 40em) {
     body.toc-sidebar #toc {
         padding-top: 150px;
-        background-attachment: local !important;
+        background-attachment: local;
     };
 }
