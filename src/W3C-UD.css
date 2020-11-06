@@ -4,11 +4,9 @@
 @import "base.css";
 
 body {
-  background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD);
-  background-color: transparent;
-}
-
-html {
-  background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
-  background-image: var(--unofficial-watermark);
+  background: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD) no-repeat fixed,
+              url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark) repeat-x;
+  background-image: url(url(https://www.w3.org/StyleSheets/TR/2016/logos/UD),
+                    var(--unofficial-watermark);
+  background-color: var(--bg-);
 }
