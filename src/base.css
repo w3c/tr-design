@@ -788,7 +788,11 @@
 	.note::before, .note > .marker,
 	details.note > summary > .marker,
 	.amendment::before, .amendment > .marker,
-	details.amendment > summary > .marker {
+	details.amendment > summary > .marker,
+	.correction::before, .correction > .marker,
+	details.correction > summary > .marker,
+	.addition::before, .addition > .marker,
+	details.addition > summary > .marker {
 		text-transform: uppercase;
 		padding-right: 1em;
 	}
