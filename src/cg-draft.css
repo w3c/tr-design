@@ -1,7 +1,7 @@
 @import url('base.css');
 
 body {
-    background-repeat: no-repeat, repeat;
+    background-repeat: no-repeat, repeat-x;
     background-size: auto;
     background-image: none, url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
     background-image: none, var(--unofficial-watermark);
