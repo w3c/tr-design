@@ -185,10 +185,10 @@
 		counter-reset: example figure issue;
 
 		/* Layout */
-		max-width: 50em;               /* limit line length to 50em for readability   */
-		margin: 0 auto;                /* center text within page                     */
-		padding: 1.6em 1.5em 2em 50px; /* assume 16px font size for downlevel clients */
-		padding: 1.6em 1.5em 2em calc(26px + 1.5em); /* leave space for status flag     */
+		max-width: 50em;             /* limit line length to 50em for readability   */
+		margin: 0 auto 4em;          /* center text within page, space for footers  */
+		padding: 1.6em 1.5em 0 50px; /* assume 16px font size for downlevel clients */
+		padding: 1.6em 1.5em 0 calc(26px + 1.5em); /* leave space for status flag   */
 
 		/* Typography */
 		line-height: 1.5;
