@@ -163,7 +163,7 @@
     a.querySelectorAll("button[value=old]")[0].disabled = false;
     a.querySelectorAll("button[value=new]")[0].disabled = true;
   }
-  var amendments = document.querySelectorAll('.amendment, .correction, .addition');
+  var amendments = document.querySelectorAll('[id].amendment, [id].correction, [id].addition');
   amendments.forEach( function(a) {
     var ins = document.querySelectorAll("ins." + a.id + ", #" + a.id + " ins" );
     var del = document.querySelectorAll("del." + a.id + ", #" + a.id + " del" );
