@@ -489,10 +489,10 @@ Section Numbers and Anchoring</h3>
     </blockquote>
   </div>
 
-  <p>And here’s a<ins class=c2>n</ins> <del class=c2>deletion</del>
-  <ins class=c2>insertion</ins> to show how they both look
+  <p>And here’s a<ins cite=#c2>n</ins> <del cite=#c2>deletion</del>
+  <ins cite=#c2>insertion</ins> to show how they both look
   when used outside the box.
-  <ins class=c2>Out-of-box revision markup is better at showing edits in context,
+  <ins cite=#c2>Out-of-box revision markup is better at showing edits in context,
   but worse at showing the edits together.</ins>
 
   <div class="correction" id="c2">
@@ -514,8 +514,8 @@ Section Numbers and Anchoring</h3>
   <p><strong>The amendment box <em>must</em> have
   an <code>id</code> value beginning with <code>c</code>
   and each <code>&lt;ins></code>/<code>&lt;del></code> change associated with it
-  but not contained by it <em>must</em> have a <code>class</code>
-  matching the ID.</strong>
+  but not contained by it <em>must</em> have a <code>cite</code> attribute
+  linking to the ID.</strong>
   Provided correct <code>&lt;ins></code>/<code>&lt;del></code> markup,
   JavaScript support via <code>fixup.js</code> will allow swapping
   between the original and altered wording.
@@ -557,10 +557,10 @@ Section Numbers and Anchoring</h3>
       Explanation of the change, maybe link to related discussion.
     &lt;/div>
 
-    &lt;p>And here’s a&lt;ins class=c2>n&lt;/ins> &lt;del class=c2>deletion&lt;/del>
-    &lt;ins class=c2>insertion&lt;/ins> to show how they both look
+    &lt;p>And here’s a&lt;ins cite=#c2>n&lt;/ins> &lt;del cite=#c2>deletion&lt;/del>
+    &lt;ins cite=#c2>insertion&lt;/ins> to show how they both look
     when used outside the box.
-    &lt;ins class=c2>Out-of-box revision markup is better at showing edits in context,
+    &lt;ins cite=#c2>Out-of-box revision markup is better at showing edits in context,
     but worse at showing the edits together.&lt;/ins>
     </pre>
   </div>
@@ -580,7 +580,7 @@ Section Numbers and Anchoring</h3>
     Explanation of the correction, maybe link to related discussion.
   </div>
 
-  <p>Here’s a<ins class=c3>n</ins> <del class=c3>deletion</del> <ins class=c3>insertion</ins>
+  <p>Here’s a<ins cite=#c3>n</ins> <del cite=#c3>deletion</del> <ins cite=#c3>insertion</ins>
       improving the specification of an existing feature.
 
   <div class="addition" id="c4">
