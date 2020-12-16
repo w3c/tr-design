@@ -21,7 +21,7 @@
  *   - .figure and .caption (HTML4) and figure and figcaption (HTML5)
  *     -> .sidefigure for right-floated figures
  *   - ins/del
- *     -> ins/del[cite=#c???] for candidate and proposed changes (amendments)
+ *     -> ins/del[cite] for candidate and proposed changes (amendments)
  *
  * Code
  *   - pre and code
@@ -601,13 +601,13 @@
 
 	/* for amendments (candidate/proposed changes) */
 	.amendment ins, .correction ins, .addition ins,
-	ins[cite^=#c] { text-decoration-style: dotted; }
+	ins[cite] { text-decoration-style: dotted; }
 	.amendment del, .correction del, .addition del,
-	del[cite^=#c] { text-decoration-style: dotted; }
+	del[cite] { text-decoration-style: dotted; }
 	.amendment.proposed ins, .correction.proposed ins, .addition.proposed ins,
-	ins[cite^=#c].proposed { text-decoration-style: double; }
+	ins[cite].proposed { text-decoration-style: double; }
 	.amendment.proposed del, .correction.proposed del, .addition.proposed del,
-	del[cite^=#c].proposed { text-decoration-style: double; }
+	del[cite].proposed { text-decoration-style: double; }
 
 /** Miscellaneous improvements to inline formatting ***************************/
 
