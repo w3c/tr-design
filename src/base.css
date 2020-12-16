@@ -598,6 +598,14 @@
 		background: var(--ins-bg);
 		text-decoration: underline;
 	}
+	ins.diff-inactive,
+	del.diff-inactive {
+		all: unset;
+	}
+	ins:not(.diff-inactive) a,
+	del:not(.diff-inactive) a {
+		color: inherit;
+	}
 
 	/* for amendments (candidate/proposed changes) */
 	.amendment ins, .correction ins, .addition ins,
