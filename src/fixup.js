@@ -135,8 +135,8 @@
   /* Amendment Diff Toggling */
   var showDiff = function(event) {
     var a = event.target.parentElement.parentElement;
-    var ins = document.querySelectorAll("ins[cite=#" + a.id + "], #" + a.id + " ins" );
-    var del = document.querySelectorAll("del[cite=#" + a.id + "], #" + a.id + " del" );
+    var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
+    var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
     ins.forEach( function(e) { e.hidden = false; e.removeAttribute('style') });
     del.forEach( function(e) { e.hidden = false; e.removeAttribute('style') });
     a.querySelectorAll("button[value=diff]")[0].disabled = true;
@@ -145,8 +145,8 @@
   }
   var showOld = function(event) {
     var a = event.target.parentElement.parentElement;
-    var ins = document.querySelectorAll("ins[cite=#" + a.id + "], #" + a.id + " ins" );
-    var del = document.querySelectorAll("del[cite=#" + a.id + "], #" + a.id + " del" );
+    var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
+    var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
     ins.forEach( function(e) { e.hidden = true;  e.removeAttribute('style') });
     del.forEach( function(e) { e.hidden = false; e.style.all = 'unset' });
     a.querySelectorAll("button[value=diff]")[0].disabled = false;
@@ -155,8 +155,8 @@
   }
   var showNew = function(event) {
     var a = event.target.parentElement.parentElement;
-    var ins = document.querySelectorAll("ins[cite=#" + a.id + "], #" + a.id + " ins" );
-    var del = document.querySelectorAll("del[cite=#" + a.id + "], #" + a.id + " del" );
+    var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
+    var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
     ins.forEach( function(e) { e.hidden = false; e.style.all = 'unset'      });
     del.forEach( function(e) { e.hidden = true;  e.removeAttribute('style') });
     a.querySelectorAll("button[value=diff]")[0].disabled = false;
@@ -165,8 +165,8 @@
   }
   var amendments = document.querySelectorAll('[id].amendment, [id].correction, [id].addition');
   amendments.forEach( function(a) {
-    var ins = document.querySelectorAll("ins[cite=#" + a.id + "], #" + a.id + " ins" );
-    var del = document.querySelectorAll("del[cite=#" + a.id + "], #" + a.id + " del" );
+    var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
+    var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
     if (ins.length == 0 && del.length == 0) { return; }
 
     var tbar = document.createElement('div');
