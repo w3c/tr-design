@@ -137,8 +137,8 @@
     var a = event.target.parentElement.parentElement;
     var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
     var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
-    ins.forEach( function(e) { e.hidden = false; e.removeAttribute('style') });
-    del.forEach( function(e) { e.hidden = false; e.removeAttribute('style') });
+    ins.forEach( function(e) { e.hidden = false; e.classList.remove("diff-inactive") });
+    del.forEach( function(e) { e.hidden = false; e.classList.remove("diff-inactive") });
     a.querySelectorAll("button[value=diff]")[0].disabled = true;
     a.querySelectorAll("button[value=old]")[0].disabled = false;
     a.querySelectorAll("button[value=new]")[0].disabled = false;
@@ -147,8 +147,8 @@
     var a = event.target.parentElement.parentElement;
     var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
     var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
-    ins.forEach( function(e) { e.hidden = true;  e.removeAttribute('style') });
-    del.forEach( function(e) { e.hidden = false; e.style.all = 'unset' });
+    ins.forEach( function(e) { e.hidden = true;  e.classList.add("diff-inactive") });
+    del.forEach( function(e) { e.hidden = false; e.classList.add("diff-inactive") });
     a.querySelectorAll("button[value=diff]")[0].disabled = false;
     a.querySelectorAll("button[value=old]")[0].disabled = true;
     a.querySelectorAll("button[value=new]")[0].disabled = false;
@@ -157,8 +157,8 @@
     var a = event.target.parentElement.parentElement;
     var ins = document.querySelectorAll("ins[cite='#" + a.id + "'], #" + a.id + " ins" );
     var del = document.querySelectorAll("del[cite='#" + a.id + "'], #" + a.id + " del" );
-    ins.forEach( function(e) { e.hidden = false; e.style.all = 'unset'      });
-    del.forEach( function(e) { e.hidden = true;  e.removeAttribute('style') });
+    ins.forEach( function(e) { e.hidden = false;  e.classList.add("diff-inactive") });
+    del.forEach( function(e) { e.hidden = true; e.classList.add("diff-inactive") });
     a.querySelectorAll("button[value=diff]")[0].disabled = false;
     a.querySelectorAll("button[value=old]")[0].disabled = false;
     a.querySelectorAll("button[value=new]")[0].disabled = true;
