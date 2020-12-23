@@ -598,8 +598,8 @@
 		background: var(--ins-bg);
 		text-decoration: underline;
 	}
-	ins.diff-inactive,
-	del.diff-inactive {
+	ins:not([hidden]).diff-inactive,
+	del:not([hidden]).diff-inactive {
 		all: unset;
 	}
 	ins:not(.diff-inactive) *,
