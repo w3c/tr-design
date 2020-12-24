@@ -602,8 +602,8 @@
 	del:not([hidden]).diff-inactive {
 		all: unset;
 	}
-	ins:not(.diff-inactive) *,
-	del:not(.diff-inactive) * {
+	ins:not(.diff-inactive):not(.diff-inactive) *,
+	del:not(.diff-inactive):not(.diff-inactive) * { /* doubling up the class selector for specificity */
 		color: inherit;
 	}
 
