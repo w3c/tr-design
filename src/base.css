@@ -937,7 +937,7 @@
 /** Spec Obsoletion Notice ****************************************************/
 	/* obnoxious obsoletion notice for older/abandoned specs. */
 
-	details {
+	details:not([hidden]) {
 		display: block;
 	}
 	summary {
