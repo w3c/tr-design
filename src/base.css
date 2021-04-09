@@ -667,8 +667,8 @@
 	a[href] {
 		color: #034575;
 		color: var(--a-normal-text);
-		text-decoration: underline #707070;
-		text-decoration: underline var(--a-normal-underline);
+		text-decoration-color: #707070;
+		text-decoration-color: var(--a-normal-underline);
 		text-decoration-skip-ink: none;
 	}
 	a:visited {
