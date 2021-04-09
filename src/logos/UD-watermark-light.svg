@@ -1,6 +1,8 @@
 <svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'>
- <g fill='#FDEDED' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='#100808' stroke-width='3'>
-  <text x='50%' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'>UNOFFICIAL</text>
-  <text x='50%' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'>DRAFT</text>
+ <g transform='translate(200 200) rotate(-45) translate(-200 -200)'
+    style='font: 750 70px Arial, sans-serif; letter-spacing: 3px'
+    fill='#FDEDED' stroke='#FDEDED' stroke-width='3'>
+  <text x='53%' y='220' style='text-anchor: middle'>UNOFFICIAL</text>
+  <text x='53%' y='305' style='text-anchor: middle'>DRAFT</text>
  </g>
 </svg>
