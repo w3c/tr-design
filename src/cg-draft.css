@@ -18,7 +18,7 @@ body::before {
     }
     body {
         background-image: url('https://www.w3.org/StyleSheets/TR/2016/logos/back-cg-draft'),
-                          url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+                          url('https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark-light');
         background-image: url('logos/back-cg-draft.png'),
                           var(--unofficial-watermark);
         padding-left: 160px;
