@@ -297,6 +297,26 @@
     request.send();
   }
 
+  /* Dark mode toggle */
+  const darkCss = document.querySelector('link[href="dark.css"]');
+  if (darkCss) {
+    const btn = document.createElement('button');
+    btn.id = 'theme-toggle';
+    btn.innerText = "Toggle dark mode";
+    document.body.appendChild(btn);
+
+    const currentTheme = localStorage.getItem("tr-theme");
+    if (currentTheme === "light") {
+      darkCss.disabled = true;
+    }
+
+    btn.addEventListener("click", function() {
+      darkCss.disabled = !darkCss.disabled;
+      const theme = darkCss.disabled ? "light" : "dark";
+      localStorage.setItem("tr-theme", theme);
+    });
+  }
+
   /* Matomo analytics */
   if (document.location.hostname === "www.w3.org" && /^\/TR\//.test(document.location.pathname)) {
     var _paq = window._paq = window._paq || [];
