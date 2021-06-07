@@ -305,9 +305,13 @@
     btn.innerText = "Toggle dark mode";
     document.body.appendChild(btn);
 
-    const currentTheme = localStorage.getItem("tr-theme");
-    if (currentTheme === "light") {
-      darkCss.disabled = true;
+    const currentTheme = localStorage.getItem("tr-theme") || "light";
+    switch (currentTheme) {
+      case "light":
+         darkCss.disabled = true;
+      case "dark":
+      default:
+         darkCss.disabled = false;
     }
 
     btn.addEventListener("click", function() {
