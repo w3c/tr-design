@@ -298,27 +298,40 @@
   }
 
   /* Dark mode toggle */
+  
   const darkCss = document.querySelector('link[href="dark.css"]');
-  if (darkCss) {
-    const btn = document.createElement('button');
-    btn.id = 'theme-toggle';
-    btn.innerText = "Toggle dark mode";
-    document.body.appendChild(btn);
+  if (darkCss && matchMedia("(prefers-color-scheme)").matches) {
 
-    const currentTheme = localStorage.getItem("tr-theme") || "light";
-    switch (currentTheme) {
-      case "light":
-         darkCss.disabled = true;
-      case "dark":
-      default:
-         darkCss.disabled = false;
+    const toggleWrapper = document.createElement('div');
+    toggleWrapper.id = 'theme-toggle';
+    toggleWrapper.setAttribute('role', 'radiogroup');
+    toggleWrapper.setAttribute('aria-label', 'Select a color scheme');
+
+    document.body.dataset.colorScheme = localStorage.getItem("tr-theme") || "auto";
+
+    const createOption = (value) => {
+        const label = document.createElement('label');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.value = value;
+        radio.name = 'color-scheme';
+        radio.checked = value === document.body.dataset.colorScheme;
+        radio.addEventListener('change', event => {
+          document.body.dataset.colorScheme = event.target.value;
+          localStorage.setItem("tr-theme", event.target.value);
+        });
+        const text = document.createElement('span');
+        text.innerText = value;
+        label.appendChild(radio);
+        label.appendChild(text);
+        return label;
     }
 
-    btn.addEventListener("click", function() {
-      darkCss.disabled = !darkCss.disabled;
-      const theme = darkCss.disabled ? "light" : "dark";
-      localStorage.setItem("tr-theme", theme);
-    });
+    toggleWrapper.appendChild(createOption('light'));
+    toggleWrapper.appendChild(createOption('dark'));
+    toggleWrapper.appendChild(createOption('auto'));
+
+    document.querySelector('div.head').appendChild(toggleWrapper);
   }
 
   /* Matomo analytics */
