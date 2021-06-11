@@ -298,41 +298,36 @@
   }
 
   /* Dark mode toggle */
-  
   const darkCss = document.querySelector('link[href="dark.css"]');
   if (darkCss && matchMedia("(prefers-color-scheme)").matches) {
-
-    const toggleWrapper = document.createElement('div');
-    toggleWrapper.id = 'theme-toggle';
-    toggleWrapper.setAttribute('role', 'radiogroup');
-    toggleWrapper.setAttribute('aria-label', 'Select a color scheme');
-
-    document.body.dataset.colorScheme = localStorage.getItem("tr-theme") || "auto";
-
-    const createOption = (value) => {
-        const label = document.createElement('label');
-        const radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.value = value;
-        radio.name = 'color-scheme';
-        radio.checked = value === document.body.dataset.colorScheme;
-        radio.addEventListener('change', event => {
-          document.body.dataset.colorScheme = event.target.value;
-          localStorage.setItem("tr-theme", event.target.value);
-        });
-        const text = document.createElement('span');
-        text.innerText = value;
-        label.appendChild(radio);
-        label.appendChild(text);
-        return label;
+    const colorScheme = localStorage.getItem("tr-theme") || "auto";
+    darkCss.disabled = colorScheme === "light";
+    const render = document.createElement("x-temp");
+    function createOption(option) {
+      const checked = option === colorScheme;
+      return `
+        <label>
+          <input name="color-scheme" type="radio" value="${option}" ${checked ? "checked": ""}>
+          <span>${option}</span>
+        </label>
+      `.trim();
     }
-
-    toggleWrapper.appendChild(createOption('light'));
-    toggleWrapper.appendChild(createOption('dark'));
-    toggleWrapper.appendChild(createOption('auto'));
-
-    document.querySelector('div.head').appendChild(toggleWrapper);
+    render.innerHTML = `
+      <div id="theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+        ${["light", "dark", "auto"].map(createOption).join("")}
+      </div>
+    `;
+    const changeListener = (event) => {
+      const { value } = event.target;
+      darkCss.disabled = value === "light";
+      localStorage.setItem("tr-theme", value);
+    };
+    render.querySelectorAll("input[type='radio']").forEach((input) => {
+      input.addEventListener("change", changeListener);
+    });
+    document.querySelector("div.head").append(...render.children);
   }
+
 
   /* Matomo analytics */
   if (document.location.hostname === "www.w3.org" && /^\/TR\//.test(document.location.pathname)) {
