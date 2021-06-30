@@ -32,7 +32,6 @@
     <dd class="p-author h-card vcard" data-editor-id="56102"><a class="ed_mailto u-email email p-name" href="mailto:igrigorik@gmail.com">Ilya Grigorik</a>
         (Google Inc.)
       </dd>
-            <a class="u-url" href="https://www.w3.org/TR/2020/REC-hr-time-20200106/">https://www.w3.org/TR/2020/REC-hr-time-20200106/</a>
     <dt>
             Former editors:
           </dt><dd class="p-author h-card vcard" data-editor-id="45726"><a class="ed_mailto u-email email p-name" href="mailto:simonjam@google.com">James Simonsen</a>
@@ -44,7 +43,7 @@
        <dt>Feedback:</dt>
        <dd><a href="https://github.com/w3c/hr-time/issues">https://github.com/w3c/hr-time/issues</a></dd>
        <dd><a href="mailto:public-web-perf@w3.org?subject=%5Bhr-time%5D%20YOUR%20TOPIC%20HERE">public-web-perf@w3.org</a> with subject line “<kbd>[hr-time] <var>… message topic …</var></kbd>” (<a href="http://lists.w3.org/Archives/Public/public-web-perf/" rel="discussion">archives</a>)</dd>
-</dl>
+   </dl>
   <p>
           Please check the
           <a href="https://github.com/w3c/display_errata/"><strong>errata</strong></a> for any
@@ -85,23 +84,25 @@ system clock skew or adjustments.</p>
 
 <p>
   This document was published by the <a href="https://www.w3.org/webperf/">Web Performance Working Group</a> as a
-  Recommendation. It includes <a href='https://www.w3.org/2020/Process-20200915/#candidate-correction'>candidate corrections</a>.
-</p>    <p>
+  Recommendation. It includes <a href="https://www.w3.org/2020/Process-20200915/#candidate-changes">candidate changes</a>,
+  introducing substantive changes and new features since the Previous Recommentation.
+</p>
+<p>
   A W3C Recommendation is a specification that, after extensive consensus-building, has received the endorsement of the
   <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. W3C recommends the wide deployment of this
 specification as a standard for the Web.
 </p>
-
-<div class='correction'>
-  <p><a href='https://www.w3.org/2020/Process-20200915/#candidate-correction'>Candidate corrections</a> are marked in the document.</p>
+<div  class='correction'>
+ <p>candidate corrections are marked in the document.</p>
+</div>
+<div class='addition'>
+ <p>candidate additions are marked in the document.</p>
 </div>
 <p>
 
     This document was produced by a group
     operating under the
     <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-
-
               <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
               <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/45211/status">public list of any patent disclosures</a>
         made in connection with the deliverables of
@@ -297,7 +298,8 @@ accurate enough to allow measurement while preventing timing attacks - see
 <h2 id="x4-the-performance-interface"><bdi class="secno">4. </bdi>The <dfn data-dfn-type="interface" data-export="" id="dom-performance" data-idl="interface" data-title="Performance" data-dfn-for=""><code>Performance</code></dfn> interface<a class="self-link" aria-label="§" href="#sec-performance"></a></h2>
 <pre class="idl def" data-cite="WebIDL DOM" id="webidl-x934063708"><span class="idlHeader"><a class="self-link" href="#webidl-x934063708">WebIDL</a></span><span data-idl="" class="idlInterface" id="idl-def-performance" data-title="Performance">[<span class="extAttr"><a data-xref-type="extended-attribute" data-cite-path="" data-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed">Exposed</a>=(<a data-xref-type="interface" data-cite-path="window-object.html" data-type="interface" href="https://html.spec.whatwg.org/multipage/window-object.html#window">Window</a>,<a data-xref-type="interface" data-lt="WorkerGlobalScope" data-cite-path="workers.html" data-type="interface" href="https://html.spec.whatwg.org/multipage/workers.html#workerglobalscope">Worker</a>)</span>]
 interface <a class="internalDFN idlID" data-link-for="" data-link-type="interface" href="#dom-performance"><code>Performance</code></a> : <span class="idlSuperclass"><a data-xref-type="_IDL_" data-cite-path="" data-type="interface" href="https://dom.spec.whatwg.org/#eventtarget">EventTarget</a></span> {<span data-idl="" class="idlMethod" id="idl-def-performance-now" data-title="now" data-dfn-for="Performance"><span class="idlType">
-<a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-now"><code>now</code></a>();</span><span data-idl="" class="idlAttribute" id="idl-def-performance-timeorigin" data-title="timeOrigin" data-dfn-for="Performance">
+<a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-now"><code>now</code></a>();</span>
+   <span data-idl="" class="idlAttribute" id="idl-def-performance-timeorigin" data-title="timeOrigin" data-dfn-for="Performance">
 readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-domhighrestimestamp" class="internalDFN" data-link-type="idl"><code>DOMHighResTimeStamp</code></a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="attribute" href="#dom-performance-timeorigin"><code>timeOrigin</code></a>;</span><span data-idl="" class="idlMethod" id="idl-def-performance-tojson" data-title="toJSON" data-dfn-for="Performance">
 [<span class="extAttr"><a data-xref-type="extended-attribute" data-cite-path="" data-type="extended-attribute" href="https://heycam.github.io/webidl/#Default">Default</a></span>]<span class="idlType"> <a data-xref-type="interface" data-cite-path="" data-type="interface" href="https://heycam.github.io/webidl/#idl-object">object</a></span> <a class="internalDFN idlName" data-link-for="Performance" data-link-type="method" href="#dom-performance-tojson"><code>toJSON</code></a>();</span>
 };</span></pre>
@@ -306,6 +308,13 @@ readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-do
   <p data-tests="basic.any.html, basic.any.worker.html">The
   <dfn data-dfn-type="method" data-export="" id="dom-performance-now" data-idl="operation" data-title="now()" data-dfn-for="Performance" data-type="DOMHighResTimeStamp" data-lt="now()" data-local-lt="Performance.now|Performance.now()|now"><code>now()</code></dfn> method <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-current-high-resolution-time" class="internalDFN" data-link-type="dfn">current high resolution
   time</a>.</p>
+</section>
+<section id="shiny-method" class='addition' id='addition1'>
+  <span class="marker">candidate addition 1:</span>
+<ins cite='#addition1'><h3 id="x4-1-shiny-method"><bdi class="secno">4.2 </bdi><code>shiny()</code> method<a class="self-link" aria-label="§" href="#shiny-method"></a></h3>
+  <p data-tests="basic.any.html, basic.any.worker.html">The
+  <dfn data-dfn-type="method" data-export="" id="dom-performance-shiny" data-idl="operation" data-title="shiny()" data-dfn-for="Performance" data-type="DOMHighResTimeStamp" data-lt="shiny()" data-local-lt="Performance.shiny|Performance.shiny()|shiny"><code>shiny()</code></dfn> method <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-current-high-resolution-time" class="internalDFN" data-link-type="dfn">current high resolution
+  time</a>.</p></ins>
 </section>
 <section id="timeorigin-attribute">
   <h3 id="x4-2-timeorigin-attribute"><bdi class="secno">4.2 </bdi><code>timeOrigin</code> attribute<a class="self-link" aria-label="§" href="#timeorigin-attribute"></a></h3>
@@ -327,6 +336,7 @@ readonly attribute<span class="idlType"> <a data-xref-type="_IDL_" href="#dom-do
   <p>The <dfn data-dfn-type="attribute" data-export="" id="dom-windoworworkerglobalscope-performance" data-idl="attribute" data-title="performance" data-dfn-for="WindowOrWorkerGlobalScope" data-type="Performance" data-lt="performance" data-local-lt="WindowOrWorkerGlobalScope.performance"><code>performance</code></dfn> attribute on the interface mixin
   <a data-xref-type="_IDL_" href="#dfn-windoworworkerglobalscope" class="internalDFN" data-link-type="idl"><code><code>WindowOrWorkerGlobalScope</code></code></a> allows access to performance related
   attributes and methods from the <a data-link-for="Realm" data-xref-for="Realm" data-cite-path="webappapis.html" data-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-realm-global">global object</a>.</p>
+
   <div class='correction' id='change1'><span class="marker">Candidate Correction 1:</span><br>
     The replaceable attribute is no longer needed</div>
 
@@ -352,15 +362,7 @@ monotonically increasing and not subject to system clock adjustments or
 system clock skew, and whose reference point is the [<cite><a class="bibref" data-link-type="biblio" href="#bib-ecma-262" title="ECMAScript Language Specification">ECMA-262</a></cite>]
 <dfn data-no-export="" data-dfn-type="dfn" id="dfn-time"><a href="https://tc39.es/ecma262/#sec-time-values-and-time-range">time</a></dfn> definition - see
 <a href="#sec-privacy-security" class="sec-ref">§&nbsp;<bdi class="secno">7. </bdi>Privacy and Security</a>.</p>
-<div class='correction' id='change2'>
-  <span class="marker">Candidate Correction 2:</span>
-  <p data-link-for="Performance" data-tests="test_cross_frame_start.html">The time values returned when
-  getting <code>performance.</code><a data-xref-type="_IDL_" href="#dom-performance-timeorigin" class="internalDFN" data-link-type="idl"><code><code>timeOrigin</code></code></a> <em class="rfc2119" title="MUST">MUST</em> use <del>same</del><ins>different</ins> <dfn data-export="" data-dfn-type="dfn" id="dfn-global-monotonic-clock">global monotonic clock</dfn> that <del>is</del><ins>are not</ins> shared by <a href="#dfn-time-origin" class="internalDFN" data-link-type="dfn">time origin</a>s, <del>is</del><ins>are
-  not</ins> monotonically increasing and not subject to system clock adjustments or
-  system clock skew<del>, and whose reference point is the [<cite><a class="bibref" data-link-type="biblio" href="#bib-ecma-262" title="ECMAScript Language Specification">ECMA-262</a></cite>]
-    <dfn data-no-export="" data-dfn-type="dfn" id="dfn-time"><a href="https://tc39.es/ecma262/#sec-time-values-and-time-range">time</a></dfn> definition - see
-    <a href="#sec-privacy-security" class="sec-ref">§&nbsp;<bdi class="secno">7. </bdi>Privacy and Security</a></del>.</p>
-</div>
+
 <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>Note</span></div><p class="">The user agent can reset its global monotonic clock across
 browser restarts, or whenever starting an isolated browsing session—e.g.
 incognito or similar browsing mode. As a result, developers should not use
