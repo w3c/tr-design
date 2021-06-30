@@ -26,13 +26,23 @@ These are mockup versions of W3C Document for [Process 2020](https://www.w3.org/
 * [Recommendation (editorial corrections) 6.2.11.2](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.2.html)
   1. No change from Process 2019.
   1. If the Proposed Recommendation intended to allow new features in Recommendation revisions, add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
+* [Recommendation (candidate corrections) 6.1.5](https://w3c.github.io/tr-design/p2020mockup/rec-6.1.5-corrections.html)
+  1. "published by the ... Group as a Recommendation. It includes [candidate corrections](https://www.w3.org/2020/Process-20200915/#candidate-correction)."
+  1. includes "[Candidate corrections](https://www.w3.org/2020/Process-20200915/#candidate-correction) are marked in the document." using the .correction CSS class
+  1. If the Proposed Recommendation intended to allow new features in Recommendation revisions, add a sentence in the PP paragraph: "This document may be revised with new features using [candidate addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
+* [Recommendation (candidate additions) 6.1.5](https://w3c.github.io/tr-design/p2020mockup/rec-6.1.5-additions.html)
+  1. "published by the ... Group as a Recommendation. It includes [candidate additions](https://www.w3.org/2020/Process-20200915/#candidate-addition)."
+  1. includes "[Candidate additions](https://www.w3.org/2020/Process-20200915/#candidate-addition) are marked in the document." using the .addition CSS class
+  1. If the Proposed Recommendation intended to allow new features in Recommendation revisions, add a sentence in the PP paragraph: "This document may be revised with new features using [candidate addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
 * [Recommendation (substantive corrections) 6.2.11.3](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.3.html)
   1. "published by the ... Group as a revised Recommendation. It includes [proposed corrections](https://www.w3.org/2020/Process-20200915/#proposed-correction)."
   1. includes "[Proposed corrections](https://www.w3.org/2020/Process-20200915/#proposed-correction) are marked in the document." using the .correction.proposed CSS class
+  1. includes a paragraph to allow for AC Review (WBS questionnaire)
   1. If the Proposed Recommendation intended to allow new features in Recommendation revisions, add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
 * [Recommendation (new features) 6.2.11.4](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.4.html)
   1. "published by the ... Group as a revised Recommendation. It includes [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition), introducing new features since the Previous Recommentation."
   1. includes "[Proposed additions](https://www.w3.org/2020/Process-20200915/#proposed-addition) are marked in the document." using the .addition.proposed CSS class
+  1. includes a paragraph to allow for AC Review (WBS questionnaire)
   1. MUST add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
 * Note that both the addition of new candidate changes and the normative incorporation of mature proposed changes into the Recommendation can be done incrementally, allowing complex specifications to be gradually improved without having to fix everything before anything can be republished. [6.2.11.3 and 6.2.11.4](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.34.html)
 
