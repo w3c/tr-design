@@ -48,7 +48,7 @@
   </div>
   <h2 id="status">Status of this document</h2>
   <div>
-   <p>This version is in preparation for the deployment of <a href='https://www.w3.org/2020/Process-20200915/'>Process 2020</a>.
+   <p>This version is compatible with <a href='https://www.w3.org/2020/Process-20200915/'>Process 2020</a>.
   </div>
 <nav id="toc">
   <h2>Table of Contents</h2>
@@ -56,6 +56,12 @@
     <li><a href="#intro"><span class="secno">1</span>
       Introduction</a>
       <ol>
+        <li><a href="#using"><span class="secno">1.1</span>
+          Importing the Style Sheet</a>
+          <ol>
+            <li><a href="#dark"><span class="secno">1.1.1</span>
+              Enabling Dark Mode</a>
+          </ol>
         <li><a href="#fixing"><span class="secno">1.1</span>
           Bug Reporting / Fixing / Adjusting the CSS</a>
         <li><a href="#requirements"><span class="secno">1.2</span>
@@ -220,8 +226,46 @@
   <p>This document shows off our specification styling,
   and describes the key features of the style sheet.
 
+<h3 id=using>
+<span class="secno">1.1</span> Using the Style Sheet</h3>
+
+  <p>If you are using a spec pre-processor such as
+  <a href="https://respec.org/docs/">ReSpec</a> or
+  <a href="https://tabatkins.github.io/bikeshed/">Bikeshed</a>,
+  it will import the correct style sheet automatically.
+
+  <p>To import the style sheet manually,
+  <code>&lt;link</code> the one corresponding to your document status from
+  <a href="https://www.w3.org/StyleSheets/TR/2016/">/StyleSheets/TR/2016</a>.
+
+<h4 id=dark>
+<span class="secno">1.1.1</span> Enabling Dark Mode</h3>
+
+  <p>Dark Mode is not enabled automatically
+  because many specs have images or custom styling
+  that become unreadable on a dark background.
+
+  <p>If you are using a spec pre-processor such as
+  <a href="https://respec.org/docs/">ReSpec</a> or
+  <a href="https://tabatkins.github.io/bikeshed/">Bikeshed</a>,
+  switch on the appropriate option;
+  they will generate the code automatically.
+
+  <p>To import the dark mode style sheet manually,
+  add the following <code>&lt;link</code> element
+  <em>after</em> the main style sheet:
+  <pre>&lt;link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/dark" media="(prefers-color-scheme: dark)"></pre>
+
+  <p>This will import all the colors (as CSS variables)
+  needed for the markup conventions defined in this document
+  and also set a default white background on any <code>&lt;img></code> elements
+  (which you can override if you want)
+  to ensure their legibility.
+  Fixup scripts will also automatically set up a user-preference toggle
+  for technical reports which include this element.
+
 <h3 id=fixing>
-<span class="secno">1.1</span> Bug Reporting / Fixing / Adjusting the CSS</h3>
+<span class="secno">1.2</span> Bug Reporting / Fixing / Adjusting the CSS</h3>
 
   <p>If you have a problem using the W3C specification style sheet,
   and it is
@@ -238,7 +282,7 @@
   </dl>
 
 <h3 id=requirements>
-<span class="secno">1.2</span> Requirements for Spec Styling</h3>
+<span class="secno">1.3</span> Requirements for Spec Styling</h3>
 
   <p>The following requirements apply to spec styling:
 
@@ -250,7 +294,7 @@
   </ul>
 
 <h3 id="conventions">
-<span class="secno">1.3 </span>Document conventions</h3>
+<span class="secno">1.4 </span>Document conventions</h3>
   <p>Conformance requirements are expressed with a combination of
     descriptive assertions and RFC 2119 terminology. The key words "MUST",
     "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
