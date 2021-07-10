@@ -206,7 +206,6 @@
 		background-size: 25px auto;
 	}
 
-
 /******************************************************************************/
 /*                         Front Matter & Navigation                          */
 /******************************************************************************/
@@ -705,6 +704,11 @@
 
 	img {
 		border-style: none;
+	}
+
+	img, svg {
+		/* Intentionally not color-scheme aware. */
+		background: white;
 	}
 
 	/* For autogen numbers, add
@@ -1492,4 +1496,37 @@ Possible extra rowspan handling
 			background-repeat: no-repeat;
 			*/
 		}
+	}
+
+	/******************************************************************************/
+	/*                             Dark mode toggle                               */
+	/******************************************************************************/
+	#theme-toggle {
+		position: fixed;
+		bottom: 10px;
+		right: 20px;
+		border: 1px solid var(--datacell-border);
+		border-radius: 30px;
+		padding: 5px;
+	}
+
+	#theme-toggle input {
+		position: absolute;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(0px 0px 99.9% 99.9%);
+		overflow: hidden;
+		height: 1px;
+		width: 1px;
+		padding: 0;
+		border: 0;
+	}
+
+	#theme-toggle span {
+		padding: 5px;
+		border-radius: 30px;
+	}
+
+	#theme-toggle input:checked + span {
+		background-color: var(--logo-bg);
+		color: var(--logo-text);
 	}

@@ -297,6 +297,40 @@
     request.send();
   }
 
+  /* Dark mode toggle */
+  const darkCss = document.querySelector('link[href="dark.css"]');
+  if (darkCss && matchMedia("(prefers-color-scheme)").matches) {
+    const colorScheme = localStorage.getItem("tr-theme") || "auto";
+    darkCss.disabled = colorScheme === "light";
+    darkCss.media = colorScheme === "auto" ? "(prefers-color-scheme: dark)" : "";
+    const render = document.createElement("x-temp");
+    function createOption(option) {
+      const checked = option === colorScheme;
+      return `
+        <label>
+          <input name="color-scheme" type="radio" value="${option}" ${checked ? "checked": ""}>
+          <span>${option}</span>
+        </label>
+      `.trim();
+    }
+    render.innerHTML = `
+      <div id="theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+        ${["light", "dark", "auto"].map(createOption).join("")}
+      </div>
+    `;
+    const changeListener = (event) => {
+      const { value } = event.target;
+      darkCss.disabled = value === "light";
+      darkCss.media = value === "auto" ? "(prefers-color-scheme: dark)" : "";
+      localStorage.setItem("tr-theme", value);
+    };
+    render.querySelectorAll("input[type='radio']").forEach((input) => {
+      input.addEventListener("change", changeListener);
+    });
+    document.querySelector("div.head").append(...render.children);
+  }
+
+
   /* Matomo analytics */
   if (document.location.hostname === "www.w3.org" && /^\/TR\//.test(document.location.pathname)) {
     var _paq = window._paq = window._paq || [];
