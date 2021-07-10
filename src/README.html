@@ -235,7 +235,7 @@
   it will import the correct style sheet automatically.
 
   <p>To import the style sheet manually,
-  <code>&lt;link</code> the one corresponding to your document status from
+  <code>&lt;link></code> the one corresponding to your document status from
   <a href="https://www.w3.org/StyleSheets/TR/2016/">/StyleSheets/TR/2016</a>.
 
 <h4 id=dark>
@@ -248,18 +248,18 @@
   <p>If you are using a spec pre-processor such as
   <a href="https://respec.org/docs/">ReSpec</a> or
   <a href="https://tabatkins.github.io/bikeshed/">Bikeshed</a>,
-  switch on the appropriate option;
+  switch on the appropriate option:
   they will generate the code automatically.
 
   <p>To import the dark mode style sheet manually,
-  add the following <code>&lt;link</code> element
+  add the following <code>&lt;link></code> element
   <em>after</em> the main style sheet:
-  <pre>&lt;link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/dark" media="(prefers-color-scheme: dark)"></pre>
+  <pre>&lt;link rel="stylesheet" type="text/css" href="https://www.w3.org/StyleSheets/TR/2016/dark.css" media="(prefers-color-scheme: dark)"></pre>
 
   <p>This will import all the colors (as CSS variables)
   needed for the markup conventions defined in this document
   and also set a default white background on any <code>&lt;img></code> elements
-  (which you can override if you want)
+  (which you can override back to transparent if you want)
   to ensure their legibility.
   Fixup scripts will also automatically set up a user-preference toggle
   for technical reports which include this element.
