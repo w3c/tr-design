@@ -40,7 +40,7 @@ These are mockup versions of W3C Document for [Process 2020](https://www.w3.org/
   1. includes a paragraph to allow for AC Review (WBS questionnaire)
   1. If the Proposed Recommendation intended to allow new features in Recommendation revisions, add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
 * [Recommendation (new features) 6.2.11.4](https://w3c.github.io/tr-design/p2020mockup/rec-6.2.11.4.html)
-  1. "published by the ... Group as a revised Recommendation. It includes [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition), introducing new features since the Previous Recommentation."
+  1. "published by the ... Group as a revised Recommendation. It includes [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition), introducing new features since the Previous Recommendation."
   1. includes "[Proposed additions](https://www.w3.org/2020/Process-20200915/#proposed-addition) are marked in the document." using the .addition.proposed CSS class
   1. includes a paragraph to allow for AC Review (WBS questionnaire)
   1. MUST add a sentence in the PP paragraph: "This document may be revised with new features using [proposed addition](https://www.w3.org/2020/Process-20200915/#proposed-addition)." to allow new features changes
