@@ -4,8 +4,8 @@
 @import "base.css";
 
 :root {
-	--heading-text: #9C005A;
-	--current-status-text: #9C005A;
+	--heading-text: #9c005a;
+	--current-status-text: #9c005a;
 }
 
 body {
@@ -13,11 +13,11 @@ body {
 }
 
 h1, h2, h3 {
-  color: #9C005A;
+  color: #9c005a;
   color: var(--heading-text);
 }
 
 div.head p.current-status {
-  color: #9C005A;
+  color: #9c005a;
   color: var(--current-status-text);
 }
