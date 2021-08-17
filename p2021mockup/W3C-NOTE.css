@@ -6,6 +6,7 @@
 :root {
 	--heading-text: #9c005a;
 	--current-status-text: #9c005a;
+  --logo-bg: #9c005a;
 }
 
 body {
@@ -20,4 +21,17 @@ h1, h2, h3 {
 div.head p.current-status {
   color: #9c005a;
   color: var(--current-status-text);
+}
+
+.head img[src*="logos/W3C"] {
+  display: block;
+  border: solid #9c005a;
+  border: solid var(--logo-bg);
+  border-width: .65rem .7rem .6rem;
+  border-radius: .4rem;
+  background: #9c005a;
+  background: var(--logo-bg);
+  color: white;
+  color: var(--logo-text);
+  font-weight: bold;
 }

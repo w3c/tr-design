@@ -6,10 +6,11 @@
 :root {
 	--heading-text: #9c4200;
 	--current-status-text: #9c4200;
+  --logo-bg: #9c4200;
 }
 
 body {
-  background-image: url(WG-Note.svg);
+  background-image: url(Draft-Registry.svg);
 }
 
 h1, h2, h3 {
@@ -20,4 +21,17 @@ h1, h2, h3 {
 div.head p.current-status {
   color: #9c4200;
   color: var(--current-status-text);
+}
+
+.head img[src*="logos/W3C"] {
+  display: block;
+  border: solid #9c4200;
+  border: solid var(--logo-bg);
+  border-width: .65rem .7rem .6rem;
+  border-radius: .4rem;
+  background: #9c4200;
+  background: var(--logo-bg);
+  color: white;
+  color: var(--logo-text);
+  font-weight: bold;
 }
