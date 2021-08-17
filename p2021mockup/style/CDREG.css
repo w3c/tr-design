@@ -1,0 +1,37 @@
+
+/* Style for a "Working Group Note" */
+
+@import "base.css";
+
+:root {
+	--heading-text: #9c4200;
+	--w3c-state-text-text: #9c4200;
+  --logo-bg: #9c4200;
+}
+
+body {
+  background-image: url(logos/CDREG.svg);
+}
+
+h1, h2, h3 {
+  color: #9c4200;
+  color: var(--heading-text);
+}
+
+#w3c-state {
+  color: #9c4200;
+  color: var(--w3c-state-text-text);
+}
+
+.head img[src*="logos/W3C"] {
+  display: block;
+  border: solid #9c4200;
+  border: solid var(--logo-bg);
+  border-width: .65rem .7rem .6rem;
+  border-radius: .4rem;
+  background: #9c4200;
+  background: var(--logo-bg);
+  color: white;
+  color: var(--logo-text);
+  font-weight: bold;
+}
