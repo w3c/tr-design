@@ -1,9 +1,23 @@
 
 /* Style for a "Working Group Note" */
 
-@import "base-note.css";
+@import "base.css";
+
+:root {
+	--heading-text: #9C005A;
+	--current-status-text: #9C005A;
+}
 
 body {
   background-image: url(WG-Note.svg);
 }
 
+h1, h2, h3 {
+  color: #9C005A;
+  color: var(--heading-text);
+}
+
+div.head p.current-status {
+  color: #9C005A;
+  color: var(--current-status-text);
+}
