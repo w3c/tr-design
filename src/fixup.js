@@ -314,9 +314,12 @@
       `.trim();
     }
     render.innerHTML = `
-      <div id="theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+      <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+        <span aria-hidden="true">☀</span>
+        <span>
         ${["light", "dark", "auto"].map(createOption).join("")}
-      </div>
+        </span>
+      </a>
     `;
     const changeListener = (event) => {
       const { value } = event.target;
@@ -327,7 +330,9 @@
     render.querySelectorAll("input[type='radio']").forEach((input) => {
       input.addEventListener("change", changeListener);
     });
-    document.querySelector("div.head").append(...render.children);
+
+    var tocNav = document.querySelector('#toc-nav');
+    tocNav.appendChild(...render.children);
   }
 
 
