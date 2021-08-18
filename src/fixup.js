@@ -298,12 +298,12 @@
   }
 
   /* Dark mode toggle */
-  const darkCss = document.querySelector('link[href="dark.css"]');
-  if (darkCss && matchMedia("(prefers-color-scheme)").matches) {
+  const darkCss = document.querySelector('link[href$="dark.css"]');
+  if (darkCss) {
     const colorScheme = localStorage.getItem("tr-theme") || "auto";
     darkCss.disabled = colorScheme === "light";
     darkCss.media = colorScheme === "auto" ? "(prefers-color-scheme: dark)" : "";
-    const render = document.createElement("x-temp");
+    const render = document.createElement("div");
     function createOption(option) {
       const checked = option === colorScheme;
       return `
