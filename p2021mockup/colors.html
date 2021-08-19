@@ -34,14 +34,14 @@
     <div class='head'>
       <a class="logo" href="https://www.w3.org/"><img class='img' alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a>
       <h1>Color: <span></span></h1>
-      <p class="w3c-state">W3C Document, August 20 2021</p>
+      <p class="w3c-state">W3C Document, August 20 <span></span></p>
       <h2>Abstract</h2>
       <p>
         We're testing the colors in this document.
       </p>
       <h2>Status</h2>
       <p>
-        This is a paragraph
+        This is a paragraph text.
       </p>
     </div>
   </section>
@@ -50,13 +50,13 @@
   let template = document.querySelector('section');
   let style = [...document.querySelectorAll('style')][1];
   // 3c790a is the WHATWG color, which we need to avoid
-  let colors = [ '005a9c', '3c790a', '0a4343', 'e93737', '0075ff', 'ddb0c8', 'f9c818', 'fc7750', '1bc0d7' ];
+  let colors = [ '005a9c', '0a4343', 'e93737', '0075ff', 'ddb0c8', 'f9c818', 'fc7750', '1bc0d7', '3c790a', '9c4200', '9c005a' ];
   for (let i = 0; i < colors.length; i++) {
     const c = `#${colors[i]}`;
     const id = `template${i}`;
     const ne = template.cloneNode(true);
     ne.setAttribute('id', id);
-    ne.querySelector('span').textContent = (c != '#3c790a')? c : 'WHATWG color';
+    ne.querySelectorAll('span').forEach(n => n.textContent = (c != '#3c790a')? c : 'WHATWG color');
     const ns = document.createElement('style');
     const st  = style.textContent;
     ns.textContent = st.replaceAll('template', id).replaceAll('white', c);
