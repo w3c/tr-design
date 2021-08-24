@@ -598,6 +598,9 @@
 		background: var(--ins-bg);
 		text-decoration: underline;
 	}
+	ins *, del * {
+		color: inherit;
+	}
 	ins:not([hidden]).diff-inactive,
 	del:not([hidden]).diff-inactive {
 		all: unset;
