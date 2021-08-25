@@ -11,7 +11,7 @@ text {
 }
   </style>
   <g>
-   <rect fill-rule='evenodd' width='25' fill='#9c4200' clip-rule='evenodd' height='380'/>
+   <rect fill-rule='evenodd' width='25' fill='#1a5e9a' clip-rule='evenodd' height='380'/>
    <g transform="rotate(-90 19 37)">
     <text x="19" y="37"><tspan>W3C Candidate Registry</tspan></text>
    </g>
