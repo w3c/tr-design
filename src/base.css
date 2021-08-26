@@ -1509,6 +1509,10 @@ Possible extra rowspan handling
 		border: 0;
 	}
 
+	#toc-theme-toggle img {
+		background-color: transparent;
+        }
+
 	#toc-theme-toggle span {
 		padding: 5px;
 		border-radius: 30px;
