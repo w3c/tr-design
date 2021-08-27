@@ -297,6 +297,45 @@
     request.send();
   }
 
+  /* Dark mode toggle */
+  const darkCss = document.querySelector('link[href^="https://www.w3.org/StyleSheets/TR/2016/dark"]');
+  if (darkCss) {
+    const colorScheme = localStorage.getItem("tr-theme") || "auto";
+    darkCss.disabled = colorScheme === "light";
+    darkCss.media = colorScheme === "auto" ? "(prefers-color-scheme: dark)" : "";
+    const render = document.createElement("div");
+    function createOption(option) {
+      const checked = option === colorScheme;
+      return `
+        <label>
+          <input name="color-scheme" type="radio" value="${option}" ${checked ? "checked": ""}>
+          <span>${option}</span>
+        </label>
+      `.trim();
+    }
+    render.innerHTML = `
+      <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+        <span aria-hidden="true"><img src="logos/dark.svg" title="theme toggle icon" /></span>
+        <span>
+        ${["light", "dark", "auto"].map(createOption).join("")}
+        </span>
+      </a>
+    `;
+    const changeListener = (event) => {
+      const { value } = event.target;
+      darkCss.disabled = value === "light";
+      darkCss.media = value === "auto" ? "(prefers-color-scheme: dark)" : "";
+      localStorage.setItem("tr-theme", value);
+    };
+    render.querySelectorAll("input[type='radio']").forEach((input) => {
+      input.addEventListener("change", changeListener);
+    });
+
+    var tocNav = document.querySelector('#toc-nav');
+    tocNav.appendChild(...render.children);
+  }
+
+
   /* Matomo analytics */
   if (document.location.hostname === "www.w3.org" && /^\/TR\//.test(document.location.pathname)) {
     var _paq = window._paq = window._paq || [];

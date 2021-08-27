@@ -206,7 +206,6 @@
 		background-size: 25px auto;
 	}
 
-
 /******************************************************************************/
 /*                         Front Matter & Navigation                          */
 /******************************************************************************/
@@ -317,7 +316,8 @@
 			background: var(--tocnav-active-bg);
 		}
 
-		#toc-nav > #toc-jump {
+		#toc-nav > #toc-jump,
+		#toc-nav > #toc-toggle {
 			padding-bottom: 2em;
 			margin-bottom: -1.9em;
 		}
@@ -1495,4 +1495,34 @@ Possible extra rowspan handling
 			background-repeat: no-repeat;
 			*/
 		}
+	}
+
+	/******************************************************************************/
+	/*                             Dark mode toggle                               */
+	/******************************************************************************/
+
+	#toc-theme-toggle input {
+		position: absolute;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(0px 0px 99.9% 99.9%);
+		overflow: hidden;
+		height: 1px;
+		width: 1px;
+		padding: 0;
+		border: 0;
+	}
+
+	#toc-theme-toggle img {
+		background-color: transparent;
+        }
+
+	#toc-theme-toggle span {
+		padding: 5px;
+		border-radius: 30px;
+	}
+
+	#toc-theme-toggle input:checked + span {
+		background-color: var(--logo-bg);
+		color: var(--logo-text);
+		padding: 3px 10px;
 	}
