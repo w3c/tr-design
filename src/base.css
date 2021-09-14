@@ -598,7 +598,8 @@
 		background: var(--ins-bg);
 		text-decoration: underline;
 	}
-	ins *, del * {
+	ins:not(#dontusethisid) *,
+	del:not(#dontusethisid) * {
 		color: inherit;
 	}
 	ins:not([hidden]).diff-inactive,
