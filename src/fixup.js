@@ -298,7 +298,7 @@
   }
 
   /* Dark mode toggle */
-  const darkCss = document.querySelector('link[href^="https://www.w3.org/StyleSheets/TR/2016/dark"]');
+  const darkCss = document.querySelector('link[rel~="stylesheet"][href^="https://www.w3.org/StyleSheets/TR/2016/dark"]');
   if (darkCss) {
     const colorScheme = localStorage.getItem("tr-theme") || "auto";
     darkCss.disabled = colorScheme === "light";
