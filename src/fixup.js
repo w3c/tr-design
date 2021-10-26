@@ -315,7 +315,7 @@
     }
     render.innerHTML = `
       <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
-        <span aria-hidden="true"><img src="logos/dark.svg" title="theme toggle icon" /></span>
+        <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/dark.svg" title="theme toggle icon" /></span>
         <span>
         ${["light", "dark", "auto"].map(createOption).join("")}
         </span>
