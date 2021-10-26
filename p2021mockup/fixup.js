@@ -12,8 +12,7 @@
     details.addEventListener("toggle", function toggle() {
       window.localStorage.setItem("tr-metadata", details.open);
     }, false);
-    if (localStorage.getItem("tr-metadata") === 'true' && !details.open)
-      details.open = true;
+    details.open = !localStorage.getItem("tr-metadata") || localStorage.getItem("tr-metadata") === 'true';
   } catch (e) {}; // ignore errors for this interaction
 
   var ESCAPEKEY = 27;
