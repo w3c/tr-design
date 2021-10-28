@@ -7,6 +7,14 @@
  ******************************************************************************/
 (function() {
   "use strict";
+  try {
+    var details = document.querySelector("div.head details");
+    details.addEventListener("toggle", function toggle() {
+      window.localStorage.setItem("tr-metadata", details.open);
+    }, false);
+    details.open = !localStorage.getItem("tr-metadata") || localStorage.getItem("tr-metadata") === 'true';
+  } catch (e) {}; // ignore errors for this interaction
+
   var ESCAPEKEY = 27;
   var collapseSidebarText = '<span aria-hidden="true">←</span> '
                           + '<span>Collapse Sidebar</span>';
@@ -298,7 +306,7 @@
   }
 
   /* Dark mode toggle */
-  const darkCss = document.querySelector('link[rel~="stylesheet"][href^="https://www.w3.org/StyleSheets/TR/2016/dark"]');
+  const darkCss = document.querySelector('link[rel~="stylesheet"][href^="https://www.w3.org/StyleSheets/TR/2021/dark"]');
   if (darkCss) {
     const colorScheme = localStorage.getItem("tr-theme") || "auto";
     darkCss.disabled = colorScheme === "light";
@@ -315,7 +323,7 @@
     }
     render.innerHTML = `
       <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
-        <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/dark.svg" title="theme toggle icon" /></span>
+        <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2021/logos/dark.svg" title="theme toggle icon" /></span>
         <span>
         ${["light", "dark", "auto"].map(createOption).join("")}
         </span>

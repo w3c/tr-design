@@ -1,8 +1,8 @@
 
-/* Style for a "Note" */
+/* Style for a "Working Group Note" */
 
 @import "base.css";
 
 body {
-  background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/NOTE);
+  background-image: url(logos/NOTE.svg);
 }

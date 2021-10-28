@@ -104,6 +104,7 @@
 	--toclink-visited-underline: #054572;
 
 	--heading-text: #005a9c;
+	--w3c-state-text: #005a9c;
 
 	--hr-text: var(--text);
 
@@ -221,7 +222,16 @@
 		font-size: 220%;
 	}
 
-	div.head h2 { margin-bottom: 1.5em;}
+	#w3c-state {
+		margin-top: 0;
+		margin-bottom: 1.5em;
+		font: 140% sans-serif;   /* Reset all font styling to clear out UA styles */
+		font-family: inherit;    /* Inherit the font family. */
+		line-height: 1.2;        /* Keep wrapped headings compact */
+		hyphens: manual;         /* Hyphenated headings look weird */
+		color: #005a9c;
+		color: var(--w3c-state-text);
+	}
 
 /** W3C Logo ******************************************************************/
 
