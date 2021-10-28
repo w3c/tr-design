@@ -1,5 +1,7 @@
 # W3C Technical Reports Design Project
 
+This project is [available on GitHub](https://github.com/w3c/tr-design/).
+
 The purpose of this project is to maintain and improve the style sheets
 for current and future [technical reports](http://www.w3.org/TR/) published by the [W3C](http://www.w3.org/).
 
