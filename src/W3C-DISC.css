@@ -1,0 +1,8 @@
+
+/* Style for a "Discontinued Draft" */
+
+@import "base.css";
+
+body {
+  background-image: url(logos/DISC.svg);
+}
