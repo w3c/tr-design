@@ -104,7 +104,6 @@
 	--toclink-visited-underline: #054572;
 
 	--heading-text: #005a9c;
-	--w3c-state-text: #005a9c;
 
 	--hr-text: var(--text);
 
@@ -230,7 +229,7 @@
 		line-height: 1.2;        /* Keep wrapped headings compact */
 		hyphens: manual;         /* Hyphenated headings look weird */
 		color: #005a9c;
-		color: var(--w3c-state-text);
+		color: var(--heading-text);
 	}
 
 /** W3C Logo ******************************************************************/

@@ -3,23 +3,11 @@
 @import "base.css";
 
 :root {
-	--heading-text: black;
-	--w3c-state-text-text: black;
   --logo-bg: red;
 }
 
 body {
   background-image: url(logos/ED.svg);
-}
-
-h1, h2, h3 {
-  color: black;
-  color: var(--heading-text);
-}
-
-#w3c-state, #w3c-state a {
-  color: black;
-  color: var(--w3c-state-text-text);
 }
 
 .head img[src*="logos/W3C"] {
