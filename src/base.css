@@ -80,7 +80,9 @@
 	--text: black;
 	--bg: white;
 
-	--unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark-light);
+	/* Absolute URLs due to https://bugs.webkit.org/show_bug.cgi?id=230243 */
+	--unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2021/logos/UD-watermark-light-unofficial.svg);
+	--draft-watermark: url(https://www.w3.org/StyleSheets/TR/2021/logos/UD-watermark-light-draft.svg);
 
 	--logo-bg: #1a5e9a;
 	--logo-active-bg: #c00;

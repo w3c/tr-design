@@ -4,9 +4,11 @@
 @import "base.css";
 
 body {
-  background: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD) no-repeat fixed,
-              url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
-  background-image: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD),
+  background: url(logos/UD) no-repeat fixed,
+              url(logos/UD-watermark-light-draft) repeat-y center left fixed,
+              url(logos/UD-watermark-light-unofficial) repeat-y center right fixed;
+  background-image: url(logos/UD),
+                    var(--draft-watermark),
                     var(--unofficial-watermark);
   background-color: var(--bg);
 }

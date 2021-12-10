@@ -1,10 +1,15 @@
 @import url('base.css');
 
 body {
-    background-repeat: no-repeat, repeat-x;
+    background-repeat: no-repeat, repeat-y, repeat-y;
     background-size: auto;
-    background-image: none, url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
-    background-image: none, var(--unofficial-watermark);
+    background-position: top left, center left, center right;
+    background-image: none,
+                      url(logos/UD-watermark-light-draft),
+                      url(logos/UD-watermark-light-unofficial);
+    background-image: none,
+                      var(--draft-watermark),
+                      var(--unofficial-watermark);
 }
 body::before {
     content: url('logos/back-cg-draft.png');
@@ -18,8 +23,10 @@ body::before {
     }
     body {
         background-image: url('https://www.w3.org/StyleSheets/TR/2016/logos/back-cg-draft'),
-                          url('https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark-light');
+                          url(logos/UD-watermark-light-draft),
+                          url(logos/UD-watermark-light-unofficial);
         background-image: url('logos/back-cg-draft.png'),
+                          var(--draft-watermark),
                           var(--unofficial-watermark);
         padding-left: 160px;
     }
