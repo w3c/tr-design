@@ -1,0 +1,7 @@
+/* Style for a "Rescinded Recommendation" */
+
+@import "base.css";
+
+body {
+  background-image: url(logos/RSCND);
+}
