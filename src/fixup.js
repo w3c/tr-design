@@ -359,19 +359,4 @@
     })();
   }
 
-  let mql = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (mql.matches) {
-    const toc = document.querySelector("#toc");
-
-    function syncScroll(element) {
-      if (element === toc) {
-        window.scrollTo(0, toc.scrollTop);
-      } else {
-        toc.scrollTop = window.scrollY;
-      }
-    }
-
-    toc.onscroll = e => syncScroll(e.target);
-    window.onscroll = e => syncScroll(e.target);
-  }
 })();

@@ -1540,5 +1540,9 @@ Possible extra rowspan handling
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		scroll-behavior: auto !important;
+		body.toc-sidebar #toc {
+			position: absolute;
+			overflow: initial;
+			bottom: unset;
+		}
 	}
