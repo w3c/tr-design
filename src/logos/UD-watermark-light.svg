@@ -1,8 +1,0 @@
-<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'>
- <g transform='translate(200 200) rotate(-45) translate(-200 -200)'
-    style='font: 750 70px Arial, sans-serif; letter-spacing: 3px'
-    fill='#FDEDED' stroke='#FDEDED' stroke-width='3'>
-  <text x='53%' y='220' style='text-anchor: middle'>UNOFFICIAL</text>
-  <text x='53%' y='305' style='text-anchor: middle'>DRAFT</text>
- </g>
-</svg>
