@@ -1231,6 +1231,9 @@ Possible extra rowspan handling
 	.toc {
 		line-height: 1.1em; /* consistent spacing */
 	}
+	.toc > li {
+		min-height: 24px; /* minimum target size success criterion */
+	}
 
 	/* ToC not indented until third level, but font style & margins show hierarchy */
 	.toc > li             { font-weight: bold;   }
