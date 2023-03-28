@@ -1364,19 +1364,16 @@ Possible extra rowspan handling
 		font-weight: bold;
 	}
 
-/** Examples of Unicode characters using the I18N template ****************/
-.codepoint bdi {
-    line-height: 1em;
-    font-size: 120%;
-    margin-inline: 0.25em;
+/** Character examples (from the I18N template) *******************************/
+.uname {
+   font-size: 75%;
+   margin: 0 2px;
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
 }
 
-.uname {
-    font-variant: all-small-caps;
-    font-variant-numeric: oldstyle-nums;
-	font-size: 85%;
-	letter-spacing: 0.03em;
-	color: brown;
+.codepoint {
+   font-size: 120%;
 }
 
 /** Outdated warning **********************************************************/
