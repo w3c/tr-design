@@ -67,6 +67,8 @@
  *     It's better to design things to fit into a narrower measure if possible.
  *
  *   - js-added ToC jump links (see fixup.js)
+ * 
+ *   - .uname and .codepoint for character names and examples
  *
  ******************************************************************************/
 
@@ -1361,6 +1363,19 @@ Possible extra rowspan handling
 	table.index th:first-child a {
 		font-weight: bold;
 	}
+
+/** Character examples (from the I18N template) *******************************/
+.uname {
+   font-size: 75%;
+   margin: 0 2px;
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
+}
+
+.codepoint {
+   font-size: 120%;
+}
+
 
 /** Outdated warning **********************************************************/
 
