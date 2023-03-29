@@ -1365,15 +1365,15 @@ Possible extra rowspan handling
 	}
 
 /** Character examples (from the I18N template) *******************************/
-.uname {
-   font-size: 75%;
-   margin: 0 2px;
-   letter-spacing: 0.05em;
-   text-transform: uppercase;
+.codepoint bdi {
+   font-size: 120%;
 }
 
-.codepoint {
-   font-size: 120%;
+.codepoint .uname {
+   font-size: 80%;
+   margin-inline: 2px;
+   letter-spacing: 0.03em;
+   text-transform: uppercase;
 }
 
 
