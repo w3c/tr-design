@@ -1369,11 +1369,9 @@ Possible extra rowspan handling
    font-size: 120%;
 }
 
-.codepoint .uname {
-   font-size: 80%;
-   margin-inline: 2px;
-   letter-spacing: 0.03em;
-   text-transform: uppercase;
+.uname {
+	text-transform: uppercase;
+	font-variant: all-small-caps;
 }
 
 /** Outdated warning **********************************************************/
