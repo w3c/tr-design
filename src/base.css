@@ -1366,9 +1366,14 @@ Possible extra rowspan handling
 
 /** Character examples (from the I18N template) *******************************/
 .codepoint bdi {
+    display: inline-block;
     line-height: 1em;
-    font-size: 120%;
     margin-inline: 0.25em;
+}
+
+.codepoint bdi:hover {
+    transform-origin: center;
+    scale: 150%;
 }
 
 .uname {
