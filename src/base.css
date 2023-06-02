@@ -1372,7 +1372,8 @@ Possible extra rowspan handling
 }
 
 .uname {
-    font-family: Arial, monospace;
+    font-variant: all-small-caps;
+    font-variant-numeric: oldstyle-nums;
 	font-size: 85%;
 	letter-spacing: 0.03em;
 	color: brown;
