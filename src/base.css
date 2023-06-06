@@ -1185,41 +1185,33 @@ Possible extra rowspan handling
 /** Table of Contents *********************************************************/
 
 	.toc a {
+		color: black;
+		color: var(--toclink-text);
 		/* More spacing; use padding to make it part of the click target. */
 		padding: 0.1rem 1px 0;
 		/* Larger, more consistently-sized click target */
 		display: block;
 		/* Switch to using border-bottom */
 		text-decoration: none;
-		border-bottom: 1px solid;
-		border-bottom: 1px solid;
-		/* Reverse color scheme */
-		color: black;
-		color: var(--toclink-text);
-		text-decoration-color: #3980b5;
-		text-decoration-color: var(--toclink-underline);
-		border-color: #3980b5;
-		border-color: var(--toclink-underline);
+		border-bottom: 3px solid transparent;
+		margin-bottom: -2px;
 	}
 	.toc a:visited {
 		color: black;
 		color: var(--toclink-visited-text);
-		text-decoration-color: #054572;
-		text-decoration-color: var(--toclink-visited-underline);
-		border-color: #054572;
-		border-color: var(--toclink-visited-underline);
 	}
 	.toc a:focus,
 	.toc a:hover {
 		background: #f8f8f8;
 		background: rgba(75%, 75%, 75%, .25);
 		background: var(--a-hover-bg);
-		border-bottom-width: 3px;
-		margin-bottom: -2px;
+		border-bottom-color: #3980b5;
+		border-bottom-color: var(--toclink-underline);
 	}
-	.toc a:not(:focus):not(:hover) {
-		/* Allow colors to cascade through from link styling */
-		border-bottom-color: transparent;
+	.toc a:visited:focus,
+	.toc a:visited:hover {
+		border-bottom-color: #054572;
+		border-bottom-color: var(--toclink-visited-underline);
 	}
 
 	.toc, .toc ol, .toc ul, .toc li {
