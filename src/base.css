@@ -557,15 +557,13 @@
 	 padding-left: 2em;
 	}
 	dl.switch > dt {
-	 text-indent: -1.5em;
 	 margin-top: 1em;
-	}
-	:where(dl.switch > dt > *) {
-		text-indent: 0; /* break inheritance */
 	}
 	dl.switch > dt + dt {
 	 margin-top: 0;
 	}
+
+	/* For older browsers */
 	dl.switch > dt::before {
 	 content: '\21AA';
 	 padding: 0 0.5em 0 0;
@@ -574,6 +572,25 @@
 	 text-align: right;
 	 line-height: 0.5em;
 	}
+	dl.switch > dt {
+	 text-indent: -1.5em;
+	}
+	:where(dl.switch > dt > *) {
+		text-indent: 0; /* break inheritance on e.g. list children */
+	}
+	/* Undo above styling and use list-style for proper bullets */
+	@supports (list-style: "\21AA  ") {
+		dl.switch > dt {
+			display: list-item;
+			list-style: "\21AA  ";
+			margin-left: -1.5em;
+			text-indent: 0;
+		}
+		dl.switch > dt::before {
+			content: none;
+		}
+	}
+
 
 /** Terminology Markup ********************************************************/
 
