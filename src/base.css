@@ -560,6 +560,9 @@
 	 text-indent: -1.5em;
 	 margin-top: 1em;
 	}
+	:where(dl.switch > dt > *) {
+		text-indent: 0; /* break inheritance */
+	}
 	dl.switch > dt + dt {
 	 margin-top: 0;
 	}
