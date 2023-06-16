@@ -986,65 +986,91 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
 
 </section>
 
-  <section>
-  <h4 id="char_ref_template"><span class="secno">2.3.7</span> Character naming template</h4>
+<h4 id="unicode-codepoints">
+<span class="secno">2.4.3</span> Unicode Codepoint Templates</h4>
 
+  <p>The stylesheet includes support for the character template
+  used in Internationalization specifications;
+  see <a href="https://www.w3.org/International/i18n-activity/guidelines/editing#codepoints">I18N Editing Guidelines</a>
+  and <a href="https://www.w3.org/TR/international-specs#char_ref_template"><cite>Best Practices for International Specifications</cite></a>
 
+<h5 id="unicode-codepoint-simple">
+<span class="secno">2.4.3.1</span> Single Codepoint Template</h5>
 
-	<div class="xref" style="font-size: 80%; padding: 1em; background-color: #fbf4e0;border-radius: 5px;padding: .25em 1em;"><span class="seealso">See also</span>
-	<ul>
-	   <li>[<a href="https://www.w3.org/International/i18n-activity/guidelines/editing#codepoints">I18N Editing Guidelines</a>].</li>
-	   <li>[<a href="https://www.w3.org/TR/international-specs#char_ref_template"><cite>Best Practices for International Specifications</cite></a>].</li>
-	</ul>
-	</div>
+  <p>For visible characters, the single-codepoint template looks like this:
 
-<p>Use of the character template used in Internationalization specifications is recommended. For most characters, the template looks like this:</p>
+  <pre>
+<!-- -->&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi>
+<!-- -->&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
+  </pre>
 
-<pre>
-&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi>
-&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
-</pre>
+  <p>For invisible characters (such as control characters) or for whitespace,
+  the character and its surrounding <code>bdi</code> element
+  should be omitted:
 
-<p>For invisible characters (such as control characters) or for whitespace, the character and its surrounding <code translate="no" class="kw">bdi</code> element should be omitted:</p>
+  <pre>
+<!-- -->&lt;span class="codepoint" translate="no">
+<!-- -->&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
+  </pre>
 
-<pre>
-&lt;span class="codepoint" translate="no">
-&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
-</pre>
+  <aside class="example" title="Example of a character reference">
+    <p>Filling in the above template like this:</p>
 
-<aside class="example" title="Example of a character reference">
-<p>Filling in the above template like this:</p>
+    <pre>
+<!-- -->&lt;span class="codepoint" translate="no">
+<!-- -->  &lt;bdi lang="fr">&#x00E9;&lt;/bdi>&lt;span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span>
+<!-- -->&lt;/span>
+    </pre>
 
-<pre>
-&lt;span class="codepoint" translate="no">
-   &lt;bdi lang="fr">&#x00E9;&lt;/bdi>&lt;span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span>
-&lt;/span>
-</pre>
+    <p>Produces output in the page like this: <span class="codepoint" translate="no"><bdi lang="fr">é</bdi> <span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span>.
+  </aside>
 
-<p>Produces output in the page like this: <span class="codepoint" translate="no"><bdi lang="fr">é</bdi><span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span>.</p>
-</aside>
+  <p class="note">The <code>bdi</code> element is used
+  to ensure that example characters that are right-to-left
+  do not interfere with the layout of the page.
+  Although the elements are shown on separate lines in this section (for clarity),
+  you do not need to include line breaks between
+  the closing <code>bdi</code>
+  and the following <code>span</code> element.
 
-<p>The <code translate="no" class="kw">bdi</code> element is used to ensure that example characters that are right-to-left do not interfere with the layout of the page. Although the elements are shown on separate lines in this section (for clarity), you do not need to include line breaks or a space between the closing <code translate="no" class="kw">bdi</code> and the following <code translate="no" class="kw">span</code> element: spacing and presentation is controlled by styling.</p>
+  <p>The <code>lang</code> attribute on <code>bdi</code>
+  should be filled in appropriately
+  to get the correct font selection for a given context.
+  Examples in East Asian languages
+  (such as Chinese, Japanese, or Korean)
+  or in the Arabic script
+  can sometimes require greater care in choosing a language tag.
 
-<p>The <code translate="no" class="kw">lang</code> attribute should be filled in appropriately to get the correct font selection for a given context. Examples in East Asian languages (such as Chinese, Japanese, or Korean) or in the Arabic script can sometimes require greater care in choosing a language tag.</p>
+<h5 id="unicode-codepoint-sequence">
+<span class="secno">2.4.3.1</span> Multiple Codepoint Template</h5>
 
-<p>Short sequences of characters should list the character names, separated by unstyled <span translate="no" style="font-weight:bold">+</span> signs.
+  <p>Short sequences of characters should list the character names,
+  separated by unstyled <code>+</code> signs.
 
-<aside class="example" title="Example of a code point sequence">
-	<p>This example: <span class="codepoint" translate="no"><bdi lang="hi">&#x0928&#x093f;</bdi><span class="uname">U+0928 DEVANAGARI LETTER NA</span> + <span class="uname">U+093F  DEVANAGARI VOWEL SIGN I</span></span> uses the following markup:</p>
+  <aside class="example" title="Example of a code point sequence">
+    <p>This example:
+      <span class="codepoint" translate="no"><bdi lang="hi">&#x0928&#x093f;</bdi>
+      <span class="uname">U+0928 DEVANAGARI LETTER NA</span>
+      +
+      <span class="uname">U+093F  DEVANAGARI VOWEL SIGN I</span></span>
+      uses the following markup:
 
-<pre>
-&lt;span class="codepoint" translate="no">
-  &lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>&lt;span class="uname">U+0928 DEVANAGARI LETTER NA&lt;/span> +
-  &lt;span class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/span>
-&lt;/span>
-</pre>
+      <pre>
+<!-- -->&lt;span class="codepoint" translate="no">
+<!-- -->  &lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>
+<!-- -->  &lt;span class="uname">U+0928 DEVANAGARI LETTER NA&lt;/span> +
+<!-- -->  &lt;span class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/span>
+<!-- -->&lt;/span>
+      </pre>
+  </aside>
 
-</aside>
-
-<p>Long sequences will sometimes list the code points without including the character names, although the character names should be retained where possible for clarity. An example can be found in <a href="https://www.w3.org/TR/international-specs#char_term_def"><cite>Best Practices for International Specifications</cite></a> in the discussion of the composed "family" emoji: <span class="codepoint"><bdi lang="en">👨‍👩‍👧‍👧</bdi><span class="uname">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467</span></span></p>
-
-</section>
+  <p>Long sequences will sometimes list the code points
+  without including the character names,
+  although the character names should be retained where possible for clarity.
+  An example can be found in
+  <a href="https://www.w3.org/TR/international-specs#char_term_def"><cite>Best Practices for International Specifications</cite></a>
+  in the discussion of the composed "family" emoji:
+  <span class="codepoint"><bdi lang="en">👨‍👩‍👧‍👧</bdi><span class="uname">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467</span></span>
 
 <h3 id="misc">
 <span class="secno">2.5</span>
