@@ -1365,19 +1365,22 @@ Possible extra rowspan handling
 	}
 
 /** Examples of Unicode characters using the I18N template ****************/
-.codepoint bdi {
-    line-height: 1em;
-    font-size: 120%;
-    margin-inline: 0.25em;
-}
 
-.uname {
-    font-variant: all-small-caps;
-    font-variant-numeric: oldstyle-nums;
-	font-size: 85%;
-	letter-spacing: 0.03em;
-	color: brown;
-}
+	.codepoint bdi {
+		line-height: 1em;
+		font-size: 125%;
+		padding-inline: 0.25em;
+		background: #8882;
+		border-radius: 0.25em;
+	}
+
+	.uname {
+		font-variant: all-small-caps;
+		font-variant-numeric: oldstyle-nums;
+		font-size: 85%;
+		letter-spacing: 0.03em;
+		color: brown;
+	}
 
 /** Outdated warning **********************************************************/
 
