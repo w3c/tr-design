@@ -940,26 +940,22 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
 	
 <p>Use of the character template used in Internationalization specifications is recommended. For most characters, the template looks like this:</p>
 
-<pre>
-&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi> 
-&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
-</pre>
+<code>
+&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi>&lt;code class="uname">U+XXXX UNICODE CHARACTER NAME ALWAYS IN CAPS&lt;/span>&lt;/code>
+</code>
 
 <p>For invisible characters (such as control characters) or for whitespace, the character and its surrounding <code translate="no" class="kw">bdi</code> element should be omitted:</p>
 
-<pre>
-&lt;span class="codepoint" translate="no">
-&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
-</pre>
+<code>
+&lt;span class="codepoint" translate="no">&lt;code class="uname">U+XXXX UNICODE CHARACTER NAME ALWAYS IN CAPS&lt;/span>&lt;/code>
+</code>
 
 <aside class="example" title="Example of a character reference">
 <p>Filling in the above template like this:</p>
 
-<pre>
-&lt;span class="codepoint" translate="no">
-   &lt;bdi lang="fr">&#x00E9;&lt;/bdi>&lt;span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span>
-&lt;/span>
-</pre>
+<code>
+&lt;span class="codepoint" translate="no">&lt;bdi lang="fr">&#x00E9;&lt;/bdi>&lt;code class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/code>&lt;/span>
+</code>
 
 <p>Produces output in the page like this: <span class="codepoint" translate="no"><bdi lang="fr">é</bdi><span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span>.</p>
 </aside>
@@ -973,12 +969,9 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
 <aside class="example" title="Example of a code point sequence">
 	<p>This example: <span class="codepoint" translate="no"><bdi lang="hi">&#x0928&#x093f;</bdi><span class="uname">U+0928 DEVANAGARI LETTER NA</span> + <span class="uname">U+093F  DEVANAGARI VOWEL SIGN I</span></span> uses the following markup:</p>
 
-<pre>
-&lt;span class="codepoint" translate="no">
-  &lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>&lt;span class="uname">U+0928 DEVANAGARI LETTER NA&lt;/span> + 
-  &lt;span class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/span>
-&lt;/span>
-</pre>	
+<code>
+&lt;span class="codepoint" translate="no">&lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>&lt;code class="uname">U+0928 DEVANAGARI LETTER NA&lt;/code> +  &lt;code class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/code>&lt;/span>
+</code>	
 
 </aside>
 
@@ -997,30 +990,24 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
 <h5 id="unicode-codepoint-simple">
 <span class="secno">2.4.3.1</span> Single Codepoint Template</h5>
 
-  <p>For visible characters, the single-codepoint template looks like this:
+  <p>For visible characters, the single-codepoint template looks like this:</p>
 
-  <pre>
-<!-- -->&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi>
-<!-- -->&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
-  </pre>
+  <code>
+&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi>&lt;code class="uname">U+XXXX UNICODE CHARACTER NAME ALWAYS IN CAPS&lt;/code>&lt;/span>
+  </code>
 
-  <p>For invisible characters (such as control characters) or for whitespace,
-  the character and its surrounding <code>bdi</code> element
-  should be omitted:
+  <p>For invisible characters (such as control characters) or for whitespace, the character and its surrounding <code>bdi</code> element should be omitted:</p>
 
-  <pre>
-<!-- -->&lt;span class="codepoint" translate="no">
-<!-- -->&lt;span class="uname">U+XXXX Unicode_character_name&lt;/span>&lt;/span>
-  </pre>
+  <code>
+&lt;span class="codepoint" translate="no">&lt;code class="uname">U+XXXX UNICODE CHARACTER NAME ALWAYS IN CAPS&lt;/code>&lt;/span>
+  </code>
 
   <aside class="example" title="Example of a character reference">
     <p>Filling in the above template like this:</p>
 
-    <pre>
-<!-- -->&lt;span class="codepoint" translate="no">
-<!-- -->  &lt;bdi lang="fr">&#x00E9;&lt;/bdi>&lt;span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span>
-<!-- -->&lt;/span>
-    </pre>
+    <code>
+&lt;span class="codepoint" translate="no">&lt;bdi lang="fr">&#x00E9;&lt;/bdi>&lt;code class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/code>&lt;/span>
+    </code>
 
     <p>Produces output in the page like this: <span class="codepoint" translate="no"><bdi lang="fr">é</bdi> <span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span>.
   </aside>
@@ -1054,14 +1041,11 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
       +
       <span class="uname">U+093F  DEVANAGARI VOWEL SIGN I</span></span>
       uses the following markup:
+    </p>
 
-      <pre>
-<!-- -->&lt;span class="codepoint" translate="no">
-<!-- -->  &lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>
-<!-- -->  &lt;span class="uname">U+0928 DEVANAGARI LETTER NA&lt;/span> +
-<!-- -->  &lt;span class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/span>
-<!-- -->&lt;/span>
-      </pre>
+      <code>
+&lt;span class="codepoint" translate="no">&lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>&lt;code class="uname">U+0928 DEVANAGARI LETTER NA&lt;/code> + &lt;code class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/code>&lt;/span>
+      </code>
   </aside>
 
   <p>Long sequences will sometimes list the code points
