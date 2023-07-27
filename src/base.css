@@ -1380,6 +1380,7 @@ Possible extra rowspan handling
 	}
 
 	.uname {
+	    font-family: Arial, monospace;
 		font-size: 0.75em;                    
 		letter-spacing: 0.03em;
 		color: brown;
