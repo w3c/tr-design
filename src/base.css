@@ -589,6 +589,10 @@
 		dl.switch > dt::before {
 			content: none;
 		}
+		dl {
+			/* don't accidentally increment the implied list-item counter */
+			counter-reset: list-item;
+		}
 	}
 
 
