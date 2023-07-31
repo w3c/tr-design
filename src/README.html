@@ -936,7 +936,7 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
   and <a href="https://www.w3.org/TR/international-specs#char_ref_template"><cite>Best Practices for International Specifications</cite></a>
 
 	
-<p>For most characters, the template looks like this:</p>
+<p>Use the following markup to represent most characters:</p>
 
 <code>
 &lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#xXXXX;&lt;/bdi>&lt;code class="uname">U+XXXX UNICODE_CHARACTER_NAME_ALL_IN_CAPS&lt;/code>&lt;/span>
@@ -955,7 +955,7 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
 
 <p>The <code translate="no" class="kw">bdi</code> element is used to ensure that example characters that are right-to-left do not interfere with the layout of the page. Do not include line breaks or a space between the closing <code translate="no" class="kw">bdi</code> and the following <code translate="no" class="kw">span</code> element; spacing and presentation is controlled by styling.</p>
 
-<p>The <code translate="no" class="kw">lang</code> attribute should be filled in appropriately to get the correct font selection for a given context. Examples in East Asian languages (such as Chinese, Japanese, or Korean) or in the Arabic script can sometimes require greater care in choosing a language tag. In some cases, it might also be necessary for you to adjust the <kbd translate="no">font-family</kbd> and/or <kbd translate="no">font-size</kbd> in your own style sheet for characters or character sequences in a given language.</p>
+<p>The <code translate="no" class="kw">lang</code> attribute should be filled in appropriately to get the correct font selection for a given context. Examples in East Asian languages (such as Chinese, Japanese, or Korean) or in the Arabic script can sometimes require greater care in choosing a language tag.  For certain languages, it may be necessary to style the <code>bdi</code> element with a <kbd translate="no">font-family</kbd> and <kbd translate="no">font-size</kbd> in your own stylesheet.</p>
 
 <p>For invisible characters (such as control characters) or for whitespace, use an image instead of the character; or you may also omit the character and its surrounding <code translate="no" class="kw">bdi</code> element.</p>
 
