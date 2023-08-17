@@ -757,7 +757,8 @@
 		margin: 2.5em 0;
 	}
 	.figure img,    .sidefigure img,    figure img,
-	.figure object, .sidefigure object, figure object {
+	.figure object, .sidefigure object, figure object,
+        .figure svg,    .sidefigure svg,    figure svg {
 		max-width: 100%;
 		margin: auto;
 		height: auto;
