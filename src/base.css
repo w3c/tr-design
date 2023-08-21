@@ -1365,7 +1365,7 @@ Possible extra rowspan handling
 	}
 
 /** Styles to support the mention of Unicode characters and character sequences *****/
-   /* For more information, see: https://www.w3.org/TR/international-specs#char_ref  */
+ /* For more information, see: https://www.w3.org/TR/international-specs#char_ref  */
 
 	.codepoint bdi {
 		line-height: 1em;
@@ -1374,13 +1374,13 @@ Possible extra rowspan handling
 	}
 	
 	.codepoint img {
-	    height: 2em;
-	    margin-inline: 0.25em;
-        vertical-align: bottom;
+		height: 2em;
+		margin-inline: 0.25em;
+		vertical-align: bottom;
 	}
 
 	.uname {
-	    font-family: Arial, monospace;
+		font-family: Arial, monospace;
 		font-size: 0.75em;                    
 		letter-spacing: 0.03em;
 		color: brown;
