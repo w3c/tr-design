@@ -1370,6 +1370,7 @@ Possible extra rowspan handling
 	.codepoint bdi {
 		line-height: 1em;
 		font-size: 1.25em;
+		padding-inline: 0.25em;
 	}
 	
 	.codepoint img {
