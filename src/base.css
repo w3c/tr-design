@@ -1364,19 +1364,12 @@ Possible extra rowspan handling
 		font-weight: bold;
 	}
 
-/** Styles to support the mention of Unicode characters and character sequences *****/
- /* For more information, see: https://www.w3.org/TR/international-specs#char_ref  */
+/** Unicode characters and character sequences *******************************/
 
 	.codepoint bdi {
 		line-height: 1em;
 		font-size: 1.25em;
 		padding-inline: 0.25em;
-	}
-	
-	.codepoint img {
-		height: 2em;
-		margin-inline: 0.25em;
-		vertical-align: bottom;
 	}
 
 	.uname {
