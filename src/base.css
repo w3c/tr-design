@@ -67,6 +67,8 @@
  *     It's better to design things to fit into a narrower measure if possible.
  *
  *   - js-added ToC jump links (see fixup.js)
+ * 
+ *   - .uname and .codepoint for character names and examples
  *
  ******************************************************************************/
 
@@ -1360,6 +1362,21 @@ Possible extra rowspan handling
 	/* The link in the first column in the property table (formerly a TD) */
 	table.index th:first-child a {
 		font-weight: bold;
+	}
+
+/** Unicode characters and character sequences *******************************/
+
+	.codepoint bdi {
+		line-height: 1em;
+		font-size: 1.25em;
+		padding-inline: 0.25em;
+	}
+
+	.uname {
+		font-family: Arial, monospace;
+		font-size: 0.75em;                    
+		letter-spacing: 0.03em;
+		color: brown;
 	}
 
 /** Outdated warning **********************************************************/

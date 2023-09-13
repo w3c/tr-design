@@ -1,6 +1,6 @@
 <!doctype html><html lang="en">
  <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Sample W3C Specification</title>
   <link rel="stylesheet" href="W3C-WD.css">
@@ -138,7 +138,7 @@
               Change Marks</a>
             <li><a href="#inline"><span class="secno">2.4.2</span>
               Recommended Inline Markup</a>
-            <li><a href="#unicode-codepoints"><span class="secno">2.4.2</span>
+            <li><a href="#unicode-codepoints"><span class="secno">2.4.3</span>
               Unicode Codepoint Template</a></li>
           </ol>
         <li><a href="#misc"><span class="secno">2.5</span>
@@ -926,12 +926,106 @@ Recommended Inline Markup (<code>dfn</code>/<code>var</code>/<code>samp</code>/<
   A future revision of the site-wide styles may incorporate some of the more
   common distinctions.
 
+<h4 id="unicode-codepoints">
+<span class="secno">2.4.3</span> Unicode Codepoint Templates</h4>
+
+  <p>The stylesheet includes support for the character template
+  used in Internationalization specifications;
+  see <a href="https://www.w3.org/International/i18n-activity/guidelines/editing#codepoints">I18N Editing Guidelines</a>
+  and <a href="https://www.w3.org/TR/international-specs#char_ref_template"><cite>Best Practices for International Specifications</cite></a>
+
+<h5 id="unicode-codepoint-simple">
+<span class="secno">2.4.3.1</span> Single Codepoint Template</h5>
+
+  <p>For visible characters, the single-codepoint template looks like this:
+
+  <pre>
+<!-- -->&lt;span class="codepoint" translate="no">&lt;bdi lang="??">&#x<var>XXXX</var>;&lt;/bdi>
+<!-- -->&lt;code class="uname">U+<var>XXXX</var> <var>UNICODE NAME IN ALL CAPS</var>&lt;/code>&lt;/span>
+  </pre>
+
+  <p>For invisible characters (such as control characters) or for whitespace,
+  the character and its surrounding <code>bdi</code> element
+  should be omitted:
+
+  <pre>
+<!-- -->&lt;span class="codepoint" translate="no">
+<!-- -->&lt;code class="uname">U+<var>XXXX</var> <var>UNICODE NAME IN ALL CAPS</var>&lt;/code>&lt;/span>
+  </pre>
+
+  <aside class="example" title="Example of a character reference">
+    <p>Filling in the above template like this:</p>
+
+    <pre>
+<!-- -->&lt;span class="codepoint" translate="no">
+<!-- -->  &lt;bdi lang="fr">&#x<strong>00E9</strong>;&lt;/bdi>&lt;code class="uname">U+<strong>00E9</strong> <strong>LATIN SMALL LETTER E WITH ACUTE</strong>&lt;/code>
+<!-- -->&lt;/span>
+    </pre>
+
+    <p>Produces output in the page like this: <span class="codepoint" translate="no"><bdi lang="fr">é</bdi> <code class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</code></span>.
+  </aside>
+
+  <p>The <code>lang</code> attribute on <code>bdi</code>
+  should be filled in appropriately
+  to get the correct font selection for a given context.
+  Examples in East Asian languages
+  (such as Chinese, Japanese, or Korean)
+  or in the Arabic script
+  can sometimes require greater care in choosing a language tag.
+  For certain languages,
+  it may be necessary to style the <code>bdi</code> element
+  with a <code>font-family</code> and <code>font-size</code>
+  in the spec’s local style sheet.
+
+  <p class="note"><span class="marker">Note:</span>
+  The <code>bdi</code> element is used
+  to ensure that example characters that are right-to-left
+  do not interfere with the layout of the page.
+
+  <p class="note"><span class="marker">Note:</span>
+  Although the elements of this template
+  are shown on separate lines in this section (for readability),
+  you can put the entire sequence on one line
+  with just a regular space (U+0020) between
+  the closing <code>bdi</code>
+  and the opening <code>code</code> tag.
+
+<h5 id="unicode-codepoint-sequence">
+<span class="secno">2.4.3.1</span> Multiple Codepoint Template</h5>
+
+  <p>Short sequences of characters should list the character names,
+  separated by unstyled <code>+</code> signs.
+
+  <aside class="example" title="Example of a code point sequence">
+    <p>This example:
+      <span class="codepoint" translate="no"><bdi lang="hi">&#x0928;&#x093f;</bdi>
+      <code class="uname">U+0928 DEVANAGARI LETTER NA</code>
+      +
+      <code class="uname">U+093F  DEVANAGARI VOWEL SIGN I</code></span>
+      uses the following markup:
+
+      <pre>
+<!-- -->&lt;span class="codepoint" translate="no">
+<!-- -->  &lt;bdi lang="hi">&amp;#x0928;&amp;#x093f;&lt;/bdi>
+<!-- -->  &lt;code class="uname">U+0928 DEVANAGARI LETTER NA&lt;/code> +
+<!-- -->  &lt;code class="uname">U+093F DEVANAGARI VOWEL SIGN I&lt;/cdode>
+<!-- -->&lt;/span>
+      </pre>
+  </aside>
+
+  <p>For long sequences, it is okay to just list the code points
+  without the character names,
+  although the character names should be retained where possible for clarity.
+  An example can be found in the discussion of the composed “family” emoji
+  (<span class="codepoint"><bdi lang="en">👨‍👩‍👧‍👧</bdi><code class="uname">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467</code></span>)
+  in <a href="https://www.w3.org/TR/international-specs#char_term_def"><cite>Best Practices for International Specifications</cite></a>.
+
 <h3 id="misc">
-<span class="secno">2.4</span>
+<span class="secno">2.5</span>
 Miscellaneous</h3>
 
 <h4 id="overlarge">
-<span class="secno">2.4.1</span>
+<span class="secno">2.5.1</span>
 Overlarge Elements</h4>
 
   <p>The style sheet currently imposes for readability a maximum measure of 50em.
@@ -1285,15 +1379,15 @@ Sample Spec Section</h2>
       Therefore, the UA may reassign specific characters
       or introduce additional levels of prioritization
       to handle <a href="#justification-opportunity">justification opportunities</a> involving symbols and punctuation. </p>
-   <p class="example" id="example-d012ef7c"> For example, there are traditionally no <a href="#justification-opportunity">justification opportunities</a> between consecutive
-      U+2014 Em Dash ‘—’,
-      U+2015 Horizontal Bar ‘―’,
-      U+2026 Horizontal Ellipsis ‘…’,
-      or U+2025 Two Dot Leader ‘‥’
+   <p class="example" id="example-d012ef7c"> For example, there are traditionally no <a href="#justification-opportunity">justification opportunities</a> between consecutive   
+   <span class="codepoint" translate="no"><bdi lang="en">&#x2014;</bdi><code class="uname">U+2014 EM DASH</code></span>
+   <span class="codepoint" translate="no"><bdi lang="en">&#x2015;</bdi><code class="uname">U+2015 HORIZONTAL BAR</code></span>
+   <span class="codepoint" translate="no"><bdi lang="en">&#x2026;</bdi><code class="uname">U+2026 HORIZONTAL ELLIPSIS</code></span>
+   or <span class="codepoint" translate="no"><bdi lang="en">&#x2025;</bdi><code class="uname">U+2025 TWO DOT LEADER</code></span>
       characters <a href="#biblio-jlreq">[JLREQ]</a>;
       thus a UA might assign these characters to a “never” prioritization level.
       As another example, certain fullwidth punctuation characters
-      (such as U+301A Left White Square Bracket ‘〚’)
+      (such as <span class="codepoint" translate="no"><bdi lang="ja">&#x301A;</bdi><code class="uname">U+301A LEFT WHITE SQUARE BRACKET</code></span>)
       are considered to contain a <a href="#justification-opportunity">justification opportunity</a> in Japanese.
       The UA might therefore assign these characters to a higher prioritization
       level than the opportunities between ideographic characters. </p>
