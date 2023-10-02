@@ -143,7 +143,7 @@
 	--note-border: #52e052;
 	--note-bg: #e9fbe9;
 	--note-text: var(--text);
-	--noteheading-text: hsl(120, 70%, 30%);
+	--noteheading-text: hsl(120, 70%, 22%);
 	--notesummary-underline: silver;
 
 	--advisement-border: orange;
