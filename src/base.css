@@ -1371,6 +1371,12 @@ Possible extra rowspan handling
 		font-size: 1.25em;
 		padding-inline: 0.25em;
 	}
+	
+	.codepoint img {
+		height: 2em;
+		margin-inline: 0.25em;
+		vertical-align: bottom;
+	}
 
 	.uname {
 		font-family: Arial, monospace;
