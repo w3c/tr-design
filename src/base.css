@@ -847,6 +847,25 @@
 		padding-right: 0em;
 	}
 
+	.algorithm:not(.heading) {
+		padding: .5em;
+		border: thin solid #ddd;
+		border-radius: .5em;
+		margin: .5em calc(-0.5em - 1px);
+	}
+
+	.algorithm:not(.heading) > :first-child {
+		margin-top: 0;
+	}
+
+	.algorithm:not(.heading) > :last-child {
+		margin-bottom: 0;
+	}
+
+	.algorithm .algorithm {
+		margin: 1em 0;
+	}
+
 /** Blockquotes ***************************************************************/
 
 	blockquote {
