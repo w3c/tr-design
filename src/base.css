@@ -179,6 +179,8 @@
 	--outdated-shadow: red;
 
 	--editedrec-bg: darkorange;
+
+	--uname: brown;
 }
 
 /******************************************************************************/
@@ -1382,7 +1384,7 @@ Possible extra rowspan handling
 		font-family: Arial, monospace;
 		font-size: 0.75em;                    
 		letter-spacing: 0.03em;
-		color: brown;
+		color: var(--uname);
 	}
 
 /** Outdated warning **********************************************************/
