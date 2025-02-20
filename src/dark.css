@@ -33,7 +33,7 @@ img { background: white; }
 	--tocsidebar-text: var(--text);
 	--tocsidebar-bg: #080808;
 	--tocsidebar-shadow: rgba(255,255,255,.1);
-	--tocsidebar-heading-text: hsla(203,20%,40%,.7);
+	--tocsidebar-heading-text: var(--heading-text);
 
 	--toclink-text: var(--text);
 	--toclink-underline: #6af;
