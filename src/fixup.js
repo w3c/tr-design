@@ -52,6 +52,7 @@
       document.body.classList.add('toc-sidebar');
       document.body.classList.remove('toc-inline');
       toggle.innerHTML = collapseSidebarText;
+      toggle.setAttribute("aria-label", "Collapse sidebar");
       if (!skipScroll) {
         window.scrollBy(0, 0 - tocHeight);
       }
@@ -62,6 +63,7 @@
       document.body.classList.add('toc-inline');
       document.body.classList.remove('toc-sidebar');
       toggle.innerHTML = expandSidebarText;
+        toggle.setAttribute("aria-label", "Expand sidebar");
       if (!skipScroll) {
         window.scrollBy(0, tocNav.offsetHeight);
       }
@@ -81,6 +83,7 @@
     toggle.class = 'toc-toggle';
     toggle.href = '#toc';
     toggle.innerHTML = collapseSidebarText;
+    toggle.setAttribute("aria-label", "Collapse sidebar");
 
     sidebarMedia.addListener(autoToggle);
     var toggler = function(e) {
@@ -107,6 +110,7 @@
       tocJump.id = 'toc-jump';
       tocJump.href = '#toc';
       tocJump.innerHTML = tocJumpText;
+        tocJump.setAttribute("aria-label", "Jump to Table of Contents");
       tocNav.appendChild(tocJump);
     }
 
@@ -235,10 +239,6 @@
       document.body.classList.add("outdated-spec");
       var node = document.createElement("p");
       node.classList.add("outdated-warning");
-      node.tabIndex = -1;
-      node.setAttribute("role", "dialog");
-      node.setAttribute("aria-modal", "true");
-      node.setAttribute("aria-labelledby", "outdatedWarning");
       if (currentSpec.style) {
           node.classList.add(currentSpec.style);
       }
@@ -273,10 +273,11 @@
           node.classList.toggle("outdated-collapsed");
           document.body.classList.toggle("outdated-spec");
           button.innerText = (isOpen) ? '\u25BE collapse' : '\u25B4 expand';
+          button.setAttribute = "aria-label" (isOpen) ? "Collapse warning" : "Expand warning";
         }
       }
 
-      document.body.appendChild(node);
+      document.body.prepend(node);
       button.focus();
       window.onkeydown = function (event) {
         var isCollapsed = node.classList.contains("outdated-collapsed");
@@ -296,7 +297,9 @@
         var containsTarget = node.contains(event.target);
         if (!isCollapsed && !containsTarget) {
           event.stopPropagation();
-          node.focus();
+          node.parentNode.removeChild(node); // Remove node from its current position
+          document.body.appendChild(node);  // Append node to the bottom of the DOM
+      
         }
       }, true); // use capture to enable event delegation as focus doesn't bubble up
     };
