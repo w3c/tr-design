@@ -110,7 +110,7 @@
       tocJump.id = 'toc-jump';
       tocJump.href = '#toc';
       tocJump.innerHTML = tocJumpText;
-        tocJump.setAttribute("aria-label", "Jump to Table of Contents");
+      tocJump.setAttribute("aria-label", "Jump to Table of Contents");
       tocNav.appendChild(tocJump);
     }
 
