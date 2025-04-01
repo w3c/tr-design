@@ -63,7 +63,7 @@
       document.body.classList.add('toc-inline');
       document.body.classList.remove('toc-sidebar');
       toggle.innerHTML = expandSidebarText;
-        toggle.setAttribute("aria-label", "Expand sidebar");
+      toggle.setAttribute("aria-label", "Expand sidebar");
       if (!skipScroll) {
         window.scrollBy(0, tocNav.offsetHeight);
       }
