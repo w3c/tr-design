@@ -88,6 +88,7 @@
     toggle.class = 'toc-toggle';
     toggle.href = '#toc';
     toggle.innerHTML = collapseSidebarText;
+    toggle.setAttribute('aria-labelledby', `${tocCollapseId}-text`);
 
     sidebarMedia.addListener(autoToggle);
     var toggler = function(e) {
@@ -243,10 +244,6 @@
       document.body.classList.add("outdated-spec");
       var node = document.createElement("p");
       node.classList.add("outdated-warning");
-      node.tabIndex = -1;
-      node.setAttribute("role", "dialog");
-      node.setAttribute("aria-modal", "true");
-      node.setAttribute("aria-labelledby", "outdatedWarning");
       if (currentSpec.style) {
           node.classList.add(currentSpec.style);
       }
@@ -281,10 +278,12 @@
           node.classList.toggle("outdated-collapsed");
           document.body.classList.toggle("outdated-spec");
           button.innerText = (isOpen) ? '\u25BE collapse' : '\u25B4 expand';
+          button.setAttribute = "aria-label" (isOpen) ? "Collapse warning" : "Expand warning";
         }
       }
 
-      document.body.appendChild(node);
+      // add to top of DOM for easier discoverability
+      document.body.prepend(node);
       button.focus();
       window.onkeydown = function (event) {
         var isCollapsed = node.classList.contains("outdated-collapsed");
@@ -304,7 +303,10 @@
         var containsTarget = node.contains(event.target);
         if (!isCollapsed && !containsTarget) {
           event.stopPropagation();
-          node.focus();
+          // add to bottom of DOM as the user is already aware of the warning
+          node.parentNode.removeChild(node);
+          document.body.appendChild(node);
+      
         }
       }, true); // use capture to enable event delegation as focus doesn't bubble up
     };
