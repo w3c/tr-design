@@ -15,13 +15,18 @@
     details.open = !localStorage.getItem("tr-metadata") || localStorage.getItem("tr-metadata") === 'true';
   } catch (e) {}; // ignore errors for this interaction
 
+  const tocToggleId = 'toc-toggle';
+  const tocJumpId = 'toc-jump';
+  const tocCollapseId = 'toc-collapse';
+  const tocExpandId = 'toc-expand';
+
   var ESCAPEKEY = 27;
   var collapseSidebarText = '<span aria-hidden="true">←</span> '
-                          + '<span>Collapse Sidebar</span>';
+                          + `<span id="${tocCollapseId}-text">Collapse Sidebar</span>`;
   var expandSidebarText   = '<span aria-hidden="true">→</span> '
-                          + '<span>Pop Out Sidebar</span>';
+                          + `<span id="${tocExpandId}-text">Pop Out Sidebar</span>`;
   var tocJumpText         = '<span aria-hidden="true">↑</span> '
-                          + '<span>Jump to Table of Contents</span>';
+                          + `<span id="${tocJumpId}-text">Jump to Table of Contents</span>`;
 
   var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
   var autoToggle   = function(e){ toggleSidebar(e.matches) };
@@ -45,14 +50,14 @@
       skipScroll = window.scrollY < headY;
     }
 
-    var toggle = document.getElementById('toc-toggle');
+    var toggle = document.getElementById(tocToggleId);
     var tocNav = document.getElementById('toc');
     if (on) {
       var tocHeight = tocNav.offsetHeight;
       document.body.classList.add('toc-sidebar');
       document.body.classList.remove('toc-inline');
       toggle.innerHTML = collapseSidebarText;
-      toggle.setAttribute("aria-label", "Collapse sidebar");
+      toggle.setAttribute('aria-labelledby', `${tocCollapseId}-text`);
       if (!skipScroll) {
         window.scrollBy(0, 0 - tocHeight);
       }
@@ -63,7 +68,7 @@
       document.body.classList.add('toc-inline');
       document.body.classList.remove('toc-sidebar');
       toggle.innerHTML = expandSidebarText;
-      toggle.setAttribute("aria-label", "Expand sidebar");
+      toggle.setAttribute('aria-labelledby', `${tocExpandId}-text`);
       if (!skipScroll) {
         window.scrollBy(0, tocNav.offsetHeight);
       }
@@ -79,7 +84,7 @@
     /* Create the sidebar toggle in JS; it shouldn't exist when JS is off. */
     var toggle = document.createElement('a');
       /* This should probably be a button, but appearance isn't standards-track.*/
-    toggle.id = 'toc-toggle';
+    toggle.id = tocToggleId;
     toggle.class = 'toc-toggle';
     toggle.href = '#toc';
     toggle.innerHTML = collapseSidebarText;
@@ -104,13 +109,13 @@
       document.body.insertBefore(tocNav, document.body.firstChild);
     }
     /* While we're at it, make sure we have a Jump to Toc link. */
-    var tocJump = document.getElementById('toc-jump');
+    var tocJump = document.getElementById(tocJumpId);
     if (!tocJump) {
       tocJump = document.createElement('a');
-      tocJump.id = 'toc-jump';
+      tocJump.id = tocJumpId;
       tocJump.href = '#toc';
       tocJump.innerHTML = tocJumpText;
-      tocJump.setAttribute("aria-label", "Jump to Table of Contents");
+      tocJump.setAttribute('aria-labelledby', `${tocJumpId}-text`);
       tocNav.appendChild(tocJump);
     }
 
@@ -119,7 +124,7 @@
 
   var toc = document.getElementById('toc');
   if (toc) {
-    if (!document.getElementById('toc-toggle')) {
+    if (!document.getElementById(tocToggleId)) {
       createSidebarToggle();
     }
     toggleSidebar(sidebarMedia.matches, true);
