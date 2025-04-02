@@ -88,7 +88,7 @@
     toggle.class = 'toc-toggle';
     toggle.href = '#toc';
     toggle.innerHTML = collapseSidebarText;
-    toggle.setAttribute("aria-label", "Collapse sidebar");
+    toggle.setAttribute('aria-labelledby', `${tocCollapseId}-text`);
 
     sidebarMedia.addListener(autoToggle);
     var toggler = function(e) {
