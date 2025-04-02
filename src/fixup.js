@@ -282,6 +282,7 @@
         }
       }
 
+      // add to top of DOM for easier discoverability
       document.body.prepend(node);
       button.focus();
       window.onkeydown = function (event) {
@@ -302,8 +303,9 @@
         var containsTarget = node.contains(event.target);
         if (!isCollapsed && !containsTarget) {
           event.stopPropagation();
-          node.parentNode.removeChild(node); // Remove node from its current position
-          document.body.appendChild(node);  // Append node to the bottom of the DOM
+          // add to bottom of DOM as the user is already aware of the warning
+          node.parentNode.removeChild(node);
+          document.body.appendChild(node);
       
         }
       }, true); // use capture to enable event delegation as focus doesn't bubble up
