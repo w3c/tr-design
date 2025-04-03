@@ -321,13 +321,18 @@
   /* Dark mode toggle */
   const darkCss = document.querySelector('link[rel~="stylesheet"][href^="https://www.w3.org/StyleSheets/TR/2021/dark"]');
   if (darkCss) {
-    const colorScheme = localStorage.getItem("tr-theme") || "auto";
-    const browserDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = colorScheme === "auto" ? (browserDarkMode ? "dark" : "light") : colorScheme;
+    let colorScheme = localStorage.getItem("tr-theme") || "auto";
+    darkCss.media = "";
+    function updateTheme() {
+      colorScheme = localStorage.getItem("tr-theme") || "auto";
+      const browserDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = colorScheme === "auto" ? (browserDarkMode ? "dark" : "light") : colorScheme;
 
-    darkCss.disabled = theme === "light";
-    darkCss.media = theme === "dark" ? "(prefers-color-scheme: dark)" : "";
-    document.body.classList.toggle("darkmode", theme === "dark")
+      darkCss.disabled = theme === "light";
+      document.body.classList.toggle("darkmode", theme === "dark")
+    }
+
+    updateTheme();
     const render = document.createElement("div");
     function createOption(option) {
       const checked = option === colorScheme;
@@ -352,7 +357,6 @@
       const theme = value === "auto" ? (browserDarkMode ? "dark" : "light") : value;
 
       darkCss.disabled = theme === "light";
-      darkCss.media = "";
       document.body.classList.toggle("darkmode", theme === "dark")
       localStorage.setItem("tr-theme", value);
     };
@@ -361,8 +365,7 @@
     });
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-      const colorScheme = localStorage.getItem("tr-theme") || "auto";
-      document.body.classList.toggle("darkmode", colorScheme === "auto" ? event.matches : colorScheme === "dark");
+      updateTheme();
     });
 
     var tocNav = document.querySelector('#toc-nav');
