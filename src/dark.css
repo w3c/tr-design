@@ -119,4 +119,6 @@ img { background: white; }
 	--outdated-shadow: red;
 
 	--editedrec-bg: darkorange;
+
+	--table-even-rows: #151b23;
 }
