@@ -798,8 +798,8 @@
 	.issue, .note, .example, .advisement, blockquote,
 	.amendment, .correction, .addition {
 		padding: .5em;
+		border: 1px solid;
 		border-left: .5em solid;
-		border-bottom: 0.25em solid;
 		page-break-inside: avoid;
 		margin: 1em auto;
 	}
@@ -1017,6 +1017,7 @@
 		background: #def;
 		background: var(--def-bg);
 		margin: 1.2em 0;
+		border: 1px solid var(--def-border);
 		border-left: 0.5em solid #8ccbf2;
 		border-left: 0.5em solid var(--def-border);
 		color: black;
