@@ -1036,9 +1036,6 @@
 		text-align: left;
 		text-align: start;
 	}
-	tr:nth-child(even) {
-		background: var(--table-row-even);
-	}
 
 /** Property/Descriptor Definition Tables *************************************/
 
