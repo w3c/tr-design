@@ -21,12 +21,58 @@
   const tocExpandId = 'toc-expand';
 
   var ESCAPEKEY = 27;
+
+  // Internationalization support for sidebar/jump text
+  var lang = document.documentElement.lang || 'en';
+  var i18n = {
+    en: {
+      collapseSidebar: 'Collapse Sidebar',
+      expandSidebar: 'Pop Out Sidebar',
+      jumpToToc: 'Jump to Table of Contents',
+    },
+    cs: {
+      collapseSidebar: 'Skrýt postranní panel',
+      expandSidebar: 'Zobrazit postranní panel',
+      jumpToToc: 'Přejít na obsah',
+    },
+    de: {
+      collapseSidebar: 'Seitenleiste einklappen',
+      expandSidebar: 'Seitenleiste ausklappen',
+      jumpToToc: 'Zum Inhaltsverzeichnis springen',
+    },
+    es: {
+      collapseSidebar: 'Colapsar barra lateral',
+      expandSidebar: 'Mostrar barra lateral',
+      jumpToToc: 'Ir al índice',
+    },
+    ja: {
+      collapseSidebar: 'サイドバーを折りたたむ',
+      expandSidebar: 'サイドバーを表示',
+      jumpToToc: '目次へジャンプ',
+    },
+    ko: {
+      collapseSidebar: '사이드바 접기',
+      expandSidebar: '사이드바 펼치기',
+      jumpToToc: '목차로 이동',
+    },
+    nl: {
+      collapseSidebar: 'Zijbalk samenvouwen',
+      expandSidebar: 'Zijbalk uitklappen',
+      jumpToToc: 'Naar inhoudsopgave',
+    },
+    zh: {
+      collapseSidebar: '收起侧边栏',
+      expandSidebar: '展开侧边栏',
+      jumpToToc: '跳转到目录',
+    }
+  };
+  var t = i18n[lang] || i18n['en'];
   var collapseSidebarText = '<span aria-hidden="true">←</span> '
-                          + `<span id="${tocCollapseId}-text">Collapse Sidebar</span>`;
+                          + `<span id="${tocCollapseId}-text">${t.collapseSidebar}</span>`;
   var expandSidebarText   = '<span aria-hidden="true">→</span> '
-                          + `<span id="${tocExpandId}-text">Pop Out Sidebar</span>`;
+                          + `<span id="${tocExpandId}-text">${t.expandSidebar}</span>`;
   var tocJumpText         = '<span aria-hidden="true">↑</span> '
-                          + `<span id="${tocJumpId}-text">Jump to Table of Contents</span>`;
+                          + `<span id="${tocJumpId}-text">${t.jumpToToc}</span>`;
 
   var sidebarMedia = window.matchMedia('screen and (min-width: 78em)');
   var autoToggle   = function(e){ toggleSidebar(e.matches) };
