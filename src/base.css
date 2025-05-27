@@ -1032,39 +1032,6 @@
 /*                                    Tables                                  */
 /******************************************************************************/
 
-	table {
-		border-spacing: 0;
-		border-collapse: collapse;
-		border-bottom: 3px solid var(--table-header-background);
-		position: relative;
-		word-wrap: normal;
-		overflow-wrap: normal;
-		hyphens: manual;
-	}
-	thead {
-		position: sticky;
-		top: 0;
-	}
-	th {
-		background: var(--table-header-background);
-		color: var(--table-header-text);
-		padding: 3px 5px;
-		text-align: left;
-	}
-	th a {
-		color: var(--table-header-text);
-		padding: 3px 5px;
-		text-align: left;
-	}
-	th[scope="row"] {
-		background: inherit;
-		color: inherit;
-		border-top: 1px solid var(--table-row-separator);
-	}
-	td {
-		padding: 3px 10px;
-		border-top: 1px solid var(--table-row-separator);
-	}
 	th, td {
 		text-align: left;
 		text-align: start;
@@ -1131,12 +1098,23 @@
 		 Alternately use class="longlastcol" on tables, to have the last column assume "long".
 	*/
 
+	table {
+		word-wrap: normal;
+		overflow-wrap: normal;
+		hyphens: manual;
+	}
+
 	table.data,
 	table.index {
-		margin: 1em auto;
-		border-collapse: collapse;
-		border: hidden;
 		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+		border-bottom: 3px solid var(--table-header-background);
+		margin: 1em auto;
+		position: relative;
+		word-wrap: normal;
+		overflow-wrap: normal;
+		hyphens: manual;
 	}
 	table.data caption,
 	table.index caption {
@@ -1163,6 +1141,36 @@
 	table.data  tbody,
 	table.index tbody {
 		border-bottom: 2px solid;
+	}
+
+	table.data  thead,
+	table.index thead {
+		position: sticky;
+		top: 0;
+	}
+
+	table.data  th,
+	table.index th {
+		background: var(--table-header-background);
+		color: var(--table-header-text);
+		text-align: left;
+	}
+
+	table.data  th a,
+	table.index th a {
+		color: var(--table-header-text);
+	}
+
+	table.data  th[scope="row"],
+	table.index th[scope="row"] {
+		background: inherit;
+		color: inherit;
+		border-top: 1px solid var(--table-row-separator);
+	}
+
+	table.data  tr:nth-child(even),
+	table.index tr:nth-child(even) {
+		background: var(--table-row-even);
 	}
 
 	table.data colgroup,
