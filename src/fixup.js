@@ -324,7 +324,7 @@
           node.classList.toggle("outdated-collapsed");
           document.body.classList.toggle("outdated-spec");
           button.innerText = (isOpen) ? '\u25BE collapse' : '\u25B4 expand';
-          button.setAttribute = "aria-label" (isOpen) ? "Collapse warning" : "Expand warning";
+          button.setAttribute("aria-label", (isOpen) ? "Collapse warning" : "Expand warning");
         }
       }
 
