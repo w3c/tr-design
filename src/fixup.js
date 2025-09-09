@@ -19,6 +19,7 @@
   const tocJumpId = 'toc-jump';
   const tocCollapseId = 'toc-collapse';
   const tocExpandId = 'toc-expand';
+  const tocThemeToggle = 'toc-theme-toggle';
 
   var ESCAPEKEY = 27;
 
@@ -389,14 +390,16 @@
         </label>
       `.trim();
     }
-    render.innerHTML = `
-      <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
-        <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2021/logos/dark.svg" title="theme toggle icon" /></span>
-        <span>
-        ${["light", "dark", "auto"].map(createOption).join("")}
-        </span>
-      </a>
-    `;
+    if (!document.getElementById(tocThemeToggle)) {
+      render.innerHTML = `
+        <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+          <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2021/logos/dark.svg" title="theme toggle icon" /></span>
+          <span>
+          ${["light", "dark", "auto"].map(createOption).join("")}
+          </span>
+        </a>
+      `;
+    }
     const changeListener = (event) => {
       const { value } = event.target;
       const browserDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
