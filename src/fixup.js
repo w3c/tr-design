@@ -390,16 +390,14 @@
         </label>
       `.trim();
     }
-    if (!document.getElementById(tocThemeToggle)) {
-      render.innerHTML = `
-        <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
-          <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2021/logos/dark.svg" title="theme toggle icon" /></span>
-          <span>
-          ${["light", "dark", "auto"].map(createOption).join("")}
-          </span>
-        </a>
-      `;
-    }
+    render.innerHTML = `
+      <a id="toc-theme-toggle" role="radiogroup" aria-label="Select a color scheme">
+        <span aria-hidden="true"><img src="https://www.w3.org/StyleSheets/TR/2021/logos/dark.svg" title="theme toggle icon" /></span>
+        <span>
+        ${["light", "dark", "auto"].map(createOption).join("")}
+        </span>
+      </a>
+    `;
     const changeListener = (event) => {
       const { value } = event.target;
       const browserDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -418,7 +416,9 @@
     });
 
     var tocNav = document.querySelector('#toc-nav');
-    tocNav.appendChild(...render.children);
+    if (!document.getElementById(tocThemeToggle)) {
+      tocNav.appendChild(...render.children);
+    }
   }
 
 })();
