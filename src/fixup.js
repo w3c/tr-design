@@ -418,7 +418,9 @@
     });
 
     var tocNav = document.querySelector('#toc-nav');
-    tocNav.appendChild(...render.children);
+    if (!document.getElementById(tocThemeToggle)) {
+      tocNav.appendChild(...render.children);
+    }
   }
 
 })();
