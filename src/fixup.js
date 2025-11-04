@@ -368,10 +368,13 @@
   /* Dark mode toggle */
   const darkCss = document.querySelector('link[rel~="stylesheet"][href^="https://www.w3.org/StyleSheets/TR/2021/dark"]');
   if (darkCss) {
-    let colorScheme = localStorage.getItem("tr-theme") || "auto";
+    let colorScheme = "auto";
     darkCss.media = "";
     function updateTheme() {
-      colorScheme = localStorage.getItem("tr-theme") || "auto";
+      colorScheme = localStorage.getItem("tr-theme");
+      if (colorScheme !== "light" && colorScheme !== "dark") {
+        colorScheme = "auto";
+      }
       const browserDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       const theme = colorScheme === "auto" ? (browserDarkMode ? "dark" : "light") : colorScheme;
 
