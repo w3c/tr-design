@@ -1,1 +1,2 @@
 # https://www.w3.org/TR/YYYY/WD-foobar-YYYYMMDD/
+https://www.w3.org/TR/2018/REC-WCAG21-20180605/
