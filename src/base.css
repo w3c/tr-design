@@ -627,6 +627,7 @@
 		background: var(--ins-bg);
 		text-decoration: underline;
 		text-decoration-style: dashed;
+		text-underline-position: under;
 	}
 	ins:not(#dontusethisid) *,
 	del:not(#dontusethisid) * {
