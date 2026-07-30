@@ -1,0 +1,9 @@
+
+/* Style for a "Draft Note" */
+
+@import "base.css";
+
+body {
+  background-image: url(logos/DNOTE-pre2025.svg);
+}
+
