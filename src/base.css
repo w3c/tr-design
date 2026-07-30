@@ -628,6 +628,7 @@
 		text-decoration: underline;
 		text-decoration-style: dashed;
 		text-underline-position: under;
+    text-decoration-thickness: from-font;
 	}
 	ins:not(#dontusethisid) *,
 	del:not(#dontusethisid) * {
