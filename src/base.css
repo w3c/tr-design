@@ -427,7 +427,7 @@
 			color: var(--tocsidebar-heading-text);
 		}
 
-		body:not(.toc-inline) {
+		body:not(.toc-inline):has(#toc) {
 			padding-left: 29em;
 		}
 		/* See also Overflow section at the bottom */
@@ -441,7 +441,7 @@
 		}
 	}
 	@media screen and (min-width: 90em) {
-		body:not(.toc-inline) {
+		body:not(.toc-inline):has(#toc) {
 			margin: 0 4em;
 		}
 	}
@@ -1517,13 +1517,13 @@ Possible extra rowspan handling
 		}
 	}
 	@media screen and (min-width: 78em) {
-		body:not(.toc-inline) .overlarge {
+		body:not(.toc-inline):has(#toc) .overlarge {
 			/* 30.5em body padding 50em content area */
 			margin-right: calc(40em - 50vw) !important;
 		}
 	}
 	@media screen and (min-width: 90em) {
-		body:not(.toc-inline) .overlarge {
+		body:not(.toc-inline):has(#toc) .overlarge {
 			/* 4em html margin 30.5em body padding 50em content area */
 			margin-right: calc(84.5em - 100vw) !important;
 		}
